@@ -1,0 +1,1954 @@
+[
+  {
+    "failure_id": "fail_1ba108d9",
+    "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+    "probe_id": "prb_80889330b7c6",
+    "category": "Spurious",
+    "severity": "high",
+    "reason": "The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (NEGATIVE (NEGATIVE) \u2192 POSITIVE (POSITIVE)).",
+    "details": "The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (NEGATIVE (NEGATIVE) \u2192 POSITIVE (POSITIVE)).",
+    "recommendation": "Augment training data and regularize behavior against negation_insertion perturbations to fix Spurious failures.",
+    "evidence": {
+      "original_label": "NEGATIVE",
+      "probe_label": "POSITIVE",
+      "original_confidence": 0.9978144203702026,
+      "probe_confidence": 0.9757612507450022,
+      "confidence_delta_pp": -2.205316962520043,
+      "label_transition": "NEGATIVE (NEGATIVE) \u2192 POSITIVE (POSITIVE)",
+      "raw_label_flip": true,
+      "polarity_flip": true,
+      "semantic_state_change": true,
+      "is_prediction_flip": true,
+      "original_polarity": "NEGATIVE",
+      "probe_polarity": "POSITIVE",
+      "expected_relation": "SAME_POLARITY",
+      "observed_relation": "POLARITY_REVERSED",
+      "expected_effect": "EXPECTED_PRESERVE",
+      "semantic_intent": "PRESERVE_POLARITY",
+      "threshold_pp": 15.0,
+      "expectation_match": false,
+      "preservation": false,
+      "jaccard_similarity": 0.42857142857142855,
+      "cosine_alignment": -0.5700706333257499,
+      "orig_explanation": {
+        "token_weights": {
+          "disappointing": 0.1422595901265008,
+          "visuals,": -0.03166694815330137,
+          "and": 1.904404979866455e-05,
+          "boring": 0.04133089523890471,
+          "storyline": -0.022777173802294253,
+          "visuals": -0.0028641550166164415,
+          "movie": -0.001824860217489441,
+          "The": 0.018388349003813958,
+          "was": 0.004264111605210702,
+          "acting": -0.04137573652909659,
+          "had": -0.05485134209563898,
+          "beautiful": -0.03390642302920431,
+          "but": 0.058733292407137865,
+          "the": -0.00015794750735251368,
+          "excellent": 0.02555615335919625
+        },
+        "token_attributions": [
+          {
+            "token": "disappointing",
+            "attribution": 0.1422595901265008,
+            "position": 1
+          },
+          {
+            "token": "visuals,",
+            "attribution": -0.03166694815330137,
+            "position": 2
+          },
+          {
+            "token": "and",
+            "attribution": 1.904404979866455e-05,
+            "position": 3
+          },
+          {
+            "token": "boring",
+            "attribution": 0.04133089523890471,
+            "position": 4
+          },
+          {
+            "token": "storyline",
+            "attribution": -0.022777173802294253,
+            "position": 5
+          },
+          {
+            "token": "visuals",
+            "attribution": -0.0028641550166164415,
+            "position": 6
+          },
+          {
+            "token": "movie",
+            "attribution": -0.001824860217489441,
+            "position": 7
+          },
+          {
+            "token": "The",
+            "attribution": 0.018388349003813958,
+            "position": 8
+          },
+          {
+            "token": "was",
+            "attribution": 0.004264111605210702,
+            "position": 9
+          },
+          {
+            "token": "acting",
+            "attribution": -0.04137573652909659,
+            "position": 10
+          },
+          {
+            "token": "had",
+            "attribution": -0.05485134209563898,
+            "position": 11
+          },
+          {
+            "token": "beautiful",
+            "attribution": -0.03390642302920431,
+            "position": 12
+          },
+          {
+            "token": "but",
+            "attribution": 0.058733292407137865,
+            "position": 13
+          },
+          {
+            "token": "the",
+            "attribution": -0.00015794750735251368,
+            "position": 14
+          },
+          {
+            "token": "excellent",
+            "attribution": 0.02555615335919625,
+            "position": 15
+          }
+        ],
+        "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+        "text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "pert_explanation": {
+        "token_weights": {
+          "not": 0.2437586434992063,
+          "disappointing": -0.44131320490382797,
+          "visuals,": 0.018841809370345956,
+          "and": -0.025938054620676887,
+          "storyline": -0.04563755787525723,
+          "visuals": 0.014854076050466023,
+          "movie": -0.019975865624597706,
+          "excellent": 0.07904986405551802,
+          "The": -0.017325086647432337,
+          "beautiful": 0.2754379421235412,
+          "was": 0.08199967829805596,
+          "had": -0.08758266951481815,
+          "acting": 0.01918246651094357,
+          "but": -0.058589039778434646,
+          "the": 0.0005758876272230904,
+          "boring": 0.12151245875120345
+        },
+        "token_attributions": [
+          {
+            "token": "not",
+            "attribution": 0.2437586434992063,
+            "position": 1
+          },
+          {
+            "token": "disappointing",
+            "attribution": -0.44131320490382797,
+            "position": 2
+          },
+          {
+            "token": "visuals,",
+            "attribution": 0.018841809370345956,
+            "position": 3
+          },
+          {
+            "token": "and",
+            "attribution": -0.025938054620676887,
+            "position": 4
+          },
+          {
+            "token": "storyline",
+            "attribution": -0.04563755787525723,
+            "position": 5
+          },
+          {
+            "token": "visuals",
+            "attribution": 0.014854076050466023,
+            "position": 6
+          },
+          {
+            "token": "movie",
+            "attribution": -0.019975865624597706,
+            "position": 7
+          },
+          {
+            "token": "excellent",
+            "attribution": 0.07904986405551802,
+            "position": 8
+          },
+          {
+            "token": "The",
+            "attribution": -0.017325086647432337,
+            "position": 9
+          },
+          {
+            "token": "beautiful",
+            "attribution": 0.2754379421235412,
+            "position": 10
+          },
+          {
+            "token": "was",
+            "attribution": 0.08199967829805596,
+            "position": 11
+          },
+          {
+            "token": "had",
+            "attribution": -0.08758266951481815,
+            "position": 12
+          },
+          {
+            "token": "acting",
+            "attribution": 0.01918246651094357,
+            "position": 13
+          },
+          {
+            "token": "but",
+            "attribution": -0.058589039778434646,
+            "position": 14
+          },
+          {
+            "token": "the",
+            "attribution": 0.0005758876272230904,
+            "position": 15
+          },
+          {
+            "token": "boring",
+            "attribution": 0.12151245875120345,
+            "position": 16
+          }
+        ],
+        "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+        "text": "The movie had excellent acting and beautiful visuals, but the storyline was not boring and disappointing",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "aligned_tokens": [
+        {
+          "token": "not",
+          "orig_token": null,
+          "pert_token": "not",
+          "orig_pos": null,
+          "pert_pos": 1,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.2437586434992063,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "disappointing",
+          "orig_token": "disappointing",
+          "pert_token": "disappointing",
+          "orig_pos": 1,
+          "pert_pos": 2,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.1422595901265008,
+          "pert_val": -0.44131320490382797,
+          "delta": -0.5835727950303288,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": true
+        },
+        {
+          "token": "visuals,",
+          "orig_token": "visuals,",
+          "pert_token": "visuals,",
+          "orig_pos": 2,
+          "pert_pos": 3,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.03166694815330137,
+          "pert_val": 0.018841809370345956,
+          "delta": 0.05050875752364733,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "and",
+          "orig_token": "and",
+          "pert_token": "and",
+          "orig_pos": 3,
+          "pert_pos": 4,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 1.904404979866455e-05,
+          "pert_val": -0.025938054620676887,
+          "delta": -0.02595709867047555,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "boring",
+          "orig_token": "boring",
+          "pert_token": null,
+          "orig_pos": 4,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": 0.04133089523890471,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "storyline",
+          "orig_token": "storyline",
+          "pert_token": "storyline",
+          "orig_pos": 5,
+          "pert_pos": 5,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.022777173802294253,
+          "pert_val": -0.04563755787525723,
+          "delta": -0.022860384072962977,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "visuals",
+          "orig_token": "visuals",
+          "pert_token": "visuals",
+          "orig_pos": 6,
+          "pert_pos": 6,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.0028641550166164415,
+          "pert_val": 0.014854076050466023,
+          "delta": 0.017718231067082466,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "movie",
+          "orig_token": "movie",
+          "pert_token": "movie",
+          "orig_pos": 7,
+          "pert_pos": 7,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.001824860217489441,
+          "pert_val": -0.019975865624597706,
+          "delta": -0.018151005407108265,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "excellent",
+          "orig_token": null,
+          "pert_token": "excellent",
+          "orig_pos": null,
+          "pert_pos": 8,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.07904986405551802,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "The",
+          "orig_token": "The",
+          "pert_token": "The",
+          "orig_pos": 8,
+          "pert_pos": 9,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 2,
+          "orig_val": 0.018388349003813958,
+          "pert_val": -0.017325086647432337,
+          "delta": -0.035713435651246295,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "beautiful",
+          "orig_token": null,
+          "pert_token": "beautiful",
+          "orig_pos": null,
+          "pert_pos": 10,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.2754379421235412,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "was",
+          "orig_token": "was",
+          "pert_token": "was",
+          "orig_pos": 9,
+          "pert_pos": 11,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.004264111605210702,
+          "pert_val": 0.08199967829805596,
+          "delta": 0.07773556669284526,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "had",
+          "orig_token": null,
+          "pert_token": "had",
+          "orig_pos": null,
+          "pert_pos": 12,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.08758266951481815,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "acting",
+          "orig_token": "acting",
+          "pert_token": "acting",
+          "orig_pos": 10,
+          "pert_pos": 13,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.04137573652909659,
+          "pert_val": 0.01918246651094357,
+          "delta": 0.06055820304004016,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "had",
+          "orig_token": "had",
+          "pert_token": null,
+          "orig_pos": 11,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": -0.05485134209563898,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "beautiful",
+          "orig_token": "beautiful",
+          "pert_token": null,
+          "orig_pos": 12,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": -0.03390642302920431,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "but",
+          "orig_token": "but",
+          "pert_token": "but",
+          "orig_pos": 13,
+          "pert_pos": 14,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.058733292407137865,
+          "pert_val": -0.058589039778434646,
+          "delta": -0.1173223321855725,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "the",
+          "orig_token": "the",
+          "pert_token": "the",
+          "orig_pos": 14,
+          "pert_pos": 15,
+          "orig_occ": 2,
+          "pert_occ": 2,
+          "total_occ": 2,
+          "orig_val": -0.00015794750735251368,
+          "pert_val": 0.0005758876272230904,
+          "delta": 0.0007338351345756041,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "excellent",
+          "orig_token": "excellent",
+          "pert_token": null,
+          "orig_pos": 15,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": 0.02555615335919625,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "boring",
+          "orig_token": null,
+          "pert_token": "boring",
+          "orig_pos": null,
+          "pert_pos": 16,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.12151245875120345,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        }
+      ]
+    },
+    "traceable_narrative": "The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (NEGATIVE (NEGATIVE) \u2192 POSITIVE (POSITIVE)).",
+    "original_sentence": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbed_sentence": "The movie had excellent acting and beautiful visuals, but the storyline was not boring and disappointing",
+    "original_label": "NEGATIVE",
+    "perturbed_label": "POSITIVE",
+    "original_confidence": 0.9978144203702026,
+    "perturbed_confidence": 0.9757612507450022,
+    "confidence_delta_pts": -2.205316962520043,
+    "is_flipped": true,
+    "expected_flip": false,
+    "behavioral_outcome": "UNEXPECTED_FLIP"
+  },
+  {
+    "failure_id": "fail_16de079f",
+    "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+    "probe_id": "prb_8883f3615d65",
+    "category": "Blind",
+    "severity": "high",
+    "reason": "Probe introduces a polarity reversal (PRESERVE_POLARITY), but model retained the same predicted class and polarity (NEGATIVE (NEGATIVE) \u2192 NEGATIVE (NEGATIVE)).",
+    "details": "Probe introduces a polarity reversal (PRESERVE_POLARITY), but model retained the same predicted class and polarity (NEGATIVE (NEGATIVE) \u2192 NEGATIVE (NEGATIVE)).",
+    "recommendation": "Augment training data and regularize behavior against contrast_negative_append perturbations to fix Blind failures.",
+    "evidence": {
+      "original_label": "NEGATIVE",
+      "probe_label": "NEGATIVE",
+      "original_confidence": 0.9978144203702026,
+      "probe_confidence": 0.9901978499255233,
+      "confidence_delta_pp": -0.7616570444679338,
+      "label_transition": "NEGATIVE (NEGATIVE) \u2192 NEGATIVE (NEGATIVE)",
+      "raw_label_flip": false,
+      "polarity_flip": false,
+      "semantic_state_change": false,
+      "is_prediction_flip": false,
+      "original_polarity": "NEGATIVE",
+      "probe_polarity": "NEGATIVE",
+      "expected_relation": "POLARITY_REVERSED",
+      "observed_relation": "SAME_POLARITY",
+      "expected_effect": "EXPECTED_PRESERVE",
+      "semantic_intent": "PRESERVE_POLARITY",
+      "threshold_pp": 15.0,
+      "expectation_match": false,
+      "preservation": true,
+      "jaccard_similarity": 0.42857142857142855,
+      "cosine_alignment": -0.16606454959087563,
+      "orig_explanation": {
+        "token_weights": {
+          "disappointing": 0.1422595901265008,
+          "visuals,": -0.03166694815330137,
+          "and": 1.904404979866455e-05,
+          "boring": 0.04133089523890471,
+          "storyline": -0.022777173802294253,
+          "visuals": -0.0028641550166164415,
+          "movie": -0.001824860217489441,
+          "The": 0.018388349003813958,
+          "was": 0.004264111605210702,
+          "acting": -0.04137573652909659,
+          "had": -0.05485134209563898,
+          "beautiful": -0.03390642302920431,
+          "but": 0.058733292407137865,
+          "the": -0.00015794750735251368,
+          "excellent": 0.02555615335919625
+        },
+        "token_attributions": [
+          {
+            "token": "disappointing",
+            "attribution": 0.1422595901265008,
+            "position": 1
+          },
+          {
+            "token": "visuals,",
+            "attribution": -0.03166694815330137,
+            "position": 2
+          },
+          {
+            "token": "and",
+            "attribution": 1.904404979866455e-05,
+            "position": 3
+          },
+          {
+            "token": "boring",
+            "attribution": 0.04133089523890471,
+            "position": 4
+          },
+          {
+            "token": "storyline",
+            "attribution": -0.022777173802294253,
+            "position": 5
+          },
+          {
+            "token": "visuals",
+            "attribution": -0.0028641550166164415,
+            "position": 6
+          },
+          {
+            "token": "movie",
+            "attribution": -0.001824860217489441,
+            "position": 7
+          },
+          {
+            "token": "The",
+            "attribution": 0.018388349003813958,
+            "position": 8
+          },
+          {
+            "token": "was",
+            "attribution": 0.004264111605210702,
+            "position": 9
+          },
+          {
+            "token": "acting",
+            "attribution": -0.04137573652909659,
+            "position": 10
+          },
+          {
+            "token": "had",
+            "attribution": -0.05485134209563898,
+            "position": 11
+          },
+          {
+            "token": "beautiful",
+            "attribution": -0.03390642302920431,
+            "position": 12
+          },
+          {
+            "token": "but",
+            "attribution": 0.058733292407137865,
+            "position": 13
+          },
+          {
+            "token": "the",
+            "attribution": -0.00015794750735251368,
+            "position": 14
+          },
+          {
+            "token": "excellent",
+            "attribution": 0.02555615335919625,
+            "position": 15
+          }
+        ],
+        "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+        "text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "pert_explanation": {
+        "token_weights": {
+          "disappointing": -0.07946651911923816,
+          "storyline": 0.00042236300406212063,
+          "The": -0.04071282551230106,
+          "boring": 0.14232277659676268,
+          "disappointing,": 0.04721848801396456,
+          "acting": 0.04118715402454573,
+          "was": 0.03034893793227553,
+          "had": -0.03649932648182901,
+          "however": 0.09450246830541045,
+          "comparison": -0.030466835640843955,
+          "and": -0.0015484326177546664,
+          "in": 0.015298345432593185,
+          "inferior": -0.017368908705646877,
+          "it": 0.010496976682035131,
+          "beautiful": 0.020447930551355742,
+          "but": -0.0015484326177546662,
+          "excellent": -0.0012894870669423121,
+          "visuals,": -0.0015484326177546664,
+          "movie": -0.0012894870669423121,
+          "surprisingly": 0.015671601878271477,
+          "the": 0.00042236300406212063
+        },
+        "token_attributions": [
+          {
+            "token": "disappointing",
+            "attribution": -0.07946651911923816,
+            "position": 1
+          },
+          {
+            "token": "storyline",
+            "attribution": 0.00042236300406212063,
+            "position": 2
+          },
+          {
+            "token": "The",
+            "attribution": -0.04071282551230106,
+            "position": 3
+          },
+          {
+            "token": "boring",
+            "attribution": 0.14232277659676268,
+            "position": 4
+          },
+          {
+            "token": "disappointing,",
+            "attribution": 0.04721848801396456,
+            "position": 5
+          },
+          {
+            "token": "acting",
+            "attribution": 0.04118715402454573,
+            "position": 6
+          },
+          {
+            "token": "was",
+            "attribution": 0.03034893793227553,
+            "position": 7
+          },
+          {
+            "token": "had",
+            "attribution": -0.03649932648182901,
+            "position": 8
+          },
+          {
+            "token": "however",
+            "attribution": 0.09450246830541045,
+            "position": 9
+          },
+          {
+            "token": "comparison",
+            "attribution": -0.030466835640843955,
+            "position": 10
+          },
+          {
+            "token": "and",
+            "attribution": -0.0015484326177546664,
+            "position": 11
+          },
+          {
+            "token": "in",
+            "attribution": 0.015298345432593185,
+            "position": 12
+          },
+          {
+            "token": "inferior",
+            "attribution": -0.017368908705646877,
+            "position": 13
+          },
+          {
+            "token": "it",
+            "attribution": 0.010496976682035131,
+            "position": 14
+          },
+          {
+            "token": "beautiful",
+            "attribution": 0.020447930551355742,
+            "position": 15
+          },
+          {
+            "token": "but",
+            "attribution": -0.0015484326177546662,
+            "position": 16
+          },
+          {
+            "token": "excellent",
+            "attribution": -0.0012894870669423121,
+            "position": 17
+          },
+          {
+            "token": "visuals,",
+            "attribution": -0.0015484326177546664,
+            "position": 18
+          },
+          {
+            "token": "movie",
+            "attribution": -0.0012894870669423121,
+            "position": 19
+          },
+          {
+            "token": "surprisingly",
+            "attribution": 0.015671601878271477,
+            "position": 20
+          },
+          {
+            "token": "the",
+            "attribution": 0.00042236300406212063,
+            "position": 21
+          }
+        ],
+        "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+        "text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing, however it was surprisingly inferior in comparison.",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "aligned_tokens": [
+        {
+          "token": "disappointing",
+          "orig_token": "disappointing",
+          "pert_token": "disappointing",
+          "orig_pos": 1,
+          "pert_pos": 1,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.1422595901265008,
+          "pert_val": -0.07946651911923816,
+          "delta": -0.22172610924573896,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": true
+        },
+        {
+          "token": "visuals,",
+          "orig_token": "visuals,",
+          "pert_token": null,
+          "orig_pos": 2,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": -0.03166694815330137,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "storyline",
+          "orig_token": null,
+          "pert_token": "storyline",
+          "orig_pos": null,
+          "pert_pos": 2,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.00042236300406212063,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "The",
+          "orig_token": null,
+          "pert_token": "The",
+          "orig_pos": null,
+          "pert_pos": 3,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 2,
+          "orig_val": null,
+          "pert_val": -0.04071282551230106,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "boring",
+          "orig_token": null,
+          "pert_token": "boring",
+          "orig_pos": null,
+          "pert_pos": 4,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.14232277659676268,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "disappointing,",
+          "orig_token": null,
+          "pert_token": "disappointing,",
+          "orig_pos": null,
+          "pert_pos": 5,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.04721848801396456,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "acting",
+          "orig_token": null,
+          "pert_token": "acting",
+          "orig_pos": null,
+          "pert_pos": 6,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.04118715402454573,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "was",
+          "orig_token": null,
+          "pert_token": "was",
+          "orig_pos": null,
+          "pert_pos": 7,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.03034893793227553,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "had",
+          "orig_token": null,
+          "pert_token": "had",
+          "orig_pos": null,
+          "pert_pos": 8,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.03649932648182901,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "however",
+          "orig_token": null,
+          "pert_token": "however",
+          "orig_pos": null,
+          "pert_pos": 9,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.09450246830541045,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "comparison",
+          "orig_token": null,
+          "pert_token": "comparison",
+          "orig_pos": null,
+          "pert_pos": 10,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.030466835640843955,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "and",
+          "orig_token": "and",
+          "pert_token": "and",
+          "orig_pos": 3,
+          "pert_pos": 11,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 1.904404979866455e-05,
+          "pert_val": -0.0015484326177546664,
+          "delta": -0.001567476667553331,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "boring",
+          "orig_token": "boring",
+          "pert_token": null,
+          "orig_pos": 4,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": 0.04133089523890471,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "in",
+          "orig_token": null,
+          "pert_token": "in",
+          "orig_pos": null,
+          "pert_pos": 12,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.015298345432593185,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "storyline",
+          "orig_token": "storyline",
+          "pert_token": null,
+          "orig_pos": 5,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": -0.022777173802294253,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "inferior",
+          "orig_token": null,
+          "pert_token": "inferior",
+          "orig_pos": null,
+          "pert_pos": 13,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.017368908705646877,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "visuals",
+          "orig_token": "visuals",
+          "pert_token": null,
+          "orig_pos": 6,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": -0.0028641550166164415,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "it",
+          "orig_token": null,
+          "pert_token": "it",
+          "orig_pos": null,
+          "pert_pos": 14,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.010496976682035131,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "movie",
+          "orig_token": "movie",
+          "pert_token": null,
+          "orig_pos": 7,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": -0.001824860217489441,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "The",
+          "orig_token": "The",
+          "pert_token": null,
+          "orig_pos": 8,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 2,
+          "orig_val": 0.018388349003813958,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "was",
+          "orig_token": "was",
+          "pert_token": null,
+          "orig_pos": 9,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": 0.004264111605210702,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "acting",
+          "orig_token": "acting",
+          "pert_token": null,
+          "orig_pos": 10,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": -0.04137573652909659,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "had",
+          "orig_token": "had",
+          "pert_token": null,
+          "orig_pos": 11,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": -0.05485134209563898,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "beautiful",
+          "orig_token": "beautiful",
+          "pert_token": "beautiful",
+          "orig_pos": 12,
+          "pert_pos": 15,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.03390642302920431,
+          "pert_val": 0.020447930551355742,
+          "delta": 0.05435435358056005,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "but",
+          "orig_token": "but",
+          "pert_token": "but",
+          "orig_pos": 13,
+          "pert_pos": 16,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.058733292407137865,
+          "pert_val": -0.0015484326177546662,
+          "delta": -0.060281725024892534,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "excellent",
+          "orig_token": null,
+          "pert_token": "excellent",
+          "orig_pos": null,
+          "pert_pos": 17,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.0012894870669423121,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "visuals,",
+          "orig_token": null,
+          "pert_token": "visuals,",
+          "orig_pos": null,
+          "pert_pos": 18,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.0015484326177546664,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "movie",
+          "orig_token": null,
+          "pert_token": "movie",
+          "orig_pos": null,
+          "pert_pos": 19,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.0012894870669423121,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "surprisingly",
+          "orig_token": null,
+          "pert_token": "surprisingly",
+          "orig_pos": null,
+          "pert_pos": 20,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.015671601878271477,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "the",
+          "orig_token": "the",
+          "pert_token": "the",
+          "orig_pos": 14,
+          "pert_pos": 21,
+          "orig_occ": 2,
+          "pert_occ": 2,
+          "total_occ": 2,
+          "orig_val": -0.00015794750735251368,
+          "pert_val": 0.00042236300406212063,
+          "delta": 0.0005803105114146343,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "excellent",
+          "orig_token": "excellent",
+          "pert_token": null,
+          "orig_pos": 15,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": 0.02555615335919625,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        }
+      ]
+    },
+    "traceable_narrative": "Probe introduces a polarity reversal (PRESERVE_POLARITY), but model retained the same predicted class and polarity (NEGATIVE (NEGATIVE) \u2192 NEGATIVE (NEGATIVE)).",
+    "original_sentence": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbed_sentence": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing, however it was surprisingly inferior in comparison.",
+    "original_label": "NEGATIVE",
+    "perturbed_label": "NEGATIVE",
+    "original_confidence": 0.9978144203702026,
+    "perturbed_confidence": 0.9901978499255233,
+    "confidence_delta_pts": -0.7616570444679338,
+    "is_flipped": false,
+    "expected_flip": false,
+    "behavioral_outcome": "MISSING_FLIP"
+  },
+  {
+    "failure_id": "fail_33ab765f",
+    "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+    "probe_id": "prb_0896126a5725",
+    "category": "Spurious",
+    "severity": "high",
+    "reason": "The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (NEGATIVE (NEGATIVE) \u2192 POSITIVE (POSITIVE)).",
+    "details": "The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (NEGATIVE (NEGATIVE) \u2192 POSITIVE (POSITIVE)).",
+    "recommendation": "Augment training data and regularize behavior against contrast_positive_append perturbations to fix Spurious failures.",
+    "evidence": {
+      "original_label": "NEGATIVE",
+      "probe_label": "POSITIVE",
+      "original_confidence": 0.9978144203702026,
+      "probe_confidence": 0.9963732658735891,
+      "confidence_delta_pp": -0.1441154496613528,
+      "label_transition": "NEGATIVE (NEGATIVE) \u2192 POSITIVE (POSITIVE)",
+      "raw_label_flip": true,
+      "polarity_flip": true,
+      "semantic_state_change": true,
+      "is_prediction_flip": true,
+      "original_polarity": "NEGATIVE",
+      "probe_polarity": "POSITIVE",
+      "expected_relation": "SAME_POLARITY",
+      "observed_relation": "POLARITY_REVERSED",
+      "expected_effect": "EXPECTED_PRESERVE",
+      "semantic_intent": "PRESERVE_POLARITY",
+      "threshold_pp": 15.0,
+      "expectation_match": false,
+      "preservation": false,
+      "jaccard_similarity": 0.25,
+      "cosine_alignment": -0.017179350946734877,
+      "orig_explanation": {
+        "token_weights": {
+          "disappointing": 0.1422595901265008,
+          "visuals,": -0.03166694815330137,
+          "and": 1.904404979866455e-05,
+          "boring": 0.04133089523890471,
+          "storyline": -0.022777173802294253,
+          "visuals": -0.0028641550166164415,
+          "movie": -0.001824860217489441,
+          "The": 0.018388349003813958,
+          "was": 0.004264111605210702,
+          "acting": -0.04137573652909659,
+          "had": -0.05485134209563898,
+          "beautiful": -0.03390642302920431,
+          "but": 0.058733292407137865,
+          "the": -0.00015794750735251368,
+          "excellent": 0.02555615335919625
+        },
+        "token_attributions": [
+          {
+            "token": "disappointing",
+            "attribution": 0.1422595901265008,
+            "position": 1
+          },
+          {
+            "token": "visuals,",
+            "attribution": -0.03166694815330137,
+            "position": 2
+          },
+          {
+            "token": "and",
+            "attribution": 1.904404979866455e-05,
+            "position": 3
+          },
+          {
+            "token": "boring",
+            "attribution": 0.04133089523890471,
+            "position": 4
+          },
+          {
+            "token": "storyline",
+            "attribution": -0.022777173802294253,
+            "position": 5
+          },
+          {
+            "token": "visuals",
+            "attribution": -0.0028641550166164415,
+            "position": 6
+          },
+          {
+            "token": "movie",
+            "attribution": -0.001824860217489441,
+            "position": 7
+          },
+          {
+            "token": "The",
+            "attribution": 0.018388349003813958,
+            "position": 8
+          },
+          {
+            "token": "was",
+            "attribution": 0.004264111605210702,
+            "position": 9
+          },
+          {
+            "token": "acting",
+            "attribution": -0.04137573652909659,
+            "position": 10
+          },
+          {
+            "token": "had",
+            "attribution": -0.05485134209563898,
+            "position": 11
+          },
+          {
+            "token": "beautiful",
+            "attribution": -0.03390642302920431,
+            "position": 12
+          },
+          {
+            "token": "but",
+            "attribution": 0.058733292407137865,
+            "position": 13
+          },
+          {
+            "token": "the",
+            "attribution": -0.00015794750735251368,
+            "position": 14
+          },
+          {
+            "token": "excellent",
+            "attribution": 0.02555615335919625,
+            "position": 15
+          }
+        ],
+        "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+        "text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "pert_explanation": {
+        "token_weights": {
+          "engaging": 0.5517049097861236,
+          "visuals,": 0.0012844036487009987,
+          "and": 0.04127456407988982,
+          "boring": -0.18199563540659422,
+          "storyline": -0.0006140325002432203,
+          "visuals": -0.009244206521800689,
+          "movie": -0.006477464360940569,
+          "The": 0.03600927866111348,
+          "disappointing,": -0.1162606958289352,
+          "acting": 0.0010254580978886433,
+          "but": -0.009779893634017532,
+          "had": -0.07738929131732308,
+          "beautiful": 0.0012844036487009987,
+          "the": -0.0006140325002432203,
+          "was": -0.0288117238865342,
+          "excellent": 0.057823652950084584,
+          "overall": 0.02091156964230923
+        },
+        "token_attributions": [
+          {
+            "token": "engaging",
+            "attribution": 0.5517049097861236,
+            "position": 1
+          },
+          {
+            "token": "visuals,",
+            "attribution": 0.0012844036487009987,
+            "position": 2
+          },
+          {
+            "token": "and",
+            "attribution": 0.04127456407988982,
+            "position": 3
+          },
+          {
+            "token": "boring",
+            "attribution": -0.18199563540659422,
+            "position": 4
+          },
+          {
+            "token": "storyline",
+            "attribution": -0.0006140325002432203,
+            "position": 5
+          },
+          {
+            "token": "visuals",
+            "attribution": -0.009244206521800689,
+            "position": 6
+          },
+          {
+            "token": "movie",
+            "attribution": -0.006477464360940569,
+            "position": 7
+          },
+          {
+            "token": "The",
+            "attribution": 0.03600927866111348,
+            "position": 8
+          },
+          {
+            "token": "disappointing,",
+            "attribution": -0.1162606958289352,
+            "position": 9
+          },
+          {
+            "token": "acting",
+            "attribution": 0.0010254580978886433,
+            "position": 10
+          },
+          {
+            "token": "but",
+            "attribution": -0.009779893634017532,
+            "position": 11
+          },
+          {
+            "token": "had",
+            "attribution": -0.07738929131732308,
+            "position": 12
+          },
+          {
+            "token": "beautiful",
+            "attribution": 0.0012844036487009987,
+            "position": 13
+          },
+          {
+            "token": "the",
+            "attribution": -0.0006140325002432203,
+            "position": 14
+          },
+          {
+            "token": "was",
+            "attribution": -0.0288117238865342,
+            "position": 15
+          },
+          {
+            "token": "excellent",
+            "attribution": 0.057823652950084584,
+            "position": 16
+          },
+          {
+            "token": "overall",
+            "attribution": 0.02091156964230923,
+            "position": 17
+          }
+        ],
+        "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+        "text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing, and the overall storyline was engaging.",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "aligned_tokens": [
+        {
+          "token": "disappointing",
+          "orig_token": "disappointing",
+          "pert_token": null,
+          "orig_pos": 1,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": 0.1422595901265008,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "engaging",
+          "orig_token": null,
+          "pert_token": "engaging",
+          "orig_pos": null,
+          "pert_pos": 1,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.5517049097861236,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "visuals,",
+          "orig_token": "visuals,",
+          "pert_token": "visuals,",
+          "orig_pos": 2,
+          "pert_pos": 2,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.03166694815330137,
+          "pert_val": 0.0012844036487009987,
+          "delta": 0.03295135180200237,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "and",
+          "orig_token": "and",
+          "pert_token": "and",
+          "orig_pos": 3,
+          "pert_pos": 3,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 1.904404979866455e-05,
+          "pert_val": 0.04127456407988982,
+          "delta": 0.04125552003009115,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "boring",
+          "orig_token": "boring",
+          "pert_token": "boring",
+          "orig_pos": 4,
+          "pert_pos": 4,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.04133089523890471,
+          "pert_val": -0.18199563540659422,
+          "delta": -0.22332653064549893,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": true
+        },
+        {
+          "token": "storyline",
+          "orig_token": "storyline",
+          "pert_token": "storyline",
+          "orig_pos": 5,
+          "pert_pos": 5,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.022777173802294253,
+          "pert_val": -0.0006140325002432203,
+          "delta": 0.022163141302051034,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "visuals",
+          "orig_token": "visuals",
+          "pert_token": "visuals",
+          "orig_pos": 6,
+          "pert_pos": 6,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.0028641550166164415,
+          "pert_val": -0.009244206521800689,
+          "delta": -0.006380051505184248,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "movie",
+          "orig_token": "movie",
+          "pert_token": "movie",
+          "orig_pos": 7,
+          "pert_pos": 7,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.001824860217489441,
+          "pert_val": -0.006477464360940569,
+          "delta": -0.004652604143451128,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "The",
+          "orig_token": "The",
+          "pert_token": "The",
+          "orig_pos": 8,
+          "pert_pos": 8,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 2,
+          "orig_val": 0.018388349003813958,
+          "pert_val": 0.03600927866111348,
+          "delta": 0.017620929657299524,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "was",
+          "orig_token": "was",
+          "pert_token": null,
+          "orig_pos": 9,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": 0.004264111605210702,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "disappointing,",
+          "orig_token": null,
+          "pert_token": "disappointing,",
+          "orig_pos": null,
+          "pert_pos": 9,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.1162606958289352,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "acting",
+          "orig_token": "acting",
+          "pert_token": "acting",
+          "orig_pos": 10,
+          "pert_pos": 10,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.04137573652909659,
+          "pert_val": 0.0010254580978886433,
+          "delta": 0.04240119462698523,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "but",
+          "orig_token": null,
+          "pert_token": "but",
+          "orig_pos": null,
+          "pert_pos": 11,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.009779893634017532,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "had",
+          "orig_token": "had",
+          "pert_token": "had",
+          "orig_pos": 11,
+          "pert_pos": 12,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.05485134209563898,
+          "pert_val": -0.07738929131732308,
+          "delta": -0.022537949221684103,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "beautiful",
+          "orig_token": "beautiful",
+          "pert_token": "beautiful",
+          "orig_pos": 12,
+          "pert_pos": 13,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.03390642302920431,
+          "pert_val": 0.0012844036487009987,
+          "delta": 0.03519082667790531,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "but",
+          "orig_token": "but",
+          "pert_token": null,
+          "orig_pos": 13,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": 0.058733292407137865,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "the",
+          "orig_token": "the",
+          "pert_token": "the",
+          "orig_pos": 14,
+          "pert_pos": 14,
+          "orig_occ": 2,
+          "pert_occ": 2,
+          "total_occ": 2,
+          "orig_val": -0.00015794750735251368,
+          "pert_val": -0.0006140325002432203,
+          "delta": -0.00045608499289070655,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "was",
+          "orig_token": null,
+          "pert_token": "was",
+          "orig_pos": null,
+          "pert_pos": 15,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.0288117238865342,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "excellent",
+          "orig_token": "excellent",
+          "pert_token": "excellent",
+          "orig_pos": 15,
+          "pert_pos": 16,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.02555615335919625,
+          "pert_val": 0.057823652950084584,
+          "delta": 0.03226749959088833,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "overall",
+          "orig_token": null,
+          "pert_token": "overall",
+          "orig_pos": null,
+          "pert_pos": 17,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.02091156964230923,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        }
+      ]
+    },
+    "traceable_narrative": "The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (NEGATIVE (NEGATIVE) \u2192 POSITIVE (POSITIVE)).",
+    "original_sentence": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbed_sentence": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing, and the overall storyline was engaging.",
+    "original_label": "NEGATIVE",
+    "perturbed_label": "POSITIVE",
+    "original_confidence": 0.9978144203702026,
+    "perturbed_confidence": 0.9963732658735891,
+    "confidence_delta_pts": -0.1441154496613528,
+    "is_flipped": true,
+    "expected_flip": false,
+    "behavioral_outcome": "UNEXPECTED_FLIP"
+  }
+]

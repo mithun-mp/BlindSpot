@@ -1,0 +1,1052 @@
+[
+  {
+    "baseline_id": "base_bb8b8d3d3f4a",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_b97b6ff93a22",
+    "seed_text": "The new security system is extremely reliable and protects users from dangerous attacks",
+    "perturbed_text": "The new security system is not extremely reliable and protects users from dangerous attacks",
+    "perturbation_type": "negation_insertion",
+    "category": "negation_insertion",
+    "expected_flip": true,
+    "expected_semantic_effect": "EXPECTED_FLIP",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.8924571766098713,
+      "formatted_confidence": "89.25%",
+      "probabilities": {
+        "NEGATIVE": 0.008417186789786462,
+        "NEUTRAL": 0.09912563660034217,
+        "POSITIVE": 0.8924571766098713
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.84%",
+        "NEUTRAL": "9.91%",
+        "POSITIVE": "89.25%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.84%\nNEUTRAL    [==                  ]   9.91%\nPOSITIVE   [==================  ]  89.25%",
+      "raw_logits": null,
+      "latency_ms": 318.3680000001914,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.008417186789786462,
+        "LABEL_1": 0.09912563660034217,
+        "LABEL_2": 0.8924571766098713
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9139870017698795,
+      "formatted_confidence": "91.40%",
+      "probabilities": {
+        "NEGATIVE": 0.9139870017698795,
+        "NEUTRAL": 0.08216166683748442,
+        "POSITIVE": 0.003851331392636168
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "91.40%",
+        "NEUTRAL": "8.22%",
+        "POSITIVE": "0.39%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [==================  ]  91.40%\nNEUTRAL    [==                  ]   8.22%\nPOSITIVE   [                    ]   0.39%",
+      "raw_logits": null,
+      "latency_ms": 103.6279428569417,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.9139870017698795,
+        "LABEL_1": 0.08216166683748442,
+        "LABEL_2": 0.003851331392636168
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.8924571766098713,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.9139870017698795,
+    "from_label": "POSITIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "POSITIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_b97b6ff93a22",
+      "sentence_text": "The new security system is not extremely reliable and protects users from dangerous attacks",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Negative affective orientation (compound score: -0.58).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "REVERSE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790614462.6332605,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": true,
+    "semantic_state_change": true,
+    "confidence_delta": 0.02152982516000812,
+    "confidence_delta_pts": 2.152982516000812,
+    "confidence_delta_pp": 2.152982516000812,
+    "formatted_confidence_delta": "+2.15 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": false,
+    "expected_relation": "POLARITY_REVERSED",
+    "observed_relation": "POLARITY_REVERSED",
+    "behavioral_outcome": "EXPECTED_FLIP",
+    "failure_type": "None",
+    "rationale": "Model correctly flipped and changed label (POSITIVE (POSITIVE) \u2192 NEGATIVE (NEGATIVE)) under DIFFERENT_LABEL expectation.",
+    "semantic_intent": "REVERSE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 103.6279428569417,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_bb8b8d3d3f4a",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_19d2175f47cc",
+    "seed_text": "The new security system is extremely reliable and protects users from dangerous attacks",
+    "perturbed_text": "It is not impossible that the new security system is extremely reliable and protects users from dangerous attacks",
+    "perturbation_type": "double_negation",
+    "category": "double_negation",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.8924571766098713,
+      "formatted_confidence": "89.25%",
+      "probabilities": {
+        "NEGATIVE": 0.008417186789786462,
+        "NEUTRAL": 0.09912563660034217,
+        "POSITIVE": 0.8924571766098713
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.84%",
+        "NEUTRAL": "9.91%",
+        "POSITIVE": "89.25%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.84%\nNEUTRAL    [==                  ]   9.91%\nPOSITIVE   [==================  ]  89.25%",
+      "raw_logits": null,
+      "latency_ms": 318.3680000001914,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.008417186789786462,
+        "LABEL_1": 0.09912563660034217,
+        "LABEL_2": 0.8924571766098713
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.8568374445208081,
+      "formatted_confidence": "85.68%",
+      "probabilities": {
+        "NEGATIVE": 0.015261738567868941,
+        "NEUTRAL": 0.1279008169113229,
+        "POSITIVE": 0.8568374445208081
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "1.53%",
+        "NEUTRAL": "12.79%",
+        "POSITIVE": "85.68%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   1.53%\nNEUTRAL    [===                 ]  12.79%\nPOSITIVE   [=================   ]  85.68%",
+      "raw_logits": null,
+      "latency_ms": 103.6279428569417,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.015261738567868941,
+        "LABEL_1": 0.1279008169113229,
+        "LABEL_2": 0.8568374445208081
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.8924571766098713,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.8568374445208081,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_19d2175f47cc",
+      "sentence_text": "It is not impossible that the new security system is extremely reliable and protects users from dangerous attacks",
+      "semantic_polarity": "POSITIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Positive affective orientation (compound score: +0.31).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790614462.6399713,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.035619732089063216,
+    "confidence_delta_pts": -3.5619732089063216,
+    "confidence_delta_pp": -3.5619732089063216,
+    "formatted_confidence_delta": "-3.56 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 103.6279428569417,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_bb8b8d3d3f4a",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_32ac03c6a824",
+    "seed_text": "The new security system is extremely reliable and protects users from dangerous attacks",
+    "perturbed_text": "The new extremely security system is extremely reliable and protects users from dangerous attacks",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.8924571766098713,
+      "formatted_confidence": "89.25%",
+      "probabilities": {
+        "NEGATIVE": 0.008417186789786462,
+        "NEUTRAL": 0.09912563660034217,
+        "POSITIVE": 0.8924571766098713
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.84%",
+        "NEUTRAL": "9.91%",
+        "POSITIVE": "89.25%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.84%\nNEUTRAL    [==                  ]   9.91%\nPOSITIVE   [==================  ]  89.25%",
+      "raw_logits": null,
+      "latency_ms": 318.3680000001914,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.008417186789786462,
+        "LABEL_1": 0.09912563660034217,
+        "LABEL_2": 0.8924571766098713
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.8949629422706316,
+      "formatted_confidence": "89.50%",
+      "probabilities": {
+        "NEGATIVE": 0.007724118210375841,
+        "NEUTRAL": 0.09731293951899256,
+        "POSITIVE": 0.8949629422706316
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.77%",
+        "NEUTRAL": "9.73%",
+        "POSITIVE": "89.50%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.77%\nNEUTRAL    [==                  ]   9.73%\nPOSITIVE   [==================  ]  89.50%",
+      "raw_logits": null,
+      "latency_ms": 103.6279428569417,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.007724118210375841,
+        "LABEL_1": 0.09731293951899256,
+        "LABEL_2": 0.8949629422706316
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.8924571766098713,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.8949629422706316,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_32ac03c6a824",
+      "sentence_text": "The new extremely security system is extremely reliable and protects users from dangerous attacks",
+      "semantic_polarity": "POSITIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Positive affective orientation (compound score: +0.37).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790614462.6476986,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.0025057656607602175,
+    "confidence_delta_pts": 0.25057656607602175,
+    "confidence_delta_pp": 0.25057656607602175,
+    "formatted_confidence_delta": "+0.25 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 103.6279428569417,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_bb8b8d3d3f4a",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_f64d6f520815",
+    "seed_text": "The new security system is extremely reliable and protects users from dangerous attacks",
+    "perturbed_text": "The new somewhat security system is extremely reliable and protects users from dangerous attacks",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.8924571766098713,
+      "formatted_confidence": "89.25%",
+      "probabilities": {
+        "NEGATIVE": 0.008417186789786462,
+        "NEUTRAL": 0.09912563660034217,
+        "POSITIVE": 0.8924571766098713
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.84%",
+        "NEUTRAL": "9.91%",
+        "POSITIVE": "89.25%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.84%\nNEUTRAL    [==                  ]   9.91%\nPOSITIVE   [==================  ]  89.25%",
+      "raw_logits": null,
+      "latency_ms": 318.3680000001914,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.008417186789786462,
+        "LABEL_1": 0.09912563660034217,
+        "LABEL_2": 0.8924571766098713
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.861021579113809,
+      "formatted_confidence": "86.10%",
+      "probabilities": {
+        "NEGATIVE": 0.010670705708368408,
+        "NEUTRAL": 0.1283077151778226,
+        "POSITIVE": 0.861021579113809
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "1.07%",
+        "NEUTRAL": "12.83%",
+        "POSITIVE": "86.10%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   1.07%\nNEUTRAL    [===                 ]  12.83%\nPOSITIVE   [=================   ]  86.10%",
+      "raw_logits": null,
+      "latency_ms": 103.6279428569417,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.010670705708368408,
+        "LABEL_1": 0.1283077151778226,
+        "LABEL_2": 0.861021579113809
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.8924571766098713,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.861021579113809,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_f64d6f520815",
+      "sentence_text": "The new somewhat security system is extremely reliable and protects users from dangerous attacks",
+      "semantic_polarity": "POSITIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Positive affective orientation (compound score: +0.24).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790614462.657158,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.031435597496062284,
+    "confidence_delta_pts": -3.1435597496062284,
+    "confidence_delta_pp": -3.1435597496062284,
+    "formatted_confidence_delta": "-3.14 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 103.6279428569417,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_bb8b8d3d3f4a",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_6e32cc742253",
+    "seed_text": "The new security system is extremely reliable and protects users from dangerous attacks",
+    "perturbed_text": "The newfangled security system is extremely reliable and protects users from dangerous attacks",
+    "perturbation_type": "synonym_substitution",
+    "category": "synonym_substitution",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.8924571766098713,
+      "formatted_confidence": "89.25%",
+      "probabilities": {
+        "NEGATIVE": 0.008417186789786462,
+        "NEUTRAL": 0.09912563660034217,
+        "POSITIVE": 0.8924571766098713
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.84%",
+        "NEUTRAL": "9.91%",
+        "POSITIVE": "89.25%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.84%\nNEUTRAL    [==                  ]   9.91%\nPOSITIVE   [==================  ]  89.25%",
+      "raw_logits": null,
+      "latency_ms": 318.3680000001914,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.008417186789786462,
+        "LABEL_1": 0.09912563660034217,
+        "LABEL_2": 0.8924571766098713
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.8885472077363762,
+      "formatted_confidence": "88.85%",
+      "probabilities": {
+        "NEGATIVE": 0.008626022625161989,
+        "NEUTRAL": 0.10282676963846187,
+        "POSITIVE": 0.8885472077363762
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.86%",
+        "NEUTRAL": "10.28%",
+        "POSITIVE": "88.85%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.86%\nNEUTRAL    [==                  ]  10.28%\nPOSITIVE   [==================  ]  88.85%",
+      "raw_logits": null,
+      "latency_ms": 103.6279428569417,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.008626022625161989,
+        "LABEL_1": 0.10282676963846187,
+        "LABEL_2": 0.8885472077363762
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.8924571766098713,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.8885472077363762,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_6e32cc742253",
+      "sentence_text": "The newfangled security system is extremely reliable and protects users from dangerous attacks",
+      "semantic_polarity": "POSITIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Positive affective orientation (compound score: +0.31).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790614462.666096,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.003909968873495151,
+    "confidence_delta_pts": -0.3909968873495151,
+    "confidence_delta_pp": -0.3909968873495151,
+    "formatted_confidence_delta": "-0.39 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 103.6279428569417,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_bb8b8d3d3f4a",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_01db79cec89d",
+    "seed_text": "The new security system is extremely reliable and protects users from dangerous attacks",
+    "perturbed_text": "The new security system is extremely reliable and protects users from dangerous attacks, however it is surprisingly worn in comparison.",
+    "perturbation_type": "contrast_negative_append",
+    "category": "contrast_negative_append",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.8924571766098713,
+      "formatted_confidence": "89.25%",
+      "probabilities": {
+        "NEGATIVE": 0.008417186789786462,
+        "NEUTRAL": 0.09912563660034217,
+        "POSITIVE": 0.8924571766098713
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.84%",
+        "NEUTRAL": "9.91%",
+        "POSITIVE": "89.25%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.84%\nNEUTRAL    [==                  ]   9.91%\nPOSITIVE   [==================  ]  89.25%",
+      "raw_logits": null,
+      "latency_ms": 318.3680000001914,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.008417186789786462,
+        "LABEL_1": 0.09912563660034217,
+        "LABEL_2": 0.8924571766098713
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.7829982434176367,
+      "formatted_confidence": "78.30%",
+      "probabilities": {
+        "NEGATIVE": 0.035814682950441615,
+        "NEUTRAL": 0.1811870736319217,
+        "POSITIVE": 0.7829982434176367
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "3.58%",
+        "NEUTRAL": "18.12%",
+        "POSITIVE": "78.30%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=                   ]   3.58%\nNEUTRAL    [====                ]  18.12%\nPOSITIVE   [================    ]  78.30%",
+      "raw_logits": null,
+      "latency_ms": 103.6279428569417,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.035814682950441615,
+        "LABEL_1": 0.1811870736319217,
+        "LABEL_2": 0.7829982434176367
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.8924571766098713,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.7829982434176367,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_01db79cec89d",
+      "sentence_text": "The new security system is extremely reliable and protects users from dangerous attacks, however it is surprisingly worn in comparison.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by favorable second clause: 'it is surprisingly worn in comparison.' (compound: +0.08).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790614462.6741874,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.10945893319223465,
+    "confidence_delta_pts": -10.945893319223465,
+    "confidence_delta_pp": -10.945893319223465,
+    "formatted_confidence_delta": "-10.95 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 103.6279428569417,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_bb8b8d3d3f4a",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_b9120354c0b5",
+    "seed_text": "The new security system is extremely reliable and protects users from dangerous attacks",
+    "perturbed_text": "The new security system is extremely reliable and protects users from dangerous attacks, and it operates reliably under normal conditions.",
+    "perturbation_type": "contrast_positive_append",
+    "category": "contrast_positive_append",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.8924571766098713,
+      "formatted_confidence": "89.25%",
+      "probabilities": {
+        "NEGATIVE": 0.008417186789786462,
+        "NEUTRAL": 0.09912563660034217,
+        "POSITIVE": 0.8924571766098713
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.84%",
+        "NEUTRAL": "9.91%",
+        "POSITIVE": "89.25%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.84%\nNEUTRAL    [==                  ]   9.91%\nPOSITIVE   [==================  ]  89.25%",
+      "raw_logits": null,
+      "latency_ms": 318.3680000001914,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.008417186789786462,
+        "LABEL_1": 0.09912563660034217,
+        "LABEL_2": 0.8924571766098713
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.912835322167022,
+      "formatted_confidence": "91.28%",
+      "probabilities": {
+        "NEGATIVE": 0.005922239031103889,
+        "NEUTRAL": 0.08124243880187412,
+        "POSITIVE": 0.912835322167022
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.59%",
+        "NEUTRAL": "8.12%",
+        "POSITIVE": "91.28%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.59%\nNEUTRAL    [==                  ]   8.12%\nPOSITIVE   [==================  ]  91.28%",
+      "raw_logits": null,
+      "latency_ms": 103.6279428569417,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.005922239031103889,
+        "LABEL_1": 0.08124243880187412,
+        "LABEL_2": 0.912835322167022
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.8924571766098713,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.912835322167022,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_b9120354c0b5",
+      "sentence_text": "The new security system is extremely reliable and protects users from dangerous attacks, and it operates reliably under normal conditions.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Positive affective orientation (compound score: +0.31).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790614462.6809592,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.020378145557150673,
+    "confidence_delta_pts": 2.0378145557150673,
+    "confidence_delta_pp": 2.0378145557150673,
+    "formatted_confidence_delta": "+2.04 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 103.6279428569417,
+    "ground_truth_match": true
+  }
+]

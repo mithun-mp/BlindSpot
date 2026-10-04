@@ -1,0 +1,79 @@
+{
+  "The movie was great and the acting was top notch.": {
+    "baseline_id": "base_1e586852604e",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "seed_text": "The movie was great and the acting was top notch.",
+    "original_text": "The movie was great and the acting was top notch.",
+    "sentence_type": "literal",
+    "prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9995554384818758,
+      "formatted_confidence": "99.96%",
+      "probabilities": {
+        "NEGATIVE": 0.0004445615181242448,
+        "POSITIVE": 0.9995554384818758
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.04%",
+        "POSITIVE": "99.96%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.04%\nPOSITIVE   [====================]  99.96%",
+      "raw_logits": null,
+      "latency_ms": 252.01059999744757,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0004445615181242448,
+        "LABEL_1": 0.9995554384818758
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "raw_label": "LABEL_1",
+    "raw_label_id": 1,
+    "semantic_polarity": "POSITIVE",
+    "confidence": 0.9995554384818758,
+    "full_probability_distribution": {
+      "NEGATIVE": 0.0004445615181242448,
+      "POSITIVE": 0.9995554384818758
+    },
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "POSITIVE",
+    "semantic_reference": {
+      "sentence_id": "baseline",
+      "sentence_text": "The movie was great and the acting was top notch.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.99,
+      "reason": "Unambiguously positive evaluation of both the movie and the acting.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.99,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-3.8-flash",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790853567.328182,
+      "prompt_version": "v2.0"
+    },
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "latency_ms": 252.01059999744757
+  }
+}

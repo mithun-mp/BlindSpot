@@ -1,0 +1,1885 @@
+[
+  {
+    "baseline_id": "base_78483b7471e5",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_7c3d68f66bd8",
+    "seed_text": "Excellent shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer",
+    "perturbed_text": "Excellent shoes at low price light weight and comfortable, this is not my second purchase from Asian shoes. Thank you Flipkart and dealer",
+    "perturbation_type": "negation_insertion",
+    "category": "negation_insertion",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9786148995656402,
+      "formatted_confidence": "97.86%",
+      "probabilities": {
+        "NEGATIVE": 0.0014341579124998406,
+        "NEUTRAL": 0.01995094252185995,
+        "POSITIVE": 0.9786148995656402
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.14%",
+        "NEUTRAL": "2.00%",
+        "POSITIVE": "97.86%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.14%\nNEUTRAL    [                    ]   2.00%\nPOSITIVE   [====================]  97.86%",
+      "raw_logits": null,
+      "latency_ms": 1522.2754999995232,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0014341579124998406,
+        "LABEL_1": 0.01995094252185995,
+        "LABEL_2": 0.9786148995656402
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9620061456285962,
+      "formatted_confidence": "96.20%",
+      "probabilities": {
+        "NEGATIVE": 0.0028659875790165586,
+        "NEUTRAL": 0.03512786679238723,
+        "POSITIVE": 0.9620061456285962
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.29%",
+        "NEUTRAL": "3.51%",
+        "POSITIVE": "96.20%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.29%\nNEUTRAL    [=                   ]   3.51%\nPOSITIVE   [=================== ]  96.20%",
+      "raw_logits": null,
+      "latency_ms": 458.6945142863052,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0028659875790165586,
+        "LABEL_1": 0.03512786679238723,
+        "LABEL_2": 0.9620061456285962
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9786148995656402,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9620061456285962,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_7c3d68f66bd8",
+      "sentence_text": "Excellent shoes at low price light weight and comfortable, this is not my second purchase from Asian shoes. Thank you Flipkart and dealer",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.85,
+      "reason": "Negating the second purchase does not remove the strong positive evaluation of the shoes themselves.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.85,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790967553.518284,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.05,
+      "neutral_probability": 0.1,
+      "positive_probability": 0.85,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "neutral_probability": 0.1,
+        "positive_probability": 0.85,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "positive_probability": 0.85,
+        "neutral_probability_excluded": 0.1,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Strong positive sentiment regarding product quality, price, and repeat purchase.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_7c3d68f66bd8",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.85,
+            "reason_short": "Negating the second purchase does not remove the strong positive evaluation of the shoes themselves.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_20c5e53695ff",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.02,
+            "neutral_probability": 0.08,
+            "positive_probability": 0.9,
+            "reason_short": "Double negation preserves the underlying positive meaning.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5695c4926f59",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Intensifier 'extremely' reinforces the positive polarity.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1a008cf77f4c",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Mitigator 'somewhat' reduces intensity slightly but remains positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e03d3734398f",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Synonym 'Fantabulous' maintains strong positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5675b2bfff4a",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Contrastive clause with 'inferior' shifts the overall sentiment to negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_d60484abd363",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.02,
+            "positive_probability": 0.97,
+            "reason_short": "Additional supporting clause reinforces the positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.016608753937043974,
+    "confidence_delta_pts": -1.6608753937043974,
+    "confidence_delta_pp": -1.6608753937043974,
+    "formatted_confidence_delta": "-1.66 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "POSITIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 458.6945142863052,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_78483b7471e5",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_20c5e53695ff",
+    "seed_text": "Excellent shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer",
+    "perturbed_text": "It is not impossible that excellent shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer",
+    "perturbation_type": "double_negation",
+    "category": "double_negation",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9786148995656402,
+      "formatted_confidence": "97.86%",
+      "probabilities": {
+        "NEGATIVE": 0.0014341579124998406,
+        "NEUTRAL": 0.01995094252185995,
+        "POSITIVE": 0.9786148995656402
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.14%",
+        "NEUTRAL": "2.00%",
+        "POSITIVE": "97.86%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.14%\nNEUTRAL    [                    ]   2.00%\nPOSITIVE   [====================]  97.86%",
+      "raw_logits": null,
+      "latency_ms": 1522.2754999995232,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0014341579124998406,
+        "LABEL_1": 0.01995094252185995,
+        "LABEL_2": 0.9786148995656402
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9751930876003273,
+      "formatted_confidence": "97.52%",
+      "probabilities": {
+        "NEGATIVE": 0.001759196872223341,
+        "NEUTRAL": 0.023047715527449407,
+        "POSITIVE": 0.9751930876003273
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.18%",
+        "NEUTRAL": "2.30%",
+        "POSITIVE": "97.52%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.18%\nNEUTRAL    [                    ]   2.30%\nPOSITIVE   [====================]  97.52%",
+      "raw_logits": null,
+      "latency_ms": 458.6945142863052,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.001759196872223341,
+        "LABEL_1": 0.023047715527449407,
+        "LABEL_2": 0.9751930876003273
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9786148995656402,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9751930876003273,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_20c5e53695ff",
+      "sentence_text": "It is not impossible that excellent shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.9,
+      "reason": "Double negation preserves the underlying positive meaning.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.9,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790967553.5183504,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.02,
+      "neutral_probability": 0.08,
+      "positive_probability": 0.9,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.02,
+        "neutral_probability": 0.08,
+        "positive_probability": 0.9,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.02,
+        "positive_probability": 0.9,
+        "neutral_probability_excluded": 0.08,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Strong positive sentiment regarding product quality, price, and repeat purchase.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_7c3d68f66bd8",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.85,
+            "reason_short": "Negating the second purchase does not remove the strong positive evaluation of the shoes themselves.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_20c5e53695ff",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.02,
+            "neutral_probability": 0.08,
+            "positive_probability": 0.9,
+            "reason_short": "Double negation preserves the underlying positive meaning.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5695c4926f59",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Intensifier 'extremely' reinforces the positive polarity.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1a008cf77f4c",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Mitigator 'somewhat' reduces intensity slightly but remains positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e03d3734398f",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Synonym 'Fantabulous' maintains strong positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5675b2bfff4a",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Contrastive clause with 'inferior' shifts the overall sentiment to negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_d60484abd363",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.02,
+            "positive_probability": 0.97,
+            "reason_short": "Additional supporting clause reinforces the positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.003421811965312882,
+    "confidence_delta_pts": -0.3421811965312882,
+    "confidence_delta_pp": -0.3421811965312882,
+    "formatted_confidence_delta": "-0.34 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "POSITIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 458.6945142863052,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_78483b7471e5",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_5695c4926f59",
+    "seed_text": "Excellent shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer",
+    "perturbed_text": "extremely Excellent shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9786148995656402,
+      "formatted_confidence": "97.86%",
+      "probabilities": {
+        "NEGATIVE": 0.0014341579124998406,
+        "NEUTRAL": 0.01995094252185995,
+        "POSITIVE": 0.9786148995656402
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.14%",
+        "NEUTRAL": "2.00%",
+        "POSITIVE": "97.86%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.14%\nNEUTRAL    [                    ]   2.00%\nPOSITIVE   [====================]  97.86%",
+      "raw_logits": null,
+      "latency_ms": 1522.2754999995232,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0014341579124998406,
+        "LABEL_1": 0.01995094252185995,
+        "LABEL_2": 0.9786148995656402
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9833151633650007,
+      "formatted_confidence": "98.33%",
+      "probabilities": {
+        "NEGATIVE": 0.0013977876158287454,
+        "NEUTRAL": 0.015287049019170542,
+        "POSITIVE": 0.9833151633650007
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.14%",
+        "NEUTRAL": "1.53%",
+        "POSITIVE": "98.33%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.14%\nNEUTRAL    [                    ]   1.53%\nPOSITIVE   [====================]  98.33%",
+      "raw_logits": null,
+      "latency_ms": 458.6945142863052,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0013977876158287454,
+        "LABEL_1": 0.015287049019170542,
+        "LABEL_2": 0.9833151633650007
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9786148995656402,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9833151633650007,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_5695c4926f59",
+      "sentence_text": "extremely Excellent shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.98,
+      "reason": "Intensifier 'extremely' reinforces the positive polarity.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.98,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790967553.5184093,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.01,
+      "neutral_probability": 0.01,
+      "positive_probability": 0.98,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.01,
+        "neutral_probability": 0.01,
+        "positive_probability": 0.98,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.01,
+        "positive_probability": 0.98,
+        "neutral_probability_excluded": 0.01,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Strong positive sentiment regarding product quality, price, and repeat purchase.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_7c3d68f66bd8",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.85,
+            "reason_short": "Negating the second purchase does not remove the strong positive evaluation of the shoes themselves.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_20c5e53695ff",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.02,
+            "neutral_probability": 0.08,
+            "positive_probability": 0.9,
+            "reason_short": "Double negation preserves the underlying positive meaning.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5695c4926f59",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Intensifier 'extremely' reinforces the positive polarity.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1a008cf77f4c",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Mitigator 'somewhat' reduces intensity slightly but remains positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e03d3734398f",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Synonym 'Fantabulous' maintains strong positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5675b2bfff4a",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Contrastive clause with 'inferior' shifts the overall sentiment to negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_d60484abd363",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.02,
+            "positive_probability": 0.97,
+            "reason_short": "Additional supporting clause reinforces the positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.0047002637993605045,
+    "confidence_delta_pts": 0.47002637993605045,
+    "confidence_delta_pp": 0.47002637993605045,
+    "formatted_confidence_delta": "+0.47 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "POSITIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 458.6945142863052,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_78483b7471e5",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_1a008cf77f4c",
+    "seed_text": "Excellent shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer",
+    "perturbed_text": "somewhat Excellent shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9786148995656402,
+      "formatted_confidence": "97.86%",
+      "probabilities": {
+        "NEGATIVE": 0.0014341579124998406,
+        "NEUTRAL": 0.01995094252185995,
+        "POSITIVE": 0.9786148995656402
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.14%",
+        "NEUTRAL": "2.00%",
+        "POSITIVE": "97.86%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.14%\nNEUTRAL    [                    ]   2.00%\nPOSITIVE   [====================]  97.86%",
+      "raw_logits": null,
+      "latency_ms": 1522.2754999995232,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0014341579124998406,
+        "LABEL_1": 0.01995094252185995,
+        "LABEL_2": 0.9786148995656402
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9814385145998791,
+      "formatted_confidence": "98.14%",
+      "probabilities": {
+        "NEGATIVE": 0.0011978999209653822,
+        "NEUTRAL": 0.017363585479155508,
+        "POSITIVE": 0.9814385145998791
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.12%",
+        "NEUTRAL": "1.74%",
+        "POSITIVE": "98.14%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.12%\nNEUTRAL    [                    ]   1.74%\nPOSITIVE   [====================]  98.14%",
+      "raw_logits": null,
+      "latency_ms": 458.6945142863052,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0011978999209653822,
+        "LABEL_1": 0.017363585479155508,
+        "LABEL_2": 0.9814385145998791
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9786148995656402,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9814385145998791,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_1a008cf77f4c",
+      "sentence_text": "somewhat Excellent shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.95,
+      "reason": "Mitigator 'somewhat' reduces intensity slightly but remains positive.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.95,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790967553.5184646,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.01,
+      "neutral_probability": 0.04,
+      "positive_probability": 0.95,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.01,
+        "neutral_probability": 0.04,
+        "positive_probability": 0.95,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.01,
+        "positive_probability": 0.95,
+        "neutral_probability_excluded": 0.04,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Strong positive sentiment regarding product quality, price, and repeat purchase.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_7c3d68f66bd8",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.85,
+            "reason_short": "Negating the second purchase does not remove the strong positive evaluation of the shoes themselves.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_20c5e53695ff",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.02,
+            "neutral_probability": 0.08,
+            "positive_probability": 0.9,
+            "reason_short": "Double negation preserves the underlying positive meaning.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5695c4926f59",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Intensifier 'extremely' reinforces the positive polarity.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1a008cf77f4c",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Mitigator 'somewhat' reduces intensity slightly but remains positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e03d3734398f",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Synonym 'Fantabulous' maintains strong positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5675b2bfff4a",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Contrastive clause with 'inferior' shifts the overall sentiment to negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_d60484abd363",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.02,
+            "positive_probability": 0.97,
+            "reason_short": "Additional supporting clause reinforces the positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.002823615034238891,
+    "confidence_delta_pts": 0.2823615034238891,
+    "confidence_delta_pp": 0.2823615034238891,
+    "formatted_confidence_delta": "+0.28 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "POSITIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 458.6945142863052,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_78483b7471e5",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_e03d3734398f",
+    "seed_text": "Excellent shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer",
+    "perturbed_text": "Fantabulous shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer",
+    "perturbation_type": "synonym_substitution",
+    "category": "synonym_substitution",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9786148995656402,
+      "formatted_confidence": "97.86%",
+      "probabilities": {
+        "NEGATIVE": 0.0014341579124998406,
+        "NEUTRAL": 0.01995094252185995,
+        "POSITIVE": 0.9786148995656402
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.14%",
+        "NEUTRAL": "2.00%",
+        "POSITIVE": "97.86%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.14%\nNEUTRAL    [                    ]   2.00%\nPOSITIVE   [====================]  97.86%",
+      "raw_logits": null,
+      "latency_ms": 1522.2754999995232,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0014341579124998406,
+        "LABEL_1": 0.01995094252185995,
+        "LABEL_2": 0.9786148995656402
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9736594319729506,
+      "formatted_confidence": "97.37%",
+      "probabilities": {
+        "NEGATIVE": 0.0014218783124123648,
+        "NEUTRAL": 0.02491868971463702,
+        "POSITIVE": 0.9736594319729506
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.14%",
+        "NEUTRAL": "2.49%",
+        "POSITIVE": "97.37%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.14%\nNEUTRAL    [                    ]   2.49%\nPOSITIVE   [=================== ]  97.37%",
+      "raw_logits": null,
+      "latency_ms": 458.6945142863052,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0014218783124123648,
+        "LABEL_1": 0.02491868971463702,
+        "LABEL_2": 0.9736594319729506
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9786148995656402,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9736594319729506,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_e03d3734398f",
+      "sentence_text": "Fantabulous shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.98,
+      "reason": "Synonym 'Fantabulous' maintains strong positive sentiment.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.98,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790967553.5189772,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.01,
+      "neutral_probability": 0.01,
+      "positive_probability": 0.98,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.01,
+        "neutral_probability": 0.01,
+        "positive_probability": 0.98,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.01,
+        "positive_probability": 0.98,
+        "neutral_probability_excluded": 0.01,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Strong positive sentiment regarding product quality, price, and repeat purchase.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_7c3d68f66bd8",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.85,
+            "reason_short": "Negating the second purchase does not remove the strong positive evaluation of the shoes themselves.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_20c5e53695ff",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.02,
+            "neutral_probability": 0.08,
+            "positive_probability": 0.9,
+            "reason_short": "Double negation preserves the underlying positive meaning.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5695c4926f59",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Intensifier 'extremely' reinforces the positive polarity.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1a008cf77f4c",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Mitigator 'somewhat' reduces intensity slightly but remains positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e03d3734398f",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Synonym 'Fantabulous' maintains strong positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5675b2bfff4a",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Contrastive clause with 'inferior' shifts the overall sentiment to negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_d60484abd363",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.02,
+            "positive_probability": 0.97,
+            "reason_short": "Additional supporting clause reinforces the positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.004955467592689611,
+    "confidence_delta_pts": -0.4955467592689611,
+    "confidence_delta_pp": -0.4955467592689611,
+    "formatted_confidence_delta": "-0.50 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "POSITIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 458.6945142863052,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_78483b7471e5",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_5675b2bfff4a",
+    "seed_text": "Excellent shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer",
+    "perturbed_text": "Excellent shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer, however it is surprisingly inferior in comparison.",
+    "perturbation_type": "contrast_negative_append",
+    "category": "contrast_negative_append",
+    "expected_flip": true,
+    "expected_semantic_effect": "EXPECTED_FLIP",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9786148995656402,
+      "formatted_confidence": "97.86%",
+      "probabilities": {
+        "NEGATIVE": 0.0014341579124998406,
+        "NEUTRAL": 0.01995094252185995,
+        "POSITIVE": 0.9786148995656402
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.14%",
+        "NEUTRAL": "2.00%",
+        "POSITIVE": "97.86%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.14%\nNEUTRAL    [                    ]   2.00%\nPOSITIVE   [====================]  97.86%",
+      "raw_logits": null,
+      "latency_ms": 1522.2754999995232,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0014341579124998406,
+        "LABEL_1": 0.01995094252185995,
+        "LABEL_2": 0.9786148995656402
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.8503274996795459,
+      "formatted_confidence": "85.03%",
+      "probabilities": {
+        "NEGATIVE": 0.03055239311002561,
+        "NEUTRAL": 0.11912010721042852,
+        "POSITIVE": 0.8503274996795459
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "3.06%",
+        "NEUTRAL": "11.91%",
+        "POSITIVE": "85.03%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=                   ]   3.06%\nNEUTRAL    [==                  ]  11.91%\nPOSITIVE   [=================   ]  85.03%",
+      "raw_logits": null,
+      "latency_ms": 458.6945142863052,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.03055239311002561,
+        "LABEL_1": 0.11912010721042852,
+        "LABEL_2": 0.8503274996795459
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9786148995656402,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.8503274996795459,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_5675b2bfff4a",
+      "sentence_text": "Excellent shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer, however it is surprisingly inferior in comparison.",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": 0.85,
+      "reason": "Contrastive clause with 'inferior' shifts the overall sentiment to negative.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "REVERSE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEGATIVE",
+      "gemini_confidence": 0.85,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790967553.5195956,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.85,
+      "neutral_probability": 0.1,
+      "positive_probability": 0.05,
+      "reference_class_count": 3,
+      "reference_label": "NEGATIVE",
+      "three_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.85,
+        "neutral_probability": 0.1,
+        "positive_probability": 0.05,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.85,
+        "positive_probability": 0.05,
+        "neutral_probability_excluded": 0.1,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "NEGATIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Strong positive sentiment regarding product quality, price, and repeat purchase.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_7c3d68f66bd8",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.85,
+            "reason_short": "Negating the second purchase does not remove the strong positive evaluation of the shoes themselves.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_20c5e53695ff",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.02,
+            "neutral_probability": 0.08,
+            "positive_probability": 0.9,
+            "reason_short": "Double negation preserves the underlying positive meaning.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5695c4926f59",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Intensifier 'extremely' reinforces the positive polarity.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1a008cf77f4c",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Mitigator 'somewhat' reduces intensity slightly but remains positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e03d3734398f",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Synonym 'Fantabulous' maintains strong positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5675b2bfff4a",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Contrastive clause with 'inferior' shifts the overall sentiment to negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_d60484abd363",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.02,
+            "positive_probability": 0.97,
+            "reason_short": "Additional supporting clause reinforces the positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.12828739988609428,
+    "confidence_delta_pts": -12.828739988609428,
+    "confidence_delta_pp": -12.828739988609428,
+    "formatted_confidence_delta": "-12.83 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": true,
+    "expected_relation": "POLARITY_REVERSED",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "MISSING_FLIP",
+    "failure_type": "Blind",
+    "rationale": "Model failed to produce expected polarity reversal and showed negligible attribution to linguistic operator 'however' (LIME: +0.0000, SHAP: -0.0116 < 0.05).",
+    "semantic_intent": "REVERSE_POLARITY",
+    "reference_polarity": "NEGATIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 458.6945142863052,
+    "ground_truth_match": false
+  },
+  {
+    "baseline_id": "base_78483b7471e5",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_d60484abd363",
+    "seed_text": "Excellent shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer",
+    "perturbed_text": "Excellent shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer, and it delivered good results in practice.",
+    "perturbation_type": "contrast_positive_append",
+    "category": "contrast_positive_append",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9786148995656402,
+      "formatted_confidence": "97.86%",
+      "probabilities": {
+        "NEGATIVE": 0.0014341579124998406,
+        "NEUTRAL": 0.01995094252185995,
+        "POSITIVE": 0.9786148995656402
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.14%",
+        "NEUTRAL": "2.00%",
+        "POSITIVE": "97.86%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.14%\nNEUTRAL    [                    ]   2.00%\nPOSITIVE   [====================]  97.86%",
+      "raw_logits": null,
+      "latency_ms": 1522.2754999995232,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0014341579124998406,
+        "LABEL_1": 0.01995094252185995,
+        "LABEL_2": 0.9786148995656402
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9807974028179612,
+      "formatted_confidence": "98.08%",
+      "probabilities": {
+        "NEGATIVE": 0.0014987605281148672,
+        "NEUTRAL": 0.01770383665392388,
+        "POSITIVE": 0.9807974028179612
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.15%",
+        "NEUTRAL": "1.77%",
+        "POSITIVE": "98.08%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.15%\nNEUTRAL    [                    ]   1.77%\nPOSITIVE   [====================]  98.08%",
+      "raw_logits": null,
+      "latency_ms": 458.6945142863052,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0014987605281148672,
+        "LABEL_1": 0.01770383665392388,
+        "LABEL_2": 0.9807974028179612
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9786148995656402,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9807974028179612,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_d60484abd363",
+      "sentence_text": "Excellent shoes at low price light weight and comfortable, this is my second purchase from Asian shoes. Thank you Flipkart and dealer, and it delivered good results in practice.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.97,
+      "reason": "Additional supporting clause reinforces the positive sentiment.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.97,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790967553.519641,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.01,
+      "neutral_probability": 0.02,
+      "positive_probability": 0.97,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.01,
+        "neutral_probability": 0.02,
+        "positive_probability": 0.97,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.01,
+        "positive_probability": 0.97,
+        "neutral_probability_excluded": 0.02,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Strong positive sentiment regarding product quality, price, and repeat purchase.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_7c3d68f66bd8",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.85,
+            "reason_short": "Negating the second purchase does not remove the strong positive evaluation of the shoes themselves.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_20c5e53695ff",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.02,
+            "neutral_probability": 0.08,
+            "positive_probability": 0.9,
+            "reason_short": "Double negation preserves the underlying positive meaning.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5695c4926f59",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Intensifier 'extremely' reinforces the positive polarity.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1a008cf77f4c",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Mitigator 'somewhat' reduces intensity slightly but remains positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e03d3734398f",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Synonym 'Fantabulous' maintains strong positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5675b2bfff4a",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Contrastive clause with 'inferior' shifts the overall sentiment to negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_d60484abd363",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.02,
+            "positive_probability": 0.97,
+            "reason_short": "Additional supporting clause reinforces the positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.0021825032523210552,
+    "confidence_delta_pts": 0.21825032523210552,
+    "confidence_delta_pp": 0.21825032523210552,
+    "formatted_confidence_delta": "+0.22 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "POSITIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 458.6945142863052,
+    "ground_truth_match": true
+  }
+]

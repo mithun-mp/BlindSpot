@@ -1,0 +1,40 @@
+{
+  "total_probes": 8,
+  "flip_rate": 0.25,
+  "observed_flip_rate": 0.25,
+  "expected_flip_rate": 0.25,
+  "expected_flip_compliance": 1.0,
+  "preserve_rate": 1.0,
+  "behavioral_consistency": 1.0,
+  "satisfaction_rate": 1.0,
+  "raw_label_flip_rate": 0.25,
+  "polarity_flip_rate": 0.25,
+  "confidence_flip_rate": 0.125,
+  "ece": 0.050447577773356636,
+  "transition_matrix": {
+    "NEGATIVE": {
+      "NEGATIVE": 0,
+      "POSITIVE": 0
+    },
+    "POSITIVE": {
+      "NEGATIVE": 2,
+      "POSITIVE": 6
+    }
+  },
+  "confidence_shifts": {
+    "mean_delta_pts": -5.000301608068703,
+    "median_delta_pts": -0.0026596194471983914,
+    "max_drop_pts": 27.15450601846914,
+    "max_gain_pts": 0.005484324527416096,
+    "num_increased": 3,
+    "num_decreased": 5,
+    "num_unchanged": 0
+  },
+  "failure_counts": {
+    "Blind": 0,
+    "Spurious": 0,
+    "Misweighted": 0,
+    "Undetermined": 0
+  },
+  "analysis_status": "NO_FAILURES_OBSERVED"
+}

@@ -1,0 +1,1808 @@
+[
+  {
+    "baseline_id": "base_b3a0f3192c24",
+    "model_id": "textattack/albert-base-v2-SST-2",
+    "probe_id": "prb_b1d9ce026ec4",
+    "seed_text": "Good product good quality all are good. But font play without barefoots ,because it is a hardground football",
+    "perturbed_text": "Good product good quality all are not good. But font play without barefoots,because it is a hardground football",
+    "perturbation_type": "negation_insertion",
+    "category": "negation_insertion",
+    "expected_flip": true,
+    "expected_semantic_effect": "EXPECTED_FLIP",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.7985943556879196,
+      "formatted_confidence": "79.86%",
+      "probabilities": {
+        "NEGATIVE": 0.2014056443120804,
+        "POSITIVE": 0.7985943556879196
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "20.14%",
+        "POSITIVE": "79.86%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====                ]  20.14%\nPOSITIVE   [================    ]  79.86%",
+      "raw_logits": null,
+      "latency_ms": 223.05259999120608,
+      "model_id": "textattack/albert-base-v2-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.2014056443120804,
+        "LABEL_1": 0.7985943556879196
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.5250970721244812,
+      "formatted_confidence": "52.51%",
+      "probabilities": {
+        "NEGATIVE": 0.5250970721244812,
+        "POSITIVE": 0.4749029278755188
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "52.51%",
+        "POSITIVE": "47.49%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [===========         ]  52.51%\nPOSITIVE   [=========           ]  47.49%",
+      "raw_logits": null,
+      "latency_ms": 331.308214289103,
+      "model_id": "textattack/albert-base-v2-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.5250970721244812,
+        "LABEL_1": 0.4749029278755188
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.7985943556879196,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.5250970721244812,
+    "from_label": "POSITIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "POSITIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_b1d9ce026ec4",
+      "sentence_text": "Good product good quality all are not good. But font play without barefoots,because it is a hardground football",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": 0.7,
+      "reason": "Explicit negation of the positive claim makes it largely negative.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "REVERSE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEGATIVE",
+      "gemini_confidence": 0.7,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1791007676.3907626,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.7,
+      "neutral_probability": 0.2,
+      "positive_probability": 0.1,
+      "reference_class_count": 3,
+      "reference_label": "NEGATIVE",
+      "three_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.7,
+        "neutral_probability": 0.2,
+        "positive_probability": 0.1,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.7,
+        "positive_probability": 0.1,
+        "neutral_probability_excluded": 0.2,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "NEGATIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.7,
+            "reason_short": "Generally positive review praising product quality with a caution about usage.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_b1d9ce026ec4",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.1,
+            "reason_short": "Explicit negation of the positive claim makes it largely negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_97f0e64a57c6",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation preserves a fundamentally positive sentiment.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0653e707ab94",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.8,
+            "reason_short": "Intensified positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_c033b0293ef2",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Dampened positive sentiment but remains positive overall.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_a0ee6208461e",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Modified positive opener maintains overall positive stance.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3eae29e4a9bf",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.1,
+            "reason_short": "Direct contradiction with a negative comparative clause shifts the sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_37a7ecc1f020",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.8,
+            "reason_short": "Reinforced positive sentiment with additional favorable outcome.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": true,
+    "semantic_state_change": true,
+    "confidence_delta": -0.2734972835634384,
+    "confidence_delta_pts": -27.34972835634384,
+    "confidence_delta_pp": -27.34972835634384,
+    "formatted_confidence_delta": "-27.35 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": false,
+    "expected_relation": "POLARITY_REVERSED",
+    "observed_relation": "POLARITY_REVERSED",
+    "behavioral_outcome": "EXPECTED_FLIP",
+    "failure_type": "None",
+    "rationale": "Model correctly flipped and changed label (POSITIVE (POSITIVE) \u2192 NEGATIVE (NEGATIVE)) under DIFFERENT_LABEL expectation.",
+    "semantic_intent": "REVERSE_POLARITY",
+    "reference_polarity": "NEGATIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 331.308214289103,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_b3a0f3192c24",
+    "model_id": "textattack/albert-base-v2-SST-2",
+    "probe_id": "prb_97f0e64a57c6",
+    "seed_text": "Good product good quality all are good. But font play without barefoots ,because it is a hardground football",
+    "perturbed_text": "It is not impossible that good product good quality all are good. But font play without barefoots,because it is a hardground football",
+    "perturbation_type": "double_negation",
+    "category": "double_negation",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.7985943556879196,
+      "formatted_confidence": "79.86%",
+      "probabilities": {
+        "NEGATIVE": 0.2014056443120804,
+        "POSITIVE": 0.7985943556879196
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "20.14%",
+        "POSITIVE": "79.86%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====                ]  20.14%\nPOSITIVE   [================    ]  79.86%",
+      "raw_logits": null,
+      "latency_ms": 223.05259999120608,
+      "model_id": "textattack/albert-base-v2-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.2014056443120804,
+        "LABEL_1": 0.7985943556879196
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.6949788928031921,
+      "formatted_confidence": "69.50%",
+      "probabilities": {
+        "NEGATIVE": 0.30502110719680786,
+        "POSITIVE": 0.6949788928031921
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "30.50%",
+        "POSITIVE": "69.50%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [======              ]  30.50%\nPOSITIVE   [==============      ]  69.50%",
+      "raw_logits": null,
+      "latency_ms": 331.308214289103,
+      "model_id": "textattack/albert-base-v2-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.30502110719680786,
+        "LABEL_1": 0.6949788928031921
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.7985943556879196,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.6949788928031921,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_97f0e64a57c6",
+      "sentence_text": "It is not impossible that good product good quality all are good. But font play without barefoots,because it is a hardground football",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.6,
+      "reason": "Double negation preserves a fundamentally positive sentiment.",
+      "ambiguity": "MEDIUM",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.6,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1791007676.3908393,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.1,
+      "neutral_probability": 0.3,
+      "positive_probability": 0.6,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.1,
+        "neutral_probability": 0.3,
+        "positive_probability": 0.6,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.1,
+        "positive_probability": 0.6,
+        "neutral_probability_excluded": 0.3,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.7,
+            "reason_short": "Generally positive review praising product quality with a caution about usage.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_b1d9ce026ec4",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.1,
+            "reason_short": "Explicit negation of the positive claim makes it largely negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_97f0e64a57c6",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation preserves a fundamentally positive sentiment.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0653e707ab94",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.8,
+            "reason_short": "Intensified positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_c033b0293ef2",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Dampened positive sentiment but remains positive overall.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_a0ee6208461e",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Modified positive opener maintains overall positive stance.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3eae29e4a9bf",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.1,
+            "reason_short": "Direct contradiction with a negative comparative clause shifts the sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_37a7ecc1f020",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.8,
+            "reason_short": "Reinforced positive sentiment with additional favorable outcome.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.10361546288472745,
+    "confidence_delta_pts": -10.361546288472745,
+    "confidence_delta_pp": -10.361546288472745,
+    "formatted_confidence_delta": "-10.36 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "POSITIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 331.308214289103,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_b3a0f3192c24",
+    "model_id": "textattack/albert-base-v2-SST-2",
+    "probe_id": "prb_0653e707ab94",
+    "seed_text": "Good product good quality all are good. But font play without barefoots ,because it is a hardground football",
+    "perturbed_text": "extremely Good product good quality all are good. But font play without barefoots ,because it is a hardground football",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.7985943556879196,
+      "formatted_confidence": "79.86%",
+      "probabilities": {
+        "NEGATIVE": 0.2014056443120804,
+        "POSITIVE": 0.7985943556879196
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "20.14%",
+        "POSITIVE": "79.86%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====                ]  20.14%\nPOSITIVE   [================    ]  79.86%",
+      "raw_logits": null,
+      "latency_ms": 223.05259999120608,
+      "model_id": "textattack/albert-base-v2-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.2014056443120804,
+        "LABEL_1": 0.7985943556879196
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.7974162578967772,
+      "formatted_confidence": "79.74%",
+      "probabilities": {
+        "NEGATIVE": 0.20258374210322289,
+        "POSITIVE": 0.7974162578967772
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "20.26%",
+        "POSITIVE": "79.74%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====                ]  20.26%\nPOSITIVE   [================    ]  79.74%",
+      "raw_logits": null,
+      "latency_ms": 331.308214289103,
+      "model_id": "textattack/albert-base-v2-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.20258374210322289,
+        "LABEL_1": 0.7974162578967772
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.7985943556879196,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.7974162578967772,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_0653e707ab94",
+      "sentence_text": "extremely Good product good quality all are good. But font play without barefoots ,because it is a hardground football",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.8,
+      "reason": "Intensified positive sentiment.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.8,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1791007676.3909073,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.05,
+      "neutral_probability": 0.15,
+      "positive_probability": 0.8,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "neutral_probability": 0.15,
+        "positive_probability": 0.8,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "positive_probability": 0.8,
+        "neutral_probability_excluded": 0.15,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.7,
+            "reason_short": "Generally positive review praising product quality with a caution about usage.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_b1d9ce026ec4",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.1,
+            "reason_short": "Explicit negation of the positive claim makes it largely negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_97f0e64a57c6",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation preserves a fundamentally positive sentiment.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0653e707ab94",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.8,
+            "reason_short": "Intensified positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_c033b0293ef2",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Dampened positive sentiment but remains positive overall.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_a0ee6208461e",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Modified positive opener maintains overall positive stance.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3eae29e4a9bf",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.1,
+            "reason_short": "Direct contradiction with a negative comparative clause shifts the sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_37a7ecc1f020",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.8,
+            "reason_short": "Reinforced positive sentiment with additional favorable outcome.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.0011780977911424184,
+    "confidence_delta_pts": -0.11780977911424184,
+    "confidence_delta_pp": -0.11780977911424184,
+    "formatted_confidence_delta": "-0.12 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "POSITIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 331.308214289103,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_b3a0f3192c24",
+    "model_id": "textattack/albert-base-v2-SST-2",
+    "probe_id": "prb_c033b0293ef2",
+    "seed_text": "Good product good quality all are good. But font play without barefoots ,because it is a hardground football",
+    "perturbed_text": "somewhat Good product good quality all are good. But font play without barefoots ,because it is a hardground football",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.7985943556879196,
+      "formatted_confidence": "79.86%",
+      "probabilities": {
+        "NEGATIVE": 0.2014056443120804,
+        "POSITIVE": 0.7985943556879196
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "20.14%",
+        "POSITIVE": "79.86%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====                ]  20.14%\nPOSITIVE   [================    ]  79.86%",
+      "raw_logits": null,
+      "latency_ms": 223.05259999120608,
+      "model_id": "textattack/albert-base-v2-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.2014056443120804,
+        "LABEL_1": 0.7985943556879196
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.7184822345232298,
+      "formatted_confidence": "71.85%",
+      "probabilities": {
+        "NEGATIVE": 0.28151776547677027,
+        "POSITIVE": 0.7184822345232298
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "28.15%",
+        "POSITIVE": "71.85%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [======              ]  28.15%\nPOSITIVE   [==============      ]  71.85%",
+      "raw_logits": null,
+      "latency_ms": 331.308214289103,
+      "model_id": "textattack/albert-base-v2-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.28151776547677027,
+        "LABEL_1": 0.7184822345232298
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.7985943556879196,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.7184822345232298,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_c033b0293ef2",
+      "sentence_text": "somewhat Good product good quality all are good. But font play without barefoots ,because it is a hardground football",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.6,
+      "reason": "Dampened positive sentiment but remains positive overall.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.6,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1791007676.3909721,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.1,
+      "neutral_probability": 0.3,
+      "positive_probability": 0.6,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.1,
+        "neutral_probability": 0.3,
+        "positive_probability": 0.6,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.1,
+        "positive_probability": 0.6,
+        "neutral_probability_excluded": 0.3,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.7,
+            "reason_short": "Generally positive review praising product quality with a caution about usage.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_b1d9ce026ec4",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.1,
+            "reason_short": "Explicit negation of the positive claim makes it largely negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_97f0e64a57c6",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation preserves a fundamentally positive sentiment.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0653e707ab94",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.8,
+            "reason_short": "Intensified positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_c033b0293ef2",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Dampened positive sentiment but remains positive overall.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_a0ee6208461e",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Modified positive opener maintains overall positive stance.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3eae29e4a9bf",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.1,
+            "reason_short": "Direct contradiction with a negative comparative clause shifts the sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_37a7ecc1f020",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.8,
+            "reason_short": "Reinforced positive sentiment with additional favorable outcome.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.0801121211646898,
+    "confidence_delta_pts": -8.011212116468979,
+    "confidence_delta_pp": -8.011212116468979,
+    "formatted_confidence_delta": "-8.01 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "POSITIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 331.308214289103,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_b3a0f3192c24",
+    "model_id": "textattack/albert-base-v2-SST-2",
+    "probe_id": "prb_a0ee6208461e",
+    "seed_text": "Good product good quality all are good. But font play without barefoots ,because it is a hardground football",
+    "perturbed_text": "Decent product good quality all are good. But font play without barefoots,because it is a hardground football",
+    "perturbation_type": "synonym_substitution",
+    "category": "synonym_substitution",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.7985943556879196,
+      "formatted_confidence": "79.86%",
+      "probabilities": {
+        "NEGATIVE": 0.2014056443120804,
+        "POSITIVE": 0.7985943556879196
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "20.14%",
+        "POSITIVE": "79.86%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====                ]  20.14%\nPOSITIVE   [================    ]  79.86%",
+      "raw_logits": null,
+      "latency_ms": 223.05259999120608,
+      "model_id": "textattack/albert-base-v2-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.2014056443120804,
+        "LABEL_1": 0.7985943556879196
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.7946724532446996,
+      "formatted_confidence": "79.47%",
+      "probabilities": {
+        "NEGATIVE": 0.20532754675530038,
+        "POSITIVE": 0.7946724532446996
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "20.53%",
+        "POSITIVE": "79.47%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====                ]  20.53%\nPOSITIVE   [================    ]  79.47%",
+      "raw_logits": null,
+      "latency_ms": 331.308214289103,
+      "model_id": "textattack/albert-base-v2-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.20532754675530038,
+        "LABEL_1": 0.7946724532446996
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.7985943556879196,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.7946724532446996,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_a0ee6208461e",
+      "sentence_text": "Decent product good quality all are good. But font play without barefoots,because it is a hardground football",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.6,
+      "reason": "Modified positive opener maintains overall positive stance.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.6,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1791007676.3910348,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.1,
+      "neutral_probability": 0.3,
+      "positive_probability": 0.6,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.1,
+        "neutral_probability": 0.3,
+        "positive_probability": 0.6,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.1,
+        "positive_probability": 0.6,
+        "neutral_probability_excluded": 0.3,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.7,
+            "reason_short": "Generally positive review praising product quality with a caution about usage.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_b1d9ce026ec4",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.1,
+            "reason_short": "Explicit negation of the positive claim makes it largely negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_97f0e64a57c6",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation preserves a fundamentally positive sentiment.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0653e707ab94",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.8,
+            "reason_short": "Intensified positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_c033b0293ef2",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Dampened positive sentiment but remains positive overall.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_a0ee6208461e",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Modified positive opener maintains overall positive stance.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3eae29e4a9bf",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.1,
+            "reason_short": "Direct contradiction with a negative comparative clause shifts the sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_37a7ecc1f020",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.8,
+            "reason_short": "Reinforced positive sentiment with additional favorable outcome.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.003921902443219993,
+    "confidence_delta_pts": -0.39219024432199934,
+    "confidence_delta_pp": -0.39219024432199934,
+    "formatted_confidence_delta": "-0.39 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "POSITIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 331.308214289103,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_b3a0f3192c24",
+    "model_id": "textattack/albert-base-v2-SST-2",
+    "probe_id": "prb_3eae29e4a9bf",
+    "seed_text": "Good product good quality all are good. But font play without barefoots ,because it is a hardground football",
+    "perturbed_text": "Good product good quality all are good. But font play without barefoots,because it is a hardground football, however it is surprisingly bad in comparison.",
+    "perturbation_type": "contrast_negative_append",
+    "category": "contrast_negative_append",
+    "expected_flip": true,
+    "expected_semantic_effect": "EXPECTED_FLIP",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.7985943556879196,
+      "formatted_confidence": "79.86%",
+      "probabilities": {
+        "NEGATIVE": 0.2014056443120804,
+        "POSITIVE": 0.7985943556879196
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "20.14%",
+        "POSITIVE": "79.86%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====                ]  20.14%\nPOSITIVE   [================    ]  79.86%",
+      "raw_logits": null,
+      "latency_ms": 223.05259999120608,
+      "model_id": "textattack/albert-base-v2-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.2014056443120804,
+        "LABEL_1": 0.7985943556879196
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.7046146006767333,
+      "formatted_confidence": "70.46%",
+      "probabilities": {
+        "NEGATIVE": 0.7046146006767333,
+        "POSITIVE": 0.29538539932326674
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "70.46%",
+        "POSITIVE": "29.54%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [==============      ]  70.46%\nPOSITIVE   [======              ]  29.54%",
+      "raw_logits": null,
+      "latency_ms": 331.308214289103,
+      "model_id": "textattack/albert-base-v2-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.7046146006767333,
+        "LABEL_1": 0.29538539932326674
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.7985943556879196,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.7046146006767333,
+    "from_label": "POSITIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "POSITIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_3eae29e4a9bf",
+      "sentence_text": "Good product good quality all are good. But font play without barefoots,because it is a hardground football, however it is surprisingly bad in comparison.",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": 0.7,
+      "reason": "Direct contradiction with a negative comparative clause shifts the sentiment.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "REVERSE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEGATIVE",
+      "gemini_confidence": 0.7,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1791007676.391108,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.7,
+      "neutral_probability": 0.2,
+      "positive_probability": 0.1,
+      "reference_class_count": 3,
+      "reference_label": "NEGATIVE",
+      "three_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.7,
+        "neutral_probability": 0.2,
+        "positive_probability": 0.1,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.7,
+        "positive_probability": 0.1,
+        "neutral_probability_excluded": 0.2,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "NEGATIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.7,
+            "reason_short": "Generally positive review praising product quality with a caution about usage.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_b1d9ce026ec4",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.1,
+            "reason_short": "Explicit negation of the positive claim makes it largely negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_97f0e64a57c6",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation preserves a fundamentally positive sentiment.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0653e707ab94",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.8,
+            "reason_short": "Intensified positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_c033b0293ef2",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Dampened positive sentiment but remains positive overall.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_a0ee6208461e",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Modified positive opener maintains overall positive stance.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3eae29e4a9bf",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.1,
+            "reason_short": "Direct contradiction with a negative comparative clause shifts the sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_37a7ecc1f020",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.8,
+            "reason_short": "Reinforced positive sentiment with additional favorable outcome.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": true,
+    "semantic_state_change": true,
+    "confidence_delta": -0.09397975501118627,
+    "confidence_delta_pts": -9.397975501118626,
+    "confidence_delta_pp": -9.397975501118626,
+    "formatted_confidence_delta": "-9.40 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": false,
+    "expected_relation": "POLARITY_REVERSED",
+    "observed_relation": "POLARITY_REVERSED",
+    "behavioral_outcome": "EXPECTED_FLIP",
+    "failure_type": "None",
+    "rationale": "Model correctly flipped and changed label (POSITIVE (POSITIVE) \u2192 NEGATIVE (NEGATIVE)) under DIFFERENT_LABEL expectation.",
+    "semantic_intent": "REVERSE_POLARITY",
+    "reference_polarity": "NEGATIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 331.308214289103,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_b3a0f3192c24",
+    "model_id": "textattack/albert-base-v2-SST-2",
+    "probe_id": "prb_37a7ecc1f020",
+    "seed_text": "Good product good quality all are good. But font play without barefoots ,because it is a hardground football",
+    "perturbed_text": "Good product good quality all are good. But font play without barefoots,because it is a hardground football, and it delivered good results in practice.",
+    "perturbation_type": "contrast_positive_append",
+    "category": "contrast_positive_append",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.7985943556879196,
+      "formatted_confidence": "79.86%",
+      "probabilities": {
+        "NEGATIVE": 0.2014056443120804,
+        "POSITIVE": 0.7985943556879196
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "20.14%",
+        "POSITIVE": "79.86%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====                ]  20.14%\nPOSITIVE   [================    ]  79.86%",
+      "raw_logits": null,
+      "latency_ms": 223.05259999120608,
+      "model_id": "textattack/albert-base-v2-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.2014056443120804,
+        "LABEL_1": 0.7985943556879196
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9822253208359775,
+      "formatted_confidence": "98.22%",
+      "probabilities": {
+        "NEGATIVE": 0.017774679164022488,
+        "POSITIVE": 0.9822253208359775
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "1.78%",
+        "POSITIVE": "98.22%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   1.78%\nPOSITIVE   [====================]  98.22%",
+      "raw_logits": null,
+      "latency_ms": 331.308214289103,
+      "model_id": "textattack/albert-base-v2-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.017774679164022488,
+        "LABEL_1": 0.9822253208359775
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.7985943556879196,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9822253208359775,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_37a7ecc1f020",
+      "sentence_text": "Good product good quality all are good. But font play without barefoots,because it is a hardground football, and it delivered good results in practice.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.8,
+      "reason": "Reinforced positive sentiment with additional favorable outcome.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.8,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1791007676.3911703,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.05,
+      "neutral_probability": 0.15,
+      "positive_probability": 0.8,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "neutral_probability": 0.15,
+        "positive_probability": 0.8,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "positive_probability": 0.8,
+        "neutral_probability_excluded": 0.15,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.7,
+            "reason_short": "Generally positive review praising product quality with a caution about usage.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_b1d9ce026ec4",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.1,
+            "reason_short": "Explicit negation of the positive claim makes it largely negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_97f0e64a57c6",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation preserves a fundamentally positive sentiment.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0653e707ab94",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.8,
+            "reason_short": "Intensified positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_c033b0293ef2",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Dampened positive sentiment but remains positive overall.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_a0ee6208461e",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.3,
+            "positive_probability": 0.6,
+            "reason_short": "Modified positive opener maintains overall positive stance.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3eae29e4a9bf",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.1,
+            "reason_short": "Direct contradiction with a negative comparative clause shifts the sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_37a7ecc1f020",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.8,
+            "reason_short": "Reinforced positive sentiment with additional favorable outcome.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.18363096514805788,
+    "confidence_delta_pts": 18.36309651480579,
+    "confidence_delta_pp": 18.36309651480579,
+    "formatted_confidence_delta": "+18.36 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "POLARITY_STRENGTHENED",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "POSITIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 331.308214289103,
+    "ground_truth_match": true
+  }
+]

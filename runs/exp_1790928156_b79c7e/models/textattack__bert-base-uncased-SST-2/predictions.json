@@ -1,0 +1,1808 @@
+[
+  {
+    "baseline_id": "base_4a29b3fc8364",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_ab206b3a976b",
+    "seed_text": "sun rises in the east and sets in the west",
+    "perturbed_text": "It is not true that sun rises in the east and sets in the west",
+    "perturbation_type": "negation_prefix",
+    "category": "negation_prefix",
+    "expected_flip": false,
+    "expected_semantic_effect": "AMBIGUOUS",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9952419333534331,
+      "formatted_confidence": "99.52%",
+      "probabilities": {
+        "NEGATIVE": 0.004758066646566833,
+        "POSITIVE": 0.9952419333534331
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.48%",
+        "POSITIVE": "99.52%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.48%\nPOSITIVE   [====================]  99.52%",
+      "raw_logits": null,
+      "latency_ms": 1293.262400009553,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.004758066646566833,
+        "LABEL_1": 0.9952419333534331
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.7241475797935599,
+      "formatted_confidence": "72.41%",
+      "probabilities": {
+        "NEGATIVE": 0.7241475797935599,
+        "POSITIVE": 0.2758524202064401
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "72.41%",
+        "POSITIVE": "27.59%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [==============      ]  72.41%\nPOSITIVE   [======              ]  27.59%",
+      "raw_logits": null,
+      "latency_ms": 88.53878571452307,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.7241475797935599,
+        "LABEL_1": 0.2758524202064401
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9952419333534331,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.7241475797935599,
+    "from_label": "POSITIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "POSITIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_ab206b3a976b",
+      "sentence_text": "It is not true that sun rises in the east and sets in the west",
+      "semantic_polarity": "NEUTRAL",
+      "confidence": 0.85,
+      "reason": "Denial of a factual statement, remains objective.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEUTRAL",
+      "gemini_confidence": 0.85,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEUTRAL",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790928124.0295794,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.1,
+      "neutral_probability": 0.85,
+      "positive_probability": 0.05,
+      "reference_class_count": 3,
+      "reference_label": "NEUTRAL",
+      "three_class": {
+        "label": "NEUTRAL",
+        "negative_probability": 0.1,
+        "neutral_probability": 0.85,
+        "positive_probability": 0.05,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.1,
+        "positive_probability": 0.05,
+        "neutral_probability_excluded": 0.85,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "NEGATIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Factual statement about nature.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ab206b3a976b",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.05,
+            "reason_short": "Denial of a factual statement, remains objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3dd07af8ccc8",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.1,
+            "reason_short": "Double negative expressing possibility of a fact, objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_3257b1103e91",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Semantically anomalous modifier on a factual statement.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_8a01b10dc96d",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Hedged factual statement, objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_40afc189100e",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.6,
+            "reason_short": "Introduction of 'sunshine' adds positive valence.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_56f81359d889",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.6,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.05,
+            "reason_short": "Clause introduces unreliability, creating negative polarity.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_85c303b62fd0",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.7,
+            "reason_short": "Explicit positive evaluation via 'delivered good results'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "NEUTRAL"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": true,
+    "semantic_state_change": true,
+    "confidence_delta": -0.2710943535598732,
+    "confidence_delta_pts": -27.109435355987323,
+    "confidence_delta_pp": -27.109435355987323,
+    "formatted_confidence_delta": "-27.11 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": false,
+    "expected_relation": "UNKNOWN",
+    "observed_relation": "POLARITY_REVERSED",
+    "behavioral_outcome": "UNDETERMINED",
+    "failure_type": "Misweighted",
+    "rationale": "Model unexpectedly flipped prediction under meaning-preserving perturbation due to disproportionate feature weight shift on semantic tokens.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 88.53878571452307,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_4a29b3fc8364",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_3dd07af8ccc8",
+    "seed_text": "sun rises in the east and sets in the west",
+    "perturbed_text": "It is not impossible that sun rises in the east and sets in the west",
+    "perturbation_type": "double_negation",
+    "category": "double_negation",
+    "expected_flip": false,
+    "expected_semantic_effect": "AMBIGUOUS",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9952419333534331,
+      "formatted_confidence": "99.52%",
+      "probabilities": {
+        "NEGATIVE": 0.004758066646566833,
+        "POSITIVE": 0.9952419333534331
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.48%",
+        "POSITIVE": "99.52%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.48%\nPOSITIVE   [====================]  99.52%",
+      "raw_logits": null,
+      "latency_ms": 1293.262400009553,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.004758066646566833,
+        "LABEL_1": 0.9952419333534331
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9744242629384006,
+      "formatted_confidence": "97.44%",
+      "probabilities": {
+        "NEGATIVE": 0.02557573706159947,
+        "POSITIVE": 0.9744242629384006
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "2.56%",
+        "POSITIVE": "97.44%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=                   ]   2.56%\nPOSITIVE   [=================== ]  97.44%",
+      "raw_logits": null,
+      "latency_ms": 88.53878571452307,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.02557573706159947,
+        "LABEL_1": 0.9744242629384006
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9952419333534331,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9744242629384006,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_3dd07af8ccc8",
+      "sentence_text": "It is not impossible that sun rises in the east and sets in the west",
+      "semantic_polarity": "NEUTRAL",
+      "confidence": 0.85,
+      "reason": "Double negative expressing possibility of a fact, objective.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEUTRAL",
+      "gemini_confidence": 0.85,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEUTRAL",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790928124.0296245,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.05,
+      "neutral_probability": 0.85,
+      "positive_probability": 0.1,
+      "reference_class_count": 3,
+      "reference_label": "NEUTRAL",
+      "three_class": {
+        "label": "NEUTRAL",
+        "negative_probability": 0.05,
+        "neutral_probability": 0.85,
+        "positive_probability": 0.1,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "positive_probability": 0.1,
+        "neutral_probability_excluded": 0.85,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Factual statement about nature.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ab206b3a976b",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.05,
+            "reason_short": "Denial of a factual statement, remains objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3dd07af8ccc8",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.1,
+            "reason_short": "Double negative expressing possibility of a fact, objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_3257b1103e91",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Semantically anomalous modifier on a factual statement.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_8a01b10dc96d",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Hedged factual statement, objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_40afc189100e",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.6,
+            "reason_short": "Introduction of 'sunshine' adds positive valence.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_56f81359d889",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.6,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.05,
+            "reason_short": "Clause introduces unreliability, creating negative polarity.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_85c303b62fd0",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.7,
+            "reason_short": "Explicit positive evaluation via 'delivered good results'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "NEUTRAL"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.020817670415032574,
+    "confidence_delta_pts": -2.0817670415032574,
+    "confidence_delta_pp": -2.0817670415032574,
+    "formatted_confidence_delta": "-2.08 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": true,
+    "expected_relation": "UNKNOWN",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "UNDETERMINED",
+    "failure_type": "Undetermined",
+    "rationale": "Undetermined probe expectation contract.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 88.53878571452307,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_4a29b3fc8364",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_3257b1103e91",
+    "seed_text": "sun rises in the east and sets in the west",
+    "perturbed_text": "sun rises extremely in the east and sets in the west",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "AMBIGUOUS",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9952419333534331,
+      "formatted_confidence": "99.52%",
+      "probabilities": {
+        "NEGATIVE": 0.004758066646566833,
+        "POSITIVE": 0.9952419333534331
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.48%",
+        "POSITIVE": "99.52%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.48%\nPOSITIVE   [====================]  99.52%",
+      "raw_logits": null,
+      "latency_ms": 1293.262400009553,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.004758066646566833,
+        "LABEL_1": 0.9952419333534331
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9968490642806265,
+      "formatted_confidence": "99.68%",
+      "probabilities": {
+        "NEGATIVE": 0.0031509357193734784,
+        "POSITIVE": 0.9968490642806265
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.32%",
+        "POSITIVE": "99.68%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.32%\nPOSITIVE   [====================]  99.68%",
+      "raw_logits": null,
+      "latency_ms": 88.53878571452307,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0031509357193734784,
+        "LABEL_1": 0.9968490642806265
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9952419333534331,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9968490642806265,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_3257b1103e91",
+      "sentence_text": "sun rises extremely in the east and sets in the west",
+      "semantic_polarity": "NEUTRAL",
+      "confidence": 0.9,
+      "reason": "Semantically anomalous modifier on a factual statement.",
+      "ambiguity": "MEDIUM",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEUTRAL",
+      "gemini_confidence": 0.9,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEUTRAL",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790928124.0296705,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.05,
+      "neutral_probability": 0.9,
+      "positive_probability": 0.05,
+      "reference_class_count": 3,
+      "reference_label": "NEUTRAL",
+      "three_class": {
+        "label": "NEUTRAL",
+        "negative_probability": 0.05,
+        "neutral_probability": 0.9,
+        "positive_probability": 0.05,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "AMBIGUOUS",
+        "negative_probability": 0.05,
+        "positive_probability": 0.05,
+        "neutral_probability_excluded": 0.9,
+        "reference_class_count": 2,
+        "status": "AMBIGUOUS"
+      },
+      "binary_projection_label": "AMBIGUOUS",
+      "binary_projection_status": "AMBIGUOUS",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Factual statement about nature.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ab206b3a976b",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.05,
+            "reason_short": "Denial of a factual statement, remains objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3dd07af8ccc8",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.1,
+            "reason_short": "Double negative expressing possibility of a fact, objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_3257b1103e91",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Semantically anomalous modifier on a factual statement.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_8a01b10dc96d",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Hedged factual statement, objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_40afc189100e",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.6,
+            "reason_short": "Introduction of 'sunshine' adds positive valence.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_56f81359d889",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.6,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.05,
+            "reason_short": "Clause introduces unreliability, creating negative polarity.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_85c303b62fd0",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.7,
+            "reason_short": "Explicit positive evaluation via 'delivered good results'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "NEUTRAL"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.0016071309271933343,
+    "confidence_delta_pts": 0.16071309271933343,
+    "confidence_delta_pp": 0.16071309271933343,
+    "formatted_confidence_delta": "+0.16 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": true,
+    "expected_relation": "UNKNOWN",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "UNDETERMINED",
+    "failure_type": "Undetermined",
+    "rationale": "Undetermined probe expectation contract.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 88.53878571452307,
+    "ground_truth_match": false
+  },
+  {
+    "baseline_id": "base_4a29b3fc8364",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_8a01b10dc96d",
+    "seed_text": "sun rises in the east and sets in the west",
+    "perturbed_text": "sun rises somewhat in the east and sets in the west",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "AMBIGUOUS",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9952419333534331,
+      "formatted_confidence": "99.52%",
+      "probabilities": {
+        "NEGATIVE": 0.004758066646566833,
+        "POSITIVE": 0.9952419333534331
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.48%",
+        "POSITIVE": "99.52%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.48%\nPOSITIVE   [====================]  99.52%",
+      "raw_logits": null,
+      "latency_ms": 1293.262400009553,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.004758066646566833,
+        "LABEL_1": 0.9952419333534331
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9818982573402883,
+      "formatted_confidence": "98.19%",
+      "probabilities": {
+        "NEGATIVE": 0.018101742659711675,
+        "POSITIVE": 0.9818982573402883
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "1.81%",
+        "POSITIVE": "98.19%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   1.81%\nPOSITIVE   [====================]  98.19%",
+      "raw_logits": null,
+      "latency_ms": 88.53878571452307,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.018101742659711675,
+        "LABEL_1": 0.9818982573402883
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9952419333534331,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9818982573402883,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_8a01b10dc96d",
+      "sentence_text": "sun rises somewhat in the east and sets in the west",
+      "semantic_polarity": "NEUTRAL",
+      "confidence": 0.9,
+      "reason": "Hedged factual statement, objective.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEUTRAL",
+      "gemini_confidence": 0.9,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEUTRAL",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790928124.0297024,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.05,
+      "neutral_probability": 0.9,
+      "positive_probability": 0.05,
+      "reference_class_count": 3,
+      "reference_label": "NEUTRAL",
+      "three_class": {
+        "label": "NEUTRAL",
+        "negative_probability": 0.05,
+        "neutral_probability": 0.9,
+        "positive_probability": 0.05,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "AMBIGUOUS",
+        "negative_probability": 0.05,
+        "positive_probability": 0.05,
+        "neutral_probability_excluded": 0.9,
+        "reference_class_count": 2,
+        "status": "AMBIGUOUS"
+      },
+      "binary_projection_label": "AMBIGUOUS",
+      "binary_projection_status": "AMBIGUOUS",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Factual statement about nature.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ab206b3a976b",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.05,
+            "reason_short": "Denial of a factual statement, remains objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3dd07af8ccc8",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.1,
+            "reason_short": "Double negative expressing possibility of a fact, objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_3257b1103e91",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Semantically anomalous modifier on a factual statement.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_8a01b10dc96d",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Hedged factual statement, objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_40afc189100e",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.6,
+            "reason_short": "Introduction of 'sunshine' adds positive valence.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_56f81359d889",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.6,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.05,
+            "reason_short": "Clause introduces unreliability, creating negative polarity.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_85c303b62fd0",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.7,
+            "reason_short": "Explicit positive evaluation via 'delivered good results'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "NEUTRAL"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.01334367601314479,
+    "confidence_delta_pts": -1.334367601314479,
+    "confidence_delta_pp": -1.334367601314479,
+    "formatted_confidence_delta": "-1.33 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": true,
+    "expected_relation": "UNKNOWN",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "UNDETERMINED",
+    "failure_type": "Undetermined",
+    "rationale": "Undetermined probe expectation contract.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 88.53878571452307,
+    "ground_truth_match": false
+  },
+  {
+    "baseline_id": "base_4a29b3fc8364",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_40afc189100e",
+    "seed_text": "sun rises in the east and sets in the west",
+    "perturbed_text": "sunshine rises in the east and sets in the west",
+    "perturbation_type": "synonym_substitution",
+    "category": "synonym_substitution",
+    "expected_flip": false,
+    "expected_semantic_effect": "AMBIGUOUS",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9952419333534331,
+      "formatted_confidence": "99.52%",
+      "probabilities": {
+        "NEGATIVE": 0.004758066646566833,
+        "POSITIVE": 0.9952419333534331
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.48%",
+        "POSITIVE": "99.52%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.48%\nPOSITIVE   [====================]  99.52%",
+      "raw_logits": null,
+      "latency_ms": 1293.262400009553,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.004758066646566833,
+        "LABEL_1": 0.9952419333534331
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9990057575989192,
+      "formatted_confidence": "99.90%",
+      "probabilities": {
+        "NEGATIVE": 0.0009942424010808194,
+        "POSITIVE": 0.9990057575989192
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.10%",
+        "POSITIVE": "99.90%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.10%\nPOSITIVE   [====================]  99.90%",
+      "raw_logits": null,
+      "latency_ms": 88.53878571452307,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0009942424010808194,
+        "LABEL_1": 0.9990057575989192
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9952419333534331,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9990057575989192,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_40afc189100e",
+      "sentence_text": "sunshine rises in the east and sets in the west",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.6,
+      "reason": "Introduction of 'sunshine' adds positive valence.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.6,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790928124.0297341,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.05,
+      "neutral_probability": 0.35,
+      "positive_probability": 0.6,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "neutral_probability": 0.35,
+        "positive_probability": 0.6,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "positive_probability": 0.6,
+        "neutral_probability_excluded": 0.35,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Factual statement about nature.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ab206b3a976b",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.05,
+            "reason_short": "Denial of a factual statement, remains objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3dd07af8ccc8",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.1,
+            "reason_short": "Double negative expressing possibility of a fact, objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_3257b1103e91",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Semantically anomalous modifier on a factual statement.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_8a01b10dc96d",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Hedged factual statement, objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_40afc189100e",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.6,
+            "reason_short": "Introduction of 'sunshine' adds positive valence.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_56f81359d889",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.6,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.05,
+            "reason_short": "Clause introduces unreliability, creating negative polarity.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_85c303b62fd0",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.7,
+            "reason_short": "Explicit positive evaluation via 'delivered good results'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "NEUTRAL"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.003763824245486047,
+    "confidence_delta_pts": 0.3763824245486047,
+    "confidence_delta_pp": 0.3763824245486047,
+    "formatted_confidence_delta": "+0.38 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": true,
+    "expected_relation": "UNKNOWN",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "UNDETERMINED",
+    "failure_type": "Undetermined",
+    "rationale": "Indeterminate behavioral transition.",
+    "semantic_intent": "SHIFT_FROM_NEUTRAL",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 88.53878571452307,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_4a29b3fc8364",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_56f81359d889",
+    "seed_text": "sun rises in the east and sets in the west",
+    "perturbed_text": "sun rises in the east and sets in the west, however it does not rise reliably.",
+    "perturbation_type": "contrast_negative_append",
+    "category": "contrast_negative_append",
+    "expected_flip": false,
+    "expected_semantic_effect": "AMBIGUOUS",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9952419333534331,
+      "formatted_confidence": "99.52%",
+      "probabilities": {
+        "NEGATIVE": 0.004758066646566833,
+        "POSITIVE": 0.9952419333534331
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.48%",
+        "POSITIVE": "99.52%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.48%\nPOSITIVE   [====================]  99.52%",
+      "raw_logits": null,
+      "latency_ms": 1293.262400009553,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.004758066646566833,
+        "LABEL_1": 0.9952419333534331
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9624924444595178,
+      "formatted_confidence": "96.25%",
+      "probabilities": {
+        "NEGATIVE": 0.9624924444595178,
+        "POSITIVE": 0.037507555540482206
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "96.25%",
+        "POSITIVE": "3.75%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=================== ]  96.25%\nPOSITIVE   [=                   ]   3.75%",
+      "raw_logits": null,
+      "latency_ms": 88.53878571452307,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.9624924444595178,
+        "LABEL_1": 0.037507555540482206
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9952419333534331,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.9624924444595178,
+    "from_label": "POSITIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "POSITIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_56f81359d889",
+      "sentence_text": "sun rises in the east and sets in the west, however it does not rise reliably.",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": 0.6,
+      "reason": "Clause introduces unreliability, creating negative polarity.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEGATIVE",
+      "gemini_confidence": 0.6,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790928124.0297685,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.6,
+      "neutral_probability": 0.35,
+      "positive_probability": 0.05,
+      "reference_class_count": 3,
+      "reference_label": "NEGATIVE",
+      "three_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.6,
+        "neutral_probability": 0.35,
+        "positive_probability": 0.05,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.6,
+        "positive_probability": 0.05,
+        "neutral_probability_excluded": 0.35,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "NEGATIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Factual statement about nature.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ab206b3a976b",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.05,
+            "reason_short": "Denial of a factual statement, remains objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3dd07af8ccc8",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.1,
+            "reason_short": "Double negative expressing possibility of a fact, objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_3257b1103e91",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Semantically anomalous modifier on a factual statement.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_8a01b10dc96d",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Hedged factual statement, objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_40afc189100e",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.6,
+            "reason_short": "Introduction of 'sunshine' adds positive valence.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_56f81359d889",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.6,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.05,
+            "reason_short": "Clause introduces unreliability, creating negative polarity.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_85c303b62fd0",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.7,
+            "reason_short": "Explicit positive evaluation via 'delivered good results'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "NEUTRAL"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": true,
+    "semantic_state_change": true,
+    "confidence_delta": -0.03274948889391538,
+    "confidence_delta_pts": -3.274948889391538,
+    "confidence_delta_pp": -3.274948889391538,
+    "formatted_confidence_delta": "-3.27 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": false,
+    "expected_relation": "UNKNOWN",
+    "observed_relation": "POLARITY_REVERSED",
+    "behavioral_outcome": "UNDETERMINED",
+    "failure_type": "Undetermined",
+    "rationale": "Indeterminate behavioral transition.",
+    "semantic_intent": "SHIFT_FROM_NEUTRAL",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 88.53878571452307,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_4a29b3fc8364",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_85c303b62fd0",
+    "seed_text": "sun rises in the east and sets in the west",
+    "perturbed_text": "sun rises in the east and sets in the west, and it delivered good results in practice.",
+    "perturbation_type": "contrast_positive_append",
+    "category": "contrast_positive_append",
+    "expected_flip": false,
+    "expected_semantic_effect": "AMBIGUOUS",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9952419333534331,
+      "formatted_confidence": "99.52%",
+      "probabilities": {
+        "NEGATIVE": 0.004758066646566833,
+        "POSITIVE": 0.9952419333534331
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.48%",
+        "POSITIVE": "99.52%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.48%\nPOSITIVE   [====================]  99.52%",
+      "raw_logits": null,
+      "latency_ms": 1293.262400009553,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.004758066646566833,
+        "LABEL_1": 0.9952419333534331
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9996057618404859,
+      "formatted_confidence": "99.96%",
+      "probabilities": {
+        "NEGATIVE": 0.0003942381595141288,
+        "POSITIVE": 0.9996057618404859
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.04%",
+        "POSITIVE": "99.96%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.04%\nPOSITIVE   [====================]  99.96%",
+      "raw_logits": null,
+      "latency_ms": 88.53878571452307,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0003942381595141288,
+        "LABEL_1": 0.9996057618404859
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9952419333534331,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9996057618404859,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_85c303b62fd0",
+      "sentence_text": "sun rises in the east and sets in the west, and it delivered good results in practice.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.7,
+      "reason": "Explicit positive evaluation via 'delivered good results'.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.7,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790928124.029799,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.05,
+      "neutral_probability": 0.25,
+      "positive_probability": 0.7,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "neutral_probability": 0.25,
+        "positive_probability": 0.7,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "positive_probability": 0.7,
+        "neutral_probability_excluded": 0.25,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Factual statement about nature.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ab206b3a976b",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.05,
+            "reason_short": "Denial of a factual statement, remains objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3dd07af8ccc8",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.1,
+            "reason_short": "Double negative expressing possibility of a fact, objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_3257b1103e91",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Semantically anomalous modifier on a factual statement.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_8a01b10dc96d",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "reason_short": "Hedged factual statement, objective.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_40afc189100e",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.6,
+            "reason_short": "Introduction of 'sunshine' adds positive valence.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_56f81359d889",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.6,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.05,
+            "reason_short": "Clause introduces unreliability, creating negative polarity.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_85c303b62fd0",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.7,
+            "reason_short": "Explicit positive evaluation via 'delivered good results'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "NEUTRAL"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.0043638284870527455,
+    "confidence_delta_pts": 0.43638284870527455,
+    "confidence_delta_pp": 0.43638284870527455,
+    "formatted_confidence_delta": "+0.44 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": true,
+    "expected_relation": "UNKNOWN",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "UNDETERMINED",
+    "failure_type": "Undetermined",
+    "rationale": "Indeterminate behavioral transition.",
+    "semantic_intent": "SHIFT_FROM_NEUTRAL",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 88.53878571452307,
+    "ground_truth_match": true
+  }
+]

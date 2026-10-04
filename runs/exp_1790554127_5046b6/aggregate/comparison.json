@@ -1,0 +1,167 @@
+{
+  "model_ids": [
+    "cardiffnlp/twitter-roberta-base-sentiment",
+    "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "distilbert-base-uncased-finetuned-sst-2-english",
+    "textattack/albert-base-v2-SST-2",
+    "textattack/bert-base-uncased-SST-2"
+  ],
+  "overall_agreement_rate": 0.0,
+  "pairwise_agreement": {
+    "cardiffnlp/twitter-roberta-base-sentiment": {
+      "cardiffnlp/twitter-roberta-base-sentiment": 1.0,
+      "cardiffnlp/twitter-roberta-base-sentiment-latest": 0.0,
+      "distilbert-base-uncased-finetuned-sst-2-english": 0.0,
+      "textattack/albert-base-v2-SST-2": 0.0,
+      "textattack/bert-base-uncased-SST-2": 0.0
+    },
+    "cardiffnlp/twitter-roberta-base-sentiment-latest": {
+      "cardiffnlp/twitter-roberta-base-sentiment": 0.0,
+      "cardiffnlp/twitter-roberta-base-sentiment-latest": 1.0,
+      "distilbert-base-uncased-finetuned-sst-2-english": 0.0,
+      "textattack/albert-base-v2-SST-2": 0.0,
+      "textattack/bert-base-uncased-SST-2": 0.0
+    },
+    "distilbert-base-uncased-finetuned-sst-2-english": {
+      "cardiffnlp/twitter-roberta-base-sentiment": 0.0,
+      "cardiffnlp/twitter-roberta-base-sentiment-latest": 0.0,
+      "distilbert-base-uncased-finetuned-sst-2-english": 1.0,
+      "textattack/albert-base-v2-SST-2": 0.0,
+      "textattack/bert-base-uncased-SST-2": 0.0
+    },
+    "textattack/albert-base-v2-SST-2": {
+      "cardiffnlp/twitter-roberta-base-sentiment": 0.0,
+      "cardiffnlp/twitter-roberta-base-sentiment-latest": 0.0,
+      "distilbert-base-uncased-finetuned-sst-2-english": 0.0,
+      "textattack/albert-base-v2-SST-2": 1.0,
+      "textattack/bert-base-uncased-SST-2": 0.0
+    },
+    "textattack/bert-base-uncased-SST-2": {
+      "cardiffnlp/twitter-roberta-base-sentiment": 0.0,
+      "cardiffnlp/twitter-roberta-base-sentiment-latest": 0.0,
+      "distilbert-base-uncased-finetuned-sst-2-english": 0.0,
+      "textattack/albert-base-v2-SST-2": 0.0,
+      "textattack/bert-base-uncased-SST-2": 1.0
+    }
+  },
+  "fingerprints": {
+    "cardiffnlp/twitter-roberta-base-sentiment": {
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "total_probes": 0,
+      "flip_rate": 0.0,
+      "ece": 0.0,
+      "satisfaction_rate": 1.0,
+      "mean_confidence_shift_pts": 0.0,
+      "category_flip_rates": {},
+      "failure_counts": {
+        "Blind": 0,
+        "Spurious": 0,
+        "Misweighted": 0,
+        "Undetermined": 0,
+        "None": 0
+      }
+    },
+    "cardiffnlp/twitter-roberta-base-sentiment-latest": {
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "total_probes": 0,
+      "flip_rate": 0.0,
+      "ece": 0.0,
+      "satisfaction_rate": 1.0,
+      "mean_confidence_shift_pts": 0.0,
+      "category_flip_rates": {},
+      "failure_counts": {
+        "Blind": 0,
+        "Spurious": 0,
+        "Misweighted": 0,
+        "Undetermined": 0,
+        "None": 0
+      }
+    },
+    "distilbert-base-uncased-finetuned-sst-2-english": {
+      "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+      "total_probes": 0,
+      "flip_rate": 0.0,
+      "ece": 0.0,
+      "satisfaction_rate": 1.0,
+      "mean_confidence_shift_pts": 0.0,
+      "category_flip_rates": {},
+      "failure_counts": {
+        "Blind": 0,
+        "Spurious": 0,
+        "Misweighted": 0,
+        "Undetermined": 0,
+        "None": 0
+      }
+    },
+    "textattack/albert-base-v2-SST-2": {
+      "model_id": "textattack/albert-base-v2-SST-2",
+      "total_probes": 0,
+      "flip_rate": 0.0,
+      "ece": 0.0,
+      "satisfaction_rate": 1.0,
+      "mean_confidence_shift_pts": 0.0,
+      "category_flip_rates": {},
+      "failure_counts": {
+        "Blind": 0,
+        "Spurious": 0,
+        "Misweighted": 0,
+        "Undetermined": 0,
+        "None": 0
+      }
+    },
+    "textattack/bert-base-uncased-SST-2": {
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "total_probes": 0,
+      "flip_rate": 0.0,
+      "ece": 0.0,
+      "satisfaction_rate": 1.0,
+      "mean_confidence_shift_pts": 0.0,
+      "category_flip_rates": {},
+      "failure_counts": {
+        "Blind": 0,
+        "Spurious": 0,
+        "Misweighted": 0,
+        "Undetermined": 0,
+        "None": 0
+      }
+    }
+  },
+  "failure_summary": {
+    "distilbert-base-uncased-finetuned-sst-2-english": {
+      "Blind": 0,
+      "Spurious": 0,
+      "Misweighted": 0,
+      "Undetermined": 0,
+      "None": 0
+    },
+    "cardiffnlp/twitter-roberta-base-sentiment-latest": {
+      "Blind": 0,
+      "Spurious": 0,
+      "Misweighted": 0,
+      "Undetermined": 0,
+      "None": 0
+    },
+    "cardiffnlp/twitter-roberta-base-sentiment": {
+      "Blind": 0,
+      "Spurious": 0,
+      "Misweighted": 0,
+      "Undetermined": 0,
+      "None": 0
+    },
+    "textattack/bert-base-uncased-SST-2": {
+      "Blind": 0,
+      "Spurious": 0,
+      "Misweighted": 0,
+      "Undetermined": 0,
+      "None": 0
+    },
+    "textattack/albert-base-v2-SST-2": {
+      "Blind": 0,
+      "Spurious": 0,
+      "Misweighted": 0,
+      "Undetermined": 0,
+      "None": 0
+    }
+  },
+  "model_probe_matrix": []
+}

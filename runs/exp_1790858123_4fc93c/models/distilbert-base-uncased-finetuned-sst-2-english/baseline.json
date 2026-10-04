@@ -1,0 +1,79 @@
+{
+  "The movie was great and the acting was top notch.": {
+    "baseline_id": "base_f3d936afa85f",
+    "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+    "seed_text": "The movie was great and the acting was top notch.",
+    "original_text": "The movie was great and the acting was top notch.",
+    "sentence_type": "literal",
+    "prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9998690498971241,
+      "formatted_confidence": "99.99%",
+      "probabilities": {
+        "NEGATIVE": 0.00013095010287589876,
+        "POSITIVE": 0.9998690498971241
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.01%",
+        "POSITIVE": "99.99%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.01%\nPOSITIVE   [====================]  99.99%",
+      "raw_logits": null,
+      "latency_ms": 121.25200000082259,
+      "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "POSITIVE",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "NEGATIVE": 0.00013095010287589876,
+        "POSITIVE": 0.9998690498971241
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "raw_label": "POSITIVE",
+    "raw_label_id": 1,
+    "semantic_polarity": "POSITIVE",
+    "confidence": 0.9998690498971241,
+    "full_probability_distribution": {
+      "NEGATIVE": 0.00013095010287589876,
+      "POSITIVE": 0.9998690498971241
+    },
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "POSITIVE",
+    "semantic_reference": {
+      "sentence_id": "baseline",
+      "sentence_text": "The movie was great and the acting was top notch.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 1.0,
+      "reason": "The sentence expresses strong positive sentiment about both the movie and the acting.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 1.0,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-3.5-flash",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790858072.9194674,
+      "prompt_version": "v2.0"
+    },
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "latency_ms": 121.25200000082259
+  }
+}

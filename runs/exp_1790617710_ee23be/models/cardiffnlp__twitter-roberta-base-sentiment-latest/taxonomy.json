@@ -1,0 +1,1322 @@
+[
+  {
+    "failure_id": "fail_173aaf15",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_d59487c5df7c",
+    "category": "Spurious",
+    "severity": "high",
+    "reason": "Model unexpectedly flipped prediction ('NEUTRAL -> NEGATIVE') under meaning-preserving perturbation, indicating spurious sensitivity.",
+    "details": "Under negation_insertion, model transition 'NEUTRAL -> NEGATIVE' was diagnosed as Spurious. Model unexpectedly flipped prediction ('NEUTRAL -> NEGATIVE') under meaning-preserving perturbation, indicating spurious sensitivity.",
+    "recommendation": "Augment training data and regularize behavior against negation_insertion perturbations to fix Spurious failures.",
+    "evidence": {
+      "original_label": "NEUTRAL",
+      "probe_label": "NEGATIVE",
+      "original_confidence": 0.6337595363712034,
+      "probe_confidence": 0.8279259824042935,
+      "confidence_delta_pp": 19.41664460330901,
+      "label_transition": "NEUTRAL (NEUTRAL) \u2192 NEGATIVE (NEGATIVE)",
+      "raw_label_flip": true,
+      "polarity_flip": false,
+      "semantic_state_change": true,
+      "is_prediction_flip": true,
+      "original_polarity": "NEUTRAL",
+      "probe_polarity": "NEGATIVE",
+      "target_polarity": "NEGATIVE",
+      "ground_truth_match": true,
+      "observed_behavior": "FLIP",
+      "expected_behavior": "PRESERVE",
+      "expected_relation": "SAME_POLARITY",
+      "observed_relation": "NEUTRAL_TO_NEGATIVE",
+      "expected_effect": "EXPECTED_PRESERVE",
+      "semantic_intent": "PRESERVE_POLARITY",
+      "threshold_pp": 15.0,
+      "behavioral_conformance": false,
+      "expectation_satisfied": false,
+      "unexpected_behavior": true,
+      "expectation_match": false,
+      "preservation": false,
+      "jaccard_similarity": 0.42857142857142855,
+      "cosine_alignment": 0.46668598277170004,
+      "orig_explanation": {
+        "token_weights": {
+          "i": -0.03785326222774133,
+          "still": -0.03655800227773901,
+          "but": 0.15879465149319494,
+          "am": -0.048209085522437245,
+          "hospitalized": 0.002379119209828447,
+          "healthy": -0.07917403616775269
+        },
+        "token_attributions": [
+          {
+            "token": "i",
+            "attribution": -0.03785326222774133,
+            "position": 1
+          },
+          {
+            "token": "still",
+            "attribution": -0.03655800227773901,
+            "position": 2
+          },
+          {
+            "token": "but",
+            "attribution": 0.15879465149319494,
+            "position": 3
+          },
+          {
+            "token": "am",
+            "attribution": -0.048209085522437245,
+            "position": 4
+          },
+          {
+            "token": "hospitalized",
+            "attribution": 0.002379119209828447,
+            "position": 5
+          },
+          {
+            "token": "healthy",
+            "attribution": -0.07917403616775269,
+            "position": 6
+          }
+        ],
+        "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+        "text": "i am healthy but still hospitalized",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "pert_explanation": {
+        "token_weights": {
+          "not": 0.08282565959836513,
+          "i": -0.044951994710427,
+          "still": 0.02200925925904739,
+          "but": 0.04951020944289647,
+          "am": -0.04153546767695606,
+          "hospitalized": 0.06339448982180786,
+          "healthy": -0.01220871761867337
+        },
+        "token_attributions": [
+          {
+            "token": "not",
+            "attribution": 0.08282565959836513,
+            "position": 1
+          },
+          {
+            "token": "i",
+            "attribution": -0.044951994710427,
+            "position": 2
+          },
+          {
+            "token": "still",
+            "attribution": 0.02200925925904739,
+            "position": 3
+          },
+          {
+            "token": "but",
+            "attribution": 0.04951020944289647,
+            "position": 4
+          },
+          {
+            "token": "am",
+            "attribution": -0.04153546767695606,
+            "position": 5
+          },
+          {
+            "token": "hospitalized",
+            "attribution": 0.06339448982180786,
+            "position": 6
+          },
+          {
+            "token": "healthy",
+            "attribution": -0.01220871761867337,
+            "position": 7
+          }
+        ],
+        "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+        "text": "i am not healthy but still hospitalized",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "aligned_tokens": [
+        {
+          "token": "not",
+          "orig_token": null,
+          "pert_token": "not",
+          "orig_pos": null,
+          "pert_pos": 1,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.08282565959836513,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "i",
+          "orig_token": "i",
+          "pert_token": "i",
+          "orig_pos": 1,
+          "pert_pos": 2,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.03785326222774133,
+          "pert_val": -0.044951994710427,
+          "delta": -0.007098732482685666,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "still",
+          "orig_token": "still",
+          "pert_token": "still",
+          "orig_pos": 2,
+          "pert_pos": 3,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.03655800227773901,
+          "pert_val": 0.02200925925904739,
+          "delta": 0.0585672615367864,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": true
+        },
+        {
+          "token": "but",
+          "orig_token": "but",
+          "pert_token": "but",
+          "orig_pos": 3,
+          "pert_pos": 4,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.15879465149319494,
+          "pert_val": 0.04951020944289647,
+          "delta": -0.10928444205029847,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "am",
+          "orig_token": "am",
+          "pert_token": "am",
+          "orig_pos": 4,
+          "pert_pos": 5,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.048209085522437245,
+          "pert_val": -0.04153546767695606,
+          "delta": 0.006673617845481185,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "hospitalized",
+          "orig_token": "hospitalized",
+          "pert_token": "hospitalized",
+          "orig_pos": 5,
+          "pert_pos": 6,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.002379119209828447,
+          "pert_val": 0.06339448982180786,
+          "delta": 0.06101537061197941,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "healthy",
+          "orig_token": "healthy",
+          "pert_token": "healthy",
+          "orig_pos": 6,
+          "pert_pos": 7,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.07917403616775269,
+          "pert_val": -0.01220871761867337,
+          "delta": 0.06696531854907932,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        }
+      ]
+    },
+    "traceable_narrative": "The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (NEUTRAL (NEUTRAL) \u2192 NEGATIVE (NEGATIVE)).",
+    "original_sentence": "i am healthy but still hospitalized",
+    "perturbed_sentence": "i am not healthy but still hospitalized",
+    "original_label": "NEUTRAL",
+    "perturbed_label": "NEGATIVE",
+    "original_confidence": 0.6337595363712034,
+    "perturbed_confidence": 0.8279259824042935,
+    "confidence_delta_pts": 19.41664460330901,
+    "is_flipped": true,
+    "expected_flip": false,
+    "behavioral_outcome": "UNEXPECTED_CHANGE"
+  },
+  {
+    "failure_id": "fail_027ac705",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_18fb2706a780",
+    "category": "Misweighted",
+    "severity": "medium",
+    "reason": "Polarity preserved, but confidence collapsed by 16.95 percentage points under meaning-preserving perturbation.",
+    "details": "Under double_negation, model transition 'NEUTRAL -> NEUTRAL' was diagnosed as Misweighted. Polarity preserved, but confidence collapsed by 16.95 percentage points under meaning-preserving perturbation.",
+    "recommendation": "Augment training data and regularize behavior against double_negation perturbations to fix Misweighted failures.",
+    "evidence": {
+      "original_label": "NEUTRAL",
+      "probe_label": "NEUTRAL",
+      "original_confidence": 0.6337595363712034,
+      "probe_confidence": 0.4642716749967264,
+      "confidence_delta_pp": -16.9487861374477,
+      "label_transition": "NEUTRAL (NEUTRAL) \u2192 NEUTRAL (NEUTRAL)",
+      "raw_label_flip": false,
+      "polarity_flip": false,
+      "semantic_state_change": false,
+      "is_prediction_flip": false,
+      "original_polarity": "NEUTRAL",
+      "probe_polarity": "NEUTRAL",
+      "target_polarity": "NEGATIVE",
+      "ground_truth_match": false,
+      "observed_behavior": "PRESERVE",
+      "expected_behavior": "PRESERVE",
+      "expected_relation": "SAME_POLARITY",
+      "observed_relation": "POLARITY_WEAKENED",
+      "expected_effect": "EXPECTED_PRESERVE",
+      "semantic_intent": "PRESERVE_POLARITY",
+      "threshold_pp": 15.0,
+      "behavioral_conformance": false,
+      "expectation_satisfied": false,
+      "unexpected_behavior": true,
+      "expectation_match": false,
+      "preservation": true,
+      "jaccard_similarity": 0.25,
+      "cosine_alignment": 0.6917417571532997,
+      "orig_explanation": {
+        "token_weights": {
+          "i": -0.03785326222774133,
+          "still": -0.03655800227773901,
+          "but": 0.15879465149319494,
+          "am": -0.048209085522437245,
+          "hospitalized": 0.002379119209828447,
+          "healthy": -0.07917403616775269
+        },
+        "token_attributions": [
+          {
+            "token": "i",
+            "attribution": -0.03785326222774133,
+            "position": 1
+          },
+          {
+            "token": "still",
+            "attribution": -0.03655800227773901,
+            "position": 2
+          },
+          {
+            "token": "but",
+            "attribution": 0.15879465149319494,
+            "position": 3
+          },
+          {
+            "token": "am",
+            "attribution": -0.048209085522437245,
+            "position": 4
+          },
+          {
+            "token": "hospitalized",
+            "attribution": 0.002379119209828447,
+            "position": 5
+          },
+          {
+            "token": "healthy",
+            "attribution": -0.07917403616775269,
+            "position": 6
+          }
+        ],
+        "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+        "text": "i am healthy but still hospitalized",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "pert_explanation": {
+        "token_weights": {
+          "not": 0.04806442725066784,
+          "is": 0.015413560655932065,
+          "i": 0.015259976094332703,
+          "still": 0.01498249857026389,
+          "that": 0.02843131161781572,
+          "It": -0.054276437425217955,
+          "but": 0.12140104397346554,
+          "am": -0.0194188881373579,
+          "hospitalized": -0.0125037659941498,
+          "healthy": -0.12372700499413265,
+          "impossible": -0.10110983953406935
+        },
+        "token_attributions": [
+          {
+            "token": "not",
+            "attribution": 0.04806442725066784,
+            "position": 1
+          },
+          {
+            "token": "is",
+            "attribution": 0.015413560655932065,
+            "position": 2
+          },
+          {
+            "token": "i",
+            "attribution": 0.015259976094332703,
+            "position": 3
+          },
+          {
+            "token": "still",
+            "attribution": 0.01498249857026389,
+            "position": 4
+          },
+          {
+            "token": "that",
+            "attribution": 0.02843131161781572,
+            "position": 5
+          },
+          {
+            "token": "It",
+            "attribution": -0.054276437425217955,
+            "position": 6
+          },
+          {
+            "token": "but",
+            "attribution": 0.12140104397346554,
+            "position": 7
+          },
+          {
+            "token": "am",
+            "attribution": -0.0194188881373579,
+            "position": 8
+          },
+          {
+            "token": "hospitalized",
+            "attribution": -0.0125037659941498,
+            "position": 9
+          },
+          {
+            "token": "healthy",
+            "attribution": -0.12372700499413265,
+            "position": 10
+          },
+          {
+            "token": "impossible",
+            "attribution": -0.10110983953406935,
+            "position": 11
+          }
+        ],
+        "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+        "text": "It is not impossible that i am healthy but still hospitalized",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "aligned_tokens": [
+        {
+          "token": "not",
+          "orig_token": null,
+          "pert_token": "not",
+          "orig_pos": null,
+          "pert_pos": 1,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.04806442725066784,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "is",
+          "orig_token": null,
+          "pert_token": "is",
+          "orig_pos": null,
+          "pert_pos": 2,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.015413560655932065,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "i",
+          "orig_token": "i",
+          "pert_token": "i",
+          "orig_pos": 1,
+          "pert_pos": 3,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.03785326222774133,
+          "pert_val": 0.015259976094332703,
+          "delta": 0.053113238322074034,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": true
+        },
+        {
+          "token": "still",
+          "orig_token": "still",
+          "pert_token": "still",
+          "orig_pos": 2,
+          "pert_pos": 4,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.03655800227773901,
+          "pert_val": 0.01498249857026389,
+          "delta": 0.0515405008480029,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "that",
+          "orig_token": null,
+          "pert_token": "that",
+          "orig_pos": null,
+          "pert_pos": 5,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.02843131161781572,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "It",
+          "orig_token": null,
+          "pert_token": "It",
+          "orig_pos": null,
+          "pert_pos": 6,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.054276437425217955,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "but",
+          "orig_token": "but",
+          "pert_token": "but",
+          "orig_pos": 3,
+          "pert_pos": 7,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.15879465149319494,
+          "pert_val": 0.12140104397346554,
+          "delta": -0.037393607519729394,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "am",
+          "orig_token": "am",
+          "pert_token": "am",
+          "orig_pos": 4,
+          "pert_pos": 8,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.048209085522437245,
+          "pert_val": -0.0194188881373579,
+          "delta": 0.028790197385079343,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "hospitalized",
+          "orig_token": "hospitalized",
+          "pert_token": "hospitalized",
+          "orig_pos": 5,
+          "pert_pos": 9,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.002379119209828447,
+          "pert_val": -0.0125037659941498,
+          "delta": -0.014882885203978248,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "healthy",
+          "orig_token": "healthy",
+          "pert_token": "healthy",
+          "orig_pos": 6,
+          "pert_pos": 10,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.07917403616775269,
+          "pert_val": -0.12372700499413265,
+          "delta": -0.04455296882637996,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "impossible",
+          "orig_token": null,
+          "pert_token": "impossible",
+          "orig_pos": null,
+          "pert_pos": 11,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.10110983953406935,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        }
+      ]
+    },
+    "traceable_narrative": "Polarity preserved, but confidence collapsed by 16.95 percentage points under meaning-preserving perturbation.",
+    "original_sentence": "i am healthy but still hospitalized",
+    "perturbed_sentence": "It is not impossible that i am healthy but still hospitalized",
+    "original_label": "NEUTRAL",
+    "perturbed_label": "NEUTRAL",
+    "original_confidence": 0.6337595363712034,
+    "perturbed_confidence": 0.4642716749967264,
+    "confidence_delta_pts": -16.9487861374477,
+    "is_flipped": false,
+    "expected_flip": false,
+    "behavioral_outcome": "EXPECTED_PRESERVE"
+  },
+  {
+    "failure_id": "fail_61e5d002",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_1faf50373dfb",
+    "category": "Spurious",
+    "severity": "high",
+    "reason": "Model unexpectedly flipped prediction ('NEUTRAL -> POSITIVE') under meaning-preserving perturbation, indicating spurious sensitivity.",
+    "details": "Under intensity, model transition 'NEUTRAL -> POSITIVE' was diagnosed as Spurious. Model unexpectedly flipped prediction ('NEUTRAL -> POSITIVE') under meaning-preserving perturbation, indicating spurious sensitivity.",
+    "recommendation": "Augment training data and regularize behavior against intensity perturbations to fix Spurious failures.",
+    "evidence": {
+      "original_label": "NEUTRAL",
+      "probe_label": "POSITIVE",
+      "original_confidence": 0.6337595363712034,
+      "probe_confidence": 0.5910622037155775,
+      "confidence_delta_pp": -4.269733265562592,
+      "label_transition": "NEUTRAL (NEUTRAL) \u2192 POSITIVE (POSITIVE)",
+      "raw_label_flip": true,
+      "polarity_flip": false,
+      "semantic_state_change": true,
+      "is_prediction_flip": true,
+      "original_polarity": "NEUTRAL",
+      "probe_polarity": "POSITIVE",
+      "target_polarity": "NEGATIVE",
+      "ground_truth_match": false,
+      "observed_behavior": "FLIP",
+      "expected_behavior": "PRESERVE",
+      "expected_relation": "SAME_POLARITY",
+      "observed_relation": "NEUTRAL_TO_POSITIVE",
+      "expected_effect": "EXPECTED_PRESERVE",
+      "semantic_intent": "PRESERVE_POLARITY",
+      "threshold_pp": 15.0,
+      "behavioral_conformance": false,
+      "expectation_satisfied": false,
+      "unexpected_behavior": true,
+      "expectation_match": false,
+      "preservation": false,
+      "jaccard_similarity": 0.42857142857142855,
+      "cosine_alignment": -0.33712698305253597,
+      "orig_explanation": {
+        "token_weights": {
+          "i": -0.03785326222774133,
+          "still": -0.03655800227773901,
+          "but": 0.15879465149319494,
+          "am": -0.048209085522437245,
+          "hospitalized": 0.002379119209828447,
+          "healthy": -0.07917403616775269
+        },
+        "token_attributions": [
+          {
+            "token": "i",
+            "attribution": -0.03785326222774133,
+            "position": 1
+          },
+          {
+            "token": "still",
+            "attribution": -0.03655800227773901,
+            "position": 2
+          },
+          {
+            "token": "but",
+            "attribution": 0.15879465149319494,
+            "position": 3
+          },
+          {
+            "token": "am",
+            "attribution": -0.048209085522437245,
+            "position": 4
+          },
+          {
+            "token": "hospitalized",
+            "attribution": 0.002379119209828447,
+            "position": 5
+          },
+          {
+            "token": "healthy",
+            "attribution": -0.07917403616775269,
+            "position": 6
+          }
+        ],
+        "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+        "text": "i am healthy but still hospitalized",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "pert_explanation": {
+        "token_weights": {
+          "extremely": -0.03193512155261763,
+          "i": -0.05989181111584163,
+          "still": -0.026143652635571227,
+          "but": -0.015148131466147532,
+          "am": -0.01994338484444734,
+          "hospitalized": -0.03678890290054709,
+          "healthy": 0.1938037206996599
+        },
+        "token_attributions": [
+          {
+            "token": "extremely",
+            "attribution": -0.03193512155261763,
+            "position": 1
+          },
+          {
+            "token": "i",
+            "attribution": -0.05989181111584163,
+            "position": 2
+          },
+          {
+            "token": "still",
+            "attribution": -0.026143652635571227,
+            "position": 3
+          },
+          {
+            "token": "but",
+            "attribution": -0.015148131466147532,
+            "position": 4
+          },
+          {
+            "token": "am",
+            "attribution": -0.01994338484444734,
+            "position": 5
+          },
+          {
+            "token": "hospitalized",
+            "attribution": -0.03678890290054709,
+            "position": 6
+          },
+          {
+            "token": "healthy",
+            "attribution": 0.1938037206996599,
+            "position": 7
+          }
+        ],
+        "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+        "text": "i am extremely healthy but still hospitalized",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "aligned_tokens": [
+        {
+          "token": "extremely",
+          "orig_token": null,
+          "pert_token": "extremely",
+          "orig_pos": null,
+          "pert_pos": 1,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.03193512155261763,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "i",
+          "orig_token": "i",
+          "pert_token": "i",
+          "orig_pos": 1,
+          "pert_pos": 2,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.03785326222774133,
+          "pert_val": -0.05989181111584163,
+          "delta": -0.0220385488881003,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "still",
+          "orig_token": "still",
+          "pert_token": "still",
+          "orig_pos": 2,
+          "pert_pos": 3,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.03655800227773901,
+          "pert_val": -0.026143652635571227,
+          "delta": 0.010414349642167784,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "but",
+          "orig_token": "but",
+          "pert_token": "but",
+          "orig_pos": 3,
+          "pert_pos": 4,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.15879465149319494,
+          "pert_val": -0.015148131466147532,
+          "delta": -0.17394278295934246,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "am",
+          "orig_token": "am",
+          "pert_token": "am",
+          "orig_pos": 4,
+          "pert_pos": 5,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.048209085522437245,
+          "pert_val": -0.01994338484444734,
+          "delta": 0.028265700677989905,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "hospitalized",
+          "orig_token": "hospitalized",
+          "pert_token": "hospitalized",
+          "orig_pos": 5,
+          "pert_pos": 6,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.002379119209828447,
+          "pert_val": -0.03678890290054709,
+          "delta": -0.03916802211037553,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "healthy",
+          "orig_token": "healthy",
+          "pert_token": "healthy",
+          "orig_pos": 6,
+          "pert_pos": 7,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.07917403616775269,
+          "pert_val": 0.1938037206996599,
+          "delta": 0.2729777568674126,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": true
+        }
+      ]
+    },
+    "traceable_narrative": "The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (NEUTRAL (NEUTRAL) \u2192 POSITIVE (POSITIVE)).",
+    "original_sentence": "i am healthy but still hospitalized",
+    "perturbed_sentence": "i am extremely healthy but still hospitalized",
+    "original_label": "NEUTRAL",
+    "perturbed_label": "POSITIVE",
+    "original_confidence": 0.6337595363712034,
+    "perturbed_confidence": 0.5910622037155775,
+    "confidence_delta_pts": -4.269733265562592,
+    "is_flipped": true,
+    "expected_flip": false,
+    "behavioral_outcome": "UNEXPECTED_CHANGE"
+  },
+  {
+    "failure_id": "fail_c2439a23",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_f9f881eda7b2",
+    "category": "Spurious",
+    "severity": "high",
+    "reason": "Model unexpectedly flipped prediction ('NEUTRAL -> NEGATIVE') under meaning-preserving perturbation, indicating spurious sensitivity.",
+    "details": "Under contrast_negative_append, model transition 'NEUTRAL -> NEGATIVE' was diagnosed as Spurious. Model unexpectedly flipped prediction ('NEUTRAL -> NEGATIVE') under meaning-preserving perturbation, indicating spurious sensitivity.",
+    "recommendation": "Augment training data and regularize behavior against contrast_negative_append perturbations to fix Spurious failures.",
+    "evidence": {
+      "original_label": "NEUTRAL",
+      "probe_label": "NEGATIVE",
+      "original_confidence": 0.6337595363712034,
+      "probe_confidence": 0.6572156548500061,
+      "confidence_delta_pp": 2.345611847880269,
+      "label_transition": "NEUTRAL (NEUTRAL) \u2192 NEGATIVE (NEGATIVE)",
+      "raw_label_flip": true,
+      "polarity_flip": false,
+      "semantic_state_change": true,
+      "is_prediction_flip": true,
+      "original_polarity": "NEUTRAL",
+      "probe_polarity": "NEGATIVE",
+      "target_polarity": "NEGATIVE",
+      "ground_truth_match": true,
+      "observed_behavior": "FLIP",
+      "expected_behavior": "PRESERVE",
+      "expected_relation": "SAME_POLARITY",
+      "observed_relation": "NEUTRAL_TO_NEGATIVE",
+      "expected_effect": "EXPECTED_PRESERVE",
+      "semantic_intent": "PRESERVE_POLARITY",
+      "threshold_pp": 15.0,
+      "behavioral_conformance": false,
+      "expectation_satisfied": false,
+      "unexpected_behavior": true,
+      "expectation_match": false,
+      "preservation": false,
+      "jaccard_similarity": 0.2857142857142857,
+      "cosine_alignment": 0.33449407133967746,
+      "orig_explanation": {
+        "token_weights": {
+          "i": -0.03785326222774133,
+          "still": -0.03655800227773901,
+          "but": 0.15879465149319494,
+          "am": -0.048209085522437245,
+          "hospitalized": 0.002379119209828447,
+          "healthy": -0.07917403616775269
+        },
+        "token_attributions": [
+          {
+            "token": "i",
+            "attribution": -0.03785326222774133,
+            "position": 1
+          },
+          {
+            "token": "still",
+            "attribution": -0.03655800227773901,
+            "position": 2
+          },
+          {
+            "token": "but",
+            "attribution": 0.15879465149319494,
+            "position": 3
+          },
+          {
+            "token": "am",
+            "attribution": -0.048209085522437245,
+            "position": 4
+          },
+          {
+            "token": "hospitalized",
+            "attribution": 0.002379119209828447,
+            "position": 5
+          },
+          {
+            "token": "healthy",
+            "attribution": -0.07917403616775269,
+            "position": 6
+          }
+        ],
+        "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+        "text": "i am healthy but still hospitalized",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "pert_explanation": {
+        "token_weights": {
+          "not": 0.11210000464216538,
+          "performance": 0.0161372348153684,
+          "i": -0.04742316409717254,
+          "repeat": 0.02586030504190836,
+          "still": 0.01903640534929306,
+          "that": -0.039573300448556906,
+          "however": 0.08017252652917575,
+          "I": -0.06806830248732923,
+          "but": 0.019154405040368964,
+          "am": -0.027739408056365926,
+          "hospitalized,": 0.03763858515083233,
+          "could": 0.00974134031899107,
+          "healthy": -0.09217720950489028
+        },
+        "token_attributions": [
+          {
+            "token": "not",
+            "attribution": 0.11210000464216538,
+            "position": 1
+          },
+          {
+            "token": "performance",
+            "attribution": 0.0161372348153684,
+            "position": 2
+          },
+          {
+            "token": "i",
+            "attribution": -0.04742316409717254,
+            "position": 3
+          },
+          {
+            "token": "repeat",
+            "attribution": 0.02586030504190836,
+            "position": 4
+          },
+          {
+            "token": "still",
+            "attribution": 0.01903640534929306,
+            "position": 5
+          },
+          {
+            "token": "that",
+            "attribution": -0.039573300448556906,
+            "position": 6
+          },
+          {
+            "token": "however",
+            "attribution": 0.08017252652917575,
+            "position": 7
+          },
+          {
+            "token": "I",
+            "attribution": -0.06806830248732923,
+            "position": 8
+          },
+          {
+            "token": "but",
+            "attribution": 0.019154405040368964,
+            "position": 9
+          },
+          {
+            "token": "am",
+            "attribution": -0.027739408056365926,
+            "position": 10
+          },
+          {
+            "token": "hospitalized,",
+            "attribution": 0.03763858515083233,
+            "position": 11
+          },
+          {
+            "token": "could",
+            "attribution": 0.00974134031899107,
+            "position": 12
+          },
+          {
+            "token": "healthy",
+            "attribution": -0.09217720950489028,
+            "position": 13
+          }
+        ],
+        "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+        "text": "i am healthy but still hospitalized, however I could not repeat that performance.",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "aligned_tokens": [
+        {
+          "token": "not",
+          "orig_token": null,
+          "pert_token": "not",
+          "orig_pos": null,
+          "pert_pos": 1,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.11210000464216538,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "performance",
+          "orig_token": null,
+          "pert_token": "performance",
+          "orig_pos": null,
+          "pert_pos": 2,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.0161372348153684,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "i",
+          "orig_token": "i",
+          "pert_token": "i",
+          "orig_pos": 1,
+          "pert_pos": 3,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 2,
+          "orig_val": -0.03785326222774133,
+          "pert_val": -0.04742316409717254,
+          "delta": -0.009569901869431206,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "repeat",
+          "orig_token": null,
+          "pert_token": "repeat",
+          "orig_pos": null,
+          "pert_pos": 4,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.02586030504190836,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "still",
+          "orig_token": "still",
+          "pert_token": "still",
+          "orig_pos": 2,
+          "pert_pos": 5,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.03655800227773901,
+          "pert_val": 0.01903640534929306,
+          "delta": 0.05559440762703207,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": true
+        },
+        {
+          "token": "that",
+          "orig_token": null,
+          "pert_token": "that",
+          "orig_pos": null,
+          "pert_pos": 6,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.039573300448556906,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "however",
+          "orig_token": null,
+          "pert_token": "however",
+          "orig_pos": null,
+          "pert_pos": 7,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.08017252652917575,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "I",
+          "orig_token": null,
+          "pert_token": "I",
+          "orig_pos": null,
+          "pert_pos": 8,
+          "orig_occ": null,
+          "pert_occ": 2,
+          "total_occ": 2,
+          "orig_val": null,
+          "pert_val": -0.06806830248732923,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "but",
+          "orig_token": "but",
+          "pert_token": "but",
+          "orig_pos": 3,
+          "pert_pos": 9,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.15879465149319494,
+          "pert_val": 0.019154405040368964,
+          "delta": -0.13964024645282597,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "am",
+          "orig_token": "am",
+          "pert_token": "am",
+          "orig_pos": 4,
+          "pert_pos": 10,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.048209085522437245,
+          "pert_val": -0.027739408056365926,
+          "delta": 0.02046967746607132,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "hospitalized",
+          "orig_token": "hospitalized",
+          "pert_token": null,
+          "orig_pos": 5,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": 0.002379119209828447,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "hospitalized,",
+          "orig_token": null,
+          "pert_token": "hospitalized,",
+          "orig_pos": null,
+          "pert_pos": 11,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.03763858515083233,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "could",
+          "orig_token": null,
+          "pert_token": "could",
+          "orig_pos": null,
+          "pert_pos": 12,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.00974134031899107,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "healthy",
+          "orig_token": "healthy",
+          "pert_token": "healthy",
+          "orig_pos": 6,
+          "pert_pos": 13,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.07917403616775269,
+          "pert_val": -0.09217720950489028,
+          "delta": -0.013003173337137588,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        }
+      ]
+    },
+    "traceable_narrative": "The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (NEUTRAL (NEUTRAL) \u2192 NEGATIVE (NEGATIVE)).",
+    "original_sentence": "i am healthy but still hospitalized",
+    "perturbed_sentence": "i am healthy but still hospitalized, however I could not repeat that performance.",
+    "original_label": "NEUTRAL",
+    "perturbed_label": "NEGATIVE",
+    "original_confidence": 0.6337595363712034,
+    "perturbed_confidence": 0.6572156548500061,
+    "confidence_delta_pts": 2.345611847880269,
+    "is_flipped": true,
+    "expected_flip": false,
+    "behavioral_outcome": "UNEXPECTED_CHANGE"
+  }
+]

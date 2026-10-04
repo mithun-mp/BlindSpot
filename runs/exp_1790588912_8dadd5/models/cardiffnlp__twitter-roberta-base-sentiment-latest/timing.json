@@ -1,0 +1,13 @@
+{
+  "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+  "cache_lookup_ms": 0.0,
+  "model_load_ms": 0.04,
+  "tokenizer_load_ms": 0.0,
+  "baseline_inference_ms": 0.0,
+  "probe_inference_ms": 246.54,
+  "total_inference_ms": 246.54,
+  "analysis_ms": 7.29,
+  "report_ms": 0.05,
+  "persistence_ms": 0.0,
+  "total_duration_sec": 34.678
+}

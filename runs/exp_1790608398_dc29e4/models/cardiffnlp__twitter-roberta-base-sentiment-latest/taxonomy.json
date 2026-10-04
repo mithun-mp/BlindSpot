@@ -1,0 +1,301 @@
+[
+  {
+    "failure_id": "fail_14945c19",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_e3fc47c979fb",
+    "category": "Spurious",
+    "severity": "high",
+    "reason": "The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (POSITIVE (POSITIVE) \u2192 NEGATIVE (NEGATIVE)).",
+    "details": "The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (POSITIVE (POSITIVE) \u2192 NEGATIVE (NEGATIVE)).",
+    "recommendation": "Augment training data and regularize behavior against negation_insertion perturbations to fix Spurious failures.",
+    "evidence": {
+      "original_label": "POSITIVE",
+      "probe_label": "NEGATIVE",
+      "original_confidence": 0.9868576466901463,
+      "probe_confidence": 0.8260568591739582,
+      "confidence_delta_pp": -16.08007875161881,
+      "label_transition": "POSITIVE (POSITIVE) \u2192 NEGATIVE (NEGATIVE)",
+      "raw_label_flip": true,
+      "polarity_flip": true,
+      "semantic_state_change": true,
+      "is_prediction_flip": true,
+      "original_polarity": "POSITIVE",
+      "probe_polarity": "NEGATIVE",
+      "target_polarity": "POSITIVE",
+      "ground_truth_match": false,
+      "observed_behavior": "FLIP",
+      "expected_behavior": "PRESERVE",
+      "expected_relation": "SAME_POLARITY",
+      "observed_relation": "POLARITY_REVERSED",
+      "expected_effect": "EXPECTED_PRESERVE",
+      "semantic_intent": "PRESERVE_POLARITY",
+      "threshold_pp": 15.0,
+      "behavioral_conformance": false,
+      "expectation_satisfied": false,
+      "unexpected_behavior": true,
+      "expectation_match": false,
+      "preservation": false,
+      "jaccard_similarity": 0.42857142857142855,
+      "cosine_alignment": -0.13210904015859753,
+      "orig_explanation": {
+        "token_weights": {
+          "was": 0.0009589354139401779,
+          "and": 0.06592704405607239,
+          "thrilling": -0.04211590454611129,
+          "fantastic": 0.08224060894007906,
+          "absolutely": -0.021765609829570515,
+          "movie": 0.010942235446888497,
+          "The": 0.007667948365725857
+        },
+        "token_attributions": [
+          {
+            "token": "was",
+            "attribution": 0.0009589354139401779,
+            "position": 1
+          },
+          {
+            "token": "and",
+            "attribution": 0.06592704405607239,
+            "position": 2
+          },
+          {
+            "token": "thrilling",
+            "attribution": -0.04211590454611129,
+            "position": 3
+          },
+          {
+            "token": "fantastic",
+            "attribution": 0.08224060894007906,
+            "position": 4
+          },
+          {
+            "token": "absolutely",
+            "attribution": -0.021765609829570515,
+            "position": 5
+          },
+          {
+            "token": "movie",
+            "attribution": 0.010942235446888497,
+            "position": 6
+          },
+          {
+            "token": "The",
+            "attribution": 0.007667948365725857,
+            "position": 7
+          }
+        ],
+        "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+        "text": "The movie was absolutely fantastic and thrilling.",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "pert_explanation": {
+        "token_weights": {
+          "was": -0.023754297453193737,
+          "and": -0.08502962696248459,
+          "thrilling": -0.028802945925849477,
+          "fantastic": -0.014641028656774656,
+          "absolutely": 0.007326452843380467,
+          "movie": 0.03165935867926112,
+          "The": -0.006806888184594659,
+          "not": 0.34262448873260587
+        },
+        "token_attributions": [
+          {
+            "token": "was",
+            "attribution": -0.023754297453193737,
+            "position": 1
+          },
+          {
+            "token": "and",
+            "attribution": -0.08502962696248459,
+            "position": 2
+          },
+          {
+            "token": "thrilling",
+            "attribution": -0.028802945925849477,
+            "position": 3
+          },
+          {
+            "token": "fantastic",
+            "attribution": -0.014641028656774656,
+            "position": 4
+          },
+          {
+            "token": "absolutely",
+            "attribution": 0.007326452843380467,
+            "position": 5
+          },
+          {
+            "token": "movie",
+            "attribution": 0.03165935867926112,
+            "position": 6
+          },
+          {
+            "token": "The",
+            "attribution": -0.006806888184594659,
+            "position": 7
+          },
+          {
+            "token": "not",
+            "attribution": 0.34262448873260587,
+            "position": 8
+          }
+        ],
+        "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+        "text": "The movie was not absolutely fantastic and thrilling.",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "aligned_tokens": [
+        {
+          "token": "was",
+          "orig_token": "was",
+          "pert_token": "was",
+          "orig_pos": 1,
+          "pert_pos": 1,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.0009589354139401779,
+          "pert_val": -0.023754297453193737,
+          "delta": -0.024713232867133915,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "and",
+          "orig_token": "and",
+          "pert_token": "and",
+          "orig_pos": 2,
+          "pert_pos": 2,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.06592704405607239,
+          "pert_val": -0.08502962696248459,
+          "delta": -0.15095667101855698,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": true
+        },
+        {
+          "token": "thrilling",
+          "orig_token": "thrilling",
+          "pert_token": "thrilling",
+          "orig_pos": 3,
+          "pert_pos": 3,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.04211590454611129,
+          "pert_val": -0.028802945925849477,
+          "delta": 0.013312958620261814,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "fantastic",
+          "orig_token": "fantastic",
+          "pert_token": "fantastic",
+          "orig_pos": 4,
+          "pert_pos": 4,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.08224060894007906,
+          "pert_val": -0.014641028656774656,
+          "delta": -0.09688163759685373,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "absolutely",
+          "orig_token": "absolutely",
+          "pert_token": "absolutely",
+          "orig_pos": 5,
+          "pert_pos": 5,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.021765609829570515,
+          "pert_val": 0.007326452843380467,
+          "delta": 0.02909206267295098,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "movie",
+          "orig_token": "movie",
+          "pert_token": "movie",
+          "orig_pos": 6,
+          "pert_pos": 6,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.010942235446888497,
+          "pert_val": 0.03165935867926112,
+          "delta": 0.02071712323237262,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "The",
+          "orig_token": "The",
+          "pert_token": "The",
+          "orig_pos": 7,
+          "pert_pos": 7,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.007667948365725857,
+          "pert_val": -0.006806888184594659,
+          "delta": -0.014474836550320516,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "not",
+          "orig_token": null,
+          "pert_token": "not",
+          "orig_pos": null,
+          "pert_pos": 8,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.34262448873260587,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        }
+      ]
+    },
+    "traceable_narrative": "The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (POSITIVE (POSITIVE) \u2192 NEGATIVE (NEGATIVE)).",
+    "original_sentence": "The movie was absolutely fantastic and thrilling.",
+    "perturbed_sentence": "The movie was not absolutely fantastic and thrilling.",
+    "original_label": "POSITIVE",
+    "perturbed_label": "NEGATIVE",
+    "original_confidence": 0.9868576466901463,
+    "perturbed_confidence": 0.8260568591739582,
+    "confidence_delta_pts": -16.08007875161881,
+    "is_flipped": true,
+    "expected_flip": false,
+    "behavioral_outcome": "UNEXPECTED_FLIP"
+  }
+]

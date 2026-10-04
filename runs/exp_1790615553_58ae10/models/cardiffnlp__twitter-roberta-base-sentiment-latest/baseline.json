@@ -1,0 +1,85 @@
+{
+  "The new security system is extremely reliable and protects users from dangerous attacks": {
+    "baseline_id": "base_a2bccba536fc",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "seed_text": "The new security system is extremely reliable and protects users from dangerous attacks",
+    "original_text": "The new security system is extremely reliable and protects users from dangerous attacks",
+    "sentence_type": "literal",
+    "prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.7663348584888471,
+      "formatted_confidence": "76.63%",
+      "probabilities": {
+        "NEGATIVE": 0.016418961104683383,
+        "NEUTRAL": 0.21724618040646956,
+        "POSITIVE": 0.7663348584888471
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "1.64%",
+        "NEUTRAL": "21.72%",
+        "POSITIVE": "76.63%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   1.64%\nNEUTRAL    [====                ]  21.72%\nPOSITIVE   [===============     ]  76.63%",
+      "raw_logits": null,
+      "latency_ms": 1264.782300000661,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "positive",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "negative": 0.016418961104683383,
+        "neutral": 0.21724618040646956,
+        "positive": 0.7663348584888471
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "raw_label": "positive",
+    "raw_label_id": 2,
+    "semantic_polarity": "POSITIVE",
+    "confidence": 0.7663348584888471,
+    "full_probability_distribution": {
+      "NEGATIVE": 0.016418961104683383,
+      "NEUTRAL": 0.21724618040646956,
+      "POSITIVE": 0.7663348584888471
+    },
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "POSITIVE",
+    "semantic_reference": {
+      "sentence_id": "baseline",
+      "sentence_text": "The new security system is extremely reliable and protects users from dangerous attacks",
+      "semantic_polarity": "POSITIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Positive affective orientation (compound score: +0.31).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": null,
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790614462.622591,
+      "prompt_version": "v2.0"
+    },
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "latency_ms": 1264.782300000661
+  }
+}

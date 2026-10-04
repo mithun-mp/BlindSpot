@@ -1,0 +1,1885 @@
+[
+  {
+    "baseline_id": "base_8cea2db9a829",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_6e8149c6f61d",
+    "seed_text": "The movie was great and the acting was top notch.",
+    "perturbed_text": "The movie was not great and the acting was top notch.",
+    "perturbation_type": "negation_insertion",
+    "category": "negation_insertion",
+    "expected_flip": true,
+    "expected_semantic_effect": "EXPECTED_FLIP",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9861739708565813,
+      "formatted_confidence": "98.62%",
+      "probabilities": {
+        "NEGATIVE": 0.0021729515501175745,
+        "NEUTRAL": 0.011653077593301054,
+        "POSITIVE": 0.9861739708565813
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.22%",
+        "NEUTRAL": "1.17%",
+        "POSITIVE": "98.62%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.22%\nNEUTRAL    [                    ]   1.17%\nPOSITIVE   [====================]  98.62%",
+      "raw_logits": null,
+      "latency_ms": 45.95079999126028,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0021729515501175745,
+        "LABEL_1": 0.011653077593301054,
+        "LABEL_2": 0.9861739708565813
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9107388238704205,
+      "formatted_confidence": "91.07%",
+      "probabilities": {
+        "NEGATIVE": 0.9107388238704205,
+        "NEUTRAL": 0.07899821304891118,
+        "POSITIVE": 0.010262963080668347
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "91.07%",
+        "NEUTRAL": "7.90%",
+        "POSITIVE": "1.03%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [==================  ]  91.07%\nNEUTRAL    [==                  ]   7.90%\nPOSITIVE   [                    ]   1.03%",
+      "raw_logits": null,
+      "latency_ms": 18.471228572057694,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.9107388238704205,
+        "LABEL_1": 0.07899821304891118,
+        "LABEL_2": 0.010262963080668347
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9861739708565813,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.9107388238704205,
+    "from_label": "POSITIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "POSITIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_6e8149c6f61d",
+      "sentence_text": "The movie was not great and the acting was top notch.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.45,
+      "reason": "Mixed sentiment: 'not great' lowers positivity, but 'acting was top notch' keeps overall nuance mixed/leaning slightly positive.",
+      "ambiguity": "HIGH",
+      "semantic_relation_to_baseline": "REVERSE_POLARITY",
+      "verification_status": "HUMAN_OVERRIDDEN",
+      "provider": "MANUAL",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.45,
+      "human_verified_polarity": "NEGATIVE",
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_OVERRIDE",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790935084.7167656,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.35,
+      "neutral_probability": 0.2,
+      "positive_probability": 0.45,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.35,
+        "neutral_probability": 0.2,
+        "positive_probability": 0.45,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.35,
+        "positive_probability": 0.45,
+        "neutral_probability_excluded": 0.2,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Strong positive sentiment expressed for both movie and acting.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_6e8149c6f61d",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.35,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.45,
+            "reason_short": "Mixed sentiment: 'not great' lowers positivity, but 'acting was top notch' keeps overall nuance mixed/leaning slightly positive.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_93a8a314162b",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation/epistemic modality preserves a generally favorable undertone.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_655b09534fa8",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.02,
+            "positive_probability": 0.97,
+            "reason_short": "Amplified positive sentiment with intensifier 'extremely'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ad69074f6902",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.02,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.83,
+            "reason_short": "Mildly moderated positive sentiment using 'somewhat'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0bcfcb23a772",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Synonymous phrasing preserving strong positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_063fe37511e1",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.8,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.1,
+            "reason_short": "Adversarial conjunction 'however' introduces a strongly negative concluding evaluation.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1fa8d2280eef",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.03,
+            "positive_probability": 0.96,
+            "reason_short": "Addition of another positive clause reinforces the positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": true,
+    "semantic_state_change": true,
+    "confidence_delta": -0.07543514698616083,
+    "confidence_delta_pts": -7.543514698616082,
+    "confidence_delta_pp": -7.543514698616082,
+    "formatted_confidence_delta": "-7.54 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": false,
+    "expected_relation": "POLARITY_REVERSED",
+    "observed_relation": "POLARITY_REVERSED",
+    "behavioral_outcome": "EXPECTED_FLIP",
+    "failure_type": "None",
+    "rationale": "Model correctly flipped and changed label (POSITIVE (POSITIVE) \u2192 NEGATIVE (NEGATIVE)) under DIFFERENT_LABEL expectation.",
+    "semantic_intent": "REVERSE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 18.471228572057694,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_8cea2db9a829",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_93a8a314162b",
+    "seed_text": "The movie was great and the acting was top notch.",
+    "perturbed_text": "It is not impossible that the movie was great and the acting was top notch.",
+    "perturbation_type": "double_negation",
+    "category": "double_negation",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9861739708565813,
+      "formatted_confidence": "98.62%",
+      "probabilities": {
+        "NEGATIVE": 0.0021729515501175745,
+        "NEUTRAL": 0.011653077593301054,
+        "POSITIVE": 0.9861739708565813
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.22%",
+        "NEUTRAL": "1.17%",
+        "POSITIVE": "98.62%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.22%\nNEUTRAL    [                    ]   1.17%\nPOSITIVE   [====================]  98.62%",
+      "raw_logits": null,
+      "latency_ms": 45.95079999126028,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0021729515501175745,
+        "LABEL_1": 0.011653077593301054,
+        "LABEL_2": 0.9861739708565813
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9653004927513616,
+      "formatted_confidence": "96.53%",
+      "probabilities": {
+        "NEGATIVE": 0.004406683577730497,
+        "NEUTRAL": 0.030292823670907878,
+        "POSITIVE": 0.9653004927513616
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.44%",
+        "NEUTRAL": "3.03%",
+        "POSITIVE": "96.53%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.44%\nNEUTRAL    [=                   ]   3.03%\nPOSITIVE   [=================== ]  96.53%",
+      "raw_logits": null,
+      "latency_ms": 18.471228572057694,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.004406683577730497,
+        "LABEL_1": 0.030292823670907878,
+        "LABEL_2": 0.9653004927513616
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9861739708565813,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9653004927513616,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_93a8a314162b",
+      "sentence_text": "It is not impossible that the movie was great and the acting was top notch.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.6,
+      "reason": "Double negation/epistemic modality preserves a generally favorable undertone.",
+      "ambiguity": "MEDIUM",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.6,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790935084.7168076,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.05,
+      "neutral_probability": 0.35,
+      "positive_probability": 0.6,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "neutral_probability": 0.35,
+        "positive_probability": 0.6,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "positive_probability": 0.6,
+        "neutral_probability_excluded": 0.35,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Strong positive sentiment expressed for both movie and acting.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_6e8149c6f61d",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.35,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.45,
+            "reason_short": "Mixed sentiment: 'not great' lowers positivity, but 'acting was top notch' keeps overall nuance mixed/leaning slightly positive.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_93a8a314162b",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation/epistemic modality preserves a generally favorable undertone.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_655b09534fa8",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.02,
+            "positive_probability": 0.97,
+            "reason_short": "Amplified positive sentiment with intensifier 'extremely'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ad69074f6902",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.02,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.83,
+            "reason_short": "Mildly moderated positive sentiment using 'somewhat'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0bcfcb23a772",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Synonymous phrasing preserving strong positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_063fe37511e1",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.8,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.1,
+            "reason_short": "Adversarial conjunction 'however' introduces a strongly negative concluding evaluation.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1fa8d2280eef",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.03,
+            "positive_probability": 0.96,
+            "reason_short": "Addition of another positive clause reinforces the positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.020873478105219667,
+    "confidence_delta_pts": -2.0873478105219667,
+    "confidence_delta_pp": -2.0873478105219667,
+    "formatted_confidence_delta": "-2.09 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 18.471228572057694,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_8cea2db9a829",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_655b09534fa8",
+    "seed_text": "The movie was great and the acting was top notch.",
+    "perturbed_text": "The movie was extremely great and the acting was top notch.",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9861739708565813,
+      "formatted_confidence": "98.62%",
+      "probabilities": {
+        "NEGATIVE": 0.0021729515501175745,
+        "NEUTRAL": 0.011653077593301054,
+        "POSITIVE": 0.9861739708565813
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.22%",
+        "NEUTRAL": "1.17%",
+        "POSITIVE": "98.62%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.22%\nNEUTRAL    [                    ]   1.17%\nPOSITIVE   [====================]  98.62%",
+      "raw_logits": null,
+      "latency_ms": 45.95079999126028,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0021729515501175745,
+        "LABEL_1": 0.011653077593301054,
+        "LABEL_2": 0.9861739708565813
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9886097530527042,
+      "formatted_confidence": "98.86%",
+      "probabilities": {
+        "NEGATIVE": 0.002010056672233787,
+        "NEUTRAL": 0.00938019027506206,
+        "POSITIVE": 0.9886097530527042
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.20%",
+        "NEUTRAL": "0.94%",
+        "POSITIVE": "98.86%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.20%\nNEUTRAL    [                    ]   0.94%\nPOSITIVE   [====================]  98.86%",
+      "raw_logits": null,
+      "latency_ms": 18.471228572057694,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.002010056672233787,
+        "LABEL_1": 0.00938019027506206,
+        "LABEL_2": 0.9886097530527042
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9861739708565813,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9886097530527042,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_655b09534fa8",
+      "sentence_text": "The movie was extremely great and the acting was top notch.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.97,
+      "reason": "Amplified positive sentiment with intensifier 'extremely'.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.97,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790935084.7168384,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.01,
+      "neutral_probability": 0.02,
+      "positive_probability": 0.97,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.01,
+        "neutral_probability": 0.02,
+        "positive_probability": 0.97,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.01,
+        "positive_probability": 0.97,
+        "neutral_probability_excluded": 0.02,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Strong positive sentiment expressed for both movie and acting.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_6e8149c6f61d",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.35,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.45,
+            "reason_short": "Mixed sentiment: 'not great' lowers positivity, but 'acting was top notch' keeps overall nuance mixed/leaning slightly positive.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_93a8a314162b",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation/epistemic modality preserves a generally favorable undertone.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_655b09534fa8",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.02,
+            "positive_probability": 0.97,
+            "reason_short": "Amplified positive sentiment with intensifier 'extremely'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ad69074f6902",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.02,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.83,
+            "reason_short": "Mildly moderated positive sentiment using 'somewhat'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0bcfcb23a772",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Synonymous phrasing preserving strong positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_063fe37511e1",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.8,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.1,
+            "reason_short": "Adversarial conjunction 'however' introduces a strongly negative concluding evaluation.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1fa8d2280eef",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.03,
+            "positive_probability": 0.96,
+            "reason_short": "Addition of another positive clause reinforces the positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.0024357821961228376,
+    "confidence_delta_pts": 0.24357821961228376,
+    "confidence_delta_pp": 0.24357821961228376,
+    "formatted_confidence_delta": "+0.24 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 18.471228572057694,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_8cea2db9a829",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_ad69074f6902",
+    "seed_text": "The movie was great and the acting was top notch.",
+    "perturbed_text": "The movie was somewhat great and the acting was top notch.",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9861739708565813,
+      "formatted_confidence": "98.62%",
+      "probabilities": {
+        "NEGATIVE": 0.0021729515501175745,
+        "NEUTRAL": 0.011653077593301054,
+        "POSITIVE": 0.9861739708565813
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.22%",
+        "NEUTRAL": "1.17%",
+        "POSITIVE": "98.62%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.22%\nNEUTRAL    [                    ]   1.17%\nPOSITIVE   [====================]  98.62%",
+      "raw_logits": null,
+      "latency_ms": 45.95079999126028,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0021729515501175745,
+        "LABEL_1": 0.011653077593301054,
+        "LABEL_2": 0.9861739708565813
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9832951431084868,
+      "formatted_confidence": "98.33%",
+      "probabilities": {
+        "NEGATIVE": 0.0016322801828534716,
+        "NEUTRAL": 0.015072576708659798,
+        "POSITIVE": 0.9832951431084868
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.16%",
+        "NEUTRAL": "1.51%",
+        "POSITIVE": "98.33%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.16%\nNEUTRAL    [                    ]   1.51%\nPOSITIVE   [====================]  98.33%",
+      "raw_logits": null,
+      "latency_ms": 18.471228572057694,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0016322801828534716,
+        "LABEL_1": 0.015072576708659798,
+        "LABEL_2": 0.9832951431084868
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9861739708565813,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9832951431084868,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_ad69074f6902",
+      "sentence_text": "The movie was somewhat great and the acting was top notch.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.83,
+      "reason": "Mildly moderated positive sentiment using 'somewhat'.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.83,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790935084.7168696,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.02,
+      "neutral_probability": 0.15,
+      "positive_probability": 0.83,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.02,
+        "neutral_probability": 0.15,
+        "positive_probability": 0.83,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.02,
+        "positive_probability": 0.83,
+        "neutral_probability_excluded": 0.15,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Strong positive sentiment expressed for both movie and acting.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_6e8149c6f61d",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.35,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.45,
+            "reason_short": "Mixed sentiment: 'not great' lowers positivity, but 'acting was top notch' keeps overall nuance mixed/leaning slightly positive.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_93a8a314162b",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation/epistemic modality preserves a generally favorable undertone.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_655b09534fa8",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.02,
+            "positive_probability": 0.97,
+            "reason_short": "Amplified positive sentiment with intensifier 'extremely'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ad69074f6902",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.02,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.83,
+            "reason_short": "Mildly moderated positive sentiment using 'somewhat'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0bcfcb23a772",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Synonymous phrasing preserving strong positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_063fe37511e1",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.8,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.1,
+            "reason_short": "Adversarial conjunction 'however' introduces a strongly negative concluding evaluation.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1fa8d2280eef",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.03,
+            "positive_probability": 0.96,
+            "reason_short": "Addition of another positive clause reinforces the positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.002878827748094559,
+    "confidence_delta_pts": -0.2878827748094559,
+    "confidence_delta_pp": -0.2878827748094559,
+    "formatted_confidence_delta": "-0.29 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 18.471228572057694,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_8cea2db9a829",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_0bcfcb23a772",
+    "seed_text": "The movie was great and the acting was top notch.",
+    "perturbed_text": "The film was great and the acting was top notch.",
+    "perturbation_type": "synonym_substitution",
+    "category": "synonym_substitution",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9861739708565813,
+      "formatted_confidence": "98.62%",
+      "probabilities": {
+        "NEGATIVE": 0.0021729515501175745,
+        "NEUTRAL": 0.011653077593301054,
+        "POSITIVE": 0.9861739708565813
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.22%",
+        "NEUTRAL": "1.17%",
+        "POSITIVE": "98.62%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.22%\nNEUTRAL    [                    ]   1.17%\nPOSITIVE   [====================]  98.62%",
+      "raw_logits": null,
+      "latency_ms": 45.95079999126028,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0021729515501175745,
+        "LABEL_1": 0.011653077593301054,
+        "LABEL_2": 0.9861739708565813
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9849865241843838,
+      "formatted_confidence": "98.50%",
+      "probabilities": {
+        "NEGATIVE": 0.0021099321006886004,
+        "NEUTRAL": 0.012903543714927544,
+        "POSITIVE": 0.9849865241843838
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.21%",
+        "NEUTRAL": "1.29%",
+        "POSITIVE": "98.50%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.21%\nNEUTRAL    [                    ]   1.29%\nPOSITIVE   [====================]  98.50%",
+      "raw_logits": null,
+      "latency_ms": 18.471228572057694,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0021099321006886004,
+        "LABEL_1": 0.012903543714927544,
+        "LABEL_2": 0.9849865241843838
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9861739708565813,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9849865241843838,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_0bcfcb23a772",
+      "sentence_text": "The film was great and the acting was top notch.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.95,
+      "reason": "Synonymous phrasing preserving strong positive sentiment.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.95,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790935084.716904,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.01,
+      "neutral_probability": 0.04,
+      "positive_probability": 0.95,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.01,
+        "neutral_probability": 0.04,
+        "positive_probability": 0.95,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.01,
+        "positive_probability": 0.95,
+        "neutral_probability_excluded": 0.04,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Strong positive sentiment expressed for both movie and acting.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_6e8149c6f61d",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.35,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.45,
+            "reason_short": "Mixed sentiment: 'not great' lowers positivity, but 'acting was top notch' keeps overall nuance mixed/leaning slightly positive.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_93a8a314162b",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation/epistemic modality preserves a generally favorable undertone.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_655b09534fa8",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.02,
+            "positive_probability": 0.97,
+            "reason_short": "Amplified positive sentiment with intensifier 'extremely'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ad69074f6902",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.02,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.83,
+            "reason_short": "Mildly moderated positive sentiment using 'somewhat'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0bcfcb23a772",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Synonymous phrasing preserving strong positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_063fe37511e1",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.8,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.1,
+            "reason_short": "Adversarial conjunction 'however' introduces a strongly negative concluding evaluation.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1fa8d2280eef",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.03,
+            "positive_probability": 0.96,
+            "reason_short": "Addition of another positive clause reinforces the positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.0011874466721975008,
+    "confidence_delta_pts": -0.11874466721975008,
+    "confidence_delta_pp": -0.11874466721975008,
+    "formatted_confidence_delta": "-0.12 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 18.471228572057694,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_8cea2db9a829",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_063fe37511e1",
+    "seed_text": "The movie was great and the acting was top notch.",
+    "perturbed_text": "The movie was great and the acting was top notch, however it was surprisingly bad in comparison.",
+    "perturbation_type": "contrast_negative_append",
+    "category": "contrast_negative_append",
+    "expected_flip": true,
+    "expected_semantic_effect": "EXPECTED_FLIP",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9861739708565813,
+      "formatted_confidence": "98.62%",
+      "probabilities": {
+        "NEGATIVE": 0.0021729515501175745,
+        "NEUTRAL": 0.011653077593301054,
+        "POSITIVE": 0.9861739708565813
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.22%",
+        "NEUTRAL": "1.17%",
+        "POSITIVE": "98.62%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.22%\nNEUTRAL    [                    ]   1.17%\nPOSITIVE   [====================]  98.62%",
+      "raw_logits": null,
+      "latency_ms": 45.95079999126028,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0021729515501175745,
+        "LABEL_1": 0.011653077593301054,
+        "LABEL_2": 0.9861739708565813
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.4155784423476922,
+      "formatted_confidence": "41.56%",
+      "probabilities": {
+        "NEGATIVE": 0.2702178874546919,
+        "NEUTRAL": 0.3142036701976159,
+        "POSITIVE": 0.4155784423476922
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "27.02%",
+        "NEUTRAL": "31.42%",
+        "POSITIVE": "41.56%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=====               ]  27.02%\nNEUTRAL    [======              ]  31.42%\nPOSITIVE   [========            ]  41.56%",
+      "raw_logits": null,
+      "latency_ms": 18.471228572057694,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.2702178874546919,
+        "LABEL_1": 0.3142036701976159,
+        "LABEL_2": 0.4155784423476922
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9861739708565813,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.4155784423476922,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_063fe37511e1",
+      "sentence_text": "The movie was great and the acting was top notch, however it was surprisingly bad in comparison.",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": 0.8,
+      "reason": "Adversarial conjunction 'however' introduces a strongly negative concluding evaluation.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "REVERSE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEGATIVE",
+      "gemini_confidence": 0.8,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790935084.7169378,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.8,
+      "neutral_probability": 0.1,
+      "positive_probability": 0.1,
+      "reference_class_count": 3,
+      "reference_label": "NEGATIVE",
+      "three_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.8,
+        "neutral_probability": 0.1,
+        "positive_probability": 0.1,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.8,
+        "positive_probability": 0.1,
+        "neutral_probability_excluded": 0.1,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "NEGATIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Strong positive sentiment expressed for both movie and acting.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_6e8149c6f61d",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.35,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.45,
+            "reason_short": "Mixed sentiment: 'not great' lowers positivity, but 'acting was top notch' keeps overall nuance mixed/leaning slightly positive.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_93a8a314162b",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation/epistemic modality preserves a generally favorable undertone.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_655b09534fa8",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.02,
+            "positive_probability": 0.97,
+            "reason_short": "Amplified positive sentiment with intensifier 'extremely'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ad69074f6902",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.02,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.83,
+            "reason_short": "Mildly moderated positive sentiment using 'somewhat'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0bcfcb23a772",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Synonymous phrasing preserving strong positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_063fe37511e1",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.8,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.1,
+            "reason_short": "Adversarial conjunction 'however' introduces a strongly negative concluding evaluation.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1fa8d2280eef",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.03,
+            "positive_probability": 0.96,
+            "reason_short": "Addition of another positive clause reinforces the positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.5705955285088891,
+    "confidence_delta_pts": -57.059552850888906,
+    "confidence_delta_pp": -57.059552850888906,
+    "formatted_confidence_delta": "-57.06 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": true,
+    "expected_relation": "POLARITY_REVERSED",
+    "observed_relation": "POLARITY_WEAKENED",
+    "behavioral_outcome": "MISSING_FLIP",
+    "failure_type": "Blind",
+    "rationale": "Model failed to produce expected polarity reversal and showed negligible attribution to linguistic operator 'however' (LIME: +0.0000, SHAP: +0.0063 < 0.05).",
+    "semantic_intent": "REVERSE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 18.471228572057694,
+    "ground_truth_match": false
+  },
+  {
+    "baseline_id": "base_8cea2db9a829",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_1fa8d2280eef",
+    "seed_text": "The movie was great and the acting was top notch.",
+    "perturbed_text": "The movie was great and the acting was top notch, and the overall storyline was engaging.",
+    "perturbation_type": "contrast_positive_append",
+    "category": "contrast_positive_append",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9861739708565813,
+      "formatted_confidence": "98.62%",
+      "probabilities": {
+        "NEGATIVE": 0.0021729515501175745,
+        "NEUTRAL": 0.011653077593301054,
+        "POSITIVE": 0.9861739708565813
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.22%",
+        "NEUTRAL": "1.17%",
+        "POSITIVE": "98.62%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.22%\nNEUTRAL    [                    ]   1.17%\nPOSITIVE   [====================]  98.62%",
+      "raw_logits": null,
+      "latency_ms": 45.95079999126028,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0021729515501175745,
+        "LABEL_1": 0.011653077593301054,
+        "LABEL_2": 0.9861739708565813
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9886801603083604,
+      "formatted_confidence": "98.87%",
+      "probabilities": {
+        "NEGATIVE": 0.0014593563341510636,
+        "NEUTRAL": 0.009860483357488561,
+        "POSITIVE": 0.9886801603083604
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.15%",
+        "NEUTRAL": "0.99%",
+        "POSITIVE": "98.87%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.15%\nNEUTRAL    [                    ]   0.99%\nPOSITIVE   [====================]  98.87%",
+      "raw_logits": null,
+      "latency_ms": 18.471228572057694,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0014593563341510636,
+        "LABEL_1": 0.009860483357488561,
+        "LABEL_2": 0.9886801603083604
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9861739708565813,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9886801603083604,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_1fa8d2280eef",
+      "sentence_text": "The movie was great and the acting was top notch, and the overall storyline was engaging.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.96,
+      "reason": "Addition of another positive clause reinforces the positive sentiment.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.96,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790935084.7169719,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.01,
+      "neutral_probability": 0.03,
+      "positive_probability": 0.96,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.01,
+        "neutral_probability": 0.03,
+        "positive_probability": 0.96,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.01,
+        "positive_probability": 0.96,
+        "neutral_probability_excluded": 0.03,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Strong positive sentiment expressed for both movie and acting.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_6e8149c6f61d",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.35,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.45,
+            "reason_short": "Mixed sentiment: 'not great' lowers positivity, but 'acting was top notch' keeps overall nuance mixed/leaning slightly positive.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_93a8a314162b",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation/epistemic modality preserves a generally favorable undertone.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_655b09534fa8",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.02,
+            "positive_probability": 0.97,
+            "reason_short": "Amplified positive sentiment with intensifier 'extremely'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ad69074f6902",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.02,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.83,
+            "reason_short": "Mildly moderated positive sentiment using 'somewhat'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0bcfcb23a772",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Synonymous phrasing preserving strong positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_063fe37511e1",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.8,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.1,
+            "reason_short": "Adversarial conjunction 'however' introduces a strongly negative concluding evaluation.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1fa8d2280eef",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.03,
+            "positive_probability": 0.96,
+            "reason_short": "Addition of another positive clause reinforces the positive sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.0025061894517790506,
+    "confidence_delta_pts": 0.25061894517790506,
+    "confidence_delta_pp": 0.25061894517790506,
+    "formatted_confidence_delta": "+0.25 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 18.471228572057694,
+    "ground_truth_match": true
+  }
+]

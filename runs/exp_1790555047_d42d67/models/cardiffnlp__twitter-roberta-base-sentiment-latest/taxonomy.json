@@ -1,0 +1,536 @@
+[
+  {
+    "failure_id": "fail_7f806f57",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_063fe37511e1",
+    "category": "Blind",
+    "severity": "high",
+    "reason": "Probe introduces a polarity reversal (REVERSE_POLARITY), but model retained the same predicted class and polarity (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)).",
+    "details": "Probe introduces a polarity reversal (REVERSE_POLARITY), but model retained the same predicted class and polarity (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)).",
+    "recommendation": "Augment training data and regularize behavior against contrast_negative_append perturbations to fix Blind failures.",
+    "evidence": {
+      "original_label": "POSITIVE",
+      "probe_label": "POSITIVE",
+      "original_confidence": 0.9870492090403543,
+      "probe_confidence": 0.625612804675293,
+      "confidence_delta_pp": -36.14364043650613,
+      "label_transition": "POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)",
+      "raw_label_flip": false,
+      "polarity_flip": false,
+      "semantic_state_change": false,
+      "is_prediction_flip": false,
+      "original_polarity": "POSITIVE",
+      "probe_polarity": "POSITIVE",
+      "expected_relation": "POLARITY_REVERSED",
+      "observed_relation": "POLARITY_WEAKENED",
+      "expected_effect": "EXPECTED_FLIP",
+      "semantic_intent": "REVERSE_POLARITY",
+      "threshold_pp": 15.0,
+      "expectation_match": false,
+      "preservation": true,
+      "jaccard_similarity": 0.1111111111111111,
+      "cosine_alignment": -0.49242985894603253,
+      "orig_explanation": {
+        "token_weights": {
+          "notch.": 0.0008826764143668453,
+          "acting": -0.03819339819675559,
+          "The": -0.037880839327206296,
+          "and": -0.004856421659534155,
+          "the": -0.01702069595464028,
+          "top": -0.03266713293241535,
+          "notch": -0.055648546322340585,
+          "movie": -0.003517191562632375,
+          "great": -0.0916782365612899,
+          "was": -0.040364344407342136
+        },
+        "token_attributions": [
+          {
+            "token": "notch.",
+            "attribution": 0.0008826764143668453,
+            "position": 1
+          },
+          {
+            "token": "acting",
+            "attribution": -0.03819339819675559,
+            "position": 2
+          },
+          {
+            "token": "The",
+            "attribution": -0.037880839327206296,
+            "position": 3
+          },
+          {
+            "token": "and",
+            "attribution": -0.004856421659534155,
+            "position": 4
+          },
+          {
+            "token": "the",
+            "attribution": -0.01702069595464028,
+            "position": 5
+          },
+          {
+            "token": "top",
+            "attribution": -0.03266713293241535,
+            "position": 6
+          },
+          {
+            "token": "notch",
+            "attribution": -0.055648546322340585,
+            "position": 7
+          },
+          {
+            "token": "movie",
+            "attribution": -0.003517191562632375,
+            "position": 8
+          },
+          {
+            "token": "great",
+            "attribution": -0.0916782365612899,
+            "position": 9
+          },
+          {
+            "token": "was",
+            "attribution": -0.040364344407342136,
+            "position": 10
+          }
+        ],
+        "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+        "text": "The movie was great and the acting was top notch.",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "pert_explanation": {
+        "token_weights": {
+          "in": -0.08057853064118647,
+          "it": -0.1006316030918562,
+          "acting": 0.05001959955743801,
+          "notch,": 0.06858421600404069,
+          "comparison.": -0.041407597089674564,
+          "and": 0.007245719846071232,
+          "bad": -0.15194622235650765,
+          "the": 0.025122726301576987,
+          "however": -0.1110188124213344,
+          "top": 0.049418731127511016,
+          "notch": -0.023272076361537792,
+          "The": 0.045252111221813884,
+          "movie": 0.10634463357297605,
+          "great": 0.1746895473144877,
+          "was": 0.01896233270542247,
+          "surprisingly": -0.034852615197052544
+        },
+        "token_attributions": [
+          {
+            "token": "in",
+            "attribution": -0.08057853064118647,
+            "position": 1
+          },
+          {
+            "token": "it",
+            "attribution": -0.1006316030918562,
+            "position": 2
+          },
+          {
+            "token": "acting",
+            "attribution": 0.05001959955743801,
+            "position": 3
+          },
+          {
+            "token": "notch,",
+            "attribution": 0.06858421600404069,
+            "position": 4
+          },
+          {
+            "token": "comparison.",
+            "attribution": -0.041407597089674564,
+            "position": 5
+          },
+          {
+            "token": "and",
+            "attribution": 0.007245719846071232,
+            "position": 6
+          },
+          {
+            "token": "bad",
+            "attribution": -0.15194622235650765,
+            "position": 7
+          },
+          {
+            "token": "the",
+            "attribution": 0.025122726301576987,
+            "position": 8
+          },
+          {
+            "token": "however",
+            "attribution": -0.1110188124213344,
+            "position": 9
+          },
+          {
+            "token": "top",
+            "attribution": 0.049418731127511016,
+            "position": 10
+          },
+          {
+            "token": "notch",
+            "attribution": -0.023272076361537792,
+            "position": 11
+          },
+          {
+            "token": "The",
+            "attribution": 0.045252111221813884,
+            "position": 12
+          },
+          {
+            "token": "movie",
+            "attribution": 0.10634463357297605,
+            "position": 13
+          },
+          {
+            "token": "great",
+            "attribution": 0.1746895473144877,
+            "position": 14
+          },
+          {
+            "token": "was",
+            "attribution": 0.01896233270542247,
+            "position": 15
+          },
+          {
+            "token": "surprisingly",
+            "attribution": -0.034852615197052544,
+            "position": 16
+          }
+        ],
+        "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+        "text": "The movie was great and the acting was top notch, however it was surprisingly bad in comparison.",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "aligned_tokens": [
+        {
+          "token": "notch.",
+          "orig_token": "notch.",
+          "pert_token": null,
+          "orig_pos": 1,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": 0.0008826764143668453,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "in",
+          "orig_token": null,
+          "pert_token": "in",
+          "orig_pos": null,
+          "pert_pos": 1,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.08057853064118647,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "it",
+          "orig_token": null,
+          "pert_token": "it",
+          "orig_pos": null,
+          "pert_pos": 2,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.1006316030918562,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "acting",
+          "orig_token": "acting",
+          "pert_token": "acting",
+          "orig_pos": 2,
+          "pert_pos": 3,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.03819339819675559,
+          "pert_val": 0.05001959955743801,
+          "delta": 0.0882129977541936,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "notch,",
+          "orig_token": null,
+          "pert_token": "notch,",
+          "orig_pos": null,
+          "pert_pos": 4,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.06858421600404069,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "comparison.",
+          "orig_token": null,
+          "pert_token": "comparison.",
+          "orig_pos": null,
+          "pert_pos": 5,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.041407597089674564,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "and",
+          "orig_token": null,
+          "pert_token": "and",
+          "orig_pos": null,
+          "pert_pos": 6,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.007245719846071232,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "bad",
+          "orig_token": null,
+          "pert_token": "bad",
+          "orig_pos": null,
+          "pert_pos": 7,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.15194622235650765,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "the",
+          "orig_token": "The",
+          "pert_token": "the",
+          "orig_pos": 3,
+          "pert_pos": 8,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 2,
+          "orig_val": -0.037880839327206296,
+          "pert_val": 0.025122726301576987,
+          "delta": 0.06300356562878329,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "and",
+          "orig_token": "and",
+          "pert_token": null,
+          "orig_pos": 4,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": -0.004856421659534155,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "however",
+          "orig_token": null,
+          "pert_token": "however",
+          "orig_pos": null,
+          "pert_pos": 9,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.1110188124213344,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "the",
+          "orig_token": "the",
+          "pert_token": null,
+          "orig_pos": 5,
+          "pert_pos": null,
+          "orig_occ": 2,
+          "pert_occ": null,
+          "total_occ": 2,
+          "orig_val": -0.01702069595464028,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "top",
+          "orig_token": "top",
+          "pert_token": "top",
+          "orig_pos": 6,
+          "pert_pos": 10,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.03266713293241535,
+          "pert_val": 0.049418731127511016,
+          "delta": 0.08208586405992636,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "notch",
+          "orig_token": "notch",
+          "pert_token": "notch",
+          "orig_pos": 7,
+          "pert_pos": 11,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.055648546322340585,
+          "pert_val": -0.023272076361537792,
+          "delta": 0.03237646996080279,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "The",
+          "orig_token": null,
+          "pert_token": "The",
+          "orig_pos": null,
+          "pert_pos": 12,
+          "orig_occ": null,
+          "pert_occ": 2,
+          "total_occ": 2,
+          "orig_val": null,
+          "pert_val": 0.045252111221813884,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "movie",
+          "orig_token": "movie",
+          "pert_token": "movie",
+          "orig_pos": 8,
+          "pert_pos": 13,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.003517191562632375,
+          "pert_val": 0.10634463357297605,
+          "delta": 0.10986182513560842,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "great",
+          "orig_token": "great",
+          "pert_token": "great",
+          "orig_pos": 9,
+          "pert_pos": 14,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.0916782365612899,
+          "pert_val": 0.1746895473144877,
+          "delta": 0.2663677838757776,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": true
+        },
+        {
+          "token": "was",
+          "orig_token": "was",
+          "pert_token": "was",
+          "orig_pos": 10,
+          "pert_pos": 15,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.040364344407342136,
+          "pert_val": 0.01896233270542247,
+          "delta": 0.059326677112764604,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "surprisingly",
+          "orig_token": null,
+          "pert_token": "surprisingly",
+          "orig_pos": null,
+          "pert_pos": 16,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.034852615197052544,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        }
+      ]
+    },
+    "traceable_narrative": "Probe introduces a polarity reversal (REVERSE_POLARITY), but model retained the same predicted class and polarity (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)).",
+    "original_sentence": "The movie was great and the acting was top notch.",
+    "perturbed_sentence": "The movie was great and the acting was top notch, however it was surprisingly bad in comparison.",
+    "original_label": "POSITIVE",
+    "perturbed_label": "POSITIVE",
+    "original_confidence": 0.9870492090403543,
+    "perturbed_confidence": 0.625612804675293,
+    "confidence_delta_pts": -36.14364043650613,
+    "is_flipped": false,
+    "expected_flip": true,
+    "behavioral_outcome": "MISSING_FLIP"
+  }
+]

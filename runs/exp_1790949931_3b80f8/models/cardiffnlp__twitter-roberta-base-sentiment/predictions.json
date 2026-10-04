@@ -1,0 +1,1885 @@
+[
+  {
+    "baseline_id": "base_7123260a6b23",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_e1bc1b0bcfac",
+    "seed_text": "All things are good but 2/3 months after use color was fade It's not original jockey t-shirt",
+    "perturbed_text": "All things are good but 2/3 months after use color was fade It's original jockey t-shirt",
+    "perturbation_type": "negation_removal",
+    "category": "negation_removal",
+    "expected_flip": true,
+    "expected_semantic_effect": "SHIFT_TO_NEUTRAL",
+    "original_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.47074213273270327,
+      "formatted_confidence": "47.07%",
+      "probabilities": {
+        "NEGATIVE": 0.43916067153840754,
+        "NEUTRAL": 0.47074213273270327,
+        "POSITIVE": 0.09009719572888913
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "43.92%",
+        "NEUTRAL": "47.07%",
+        "POSITIVE": "9.01%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=========           ]  43.92%\nNEUTRAL    [=========           ]  47.07%\nPOSITIVE   [==                  ]   9.01%",
+      "raw_logits": null,
+      "latency_ms": 1358.9431999862427,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.43916067153840754,
+        "LABEL_1": 0.47074213273270327,
+        "LABEL_2": 0.09009719572888913
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.4986317306349197,
+      "formatted_confidence": "49.86%",
+      "probabilities": {
+        "NEGATIVE": 0.058619024116367824,
+        "NEUTRAL": 0.4986317306349197,
+        "POSITIVE": 0.44274924524871245
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "5.86%",
+        "NEUTRAL": "49.86%",
+        "POSITIVE": "44.27%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=                   ]   5.86%\nNEUTRAL    [==========          ]  49.86%\nPOSITIVE   [=========           ]  44.27%",
+      "raw_logits": null,
+      "latency_ms": 230.26397142842012,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.058619024116367824,
+        "LABEL_1": 0.4986317306349197,
+        "LABEL_2": 0.44274924524871245
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "NEUTRAL",
+    "original_confidence": 0.47074213273270327,
+    "perturbed_label": "NEUTRAL",
+    "perturbed_confidence": 0.4986317306349197,
+    "from_label": "NEUTRAL",
+    "to_label": "NEUTRAL",
+    "transition_type": "NEUTRAL \u2192 NEUTRAL",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_e1bc1b0bcfac",
+      "sentence_text": "All things are good but 2/3 months after use color was fade It's original jockey t-shirt",
+      "semantic_polarity": "NEUTRAL",
+      "confidence": 0.45,
+      "reason": "Mixed review with fading color but assertion of being original.",
+      "ambiguity": "MEDIUM",
+      "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEUTRAL",
+      "gemini_confidence": 0.45,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEUTRAL",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790949842.3753111,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.4,
+      "neutral_probability": 0.45,
+      "positive_probability": 0.15,
+      "reference_class_count": 3,
+      "reference_label": "NEUTRAL",
+      "three_class": {
+        "label": "NEUTRAL",
+        "negative_probability": 0.4,
+        "neutral_probability": 0.45,
+        "positive_probability": 0.15,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.4,
+        "positive_probability": 0.15,
+        "neutral_probability_excluded": 0.45,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "NEGATIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Fading color and counterfeit product accusation constitute a negative review.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e1bc1b0bcfac",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.4,
+            "neutral_probability": 0.45,
+            "positive_probability": 0.15,
+            "reason_short": "Mixed review with fading color but assertion of being original.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_571f2f88377e",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.75,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.05,
+            "reason_short": "Double negation implies non-original, combined with fading color.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_c1d3675b76af",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.8,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.1,
+            "reason_short": "Extremely good opening countered by fading and fake product, net negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_8e4ce063c89d",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Somewhat good start offset by product flaws and counterfeit claim.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e5186710a324",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Decent start overridden by negative defects.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_4ac621fcebbb",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.95,
+            "neutral_probability": 0.03,
+            "positive_probability": 0.02,
+            "reason_short": "Explicitly states surprisingly bad comparison reinforcing negative sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_9c627a7c6f46",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.35,
+            "neutral_probability": 0.45,
+            "positive_probability": 0.2,
+            "reason_short": "Contradictory elements of negative complaints and positive practical results.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.027889597902216456,
+    "confidence_delta_pts": 2.7889597902216456,
+    "confidence_delta_pp": 2.7889597902216456,
+    "formatted_confidence_delta": "+2.79 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": false,
+    "expected_relation": "NEGATIVE_TO_NEUTRAL",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_FLIP",
+    "failure_type": "None",
+    "rationale": "Model correctly shifted to NEUTRAL (NEUTRAL (NEUTRAL) \u2192 NEUTRAL (NEUTRAL)) as expected.",
+    "semantic_intent": "SHIFT_TO_NEUTRAL",
+    "reference_polarity": "NEUTRAL",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 230.26397142842012,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_7123260a6b23",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_571f2f88377e",
+    "seed_text": "All things are good but 2/3 months after use color was fade It's not original jockey t-shirt",
+    "perturbed_text": "All things are good but 2/3 months after use color was fade It's not entirely non-original jockey t-shirt",
+    "perturbation_type": "double_negation",
+    "category": "double_negation",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.47074213273270327,
+      "formatted_confidence": "47.07%",
+      "probabilities": {
+        "NEGATIVE": 0.43916067153840754,
+        "NEUTRAL": 0.47074213273270327,
+        "POSITIVE": 0.09009719572888913
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "43.92%",
+        "NEUTRAL": "47.07%",
+        "POSITIVE": "9.01%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=========           ]  43.92%\nNEUTRAL    [=========           ]  47.07%\nPOSITIVE   [==                  ]   9.01%",
+      "raw_logits": null,
+      "latency_ms": 1358.9431999862427,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.43916067153840754,
+        "LABEL_1": 0.47074213273270327,
+        "LABEL_2": 0.09009719572888913
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.5250225086697284,
+      "formatted_confidence": "52.50%",
+      "probabilities": {
+        "NEGATIVE": 0.0421147906859025,
+        "NEUTRAL": 0.43286270064436905,
+        "POSITIVE": 0.5250225086697284
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "4.21%",
+        "NEUTRAL": "43.29%",
+        "POSITIVE": "52.50%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=                   ]   4.21%\nNEUTRAL    [=========           ]  43.29%\nPOSITIVE   [===========         ]  52.50%",
+      "raw_logits": null,
+      "latency_ms": 230.26397142842012,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0421147906859025,
+        "LABEL_1": 0.43286270064436905,
+        "LABEL_2": 0.5250225086697284
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "NEUTRAL",
+    "original_confidence": 0.47074213273270327,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.5250225086697284,
+    "from_label": "NEUTRAL",
+    "to_label": "POSITIVE",
+    "transition_type": "NEUTRAL \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_571f2f88377e",
+      "sentence_text": "All things are good but 2/3 months after use color was fade It's not entirely non-original jockey t-shirt",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": 0.75,
+      "reason": "Double negation implies non-original, combined with fading color.",
+      "ambiguity": "MEDIUM",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEGATIVE",
+      "gemini_confidence": 0.75,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790949842.3753815,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.75,
+      "neutral_probability": 0.2,
+      "positive_probability": 0.05,
+      "reference_class_count": 3,
+      "reference_label": "NEGATIVE",
+      "three_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.75,
+        "neutral_probability": 0.2,
+        "positive_probability": 0.05,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.75,
+        "positive_probability": 0.05,
+        "neutral_probability_excluded": 0.2,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "NEGATIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Fading color and counterfeit product accusation constitute a negative review.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e1bc1b0bcfac",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.4,
+            "neutral_probability": 0.45,
+            "positive_probability": 0.15,
+            "reason_short": "Mixed review with fading color but assertion of being original.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_571f2f88377e",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.75,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.05,
+            "reason_short": "Double negation implies non-original, combined with fading color.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_c1d3675b76af",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.8,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.1,
+            "reason_short": "Extremely good opening countered by fading and fake product, net negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_8e4ce063c89d",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Somewhat good start offset by product flaws and counterfeit claim.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e5186710a324",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Decent start overridden by negative defects.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_4ac621fcebbb",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.95,
+            "neutral_probability": 0.03,
+            "positive_probability": 0.02,
+            "reason_short": "Explicitly states surprisingly bad comparison reinforcing negative sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_9c627a7c6f46",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.35,
+            "neutral_probability": 0.45,
+            "positive_probability": 0.2,
+            "reason_short": "Contradictory elements of negative complaints and positive practical results.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": false,
+    "semantic_state_change": true,
+    "confidence_delta": 0.05428037593702517,
+    "confidence_delta_pts": 5.428037593702517,
+    "confidence_delta_pp": 5.428037593702517,
+    "formatted_confidence_delta": "+5.43 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": false,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "NEUTRAL_TO_POSITIVE",
+    "behavioral_outcome": "UNEXPECTED_CHANGE",
+    "failure_type": "Misweighted",
+    "rationale": "Model unexpectedly flipped prediction under meaning-preserving perturbation due to disproportionate feature weight shift on semantic tokens.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "NEGATIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 230.26397142842012,
+    "ground_truth_match": false
+  },
+  {
+    "baseline_id": "base_7123260a6b23",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_c1d3675b76af",
+    "seed_text": "All things are good but 2/3 months after use color was fade It's not original jockey t-shirt",
+    "perturbed_text": "All things are extremely good but 2/3 months after use color was fade It's not original jockey t-shirt",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.47074213273270327,
+      "formatted_confidence": "47.07%",
+      "probabilities": {
+        "NEGATIVE": 0.43916067153840754,
+        "NEUTRAL": 0.47074213273270327,
+        "POSITIVE": 0.09009719572888913
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "43.92%",
+        "NEUTRAL": "47.07%",
+        "POSITIVE": "9.01%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=========           ]  43.92%\nNEUTRAL    [=========           ]  47.07%\nPOSITIVE   [==                  ]   9.01%",
+      "raw_logits": null,
+      "latency_ms": 1358.9431999862427,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.43916067153840754,
+        "LABEL_1": 0.47074213273270327,
+        "LABEL_2": 0.09009719572888913
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.42907025987328645,
+      "formatted_confidence": "42.91%",
+      "probabilities": {
+        "NEGATIVE": 0.14243383064471665,
+        "NEUTRAL": 0.42849590948199684,
+        "POSITIVE": 0.42907025987328645
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "14.24%",
+        "NEUTRAL": "42.85%",
+        "POSITIVE": "42.91%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [===                 ]  14.24%\nNEUTRAL    [=========           ]  42.85%\nPOSITIVE   [=========           ]  42.91%",
+      "raw_logits": null,
+      "latency_ms": 230.26397142842012,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.14243383064471665,
+        "LABEL_1": 0.42849590948199684,
+        "LABEL_2": 0.42907025987328645
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "NEUTRAL",
+    "original_confidence": 0.47074213273270327,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.42907025987328645,
+    "from_label": "NEUTRAL",
+    "to_label": "POSITIVE",
+    "transition_type": "NEUTRAL \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_c1d3675b76af",
+      "sentence_text": "All things are extremely good but 2/3 months after use color was fade It's not original jockey t-shirt",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": 0.8,
+      "reason": "Extremely good opening countered by fading and fake product, net negative.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEGATIVE",
+      "gemini_confidence": 0.8,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790949842.3754427,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.8,
+      "neutral_probability": 0.1,
+      "positive_probability": 0.1,
+      "reference_class_count": 3,
+      "reference_label": "NEGATIVE",
+      "three_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.8,
+        "neutral_probability": 0.1,
+        "positive_probability": 0.1,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.8,
+        "positive_probability": 0.1,
+        "neutral_probability_excluded": 0.1,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "NEGATIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Fading color and counterfeit product accusation constitute a negative review.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e1bc1b0bcfac",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.4,
+            "neutral_probability": 0.45,
+            "positive_probability": 0.15,
+            "reason_short": "Mixed review with fading color but assertion of being original.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_571f2f88377e",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.75,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.05,
+            "reason_short": "Double negation implies non-original, combined with fading color.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_c1d3675b76af",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.8,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.1,
+            "reason_short": "Extremely good opening countered by fading and fake product, net negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_8e4ce063c89d",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Somewhat good start offset by product flaws and counterfeit claim.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e5186710a324",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Decent start overridden by negative defects.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_4ac621fcebbb",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.95,
+            "neutral_probability": 0.03,
+            "positive_probability": 0.02,
+            "reason_short": "Explicitly states surprisingly bad comparison reinforcing negative sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_9c627a7c6f46",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.35,
+            "neutral_probability": 0.45,
+            "positive_probability": 0.2,
+            "reason_short": "Contradictory elements of negative complaints and positive practical results.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": false,
+    "semantic_state_change": true,
+    "confidence_delta": -0.041671872859416814,
+    "confidence_delta_pts": -4.167187285941681,
+    "confidence_delta_pp": -4.167187285941681,
+    "formatted_confidence_delta": "-4.17 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": false,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "NEUTRAL_TO_POSITIVE",
+    "behavioral_outcome": "UNEXPECTED_CHANGE",
+    "failure_type": "Misweighted",
+    "rationale": "Model unexpectedly flipped prediction under meaning-preserving perturbation due to disproportionate feature weight shift on semantic tokens.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "NEGATIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 230.26397142842012,
+    "ground_truth_match": false
+  },
+  {
+    "baseline_id": "base_7123260a6b23",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_8e4ce063c89d",
+    "seed_text": "All things are good but 2/3 months after use color was fade It's not original jockey t-shirt",
+    "perturbed_text": "All things are somewhat good but 2/3 months after use color was fade It's not original jockey t-shirt",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.47074213273270327,
+      "formatted_confidence": "47.07%",
+      "probabilities": {
+        "NEGATIVE": 0.43916067153840754,
+        "NEUTRAL": 0.47074213273270327,
+        "POSITIVE": 0.09009719572888913
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "43.92%",
+        "NEUTRAL": "47.07%",
+        "POSITIVE": "9.01%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=========           ]  43.92%\nNEUTRAL    [=========           ]  47.07%\nPOSITIVE   [==                  ]   9.01%",
+      "raw_logits": null,
+      "latency_ms": 1358.9431999862427,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.43916067153840754,
+        "LABEL_1": 0.47074213273270327,
+        "LABEL_2": 0.09009719572888913
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.5528186230171548,
+      "formatted_confidence": "55.28%",
+      "probabilities": {
+        "NEGATIVE": 0.24213840114245408,
+        "NEUTRAL": 0.5528186230171548,
+        "POSITIVE": 0.20504297584039116
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "24.21%",
+        "NEUTRAL": "55.28%",
+        "POSITIVE": "20.50%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=====               ]  24.21%\nNEUTRAL    [===========         ]  55.28%\nPOSITIVE   [====                ]  20.50%",
+      "raw_logits": null,
+      "latency_ms": 230.26397142842012,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.24213840114245408,
+        "LABEL_1": 0.5528186230171548,
+        "LABEL_2": 0.20504297584039116
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "NEUTRAL",
+    "original_confidence": 0.47074213273270327,
+    "perturbed_label": "NEUTRAL",
+    "perturbed_confidence": 0.5528186230171548,
+    "from_label": "NEUTRAL",
+    "to_label": "NEUTRAL",
+    "transition_type": "NEUTRAL \u2192 NEUTRAL",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_8e4ce063c89d",
+      "sentence_text": "All things are somewhat good but 2/3 months after use color was fade It's not original jockey t-shirt",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": 0.85,
+      "reason": "Somewhat good start offset by product flaws and counterfeit claim.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEGATIVE",
+      "gemini_confidence": 0.85,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790949842.3754964,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.85,
+      "neutral_probability": 0.1,
+      "positive_probability": 0.05,
+      "reference_class_count": 3,
+      "reference_label": "NEGATIVE",
+      "three_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.85,
+        "neutral_probability": 0.1,
+        "positive_probability": 0.05,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.85,
+        "positive_probability": 0.05,
+        "neutral_probability_excluded": 0.1,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "NEGATIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Fading color and counterfeit product accusation constitute a negative review.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e1bc1b0bcfac",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.4,
+            "neutral_probability": 0.45,
+            "positive_probability": 0.15,
+            "reason_short": "Mixed review with fading color but assertion of being original.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_571f2f88377e",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.75,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.05,
+            "reason_short": "Double negation implies non-original, combined with fading color.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_c1d3675b76af",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.8,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.1,
+            "reason_short": "Extremely good opening countered by fading and fake product, net negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_8e4ce063c89d",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Somewhat good start offset by product flaws and counterfeit claim.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e5186710a324",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Decent start overridden by negative defects.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_4ac621fcebbb",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.95,
+            "neutral_probability": 0.03,
+            "positive_probability": 0.02,
+            "reason_short": "Explicitly states surprisingly bad comparison reinforcing negative sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_9c627a7c6f46",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.35,
+            "neutral_probability": 0.45,
+            "positive_probability": 0.2,
+            "reason_short": "Contradictory elements of negative complaints and positive practical results.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.08207649028445152,
+    "confidence_delta_pts": 8.207649028445152,
+    "confidence_delta_pp": 8.207649028445152,
+    "formatted_confidence_delta": "+8.21 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (NEUTRAL (NEUTRAL) \u2192 NEUTRAL (NEUTRAL)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "NEGATIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 230.26397142842012,
+    "ground_truth_match": false
+  },
+  {
+    "baseline_id": "base_7123260a6b23",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_e5186710a324",
+    "seed_text": "All things are good but 2/3 months after use color was fade It's not original jockey t-shirt",
+    "perturbed_text": "All things are decent but 2/3 months after use color was fade It's not original jockey t-shirt",
+    "perturbation_type": "synonym_substitution",
+    "category": "synonym_substitution",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.47074213273270327,
+      "formatted_confidence": "47.07%",
+      "probabilities": {
+        "NEGATIVE": 0.43916067153840754,
+        "NEUTRAL": 0.47074213273270327,
+        "POSITIVE": 0.09009719572888913
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "43.92%",
+        "NEUTRAL": "47.07%",
+        "POSITIVE": "9.01%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=========           ]  43.92%\nNEUTRAL    [=========           ]  47.07%\nPOSITIVE   [==                  ]   9.01%",
+      "raw_logits": null,
+      "latency_ms": 1358.9431999862427,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.43916067153840754,
+        "LABEL_1": 0.47074213273270327,
+        "LABEL_2": 0.09009719572888913
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.4941169023513794,
+      "formatted_confidence": "49.41%",
+      "probabilities": {
+        "NEGATIVE": 0.4941169023513794,
+        "NEUTRAL": 0.4281429946422577,
+        "POSITIVE": 0.07774010300636292
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "49.41%",
+        "NEUTRAL": "42.81%",
+        "POSITIVE": "7.77%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [==========          ]  49.41%\nNEUTRAL    [=========           ]  42.81%\nPOSITIVE   [==                  ]   7.77%",
+      "raw_logits": null,
+      "latency_ms": 230.26397142842012,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.4941169023513794,
+        "LABEL_1": 0.4281429946422577,
+        "LABEL_2": 0.07774010300636292
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "NEUTRAL",
+    "original_confidence": 0.47074213273270327,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.4941169023513794,
+    "from_label": "NEUTRAL",
+    "to_label": "NEGATIVE",
+    "transition_type": "NEUTRAL \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_e5186710a324",
+      "sentence_text": "All things are decent but 2/3 months after use color was fade It's not original jockey t-shirt",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": 0.85,
+      "reason": "Decent start overridden by negative defects.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEGATIVE",
+      "gemini_confidence": 0.85,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790949842.3755467,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.85,
+      "neutral_probability": 0.1,
+      "positive_probability": 0.05,
+      "reference_class_count": 3,
+      "reference_label": "NEGATIVE",
+      "three_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.85,
+        "neutral_probability": 0.1,
+        "positive_probability": 0.05,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.85,
+        "positive_probability": 0.05,
+        "neutral_probability_excluded": 0.1,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "NEGATIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Fading color and counterfeit product accusation constitute a negative review.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e1bc1b0bcfac",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.4,
+            "neutral_probability": 0.45,
+            "positive_probability": 0.15,
+            "reason_short": "Mixed review with fading color but assertion of being original.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_571f2f88377e",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.75,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.05,
+            "reason_short": "Double negation implies non-original, combined with fading color.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_c1d3675b76af",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.8,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.1,
+            "reason_short": "Extremely good opening countered by fading and fake product, net negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_8e4ce063c89d",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Somewhat good start offset by product flaws and counterfeit claim.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e5186710a324",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Decent start overridden by negative defects.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_4ac621fcebbb",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.95,
+            "neutral_probability": 0.03,
+            "positive_probability": 0.02,
+            "reason_short": "Explicitly states surprisingly bad comparison reinforcing negative sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_9c627a7c6f46",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.35,
+            "neutral_probability": 0.45,
+            "positive_probability": 0.2,
+            "reason_short": "Contradictory elements of negative complaints and positive practical results.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": false,
+    "semantic_state_change": true,
+    "confidence_delta": 0.023374769618676128,
+    "confidence_delta_pts": 2.337476961867613,
+    "confidence_delta_pp": 2.337476961867613,
+    "formatted_confidence_delta": "+2.34 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": false,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "NEUTRAL_TO_NEGATIVE",
+    "behavioral_outcome": "UNEXPECTED_CHANGE",
+    "failure_type": "Misweighted",
+    "rationale": "Model unexpectedly flipped prediction under meaning-preserving perturbation due to disproportionate feature weight shift on semantic tokens.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "NEGATIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 230.26397142842012,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_7123260a6b23",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_4ac621fcebbb",
+    "seed_text": "All things are good but 2/3 months after use color was fade It's not original jockey t-shirt",
+    "perturbed_text": "All things are good but 2/3 months after use color was fade It's not original jockey t-shirt, however they were surprisingly bad in comparison.",
+    "perturbation_type": "contrast_negative_append",
+    "category": "contrast_negative_append",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.47074213273270327,
+      "formatted_confidence": "47.07%",
+      "probabilities": {
+        "NEGATIVE": 0.43916067153840754,
+        "NEUTRAL": 0.47074213273270327,
+        "POSITIVE": 0.09009719572888913
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "43.92%",
+        "NEUTRAL": "47.07%",
+        "POSITIVE": "9.01%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=========           ]  43.92%\nNEUTRAL    [=========           ]  47.07%\nPOSITIVE   [==                  ]   9.01%",
+      "raw_logits": null,
+      "latency_ms": 1358.9431999862427,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.43916067153840754,
+        "LABEL_1": 0.47074213273270327,
+        "LABEL_2": 0.09009719572888913
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.6181922419512452,
+      "formatted_confidence": "61.82%",
+      "probabilities": {
+        "NEGATIVE": 0.6181922419512452,
+        "NEUTRAL": 0.31046017337293724,
+        "POSITIVE": 0.07134758467581755
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "61.82%",
+        "NEUTRAL": "31.05%",
+        "POSITIVE": "7.13%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [============        ]  61.82%\nNEUTRAL    [======              ]  31.05%\nPOSITIVE   [=                   ]   7.13%",
+      "raw_logits": null,
+      "latency_ms": 230.26397142842012,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.6181922419512452,
+        "LABEL_1": 0.31046017337293724,
+        "LABEL_2": 0.07134758467581755
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "NEUTRAL",
+    "original_confidence": 0.47074213273270327,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.6181922419512452,
+    "from_label": "NEUTRAL",
+    "to_label": "NEGATIVE",
+    "transition_type": "NEUTRAL \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_4ac621fcebbb",
+      "sentence_text": "All things are good but 2/3 months after use color was fade It's not original jockey t-shirt, however they were surprisingly bad in comparison.",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": 0.95,
+      "reason": "Explicitly states surprisingly bad comparison reinforcing negative sentiment.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEGATIVE",
+      "gemini_confidence": 0.95,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790949842.3756042,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.95,
+      "neutral_probability": 0.03,
+      "positive_probability": 0.02,
+      "reference_class_count": 3,
+      "reference_label": "NEGATIVE",
+      "three_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.95,
+        "neutral_probability": 0.03,
+        "positive_probability": 0.02,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.95,
+        "positive_probability": 0.02,
+        "neutral_probability_excluded": 0.03,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "NEGATIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Fading color and counterfeit product accusation constitute a negative review.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e1bc1b0bcfac",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.4,
+            "neutral_probability": 0.45,
+            "positive_probability": 0.15,
+            "reason_short": "Mixed review with fading color but assertion of being original.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_571f2f88377e",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.75,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.05,
+            "reason_short": "Double negation implies non-original, combined with fading color.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_c1d3675b76af",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.8,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.1,
+            "reason_short": "Extremely good opening countered by fading and fake product, net negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_8e4ce063c89d",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Somewhat good start offset by product flaws and counterfeit claim.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e5186710a324",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Decent start overridden by negative defects.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_4ac621fcebbb",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.95,
+            "neutral_probability": 0.03,
+            "positive_probability": 0.02,
+            "reason_short": "Explicitly states surprisingly bad comparison reinforcing negative sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_9c627a7c6f46",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.35,
+            "neutral_probability": 0.45,
+            "positive_probability": 0.2,
+            "reason_short": "Contradictory elements of negative complaints and positive practical results.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": false,
+    "semantic_state_change": true,
+    "confidence_delta": 0.14745010921854196,
+    "confidence_delta_pts": 14.745010921854195,
+    "confidence_delta_pp": 14.745010921854195,
+    "formatted_confidence_delta": "+14.75 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": false,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "NEUTRAL_TO_NEGATIVE",
+    "behavioral_outcome": "UNEXPECTED_CHANGE",
+    "failure_type": "Misweighted",
+    "rationale": "Model unexpectedly flipped prediction under meaning-preserving perturbation due to disproportionate feature weight shift on semantic tokens.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "NEGATIVE",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 230.26397142842012,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_7123260a6b23",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_9c627a7c6f46",
+    "seed_text": "All things are good but 2/3 months after use color was fade It's not original jockey t-shirt",
+    "perturbed_text": "All things are good but 2/3 months after use color was fade It's not original jockey t-shirt, but it delivered good results in practice.",
+    "perturbation_type": "contrast_positive_append",
+    "category": "contrast_positive_append",
+    "expected_flip": true,
+    "expected_semantic_effect": "SHIFT_TO_NEUTRAL",
+    "original_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.47074213273270327,
+      "formatted_confidence": "47.07%",
+      "probabilities": {
+        "NEGATIVE": 0.43916067153840754,
+        "NEUTRAL": 0.47074213273270327,
+        "POSITIVE": 0.09009719572888913
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "43.92%",
+        "NEUTRAL": "47.07%",
+        "POSITIVE": "9.01%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=========           ]  43.92%\nNEUTRAL    [=========           ]  47.07%\nPOSITIVE   [==                  ]   9.01%",
+      "raw_logits": null,
+      "latency_ms": 1358.9431999862427,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.43916067153840754,
+        "LABEL_1": 0.47074213273270327,
+        "LABEL_2": 0.09009719572888913
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.8708458688810706,
+      "formatted_confidence": "87.08%",
+      "probabilities": {
+        "NEGATIVE": 0.00962576099975379,
+        "NEUTRAL": 0.11952837011917555,
+        "POSITIVE": 0.8708458688810706
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.96%",
+        "NEUTRAL": "11.95%",
+        "POSITIVE": "87.08%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.96%\nNEUTRAL    [==                  ]  11.95%\nPOSITIVE   [=================   ]  87.08%",
+      "raw_logits": null,
+      "latency_ms": 230.26397142842012,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.00962576099975379,
+        "LABEL_1": 0.11952837011917555,
+        "LABEL_2": 0.8708458688810706
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "NEUTRAL",
+    "original_confidence": 0.47074213273270327,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.8708458688810706,
+    "from_label": "NEUTRAL",
+    "to_label": "POSITIVE",
+    "transition_type": "NEUTRAL \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_9c627a7c6f46",
+      "sentence_text": "All things are good but 2/3 months after use color was fade It's not original jockey t-shirt, but it delivered good results in practice.",
+      "semantic_polarity": "NEUTRAL",
+      "confidence": 0.45,
+      "reason": "Contradictory elements of negative complaints and positive practical results.",
+      "ambiguity": "HIGH",
+      "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEUTRAL",
+      "gemini_confidence": 0.45,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEUTRAL",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790949842.3756633,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.35,
+      "neutral_probability": 0.45,
+      "positive_probability": 0.2,
+      "reference_class_count": 3,
+      "reference_label": "NEUTRAL",
+      "three_class": {
+        "label": "NEUTRAL",
+        "negative_probability": 0.35,
+        "neutral_probability": 0.45,
+        "positive_probability": 0.2,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.35,
+        "positive_probability": 0.2,
+        "neutral_probability_excluded": 0.45,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "NEGATIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Fading color and counterfeit product accusation constitute a negative review.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e1bc1b0bcfac",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.4,
+            "neutral_probability": 0.45,
+            "positive_probability": 0.15,
+            "reason_short": "Mixed review with fading color but assertion of being original.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_571f2f88377e",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.75,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.05,
+            "reason_short": "Double negation implies non-original, combined with fading color.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_c1d3675b76af",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.8,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.1,
+            "reason_short": "Extremely good opening countered by fading and fake product, net negative.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_8e4ce063c89d",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Somewhat good start offset by product flaws and counterfeit claim.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_e5186710a324",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.85,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.05,
+            "reason_short": "Decent start overridden by negative defects.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_4ac621fcebbb",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.95,
+            "neutral_probability": 0.03,
+            "positive_probability": 0.02,
+            "reason_short": "Explicitly states surprisingly bad comparison reinforcing negative sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_9c627a7c6f46",
+            "semantic_polarity": "NEUTRAL",
+            "label": "NEUTRAL",
+            "negative_probability": 0.35,
+            "neutral_probability": 0.45,
+            "positive_probability": 0.2,
+            "reason_short": "Contradictory elements of negative complaints and positive practical results.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": false,
+    "semantic_state_change": true,
+    "confidence_delta": 0.40010373614836736,
+    "confidence_delta_pts": 40.01037361483674,
+    "confidence_delta_pp": 40.01037361483674,
+    "formatted_confidence_delta": "+40.01 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": true,
+    "expected_relation": "NEGATIVE_TO_NEUTRAL",
+    "observed_relation": "NEUTRAL_TO_POSITIVE",
+    "behavioral_outcome": "MISSING_FLIP",
+    "failure_type": "Blind",
+    "rationale": "Model failed to produce expected polarity reversal and showed negligible attribution to linguistic operator 'and' (LIME: +0.0000, SHAP: +0.0000 < 0.05).",
+    "semantic_intent": "SHIFT_TO_NEUTRAL",
+    "reference_polarity": "NEUTRAL",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 230.26397142842012,
+    "ground_truth_match": false
+  }
+]

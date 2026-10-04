@@ -1,0 +1,697 @@
+[
+  {
+    "failure_id": "fail_80b5099a",
+    "model_id": "textattack/albert-base-v2-SST-2",
+    "probe_id": "prb_01db79cec89d",
+    "category": "Misweighted",
+    "severity": "medium",
+    "reason": "Polarity preserved, but confidence collapsed by 46.94 percentage points under meaning-preserving perturbation.",
+    "details": "Under contrast_negative_append, model transition 'POSITIVE -> POSITIVE' was diagnosed as Misweighted. Polarity preserved, but confidence collapsed by 46.94 percentage points under meaning-preserving perturbation.",
+    "recommendation": "Augment training data and regularize behavior against contrast_negative_append perturbations to fix Misweighted failures.",
+    "evidence": {
+      "original_label": "POSITIVE",
+      "probe_label": "POSITIVE",
+      "original_confidence": 0.9875923452145015,
+      "probe_confidence": 0.5182393943738757,
+      "confidence_delta_pp": -46.93529508406258,
+      "label_transition": "POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)",
+      "raw_label_flip": false,
+      "polarity_flip": false,
+      "semantic_state_change": false,
+      "is_prediction_flip": false,
+      "original_polarity": "POSITIVE",
+      "probe_polarity": "POSITIVE",
+      "target_polarity": "POSITIVE",
+      "ground_truth_match": true,
+      "observed_behavior": "PRESERVE",
+      "expected_behavior": "PRESERVE",
+      "expected_relation": "SAME_POLARITY",
+      "observed_relation": "POLARITY_WEAKENED",
+      "expected_effect": "EXPECTED_PRESERVE",
+      "semantic_intent": "PRESERVE_POLARITY",
+      "threshold_pp": 15.0,
+      "behavioral_conformance": false,
+      "expectation_satisfied": false,
+      "unexpected_behavior": true,
+      "expectation_match": false,
+      "preservation": true,
+      "jaccard_similarity": 0.25,
+      "cosine_alignment": 0.5131673588354966,
+      "orig_explanation": {
+        "token_weights": {
+          "users": -0.00954905215981459,
+          "The": 0.009265638836623256,
+          "dangerous": -0.07009810959822275,
+          "is": 0.038571747927473775,
+          "extremely": 0.03130630572589837,
+          "and": 0.013029616240169678,
+          "reliable": 0.1300044618681931,
+          "system": -0.015844203210466184,
+          "attacks": -0.07174496945925848,
+          "protects": 0.22519346100452828,
+          "from": 0.027584653571686595,
+          "new": 0.021978861630251714,
+          "security": 0.00047861078599750057
+        },
+        "token_attributions": [
+          {
+            "token": "users",
+            "attribution": -0.00954905215981459,
+            "position": 1
+          },
+          {
+            "token": "The",
+            "attribution": 0.009265638836623256,
+            "position": 2
+          },
+          {
+            "token": "dangerous",
+            "attribution": -0.07009810959822275,
+            "position": 3
+          },
+          {
+            "token": "is",
+            "attribution": 0.038571747927473775,
+            "position": 4
+          },
+          {
+            "token": "extremely",
+            "attribution": 0.03130630572589837,
+            "position": 5
+          },
+          {
+            "token": "and",
+            "attribution": 0.013029616240169678,
+            "position": 6
+          },
+          {
+            "token": "reliable",
+            "attribution": 0.1300044618681931,
+            "position": 7
+          },
+          {
+            "token": "system",
+            "attribution": -0.015844203210466184,
+            "position": 8
+          },
+          {
+            "token": "attacks",
+            "attribution": -0.07174496945925848,
+            "position": 9
+          },
+          {
+            "token": "protects",
+            "attribution": 0.22519346100452828,
+            "position": 10
+          },
+          {
+            "token": "from",
+            "attribution": 0.027584653571686595,
+            "position": 11
+          },
+          {
+            "token": "new",
+            "attribution": 0.021978861630251714,
+            "position": 12
+          },
+          {
+            "token": "security",
+            "attribution": 0.00047861078599750057,
+            "position": 13
+          }
+        ],
+        "model_id": "textattack/albert-base-v2-SST-2",
+        "text": "The new security system is extremely reliable and protects users from dangerous attacks",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "pert_explanation": {
+        "token_weights": {
+          "in": -0.014057306841194845,
+          "users": 0.04381976141234894,
+          "reliable": 0.09619238713231222,
+          "worn": -0.30277473330717297,
+          "surprisingly": -0.08539310564690006,
+          "and": 0.020030890179801766,
+          "protects": 0.18990965015172456,
+          "attacks": -0.04326188898887466,
+          "new": 0.0699895550697047,
+          "The": 0.00965502454743864,
+          "it": -0.009257381523276797,
+          "extremely": 0.07527329162325477,
+          "attacks,": -0.03478113114135461,
+          "dangerous": 0.04821299647554794,
+          "is": 0.00515694533115927,
+          "system": 0.013179716559789478,
+          "however": -0.03478113114135461,
+          "from": 0.11556030092826572,
+          "comparison": -0.014057306841194845,
+          "security": 0.013179716559789478
+        },
+        "token_attributions": [
+          {
+            "token": "in",
+            "attribution": -0.014057306841194845,
+            "position": 1
+          },
+          {
+            "token": "users",
+            "attribution": 0.04381976141234894,
+            "position": 2
+          },
+          {
+            "token": "reliable",
+            "attribution": 0.09619238713231222,
+            "position": 3
+          },
+          {
+            "token": "worn",
+            "attribution": -0.30277473330717297,
+            "position": 4
+          },
+          {
+            "token": "surprisingly",
+            "attribution": -0.08539310564690006,
+            "position": 5
+          },
+          {
+            "token": "and",
+            "attribution": 0.020030890179801766,
+            "position": 6
+          },
+          {
+            "token": "protects",
+            "attribution": 0.18990965015172456,
+            "position": 7
+          },
+          {
+            "token": "attacks",
+            "attribution": -0.04326188898887466,
+            "position": 8
+          },
+          {
+            "token": "new",
+            "attribution": 0.0699895550697047,
+            "position": 9
+          },
+          {
+            "token": "The",
+            "attribution": 0.00965502454743864,
+            "position": 10
+          },
+          {
+            "token": "it",
+            "attribution": -0.009257381523276797,
+            "position": 11
+          },
+          {
+            "token": "extremely",
+            "attribution": 0.07527329162325477,
+            "position": 12
+          },
+          {
+            "token": "attacks,",
+            "attribution": -0.03478113114135461,
+            "position": 13
+          },
+          {
+            "token": "dangerous",
+            "attribution": 0.04821299647554794,
+            "position": 14
+          },
+          {
+            "token": "is",
+            "attribution": 0.00515694533115927,
+            "position": 15
+          },
+          {
+            "token": "system",
+            "attribution": 0.013179716559789478,
+            "position": 16
+          },
+          {
+            "token": "however",
+            "attribution": -0.03478113114135461,
+            "position": 17
+          },
+          {
+            "token": "from",
+            "attribution": 0.11556030092826572,
+            "position": 18
+          },
+          {
+            "token": "comparison",
+            "attribution": -0.014057306841194845,
+            "position": 19
+          },
+          {
+            "token": "security",
+            "attribution": 0.013179716559789478,
+            "position": 20
+          }
+        ],
+        "model_id": "textattack/albert-base-v2-SST-2",
+        "text": "The new security system is extremely reliable and protects users from dangerous attacks, however it is surprisingly worn in comparison.",
+        "explainer_requested": "both",
+        "explainer_used": "both",
+        "fallback_used": false,
+        "fallback_reason": null,
+        "runtime_ms": 0.0,
+        "random_seed": 42
+      },
+      "aligned_tokens": [
+        {
+          "token": "in",
+          "orig_token": null,
+          "pert_token": "in",
+          "orig_pos": null,
+          "pert_pos": 1,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.014057306841194845,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "users",
+          "orig_token": "users",
+          "pert_token": "users",
+          "orig_pos": 1,
+          "pert_pos": 2,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.00954905215981459,
+          "pert_val": 0.04381976141234894,
+          "delta": 0.053368813572163526,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "reliable",
+          "orig_token": null,
+          "pert_token": "reliable",
+          "orig_pos": null,
+          "pert_pos": 3,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.09619238713231222,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "worn",
+          "orig_token": null,
+          "pert_token": "worn",
+          "orig_pos": null,
+          "pert_pos": 4,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.30277473330717297,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "surprisingly",
+          "orig_token": null,
+          "pert_token": "surprisingly",
+          "orig_pos": null,
+          "pert_pos": 5,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.08539310564690006,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "and",
+          "orig_token": null,
+          "pert_token": "and",
+          "orig_pos": null,
+          "pert_pos": 6,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.020030890179801766,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "protects",
+          "orig_token": null,
+          "pert_token": "protects",
+          "orig_pos": null,
+          "pert_pos": 7,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.18990965015172456,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "attacks",
+          "orig_token": null,
+          "pert_token": "attacks",
+          "orig_pos": null,
+          "pert_pos": 8,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.04326188898887466,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "new",
+          "orig_token": null,
+          "pert_token": "new",
+          "orig_pos": null,
+          "pert_pos": 9,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.0699895550697047,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "The",
+          "orig_token": "The",
+          "pert_token": "The",
+          "orig_pos": 2,
+          "pert_pos": 10,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.009265638836623256,
+          "pert_val": 0.00965502454743864,
+          "delta": 0.000389385710815383,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "it",
+          "orig_token": null,
+          "pert_token": "it",
+          "orig_pos": null,
+          "pert_pos": 11,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.009257381523276797,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "extremely",
+          "orig_token": null,
+          "pert_token": "extremely",
+          "orig_pos": null,
+          "pert_pos": 12,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": 0.07527329162325477,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "attacks,",
+          "orig_token": null,
+          "pert_token": "attacks,",
+          "orig_pos": null,
+          "pert_pos": 13,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.03478113114135461,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "dangerous",
+          "orig_token": "dangerous",
+          "pert_token": "dangerous",
+          "orig_pos": 3,
+          "pert_pos": 14,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.07009810959822275,
+          "pert_val": 0.04821299647554794,
+          "delta": 0.1183111060737707,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": true
+        },
+        {
+          "token": "is",
+          "orig_token": "is",
+          "pert_token": "is",
+          "orig_pos": 4,
+          "pert_pos": 15,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.038571747927473775,
+          "pert_val": 0.00515694533115927,
+          "delta": -0.033414802596314505,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "extremely",
+          "orig_token": "extremely",
+          "pert_token": null,
+          "orig_pos": 5,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": 0.03130630572589837,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "and",
+          "orig_token": "and",
+          "pert_token": null,
+          "orig_pos": 6,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": 0.013029616240169678,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "reliable",
+          "orig_token": "reliable",
+          "pert_token": null,
+          "orig_pos": 7,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": 0.1300044618681931,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "system",
+          "orig_token": "system",
+          "pert_token": "system",
+          "orig_pos": 8,
+          "pert_pos": 16,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": -0.015844203210466184,
+          "pert_val": 0.013179716559789478,
+          "delta": 0.02902391977025566,
+          "polarity_changed": true,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "attacks",
+          "orig_token": "attacks",
+          "pert_token": null,
+          "orig_pos": 9,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": -0.07174496945925848,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "however",
+          "orig_token": null,
+          "pert_token": "however",
+          "orig_pos": null,
+          "pert_pos": 17,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.03478113114135461,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "protects",
+          "orig_token": "protects",
+          "pert_token": null,
+          "orig_pos": 10,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": 0.22519346100452828,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "from",
+          "orig_token": "from",
+          "pert_token": "from",
+          "orig_pos": 11,
+          "pert_pos": 18,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.027584653571686595,
+          "pert_val": 0.11556030092826572,
+          "delta": 0.08797564735657912,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        },
+        {
+          "token": "new",
+          "orig_token": "new",
+          "pert_token": null,
+          "orig_pos": 12,
+          "pert_pos": null,
+          "orig_occ": 1,
+          "pert_occ": null,
+          "total_occ": 1,
+          "orig_val": 0.021978861630251714,
+          "pert_val": null,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "removed",
+          "is_key_shift": false
+        },
+        {
+          "token": "comparison",
+          "orig_token": null,
+          "pert_token": "comparison",
+          "orig_pos": null,
+          "pert_pos": 19,
+          "orig_occ": null,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": null,
+          "pert_val": -0.014057306841194845,
+          "delta": null,
+          "polarity_changed": false,
+          "status": "inserted",
+          "is_key_shift": false
+        },
+        {
+          "token": "security",
+          "orig_token": "security",
+          "pert_token": "security",
+          "orig_pos": 13,
+          "pert_pos": 20,
+          "orig_occ": 1,
+          "pert_occ": 1,
+          "total_occ": 1,
+          "orig_val": 0.00047861078599750057,
+          "pert_val": 0.013179716559789478,
+          "delta": 0.012701105773791977,
+          "polarity_changed": false,
+          "status": "aligned",
+          "is_key_shift": false
+        }
+      ]
+    },
+    "traceable_narrative": "Polarity preserved, but confidence collapsed by 46.94 percentage points under meaning-preserving perturbation.",
+    "original_sentence": "The new security system is extremely reliable and protects users from dangerous attacks",
+    "perturbed_sentence": "The new security system is extremely reliable and protects users from dangerous attacks, however it is surprisingly worn in comparison.",
+    "original_label": "POSITIVE",
+    "perturbed_label": "POSITIVE",
+    "original_confidence": 0.9875923452145015,
+    "perturbed_confidence": 0.5182393943738757,
+    "confidence_delta_pts": -46.93529508406258,
+    "is_flipped": false,
+    "expected_flip": false,
+    "behavioral_outcome": "EXPECTED_PRESERVE"
+  }
+]

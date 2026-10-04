@@ -1,0 +1,37 @@
+{
+  "experiment_id": "exp_1790554038_ae6575",
+  "experiment_name": "Multimodel Robustness Audit",
+  "created_at": 1790554039.1710367,
+  "status": "failed",
+  "models": [
+    "distilbert-base-uncased-finetuned-sst-2-english",
+    "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "cardiffnlp/twitter-roberta-base-sentiment",
+    "textattack/bert-base-uncased-SST-2",
+    "textattack/albert-base-v2-SST-2"
+  ],
+  "completed_models": [],
+  "model_states": {
+    "distilbert-base-uncased-finetuned-sst-2-english": "failed",
+    "cardiffnlp/twitter-roberta-base-sentiment-latest": "failed",
+    "cardiffnlp/twitter-roberta-base-sentiment": "failed",
+    "textattack/bert-base-uncased-SST-2": "failed",
+    "textattack/albert-base-v2-SST-2": "failed"
+  },
+  "num_models": 5,
+  "num_seed_texts": 1,
+  "num_probes": 7,
+  "last_updated_at": 1790554045.924914,
+  "total_duration_sec": 7.14,
+  "pipeline_integrity_passed": false,
+  "run_status": "FAILED",
+  "analysis_status": "NO_VALID_ANALYSIS",
+  "semantic_reference": {
+    "engine": "local_heuristic",
+    "model": "local_heuristic",
+    "baseline_polarity": "POSITIVE",
+    "cache_hits": 0,
+    "api_requests": 0
+  },
+  "completed_at": 1790554059.6887863
+}

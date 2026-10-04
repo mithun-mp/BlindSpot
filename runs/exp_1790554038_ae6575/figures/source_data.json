@@ -1,0 +1,98 @@
+{
+  "experiment_id": "exp_1790554038_ae6575",
+  "generated_at": null,
+  "models": [
+    "distilbert-base-uncased-finetuned-sst-2-english",
+    "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "cardiffnlp/twitter-roberta-base-sentiment",
+    "textattack/bert-base-uncased-SST-2",
+    "textattack/albert-base-v2-SST-2"
+  ],
+  "pipeline_integrity": {
+    "generated": 7,
+    "selected": 7,
+    "verified": 7,
+    "planned": 7,
+    "total_probes": 7,
+    "model_checks": {
+      "distilbert-base-uncased-finetuned-sst-2-english": {
+        "generated": 7,
+        "selected": 7,
+        "verified": 7,
+        "planned": 7,
+        "executed": 0,
+        "analyzed": 0,
+        "reported": 0,
+        "integrity_verified": false
+      },
+      "cardiffnlp/twitter-roberta-base-sentiment-latest": {
+        "generated": 7,
+        "selected": 7,
+        "verified": 7,
+        "planned": 7,
+        "executed": 0,
+        "analyzed": 0,
+        "reported": 0,
+        "integrity_verified": false
+      },
+      "cardiffnlp/twitter-roberta-base-sentiment": {
+        "generated": 7,
+        "selected": 7,
+        "verified": 7,
+        "planned": 7,
+        "executed": 0,
+        "analyzed": 0,
+        "reported": 0,
+        "integrity_verified": false
+      },
+      "textattack/bert-base-uncased-SST-2": {
+        "generated": 7,
+        "selected": 7,
+        "verified": 7,
+        "planned": 7,
+        "executed": 0,
+        "analyzed": 0,
+        "reported": 0,
+        "integrity_verified": false
+      },
+      "textattack/albert-base-v2-SST-2": {
+        "generated": 7,
+        "selected": 7,
+        "verified": 7,
+        "planned": 7,
+        "executed": 0,
+        "analyzed": 0,
+        "reported": 0,
+        "integrity_verified": false
+      }
+    },
+    "all_passed": false
+  },
+  "summary_metrics": {
+    "distilbert-base-uncased-finetuned-sst-2-english": {
+      "error": "Model 'distilbert-base-uncased-finetuned-sst-2-english' pipeline is not loaded (load error: [WinError 4551] An Application Control policy has blocked this file. Error loading \"C:\\Users\\ASUS\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\torch\\lib\\torch_global_deps.dll\" or one of its dependencies.) and allow_fallback=False.",
+      "analysis_status": "NO_VALID_ANALYSIS",
+      "failure_counts": null
+    },
+    "cardiffnlp/twitter-roberta-base-sentiment-latest": {
+      "error": "Model 'cardiffnlp/twitter-roberta-base-sentiment-latest' pipeline is not loaded (load error: [WinError 4551] An Application Control policy has blocked this file. Error loading \"C:\\Users\\ASUS\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\torch\\lib\\torch_global_deps.dll\" or one of its dependencies.) and allow_fallback=False.",
+      "analysis_status": "NO_VALID_ANALYSIS",
+      "failure_counts": null
+    },
+    "cardiffnlp/twitter-roberta-base-sentiment": {
+      "error": "Model 'cardiffnlp/twitter-roberta-base-sentiment' pipeline is not loaded (load error: [WinError 4551] An Application Control policy has blocked this file. Error loading \"C:\\Users\\ASUS\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\torch\\lib\\torch_global_deps.dll\" or one of its dependencies.) and allow_fallback=False.",
+      "analysis_status": "NO_VALID_ANALYSIS",
+      "failure_counts": null
+    },
+    "textattack/bert-base-uncased-SST-2": {
+      "error": "Model 'textattack/bert-base-uncased-SST-2' pipeline is not loaded (load error: [WinError 4551] An Application Control policy has blocked this file. Error loading \"C:\\Users\\ASUS\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\torch\\lib\\torch_global_deps.dll\" or one of its dependencies.) and allow_fallback=False.",
+      "analysis_status": "NO_VALID_ANALYSIS",
+      "failure_counts": null
+    },
+    "textattack/albert-base-v2-SST-2": {
+      "error": "Model 'textattack/albert-base-v2-SST-2' pipeline is not loaded (load error: [WinError 4551] An Application Control policy has blocked this file. Error loading \"C:\\Users\\ASUS\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\torch\\lib\\torch_global_deps.dll\" or one of its dependencies.) and allow_fallback=False.",
+      "analysis_status": "NO_VALID_ANALYSIS",
+      "failure_counts": null
+    }
+  }
+}

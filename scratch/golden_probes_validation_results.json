@@ -1,0 +1,170 @@
+[
+  {
+    "probe_id": "P01_NEGATION",
+    "type": "NEGATION_INSERTION",
+    "gemini_3class": {
+      "label": "POSITIVE",
+      "negative_probability": 0.2,
+      "neutral_probability": 0.35,
+      "positive_probability": 0.45,
+      "reference_class_count": 3,
+      "status": "AVAILABLE"
+    },
+    "gemini_2class": {
+      "label": "POSITIVE",
+      "negative_probability": 0.2,
+      "positive_probability": 0.45,
+      "neutral_probability_excluded": 0.35,
+      "reference_class_count": 2,
+      "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+    },
+    "distilbert_prediction": "POSITIVE (1.00)",
+    "roberta_prediction": "NEGATIVE (0.44)",
+    "outcome_2class": "EXPECTED_PRESERVE",
+    "outcome_3class": "UNEXPECTED_FLIP"
+  },
+  {
+    "probe_id": "P02_DOUBLE_NEG",
+    "type": "DOUBLE_NEGATION",
+    "gemini_3class": {
+      "label": "POSITIVE",
+      "negative_probability": 0.05,
+      "neutral_probability": 0.2,
+      "positive_probability": 0.75,
+      "reference_class_count": 3,
+      "status": "AVAILABLE"
+    },
+    "gemini_2class": {
+      "label": "POSITIVE",
+      "negative_probability": 0.05,
+      "positive_probability": 0.75,
+      "neutral_probability_excluded": 0.2,
+      "reference_class_count": 2,
+      "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+    },
+    "distilbert_prediction": "POSITIVE (1.00)",
+    "roberta_prediction": "NEGATIVE (0.39)",
+    "outcome_2class": "EXPECTED_PRESERVE",
+    "outcome_3class": "UNEXPECTED_FLIP"
+  },
+  {
+    "probe_id": "P03_INTENSITY_HIGH",
+    "type": "INTENSITY",
+    "gemini_3class": {
+      "label": "POSITIVE",
+      "negative_probability": 0.01,
+      "neutral_probability": 0.01,
+      "positive_probability": 0.98,
+      "reference_class_count": 3,
+      "status": "AVAILABLE"
+    },
+    "gemini_2class": {
+      "label": "POSITIVE",
+      "negative_probability": 0.01,
+      "positive_probability": 0.98,
+      "neutral_probability_excluded": 0.01,
+      "reference_class_count": 2,
+      "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+    },
+    "distilbert_prediction": "POSITIVE (1.00)",
+    "roberta_prediction": "POSITIVE (0.99)",
+    "outcome_2class": "EXPECTED_PRESERVE",
+    "outcome_3class": "EXPECTED_PRESERVE"
+  },
+  {
+    "probe_id": "P04_INTENSITY_LOW",
+    "type": "INTENSITY",
+    "gemini_3class": {
+      "label": "POSITIVE",
+      "negative_probability": 0.02,
+      "neutral_probability": 0.18,
+      "positive_probability": 0.8,
+      "reference_class_count": 3,
+      "status": "AVAILABLE"
+    },
+    "gemini_2class": {
+      "label": "POSITIVE",
+      "negative_probability": 0.02,
+      "positive_probability": 0.8,
+      "neutral_probability_excluded": 0.18,
+      "reference_class_count": 2,
+      "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+    },
+    "distilbert_prediction": "POSITIVE (1.00)",
+    "roberta_prediction": "POSITIVE (0.98)",
+    "outcome_2class": "EXPECTED_PRESERVE",
+    "outcome_3class": "EXPECTED_PRESERVE"
+  },
+  {
+    "probe_id": "P05_SYNONYM",
+    "type": "SYNONYM_SUBSTITUTION",
+    "gemini_3class": {
+      "label": "POSITIVE",
+      "negative_probability": 0.01,
+      "neutral_probability": 0.04,
+      "positive_probability": 0.95,
+      "reference_class_count": 3,
+      "status": "AVAILABLE"
+    },
+    "gemini_2class": {
+      "label": "POSITIVE",
+      "negative_probability": 0.01,
+      "positive_probability": 0.95,
+      "neutral_probability_excluded": 0.04,
+      "reference_class_count": 2,
+      "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+    },
+    "distilbert_prediction": "POSITIVE (1.00)",
+    "roberta_prediction": "POSITIVE (0.99)",
+    "outcome_2class": "EXPECTED_PRESERVE",
+    "outcome_3class": "EXPECTED_PRESERVE"
+  },
+  {
+    "probe_id": "P06_CONTRAST_NEG",
+    "type": "CONTRAST_NEGATIVE_APPEND",
+    "gemini_3class": {
+      "label": "NEUTRAL",
+      "negative_probability": 0.35,
+      "neutral_probability": 0.4,
+      "positive_probability": 0.25,
+      "reference_class_count": 3,
+      "status": "AVAILABLE"
+    },
+    "gemini_2class": {
+      "label": "NEGATIVE",
+      "negative_probability": 0.35,
+      "positive_probability": 0.25,
+      "neutral_probability_excluded": 0.4,
+      "reference_class_count": 2,
+      "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+    },
+    "distilbert_prediction": "NEGATIVE (1.00)",
+    "roberta_prediction": "NEGATIVE (0.41)",
+    "outcome_2class": "EXPECTED_FLIP",
+    "outcome_3class": "UNDETERMINED"
+  },
+  {
+    "probe_id": "P07_CONTRAST_POS",
+    "type": "CONTRAST_POSITIVE_APPEND",
+    "gemini_3class": {
+      "label": "POSITIVE",
+      "negative_probability": 0.25,
+      "neutral_probability": 0.3,
+      "positive_probability": 0.45,
+      "reference_class_count": 3,
+      "status": "AVAILABLE"
+    },
+    "gemini_2class": {
+      "label": "POSITIVE",
+      "negative_probability": 0.25,
+      "positive_probability": 0.45,
+      "neutral_probability_excluded": 0.3,
+      "reference_class_count": 2,
+      "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+    },
+    "distilbert_prediction": "POSITIVE (1.00)",
+    "roberta_prediction": "POSITIVE (0.87)",
+    "outcome_2class": "EXPECTED_PRESERVE",
+    "outcome_3class": "EXPECTED_PRESERVE"
+  }
+]

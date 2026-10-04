@@ -1,0 +1,66 @@
+{
+  "experiment_id": "exp_1790851320_dd1467",
+  "generated_at": null,
+  "models": [
+    "distilbert-base-uncased-finetuned-sst-2-english"
+  ],
+  "pipeline_integrity": {
+    "generated": 4,
+    "selected": 4,
+    "verified": 4,
+    "planned": 4,
+    "total_probes": 4,
+    "model_checks": {
+      "distilbert-base-uncased-finetuned-sst-2-english": {
+        "generated": 4,
+        "selected": 4,
+        "verified": 4,
+        "planned": 4,
+        "executed": 4,
+        "analyzed": 4,
+        "reported": 4,
+        "integrity_verified": true
+      }
+    },
+    "all_passed": true
+  },
+  "summary_metrics": {
+    "distilbert-base-uncased-finetuned-sst-2-english": {
+      "total_probes": 4,
+      "flip_rate": 0.25,
+      "observed_flip_rate": 0.25,
+      "expected_flip_rate": 0.5,
+      "expected_flip_compliance": 0.5,
+      "preserve_rate": 1.0,
+      "behavioral_consistency": 0.75,
+      "satisfaction_rate": 0.75,
+      "raw_label_flip_rate": 0.25,
+      "polarity_flip_rate": 0.25,
+      "confidence_flip_rate": 0.0,
+      "ece": 0.24543533497417436,
+      "transition_matrix": {
+        "NEGATIVE": {
+          "NEGATIVE": 0,
+          "POSITIVE": 0
+        },
+        "POSITIVE": {
+          "NEGATIVE": 1,
+          "POSITIVE": 3
+        }
+      },
+      "confidence_shifts": {
+        "mean_delta_pts": -0.4433714922949805,
+        "median_delta_pts": -0.1639675953197639,
+        "max_drop_pts": 1.4451498582606526,
+        "max_gain_pts": 0.0,
+        "num_increased": 0,
+        "num_decreased": 4,
+        "num_unchanged": 0
+      },
+      "failure_counts": {
+        "Misweighted": 1
+      },
+      "analysis_status": "FAILURES_OBSERVED"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "probe_id": "prb_6e8149c6f61d",
+    "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+    "failure_type": "Blind",
+    "behavioral_outcome": "MISSING_FLIP",
+    "original_input": "The movie was great and the acting was top notch.",
+    "perturbed_input": "The movie was not great and the acting was top notch.",
+    "original_prediction": "POSITIVE",
+    "perturbed_prediction": "POSITIVE",
+    "original_confidence": 0.9998690500135242,
+    "perturbed_confidence": 0.9854175714077125,
+    "evidence": "Probe introduces a polarity reversal (REVERSE_POLARITY), but model retained the same predicted class and polarity (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)).",
+    "recommendation": "Augment training data and regularize behavior against negation_insertion perturbations to fix Blind failures."
+  }
+]

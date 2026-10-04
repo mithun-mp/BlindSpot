@@ -1,0 +1,41 @@
+{
+  "experiment_id": "exp_1790612002_8f11da",
+  "experiment_name": "E2E Semantic Ground-Truth Benchmark",
+  "created_at": 1790612003.258124,
+  "status": "incomplete",
+  "models": [
+    "distilbert-base-uncased-finetuned-sst-2-english",
+    "textattack/albert-base-v2-SST-2",
+    "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "textattack/bert-base-uncased-SST-2",
+    "cardiffnlp/twitter-roberta-base-sentiment"
+  ],
+  "completed_models": [
+    "textattack/albert-base-v2-SST-2",
+    "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "cardiffnlp/twitter-roberta-base-sentiment"
+  ],
+  "model_states": {
+    "distilbert-base-uncased-finetuned-sst-2-english": "failed",
+    "textattack/albert-base-v2-SST-2": "completed",
+    "cardiffnlp/twitter-roberta-base-sentiment-latest": "completed",
+    "textattack/bert-base-uncased-SST-2": "failed",
+    "cardiffnlp/twitter-roberta-base-sentiment": "completed"
+  },
+  "num_models": 5,
+  "num_seed_texts": 1,
+  "num_probes": 7,
+  "last_updated_at": 1790612192.923122,
+  "total_duration_sec": 189.68,
+  "pipeline_integrity_passed": false,
+  "run_status": "INCOMPLETE",
+  "analysis_status": "NO_VALID_ANALYSIS",
+  "semantic_reference": {
+    "engine": "local_heuristic",
+    "model": "local_heuristic",
+    "baseline_polarity": "POSITIVE",
+    "cache_hits": 7,
+    "api_requests": 0
+  },
+  "completed_at": 1790612206.406965
+}

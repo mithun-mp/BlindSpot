@@ -1,0 +1,968 @@
+[
+  {
+    "baseline_id": "base_c6c2e860347b",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_80889330b7c6",
+    "seed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbed_text": "The movie had excellent acting and beautiful visuals, but the storyline was not boring and disappointing",
+    "perturbation_type": "negation_insertion",
+    "category": "negation_insertion",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9932807613944497,
+      "formatted_confidence": "99.33%",
+      "probabilities": {
+        "NEGATIVE": 0.9932807613944497,
+        "POSITIVE": 0.006719238605550323
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "99.33%",
+        "POSITIVE": "0.67%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====================]  99.33%\nPOSITIVE   [                    ]   0.67%",
+      "raw_logits": null,
+      "latency_ms": 122.81179999990854,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.9932807613944497,
+        "LABEL_1": 0.006719238605550323
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9980753474296006,
+      "formatted_confidence": "99.81%",
+      "probabilities": {
+        "NEGATIVE": 0.0019246525703994078,
+        "POSITIVE": 0.9980753474296006
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.19%",
+        "POSITIVE": "99.81%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.19%\nPOSITIVE   [====================]  99.81%",
+      "raw_logits": null,
+      "latency_ms": 102.71465714270433,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0019246525703994078,
+        "LABEL_1": 0.9980753474296006
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "NEGATIVE",
+    "original_confidence": 0.9932807613944497,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9980753474296006,
+    "from_label": "NEGATIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "NEGATIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_80889330b7c6",
+      "sentence_text": "The movie had excellent acting and beautiful visuals, but the storyline was not boring and disappointing",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'the storyline was not boring and disappointing' (compound: +0.62).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790597714.6920607,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": true,
+    "semantic_state_change": true,
+    "confidence_delta": 0.004794586035150927,
+    "confidence_delta_pts": 0.47945860351509273,
+    "confidence_delta_pp": 0.47945860351509273,
+    "formatted_confidence_delta": "+0.48 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": false,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "POLARITY_REVERSED",
+    "behavioral_outcome": "UNEXPECTED_FLIP",
+    "failure_type": "Spurious",
+    "rationale": "The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (NEGATIVE (NEGATIVE) \u2192 POSITIVE (POSITIVE)).",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 102.71465714270433
+  },
+  {
+    "baseline_id": "base_c6c2e860347b",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_0b010af6635d",
+    "seed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbed_text": "It is not impossible that the movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbation_type": "double_negation",
+    "category": "double_negation",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9932807613944497,
+      "formatted_confidence": "99.33%",
+      "probabilities": {
+        "NEGATIVE": 0.9932807613944497,
+        "POSITIVE": 0.006719238605550323
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "99.33%",
+        "POSITIVE": "0.67%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====================]  99.33%\nPOSITIVE   [                    ]   0.67%",
+      "raw_logits": null,
+      "latency_ms": 122.81179999990854,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.9932807613944497,
+        "LABEL_1": 0.006719238605550323
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9985283066266228,
+      "formatted_confidence": "99.85%",
+      "probabilities": {
+        "NEGATIVE": 0.9985283066266228,
+        "POSITIVE": 0.0014716933733771814
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "99.85%",
+        "POSITIVE": "0.15%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====================]  99.85%\nPOSITIVE   [                    ]   0.15%",
+      "raw_logits": null,
+      "latency_ms": 102.71465714270433,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.9985283066266228,
+        "LABEL_1": 0.0014716933733771814
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "NEGATIVE",
+    "original_confidence": 0.9932807613944497,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.9985283066266228,
+    "from_label": "NEGATIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "NEGATIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_0b010af6635d",
+      "sentence_text": "It is not impossible that the movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'the storyline was boring and disappointing' (compound: -0.30).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "UNVERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "LOCAL_HEURISTIC_UNVERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790597714.697132,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.00524754523217319,
+    "confidence_delta_pts": 0.524754523217319,
+    "confidence_delta_pp": 0.524754523217319,
+    "formatted_confidence_delta": "+0.52 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (NEGATIVE (NEGATIVE) \u2192 NEGATIVE (NEGATIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 102.71465714270433
+  },
+  {
+    "baseline_id": "base_c6c2e860347b",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_3b1c7a6a7f9a",
+    "seed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbed_text": "The movie had extremely excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9932807613944497,
+      "formatted_confidence": "99.33%",
+      "probabilities": {
+        "NEGATIVE": 0.9932807613944497,
+        "POSITIVE": 0.006719238605550323
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "99.33%",
+        "POSITIVE": "0.67%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====================]  99.33%\nPOSITIVE   [                    ]   0.67%",
+      "raw_logits": null,
+      "latency_ms": 122.81179999990854,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.9932807613944497,
+        "LABEL_1": 0.006719238605550323
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9911990678675551,
+      "formatted_confidence": "99.12%",
+      "probabilities": {
+        "NEGATIVE": 0.9911990678675551,
+        "POSITIVE": 0.008800932132444914
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "99.12%",
+        "POSITIVE": "0.88%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====================]  99.12%\nPOSITIVE   [                    ]   0.88%",
+      "raw_logits": null,
+      "latency_ms": 102.71465714270433,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.9911990678675551,
+        "LABEL_1": 0.008800932132444914
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "NEGATIVE",
+    "original_confidence": 0.9932807613944497,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.9911990678675551,
+    "from_label": "NEGATIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "NEGATIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_3b1c7a6a7f9a",
+      "sentence_text": "The movie had extremely excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'the storyline was boring and disappointing' (compound: -0.29).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790597714.7028654,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.002081693526894579,
+    "confidence_delta_pts": -0.2081693526894579,
+    "confidence_delta_pp": -0.2081693526894579,
+    "formatted_confidence_delta": "-0.21 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "POLARITY_STRENGTHENED",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Intensifier preserved polarity.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 102.71465714270433
+  },
+  {
+    "baseline_id": "base_c6c2e860347b",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_d794fddd78d0",
+    "seed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbed_text": "The movie had somewhat excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9932807613944497,
+      "formatted_confidence": "99.33%",
+      "probabilities": {
+        "NEGATIVE": 0.9932807613944497,
+        "POSITIVE": 0.006719238605550323
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "99.33%",
+        "POSITIVE": "0.67%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====================]  99.33%\nPOSITIVE   [                    ]   0.67%",
+      "raw_logits": null,
+      "latency_ms": 122.81179999990854,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.9932807613944497,
+        "LABEL_1": 0.006719238605550323
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9958513181857827,
+      "formatted_confidence": "99.59%",
+      "probabilities": {
+        "NEGATIVE": 0.9958513181857827,
+        "POSITIVE": 0.004148681814217305
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "99.59%",
+        "POSITIVE": "0.41%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====================]  99.59%\nPOSITIVE   [                    ]   0.41%",
+      "raw_logits": null,
+      "latency_ms": 102.71465714270433,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.9958513181857827,
+        "LABEL_1": 0.004148681814217305
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "NEGATIVE",
+    "original_confidence": 0.9932807613944497,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.9958513181857827,
+    "from_label": "NEGATIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "NEGATIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_d794fddd78d0",
+      "sentence_text": "The movie had somewhat excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'the storyline was boring and disappointing' (compound: -0.30).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790597714.7075071,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.0025705567913330007,
+    "confidence_delta_pts": 0.2570556791333001,
+    "confidence_delta_pp": 0.2570556791333001,
+    "formatted_confidence_delta": "+0.26 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "POLARITY_WEAKENED",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Downtoner preserved polarity (NEGATIVE (NEGATIVE) \u2192 NEGATIVE (NEGATIVE)).",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 102.71465714270433
+  },
+  {
+    "baseline_id": "base_c6c2e860347b",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_e115cc106ff1",
+    "seed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbed_text": "The film had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbation_type": "synonym_substitution",
+    "category": "synonym_substitution",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9932807613944497,
+      "formatted_confidence": "99.33%",
+      "probabilities": {
+        "NEGATIVE": 0.9932807613944497,
+        "POSITIVE": 0.006719238605550323
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "99.33%",
+        "POSITIVE": "0.67%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====================]  99.33%\nPOSITIVE   [                    ]   0.67%",
+      "raw_logits": null,
+      "latency_ms": 122.81179999990854,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.9932807613944497,
+        "LABEL_1": 0.006719238605550323
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9931256863579684,
+      "formatted_confidence": "99.31%",
+      "probabilities": {
+        "NEGATIVE": 0.9931256863579684,
+        "POSITIVE": 0.0068743136420316405
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "99.31%",
+        "POSITIVE": "0.69%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====================]  99.31%\nPOSITIVE   [                    ]   0.69%",
+      "raw_logits": null,
+      "latency_ms": 102.71465714270433,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.9931256863579684,
+        "LABEL_1": 0.0068743136420316405
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "NEGATIVE",
+    "original_confidence": 0.9932807613944497,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.9931256863579684,
+    "from_label": "NEGATIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "NEGATIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_e115cc106ff1",
+      "sentence_text": "The film had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'the storyline was boring and disappointing' (compound: -0.30).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "UNVERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "LOCAL_HEURISTIC_UNVERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790597714.7125041,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.00015507503648126697,
+    "confidence_delta_pts": -0.015507503648126697,
+    "confidence_delta_pp": -0.015507503648126697,
+    "formatted_confidence_delta": "-0.02 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (NEGATIVE (NEGATIVE) \u2192 NEGATIVE (NEGATIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 102.71465714270433
+  },
+  {
+    "baseline_id": "base_c6c2e860347b",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_8883f3615d65",
+    "seed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing, however it was surprisingly inferior in comparison.",
+    "perturbation_type": "contrast_negative_append",
+    "category": "contrast_negative_append",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9932807613944497,
+      "formatted_confidence": "99.33%",
+      "probabilities": {
+        "NEGATIVE": 0.9932807613944497,
+        "POSITIVE": 0.006719238605550323
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "99.33%",
+        "POSITIVE": "0.67%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====================]  99.33%\nPOSITIVE   [                    ]   0.67%",
+      "raw_logits": null,
+      "latency_ms": 122.81179999990854,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.9932807613944497,
+        "LABEL_1": 0.006719238605550323
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.994695504092244,
+      "formatted_confidence": "99.47%",
+      "probabilities": {
+        "NEGATIVE": 0.994695504092244,
+        "POSITIVE": 0.005304495907755954
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "99.47%",
+        "POSITIVE": "0.53%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====================]  99.47%\nPOSITIVE   [                    ]   0.53%",
+      "raw_logits": null,
+      "latency_ms": 102.71465714270433,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.994695504092244,
+        "LABEL_1": 0.005304495907755954
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "NEGATIVE",
+    "original_confidence": 0.9932807613944497,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.994695504092244,
+    "from_label": "NEGATIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "NEGATIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_8883f3615d65",
+      "sentence_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing, however it was surprisingly inferior in comparison.",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'the storyline was boring and disappointing,' (compound: -0.30).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790597714.7178652,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.0014147426977944022,
+    "confidence_delta_pts": 0.14147426977944022,
+    "confidence_delta_pp": 0.14147426977944022,
+    "formatted_confidence_delta": "+0.14 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": true,
+    "expected_relation": "POLARITY_REVERSED",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "MISSING_FLIP",
+    "failure_type": "Blind",
+    "rationale": "Probe introduces a polarity reversal (PRESERVE_POLARITY), but model retained the same predicted class and polarity (NEGATIVE (NEGATIVE) \u2192 NEGATIVE (NEGATIVE)).",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 102.71465714270433
+  },
+  {
+    "baseline_id": "base_c6c2e860347b",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_0896126a5725",
+    "seed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing, and the overall storyline was engaging.",
+    "perturbation_type": "contrast_positive_append",
+    "category": "contrast_positive_append",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9932807613944497,
+      "formatted_confidence": "99.33%",
+      "probabilities": {
+        "NEGATIVE": 0.9932807613944497,
+        "POSITIVE": 0.006719238605550323
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "99.33%",
+        "POSITIVE": "0.67%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====================]  99.33%\nPOSITIVE   [                    ]   0.67%",
+      "raw_logits": null,
+      "latency_ms": 122.81179999990854,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.9932807613944497,
+        "LABEL_1": 0.006719238605550323
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9909391587775044,
+      "formatted_confidence": "99.09%",
+      "probabilities": {
+        "NEGATIVE": 0.009060841222495609,
+        "POSITIVE": 0.9909391587775044
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.91%",
+        "POSITIVE": "99.09%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.91%\nPOSITIVE   [====================]  99.09%",
+      "raw_logits": null,
+      "latency_ms": 102.71465714270433,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.009060841222495609,
+        "LABEL_1": 0.9909391587775044
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "NEGATIVE",
+    "original_confidence": 0.9932807613944497,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9909391587775044,
+    "from_label": "NEGATIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "NEGATIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_0896126a5725",
+      "sentence_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing, and the overall storyline was engaging.",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'the storyline was boring and disappointing, and the overall storyline was engaging.' (compound: -0.15).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790597714.7233264,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": true,
+    "semantic_state_change": true,
+    "confidence_delta": -0.002341602616945271,
+    "confidence_delta_pts": -0.23416026169452708,
+    "confidence_delta_pp": -0.23416026169452708,
+    "formatted_confidence_delta": "-0.23 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": false,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "POLARITY_REVERSED",
+    "behavioral_outcome": "UNEXPECTED_FLIP",
+    "failure_type": "Spurious",
+    "rationale": "The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (NEGATIVE (NEGATIVE) \u2192 POSITIVE (POSITIVE)).",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 102.71465714270433
+  }
+]

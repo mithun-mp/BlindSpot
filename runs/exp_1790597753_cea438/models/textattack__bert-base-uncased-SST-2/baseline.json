@@ -1,0 +1,79 @@
+{
+  "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing": {
+    "baseline_id": "base_c6c2e860347b",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "seed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "original_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "sentence_type": "literal",
+    "prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9932807613944497,
+      "formatted_confidence": "99.33%",
+      "probabilities": {
+        "NEGATIVE": 0.9932807613944497,
+        "POSITIVE": 0.006719238605550323
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "99.33%",
+        "POSITIVE": "0.67%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====================]  99.33%\nPOSITIVE   [                    ]   0.67%",
+      "raw_logits": null,
+      "latency_ms": 122.81179999990854,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.9932807613944497,
+        "LABEL_1": 0.006719238605550323
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "raw_label": "LABEL_0",
+    "raw_label_id": 0,
+    "semantic_polarity": "NEGATIVE",
+    "confidence": 0.9932807613944497,
+    "full_probability_distribution": {
+      "NEGATIVE": 0.9932807613944497,
+      "POSITIVE": 0.006719238605550323
+    },
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "NEGATIVE",
+    "semantic_reference": {
+      "sentence_id": "baseline",
+      "sentence_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'the storyline was boring and disappointing' (compound: -0.30).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": null,
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790597714.6864526,
+      "prompt_version": "v2.0"
+    },
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "latency_ms": 122.81179999990854
+  }
+}

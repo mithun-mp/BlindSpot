@@ -1,0 +1,975 @@
+[
+  {
+    "baseline_id": "base_834710d7f6e6",
+    "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+    "probe_id": "prb_d59487c5df7c",
+    "seed_text": "i am healthy but still hospitalized",
+    "perturbed_text": "i am not healthy but still hospitalized",
+    "perturbation_type": "negation_insertion",
+    "category": "negation_insertion",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.8577466607093811,
+      "formatted_confidence": "85.77%",
+      "probabilities": {
+        "NEGATIVE": 0.8577466607093811,
+        "POSITIVE": 0.1422533392906189
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "85.77%",
+        "POSITIVE": "14.23%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=================   ]  85.77%\nPOSITIVE   [===                 ]  14.23%",
+      "raw_logits": null,
+      "latency_ms": 142.3821999997017,
+      "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "NEGATIVE",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "NEGATIVE": 0.8577466607093811,
+        "POSITIVE": 0.1422533392906189
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9979652605623136,
+      "formatted_confidence": "99.80%",
+      "probabilities": {
+        "NEGATIVE": 0.9979652605623136,
+        "POSITIVE": 0.002034739437686378
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "99.80%",
+        "POSITIVE": "0.20%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====================]  99.80%\nPOSITIVE   [                    ]   0.20%",
+      "raw_logits": null,
+      "latency_ms": 47.150742857151535,
+      "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "NEGATIVE",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "NEGATIVE": 0.9979652605623136,
+        "POSITIVE": 0.002034739437686378
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "NEGATIVE",
+    "original_confidence": 0.8577466607093811,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.9979652605623136,
+    "from_label": "NEGATIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "NEGATIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_d59487c5df7c",
+      "sentence_text": "i am not healthy but still hospitalized",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'still hospitalized' (compound: -0.54).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790617610.4890516,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.1402185998529325,
+    "confidence_delta_pts": 14.02185998529325,
+    "confidence_delta_pp": 14.02185998529325,
+    "formatted_confidence_delta": "+14.02 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (NEGATIVE (NEGATIVE) \u2192 NEGATIVE (NEGATIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 47.150742857151535,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_834710d7f6e6",
+    "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+    "probe_id": "prb_18fb2706a780",
+    "seed_text": "i am healthy but still hospitalized",
+    "perturbed_text": "It is not impossible that i am healthy but still hospitalized",
+    "perturbation_type": "double_negation",
+    "category": "double_negation",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.8577466607093811,
+      "formatted_confidence": "85.77%",
+      "probabilities": {
+        "NEGATIVE": 0.8577466607093811,
+        "POSITIVE": 0.1422533392906189
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "85.77%",
+        "POSITIVE": "14.23%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=================   ]  85.77%\nPOSITIVE   [===                 ]  14.23%",
+      "raw_logits": null,
+      "latency_ms": 142.3821999997017,
+      "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "NEGATIVE",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "NEGATIVE": 0.8577466607093811,
+        "POSITIVE": 0.1422533392906189
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9957044090070764,
+      "formatted_confidence": "99.57%",
+      "probabilities": {
+        "NEGATIVE": 0.9957044090070764,
+        "POSITIVE": 0.0042955909929236515
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "99.57%",
+        "POSITIVE": "0.43%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====================]  99.57%\nPOSITIVE   [                    ]   0.43%",
+      "raw_logits": null,
+      "latency_ms": 47.150742857151535,
+      "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "NEGATIVE",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "NEGATIVE": 0.9957044090070764,
+        "POSITIVE": 0.0042955909929236515
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "NEGATIVE",
+    "original_confidence": 0.8577466607093811,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.9957044090070764,
+    "from_label": "NEGATIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "NEGATIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_18fb2706a780",
+      "sentence_text": "It is not impossible that i am healthy but still hospitalized",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'still hospitalized' (compound: -0.32).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790617610.4980555,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.13795774829769525,
+    "confidence_delta_pts": 13.795774829769524,
+    "confidence_delta_pp": 13.795774829769524,
+    "formatted_confidence_delta": "+13.80 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (NEGATIVE (NEGATIVE) \u2192 NEGATIVE (NEGATIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 47.150742857151535,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_834710d7f6e6",
+    "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+    "probe_id": "prb_1faf50373dfb",
+    "seed_text": "i am healthy but still hospitalized",
+    "perturbed_text": "i am extremely healthy but still hospitalized",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.8577466607093811,
+      "formatted_confidence": "85.77%",
+      "probabilities": {
+        "NEGATIVE": 0.8577466607093811,
+        "POSITIVE": 0.1422533392906189
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "85.77%",
+        "POSITIVE": "14.23%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=================   ]  85.77%\nPOSITIVE   [===                 ]  14.23%",
+      "raw_logits": null,
+      "latency_ms": 142.3821999997017,
+      "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "NEGATIVE",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "NEGATIVE": 0.8577466607093811,
+        "POSITIVE": 0.1422533392906189
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9518710516671993,
+      "formatted_confidence": "95.19%",
+      "probabilities": {
+        "NEGATIVE": 0.9518710516671993,
+        "POSITIVE": 0.048128948332800695
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "95.19%",
+        "POSITIVE": "4.81%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=================== ]  95.19%\nPOSITIVE   [=                   ]   4.81%",
+      "raw_logits": null,
+      "latency_ms": 47.150742857151535,
+      "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "NEGATIVE",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "NEGATIVE": 0.9518710516671993,
+        "POSITIVE": 0.048128948332800695
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "NEGATIVE",
+    "original_confidence": 0.8577466607093811,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.9518710516671993,
+    "from_label": "NEGATIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "NEGATIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_1faf50373dfb",
+      "sentence_text": "i am extremely healthy but still hospitalized",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'still hospitalized' (compound: -0.30).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790617610.5064297,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.09412439095781822,
+    "confidence_delta_pts": 9.41243909578182,
+    "confidence_delta_pp": 9.41243909578182,
+    "formatted_confidence_delta": "+9.41 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (NEGATIVE (NEGATIVE) \u2192 NEGATIVE (NEGATIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 47.150742857151535,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_834710d7f6e6",
+    "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+    "probe_id": "prb_defcd4d250b4",
+    "seed_text": "i am healthy but still hospitalized",
+    "perturbed_text": "i am somewhat healthy but still hospitalized",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.8577466607093811,
+      "formatted_confidence": "85.77%",
+      "probabilities": {
+        "NEGATIVE": 0.8577466607093811,
+        "POSITIVE": 0.1422533392906189
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "85.77%",
+        "POSITIVE": "14.23%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=================   ]  85.77%\nPOSITIVE   [===                 ]  14.23%",
+      "raw_logits": null,
+      "latency_ms": 142.3821999997017,
+      "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "NEGATIVE",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "NEGATIVE": 0.8577466607093811,
+        "POSITIVE": 0.1422533392906189
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9527027606964111,
+      "formatted_confidence": "95.27%",
+      "probabilities": {
+        "NEGATIVE": 0.9527027606964111,
+        "POSITIVE": 0.04729723930358887
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "95.27%",
+        "POSITIVE": "4.73%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=================== ]  95.27%\nPOSITIVE   [=                   ]   4.73%",
+      "raw_logits": null,
+      "latency_ms": 47.150742857151535,
+      "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "NEGATIVE",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "NEGATIVE": 0.9527027606964111,
+        "POSITIVE": 0.04729723930358887
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "NEGATIVE",
+    "original_confidence": 0.8577466607093811,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.9527027606964111,
+    "from_label": "NEGATIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "NEGATIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_defcd4d250b4",
+      "sentence_text": "i am somewhat healthy but still hospitalized",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'still hospitalized' (compound: -0.33).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790617610.5134697,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.09495609998703003,
+    "confidence_delta_pts": 9.495609998703003,
+    "confidence_delta_pp": 9.495609998703003,
+    "formatted_confidence_delta": "+9.50 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (NEGATIVE (NEGATIVE) \u2192 NEGATIVE (NEGATIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 47.150742857151535,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_834710d7f6e6",
+    "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+    "probe_id": "prb_7dc6459a9d15",
+    "seed_text": "i am healthy but still hospitalized",
+    "perturbed_text": "i am goodish but still hospitalized",
+    "perturbation_type": "synonym_substitution",
+    "category": "synonym_substitution",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.8577466607093811,
+      "formatted_confidence": "85.77%",
+      "probabilities": {
+        "NEGATIVE": 0.8577466607093811,
+        "POSITIVE": 0.1422533392906189
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "85.77%",
+        "POSITIVE": "14.23%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=================   ]  85.77%\nPOSITIVE   [===                 ]  14.23%",
+      "raw_logits": null,
+      "latency_ms": 142.3821999997017,
+      "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "NEGATIVE",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "NEGATIVE": 0.8577466607093811,
+        "POSITIVE": 0.1422533392906189
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9714406115675337,
+      "formatted_confidence": "97.14%",
+      "probabilities": {
+        "NEGATIVE": 0.9714406115675337,
+        "POSITIVE": 0.028559388432466293
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "97.14%",
+        "POSITIVE": "2.86%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=================== ]  97.14%\nPOSITIVE   [=                   ]   2.86%",
+      "raw_logits": null,
+      "latency_ms": 47.150742857151535,
+      "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "NEGATIVE",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "NEGATIVE": 0.9714406115675337,
+        "POSITIVE": 0.028559388432466293
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "NEGATIVE",
+    "original_confidence": 0.8577466607093811,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.9714406115675337,
+    "from_label": "NEGATIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "NEGATIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_7dc6459a9d15",
+      "sentence_text": "i am goodish but still hospitalized",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'still hospitalized' (compound: -0.44).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790617610.5191524,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.11369395085815259,
+    "confidence_delta_pts": 11.36939508581526,
+    "confidence_delta_pp": 11.36939508581526,
+    "formatted_confidence_delta": "+11.37 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (NEGATIVE (NEGATIVE) \u2192 NEGATIVE (NEGATIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 47.150742857151535,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_834710d7f6e6",
+    "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+    "probe_id": "prb_f9f881eda7b2",
+    "seed_text": "i am healthy but still hospitalized",
+    "perturbed_text": "i am healthy but still hospitalized, however I could not repeat that performance.",
+    "perturbation_type": "contrast_negative_append",
+    "category": "contrast_negative_append",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.8577466607093811,
+      "formatted_confidence": "85.77%",
+      "probabilities": {
+        "NEGATIVE": 0.8577466607093811,
+        "POSITIVE": 0.1422533392906189
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "85.77%",
+        "POSITIVE": "14.23%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=================   ]  85.77%\nPOSITIVE   [===                 ]  14.23%",
+      "raw_logits": null,
+      "latency_ms": 142.3821999997017,
+      "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "NEGATIVE",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "NEGATIVE": 0.8577466607093811,
+        "POSITIVE": 0.1422533392906189
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.7149065732955933,
+      "formatted_confidence": "71.49%",
+      "probabilities": {
+        "NEGATIVE": 0.7149065732955933,
+        "POSITIVE": 0.28509342670440674
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "71.49%",
+        "POSITIVE": "28.51%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [==============      ]  71.49%\nPOSITIVE   [======              ]  28.51%",
+      "raw_logits": null,
+      "latency_ms": 47.150742857151535,
+      "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "NEGATIVE",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "NEGATIVE": 0.7149065732955933,
+        "POSITIVE": 0.28509342670440674
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "NEGATIVE",
+    "original_confidence": 0.8577466607093811,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.7149065732955933,
+    "from_label": "NEGATIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "NEGATIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_f9f881eda7b2",
+      "sentence_text": "i am healthy but still hospitalized, however I could not repeat that performance.",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'still hospitalized,' (compound: -0.32).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790617610.525104,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.14284008741378784,
+    "confidence_delta_pts": -14.284008741378784,
+    "confidence_delta_pp": -14.284008741378784,
+    "formatted_confidence_delta": "-14.28 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (NEGATIVE (NEGATIVE) \u2192 NEGATIVE (NEGATIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 47.150742857151535,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_834710d7f6e6",
+    "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+    "probe_id": "prb_d57d653dadae",
+    "seed_text": "i am healthy but still hospitalized",
+    "perturbed_text": "i am healthy but still hospitalized, and I displayed remarkable skill.",
+    "perturbation_type": "contrast_positive_append",
+    "category": "contrast_positive_append",
+    "expected_flip": true,
+    "expected_semantic_effect": "EXPECTED_FLIP",
+    "original_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.8577466607093811,
+      "formatted_confidence": "85.77%",
+      "probabilities": {
+        "NEGATIVE": 0.8577466607093811,
+        "POSITIVE": 0.1422533392906189
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "85.77%",
+        "POSITIVE": "14.23%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=================   ]  85.77%\nPOSITIVE   [===                 ]  14.23%",
+      "raw_logits": null,
+      "latency_ms": 142.3821999997017,
+      "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "NEGATIVE",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "NEGATIVE": 0.8577466607093811,
+        "POSITIVE": 0.1422533392906189
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9998621990664484,
+      "formatted_confidence": "99.99%",
+      "probabilities": {
+        "NEGATIVE": 0.0001378009335516766,
+        "POSITIVE": 0.9998621990664484
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.01%",
+        "POSITIVE": "99.99%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.01%\nPOSITIVE   [====================]  99.99%",
+      "raw_logits": null,
+      "latency_ms": 47.150742857151535,
+      "model_id": "distilbert-base-uncased-finetuned-sst-2-english",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "POSITIVE",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "NEGATIVE": 0.0001378009335516766,
+        "POSITIVE": 0.9998621990664484
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "NEGATIVE",
+    "original_confidence": 0.8577466607093811,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9998621990664484,
+    "from_label": "NEGATIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "NEGATIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_d57d653dadae",
+      "sentence_text": "i am healthy but still hospitalized, and I displayed remarkable skill.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Positive affective orientation (compound score: +0.13).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "REVERSE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790617610.5319207,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": true,
+    "semantic_state_change": true,
+    "confidence_delta": 0.14211553835706725,
+    "confidence_delta_pts": 14.211553835706725,
+    "confidence_delta_pp": 14.211553835706725,
+    "formatted_confidence_delta": "+14.21 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": false,
+    "expected_relation": "POLARITY_REVERSED",
+    "observed_relation": "POLARITY_REVERSED",
+    "behavioral_outcome": "EXPECTED_FLIP",
+    "failure_type": "None",
+    "rationale": "Model correctly flipped and changed label (NEGATIVE (NEGATIVE) \u2192 POSITIVE (POSITIVE)) under DIFFERENT_LABEL expectation.",
+    "semantic_intent": "REVERSE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 47.150742857151535,
+    "ground_truth_match": true
+  }
+]

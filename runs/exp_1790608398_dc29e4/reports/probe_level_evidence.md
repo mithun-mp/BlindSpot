@@ -1,0 +1,110 @@
+# Probe-Level Behavioral Evidence: E2E Semantic Ground-Truth Benchmark
+
+**Experiment ID**: `exp_1790608398_dc29e4`
+Detailed probe-level records establishing full observable evidence for behavioral outcomes and failure classifications.
+
+
+## Model: `distilbert-base-uncased-finetuned-sst-2-english`
+
+| Probe ID | Category | Original → Perturbed | Semantic Ref | Baseline | Probe Output | Transition | Δ Conf (pp) | Flip | Outcome | Failure |
+| :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `prb_e3fc` | NEGATION_INSERTION | "The movie was absolutely ..." → "The movie was not absolut..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | NEGATIVE (1.00) | POSITIVE → NEGATIVE | -0.0 | YES | `UNEXPECTED_FLIP` | **Spurious** |
+| `prb_3308` | DOUBLE_NEGATION | "The movie was absolutely ..." → "It is not impossible that..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | POSITIVE (1.00) | POSITIVE → POSITIVE | -0.0 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_4e98` | INTENSITY | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | POSITIVE (1.00) | POSITIVE → POSITIVE | +0.0 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_8f2a` | INTENSITY | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | POSITIVE (1.00) | POSITIVE → POSITIVE | +0.0 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_28b5` | SYNONYM_SUBSTITUTION | "The movie was absolutely ..." → "The film was absolutely f..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | POSITIVE (1.00) | POSITIVE → POSITIVE | +0.0 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_2f02` | CONTRAST_NEGATIVE_APPEND | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | POSITIVE (0.80) | POSITIVE → POSITIVE | -20.0 | NO | `EXPECTED_PRESERVE` | **Misweighted** |
+| `prb_8a84` | CONTRAST_POSITIVE_APPEND | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | POSITIVE (1.00) | POSITIVE → POSITIVE | +0.0 | NO | `EXPECTED_PRESERVE` | **None** |
+
+### Probe Rationales & Evidence Notes
+- **`prb_e3fc`** [Spurious / UNEXPECTED_FLIP]: The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (POSITIVE (POSITIVE) → NEGATIVE (NEGATIVE)).
+- **`prb_3308`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_4e98`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_8f2a`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_28b5`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_2f02`** [Misweighted / EXPECTED_PRESERVE]: Polarity preserved, but confidence collapsed by 19.99 percentage points under meaning-preserving perturbation.
+- **`prb_8a84`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+
+## Model: `albert-base-v2-SST-2`
+
+| Probe ID | Category | Original → Perturbed | Semantic Ref | Baseline | Probe Output | Transition | Δ Conf (pp) | Flip | Outcome | Failure |
+| :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `prb_e3fc` | NEGATION_INSERTION | "The movie was absolutely ..." → "The movie was not absolut..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | NEGATIVE (1.00) | POSITIVE → NEGATIVE | -0.4 | YES | `UNEXPECTED_FLIP` | **Spurious** |
+| `prb_3308` | DOUBLE_NEGATION | "The movie was absolutely ..." → "It is not impossible that..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | POSITIVE (0.99) | POSITIVE → POSITIVE | -0.5 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_4e98` | INTENSITY | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | POSITIVE (1.00) | POSITIVE → POSITIVE | -0.0 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_8f2a` | INTENSITY | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | POSITIVE (1.00) | POSITIVE → POSITIVE | -0.0 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_28b5` | SYNONYM_SUBSTITUTION | "The movie was absolutely ..." → "The film was absolutely f..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | POSITIVE (1.00) | POSITIVE → POSITIVE | -0.0 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_2f02` | CONTRAST_NEGATIVE_APPEND | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | POSITIVE (0.92) | POSITIVE → POSITIVE | -7.6 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_8a84` | CONTRAST_POSITIVE_APPEND | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | POSITIVE (1.00) | POSITIVE → POSITIVE | +0.0 | NO | `EXPECTED_PRESERVE` | **None** |
+
+### Probe Rationales & Evidence Notes
+- **`prb_e3fc`** [Spurious / UNEXPECTED_FLIP]: The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (POSITIVE (POSITIVE) → NEGATIVE (NEGATIVE)).
+- **`prb_3308`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_4e98`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_8f2a`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_28b5`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_2f02`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_8a84`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+
+## Model: `twitter-roberta-base-sentiment-latest`
+
+| Probe ID | Category | Original → Perturbed | Semantic Ref | Baseline | Probe Output | Transition | Δ Conf (pp) | Flip | Outcome | Failure |
+| :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `prb_e3fc` | NEGATION_INSERTION | "The movie was absolutely ..." → "The movie was not absolut..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (0.99) | NEGATIVE (0.83) | POSITIVE → NEGATIVE | -16.1 | YES | `UNEXPECTED_FLIP` | **Spurious** |
+| `prb_3308` | DOUBLE_NEGATION | "The movie was absolutely ..." → "It is not impossible that..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (0.99) | POSITIVE (0.98) | POSITIVE → POSITIVE | -0.4 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_4e98` | INTENSITY | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (0.99) | POSITIVE (0.99) | POSITIVE → POSITIVE | +0.0 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_8f2a` | INTENSITY | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (0.99) | POSITIVE (0.99) | POSITIVE → POSITIVE | +0.1 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_28b5` | SYNONYM_SUBSTITUTION | "The movie was absolutely ..." → "The film was absolutely f..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (0.99) | POSITIVE (0.99) | POSITIVE → POSITIVE | -0.2 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_2f02` | CONTRAST_NEGATIVE_APPEND | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (0.99) | POSITIVE (0.97) | POSITIVE → POSITIVE | -1.6 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_8a84` | CONTRAST_POSITIVE_APPEND | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (0.99) | POSITIVE (0.99) | POSITIVE → POSITIVE | +0.3 | NO | `EXPECTED_PRESERVE` | **None** |
+
+### Probe Rationales & Evidence Notes
+- **`prb_e3fc`** [Spurious / UNEXPECTED_FLIP]: The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (POSITIVE (POSITIVE) → NEGATIVE (NEGATIVE)).
+- **`prb_3308`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_4e98`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_8f2a`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_28b5`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_2f02`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_8a84`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+
+## Model: `bert-base-uncased-SST-2`
+
+| Probe ID | Category | Original → Perturbed | Semantic Ref | Baseline | Probe Output | Transition | Δ Conf (pp) | Flip | Outcome | Failure |
+| :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `prb_e3fc` | NEGATION_INSERTION | "The movie was absolutely ..." → "The movie was not absolut..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | NEGATIVE (1.00) | POSITIVE → NEGATIVE | -0.2 | YES | `UNEXPECTED_FLIP` | **Spurious** |
+| `prb_3308` | DOUBLE_NEGATION | "The movie was absolutely ..." → "It is not impossible that..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | POSITIVE (1.00) | POSITIVE → POSITIVE | -0.0 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_4e98` | INTENSITY | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | POSITIVE (1.00) | POSITIVE → POSITIVE | +0.0 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_8f2a` | INTENSITY | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | POSITIVE (1.00) | POSITIVE → POSITIVE | -0.0 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_28b5` | SYNONYM_SUBSTITUTION | "The movie was absolutely ..." → "The film was absolutely f..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | POSITIVE (1.00) | POSITIVE → POSITIVE | +0.0 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_2f02` | CONTRAST_NEGATIVE_APPEND | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | POSITIVE (0.69) | POSITIVE → POSITIVE | -30.7 | NO | `EXPECTED_PRESERVE` | **Misweighted** |
+| `prb_8a84` | CONTRAST_POSITIVE_APPEND | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (1.00) | POSITIVE (1.00) | POSITIVE → POSITIVE | -0.0 | NO | `EXPECTED_PRESERVE` | **None** |
+
+### Probe Rationales & Evidence Notes
+- **`prb_e3fc`** [Spurious / UNEXPECTED_FLIP]: The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (POSITIVE (POSITIVE) → NEGATIVE (NEGATIVE)).
+- **`prb_3308`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_4e98`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_8f2a`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_28b5`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_2f02`** [Misweighted / EXPECTED_PRESERVE]: Polarity preserved, but confidence collapsed by 30.71 percentage points under meaning-preserving perturbation.
+- **`prb_8a84`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+
+## Model: `twitter-roberta-base-sentiment`
+
+| Probe ID | Category | Original → Perturbed | Semantic Ref | Baseline | Probe Output | Transition | Δ Conf (pp) | Flip | Outcome | Failure |
+| :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| `prb_e3fc` | NEGATION_INSERTION | "The movie was absolutely ..." → "The movie was not absolut..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (0.99) | NEGATIVE (0.66) | POSITIVE → NEGATIVE | -32.6 | YES | `UNEXPECTED_FLIP` | **Spurious** |
+| `prb_3308` | DOUBLE_NEGATION | "The movie was absolutely ..." → "It is not impossible that..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (0.99) | POSITIVE (0.98) | POSITIVE → POSITIVE | -0.6 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_4e98` | INTENSITY | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (0.99) | POSITIVE (0.99) | POSITIVE → POSITIVE | +0.0 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_8f2a` | INTENSITY | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (0.99) | POSITIVE (0.99) | POSITIVE → POSITIVE | -0.1 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_28b5` | SYNONYM_SUBSTITUTION | "The movie was absolutely ..." → "The film was absolutely f..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (0.99) | POSITIVE (0.99) | POSITIVE → POSITIVE | -0.1 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_2f02` | CONTRAST_NEGATIVE_APPEND | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (0.99) | POSITIVE (0.93) | POSITIVE → POSITIVE | -5.6 | NO | `EXPECTED_PRESERVE` | **None** |
+| `prb_8a84` | CONTRAST_POSITIVE_APPEND | "The movie was absolutely ..." → "The movie was absolutely ..." | `POSITIVE (PRESERVE_POLARITY)` | POSITIVE (0.99) | POSITIVE (0.99) | POSITIVE → POSITIVE | +0.3 | NO | `EXPECTED_PRESERVE` | **None** |
+
+### Probe Rationales & Evidence Notes
+- **`prb_e3fc`** [Spurious / UNEXPECTED_FLIP]: The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (POSITIVE (POSITIVE) → NEGATIVE (NEGATIVE)).
+- **`prb_3308`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_4e98`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_8f2a`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_28b5`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_2f02`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.
+- **`prb_8a84`** [None / EXPECTED_PRESERVE]: Model correctly preserved prediction (POSITIVE (POSITIVE) → POSITIVE (POSITIVE)) under meaning-preserving probe.

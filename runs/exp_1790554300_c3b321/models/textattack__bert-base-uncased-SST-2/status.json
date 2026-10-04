@@ -1,0 +1,8 @@
+{
+  "model_id": "textattack/bert-base-uncased-SST-2",
+  "status": "FAILED",
+  "completed_at": 1790554301.3461547,
+  "error": "Model 'textattack/bert-base-uncased-SST-2' pipeline is not loaded (load error: [WinError 4551] An Application Control policy has blocked this file. Error loading \"C:\\Users\\ASUS\\AppData\\Local\\Python\\pythoncore-3.14-64\\Lib\\site-packages\\torch\\lib\\torch_global_deps.dll\" or one of its dependencies.) and allow_fallback=False.",
+  "probes_done": 0,
+  "total_probes": 0
+}

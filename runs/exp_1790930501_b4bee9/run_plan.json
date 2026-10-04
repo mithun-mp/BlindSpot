@@ -1,0 +1,870 @@
+{
+  "experiment_id": "exp_1790930501_b4bee9",
+  "model_ids": [
+    "distilbert-base-uncased-finetuned-sst-2-english",
+    "textattack/albert-base-v2-SST-2",
+    "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "textattack/bert-base-uncased-SST-2",
+    "cardiffnlp/twitter-roberta-base-sentiment"
+  ],
+  "probe_set_id": "pset_1790930495_sel",
+  "probe_set_version": "2.2.0",
+  "selected_probe_ids": [
+    "prb_ab206b3a976b",
+    "prb_3dd07af8ccc8",
+    "prb_3257b1103e91",
+    "prb_8a01b10dc96d",
+    "prb_1f856e73cf96",
+    "prb_56f81359d889",
+    "prb_85c303b62fd0"
+  ],
+  "probe_versions": {
+    "prb_ab206b3a976b": 1,
+    "prb_3dd07af8ccc8": 1,
+    "prb_3257b1103e91": 1,
+    "prb_8a01b10dc96d": 1,
+    "prb_1f856e73cf96": 1,
+    "prb_56f81359d889": 1,
+    "prb_85c303b62fd0": 1
+  },
+  "original_text": "sun rises in the east and sets in the west",
+  "probe_texts": {
+    "prb_ab206b3a976b": "It is not true that sun rises in the east and sets in the west",
+    "prb_3dd07af8ccc8": "It is not impossible that sun rises in the east and sets in the west",
+    "prb_3257b1103e91": "sun rises extremely in the east and sets in the west",
+    "prb_8a01b10dc96d": "sun rises somewhat in the east and sets in the west",
+    "prb_1f856e73cf96": "insolate rises in the east and sets in the west",
+    "prb_56f81359d889": "sun rises in the east and sets in the west, however it does not rise reliably.",
+    "prb_85c303b62fd0": "sun rises in the east and sets in the west, and it delivered good results in practice."
+  },
+  "semantic_polarity_reference": "NEUTRAL",
+  "probe_semantic_references": {
+    "prb_ab206b3a976b": {
+      "sentence_id": "prb_ab206b3a976b",
+      "sentence_text": "It is not true that sun rises in the east and sets in the west",
+      "semantic_polarity": "NEUTRAL",
+      "confidence": 0.85,
+      "reason": "",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEUTRAL",
+      "gemini_confidence": 0.85,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEUTRAL",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790930478.4764898,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.1,
+      "neutral_probability": 0.85,
+      "positive_probability": 0.05,
+      "reference_class_count": 3,
+      "reference_label": "NEUTRAL",
+      "three_class": {
+        "label": "NEUTRAL",
+        "negative_probability": 0.1,
+        "neutral_probability": 0.85,
+        "positive_probability": 0.05,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.1,
+        "positive_probability": 0.05,
+        "neutral_probability_excluded": 0.85,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "NEGATIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ab206b3a976b",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3dd07af8ccc8",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.1,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3257b1103e91",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_8a01b10dc96d",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1f856e73cf96",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.8,
+            "positive_probability": 0.1,
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_56f81359d889",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_85c303b62fd0",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.7,
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          }
+        ]
+      }
+    },
+    "prb_3dd07af8ccc8": {
+      "sentence_id": "prb_3dd07af8ccc8",
+      "sentence_text": "It is not impossible that sun rises in the east and sets in the west",
+      "semantic_polarity": "NEUTRAL",
+      "confidence": 0.85,
+      "reason": "",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEUTRAL",
+      "gemini_confidence": 0.85,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEUTRAL",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790930478.4765487,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.05,
+      "neutral_probability": 0.85,
+      "positive_probability": 0.1,
+      "reference_class_count": 3,
+      "reference_label": "NEUTRAL",
+      "three_class": {
+        "label": "NEUTRAL",
+        "negative_probability": 0.05,
+        "neutral_probability": 0.85,
+        "positive_probability": 0.1,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "positive_probability": 0.1,
+        "neutral_probability_excluded": 0.85,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ab206b3a976b",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3dd07af8ccc8",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.1,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3257b1103e91",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_8a01b10dc96d",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1f856e73cf96",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.8,
+            "positive_probability": 0.1,
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_56f81359d889",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_85c303b62fd0",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.7,
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          }
+        ]
+      }
+    },
+    "prb_3257b1103e91": {
+      "sentence_id": "prb_3257b1103e91",
+      "sentence_text": "sun rises extremely in the east and sets in the west",
+      "semantic_polarity": "NEUTRAL",
+      "confidence": 0.9,
+      "reason": "",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEUTRAL",
+      "gemini_confidence": 0.9,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEUTRAL",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790930478.476596,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.05,
+      "neutral_probability": 0.9,
+      "positive_probability": 0.05,
+      "reference_class_count": 3,
+      "reference_label": "NEUTRAL",
+      "three_class": {
+        "label": "NEUTRAL",
+        "negative_probability": 0.05,
+        "neutral_probability": 0.9,
+        "positive_probability": 0.05,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "positive_probability": 0.05,
+        "neutral_probability_excluded": 0.9,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ab206b3a976b",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3dd07af8ccc8",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.1,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3257b1103e91",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_8a01b10dc96d",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1f856e73cf96",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.8,
+            "positive_probability": 0.1,
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_56f81359d889",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_85c303b62fd0",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.7,
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          }
+        ]
+      }
+    },
+    "prb_8a01b10dc96d": {
+      "sentence_id": "prb_8a01b10dc96d",
+      "sentence_text": "sun rises somewhat in the east and sets in the west",
+      "semantic_polarity": "NEUTRAL",
+      "confidence": 0.9,
+      "reason": "",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEUTRAL",
+      "gemini_confidence": 0.9,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEUTRAL",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790930478.4766402,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.05,
+      "neutral_probability": 0.9,
+      "positive_probability": 0.05,
+      "reference_class_count": 3,
+      "reference_label": "NEUTRAL",
+      "three_class": {
+        "label": "NEUTRAL",
+        "negative_probability": 0.05,
+        "neutral_probability": 0.9,
+        "positive_probability": 0.05,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "positive_probability": 0.05,
+        "neutral_probability_excluded": 0.9,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ab206b3a976b",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3dd07af8ccc8",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.1,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3257b1103e91",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_8a01b10dc96d",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1f856e73cf96",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.8,
+            "positive_probability": 0.1,
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_56f81359d889",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_85c303b62fd0",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.7,
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          }
+        ]
+      }
+    },
+    "prb_1f856e73cf96": {
+      "sentence_id": "prb_1f856e73cf96",
+      "sentence_text": "insolate rises in the east and sets in the west",
+      "semantic_polarity": "NEUTRAL",
+      "confidence": 0.8,
+      "reason": "",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEUTRAL",
+      "gemini_confidence": 0.8,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEUTRAL",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790930478.4766922,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.1,
+      "neutral_probability": 0.8,
+      "positive_probability": 0.1,
+      "reference_class_count": 3,
+      "reference_label": "NEUTRAL",
+      "three_class": {
+        "label": "NEUTRAL",
+        "negative_probability": 0.1,
+        "neutral_probability": 0.8,
+        "positive_probability": 0.1,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.1,
+        "positive_probability": 0.1,
+        "neutral_probability_excluded": 0.8,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ab206b3a976b",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3dd07af8ccc8",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.1,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3257b1103e91",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_8a01b10dc96d",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1f856e73cf96",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.8,
+            "positive_probability": 0.1,
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_56f81359d889",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_85c303b62fd0",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.7,
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          }
+        ]
+      }
+    },
+    "prb_56f81359d889": {
+      "sentence_id": "prb_56f81359d889",
+      "sentence_text": "sun rises in the east and sets in the west, however it does not rise reliably.",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": 0.7,
+      "reason": "",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEGATIVE",
+      "gemini_confidence": 0.7,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790930478.476739,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.7,
+      "neutral_probability": 0.25,
+      "positive_probability": 0.05,
+      "reference_class_count": 3,
+      "reference_label": "NEGATIVE",
+      "three_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.7,
+        "neutral_probability": 0.25,
+        "positive_probability": 0.05,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.7,
+        "positive_probability": 0.05,
+        "neutral_probability_excluded": 0.25,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "NEGATIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ab206b3a976b",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3dd07af8ccc8",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.1,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3257b1103e91",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_8a01b10dc96d",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1f856e73cf96",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.8,
+            "positive_probability": 0.1,
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_56f81359d889",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_85c303b62fd0",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.7,
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          }
+        ]
+      }
+    },
+    "prb_85c303b62fd0": {
+      "sentence_id": "prb_85c303b62fd0",
+      "sentence_text": "sun rises in the east and sets in the west, and it delivered good results in practice.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.7,
+      "reason": "",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.7,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790930478.4767852,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.05,
+      "neutral_probability": 0.25,
+      "positive_probability": 0.7,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "neutral_probability": 0.25,
+        "positive_probability": 0.7,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "positive_probability": 0.7,
+        "neutral_probability_excluded": 0.25,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ab206b3a976b",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3dd07af8ccc8",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.1,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3257b1103e91",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_8a01b10dc96d",
+            "label": "NEUTRAL",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1f856e73cf96",
+            "label": "NEUTRAL",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.8,
+            "positive_probability": 0.1,
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_56f81359d889",
+            "label": "NEGATIVE",
+            "negative_probability": 0.7,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.05,
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_85c303b62fd0",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.7,
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          }
+        ]
+      }
+    }
+  },
+  "semantic_relations": {
+    "prb_ab206b3a976b": "PRESERVE_POLARITY",
+    "prb_3dd07af8ccc8": "PRESERVE_POLARITY",
+    "prb_3257b1103e91": "PRESERVE_POLARITY",
+    "prb_8a01b10dc96d": "PRESERVE_POLARITY",
+    "prb_1f856e73cf96": "PRESERVE_POLARITY",
+    "prb_56f81359d889": "SHIFT_FROM_NEUTRAL",
+    "prb_85c303b62fd0": "SHIFT_FROM_NEUTRAL"
+  },
+  "verification_status": "HUMAN_VERIFIED",
+  "provider": "GEMINI",
+  "schema_version": "v2.0",
+  "created_at": 1790930502.3921235,
+  "sentence_type": "literal",
+  "metadata": {}
+}

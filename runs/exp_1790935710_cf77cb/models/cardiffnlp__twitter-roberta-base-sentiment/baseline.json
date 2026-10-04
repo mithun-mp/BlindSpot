@@ -1,0 +1,204 @@
+{
+  "sun rises in the east and sets in the west": {
+    "baseline_id": "base_72b488ec5095",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "seed_text": "sun rises in the east and sets in the west",
+    "original_text": "sun rises in the east and sets in the west",
+    "sentence_type": "literal",
+    "prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.8554390230689698,
+      "formatted_confidence": "85.54%",
+      "probabilities": {
+        "NEGATIVE": 0.014256051011306415,
+        "NEUTRAL": 0.8554390230689698,
+        "POSITIVE": 0.13030492591972376
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "1.43%",
+        "NEUTRAL": "85.54%",
+        "POSITIVE": "13.03%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   1.43%\nNEUTRAL    [=================   ]  85.54%\nPOSITIVE   [===                 ]  13.03%",
+      "raw_logits": null,
+      "latency_ms": 1124.650500001735,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.014256051011306415,
+        "LABEL_1": 0.8554390230689698,
+        "LABEL_2": 0.13030492591972376
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "raw_label": "LABEL_1",
+    "raw_label_id": 1,
+    "semantic_polarity": "NEUTRAL",
+    "confidence": 0.8554390230689698,
+    "full_probability_distribution": {
+      "NEGATIVE": 0.014256051011306415,
+      "NEUTRAL": 0.8554390230689698,
+      "POSITIVE": 0.13030492591972376
+    },
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "NEUTRAL",
+    "semantic_reference": {
+      "sentence_id": "baseline",
+      "sentence_text": "sun rises in the east and sets in the west",
+      "semantic_polarity": "NEUTRAL",
+      "confidence": 0.9,
+      "reason": "Factual statement about nature.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEUTRAL",
+      "gemini_confidence": 0.9,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEUTRAL",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790935681.7016356,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.05,
+      "neutral_probability": 0.9,
+      "positive_probability": 0.05,
+      "reference_class_count": 3,
+      "reference_label": "NEUTRAL",
+      "three_class": {
+        "label": "NEUTRAL",
+        "negative_probability": 0.05,
+        "neutral_probability": 0.9,
+        "positive_probability": 0.05,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "positive_probability": 0.05,
+        "neutral_probability_excluded": 0.9,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.9,
+            "positive_probability": 0.05,
+            "label": "NEUTRAL",
+            "ambiguity": "LOW",
+            "reason_short": "Factual statement about nature.",
+            "semantic_polarity": "NEUTRAL",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ab206b3a976b",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.05,
+            "label": "NEUTRAL",
+            "ambiguity": "LOW",
+            "reason_short": "Negation of a factual statement, remains factual/objective.",
+            "semantic_polarity": "NEUTRAL",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3dd07af8ccc8",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.8,
+            "positive_probability": 0.15,
+            "label": "NEUTRAL",
+            "ambiguity": "LOW",
+            "reason_short": "Double negation expressing possibility, still objective.",
+            "semantic_polarity": "NEUTRAL",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3257b1103e91",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.1,
+            "label": "NEUTRAL",
+            "ambiguity": "MEDIUM",
+            "reason_short": "Slightly unnatural adverb modifier, but fundamentally objective.",
+            "semantic_polarity": "NEUTRAL",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_8a01b10dc96d",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.85,
+            "positive_probability": 0.1,
+            "label": "NEUTRAL",
+            "ambiguity": "MEDIUM",
+            "reason_short": "Qualified factual statement, remains neutral.",
+            "semantic_polarity": "NEUTRAL",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_1f856e73cf96",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.8,
+            "positive_probability": 0.1,
+            "label": "NEUTRAL",
+            "ambiguity": "HIGH",
+            "reason_short": "Lexical substitution creates semantic oddity, but overall non-affective.",
+            "semantic_polarity": "NEUTRAL",
+            "semantic_relation_to_baseline": "MEANING_CHANGED"
+          },
+          {
+            "sentence_id": "prb_56f81359d889",
+            "negative_probability": 0.55,
+            "neutral_probability": 0.35,
+            "positive_probability": 0.1,
+            "label": "NEGATIVE",
+            "ambiguity": "LOW",
+            "reason_short": "Contains explicit critique regarding reliability.",
+            "semantic_polarity": "NEGATIVE",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_85c303b62fd0",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.7,
+            "label": "POSITIVE",
+            "ambiguity": "LOW",
+            "reason_short": "Explicit positive evaluation (\"delivered good results\").",
+            "semantic_polarity": "POSITIVE",
+            "semantic_relation_to_baseline": "SHIFT_FROM_NEUTRAL"
+          }
+        ]
+      }
+    },
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "latency_ms": 1124.650500001735
+  }
+}

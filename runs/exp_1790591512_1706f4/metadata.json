@@ -1,0 +1,31 @@
+{
+  "experiment_id": "exp_1790591512_1706f4",
+  "experiment_name": "Multimodel Robustness Audit",
+  "created_at": 1790591513.4521298,
+  "status": "completed",
+  "models": [
+    "distilbert-base-uncased-finetuned-sst-2-english"
+  ],
+  "completed_models": [
+    "distilbert-base-uncased-finetuned-sst-2-english"
+  ],
+  "model_states": {
+    "distilbert-base-uncased-finetuned-sst-2-english": "completed"
+  },
+  "num_models": 1,
+  "num_seed_texts": 1,
+  "num_probes": 7,
+  "last_updated_at": 1790591534.5535753,
+  "total_duration_sec": 21.92,
+  "pipeline_integrity_passed": true,
+  "run_status": "COMPLETED",
+  "analysis_status": "NO_FAILURES_OBSERVED",
+  "semantic_reference": {
+    "engine": "local_heuristic",
+    "model": "local_heuristic",
+    "baseline_polarity": "POSITIVE",
+    "cache_hits": 0,
+    "api_requests": 0
+  },
+  "completed_at": 1790591555.535542
+}

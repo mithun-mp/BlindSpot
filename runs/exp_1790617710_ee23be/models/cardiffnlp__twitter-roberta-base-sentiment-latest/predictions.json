@@ -1,0 +1,1052 @@
+[
+  {
+    "baseline_id": "base_486ad0cc9955",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_d59487c5df7c",
+    "seed_text": "i am healthy but still hospitalized",
+    "perturbed_text": "i am not healthy but still hospitalized",
+    "perturbation_type": "negation_insertion",
+    "category": "negation_insertion",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.6337595363712034,
+      "formatted_confidence": "63.38%",
+      "probabilities": {
+        "NEGATIVE": 0.22901400798642682,
+        "NEUTRAL": 0.6337595363712034,
+        "POSITIVE": 0.13722645564236974
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "22.90%",
+        "NEUTRAL": "63.38%",
+        "POSITIVE": "13.72%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=====               ]  22.90%\nNEUTRAL    [=============       ]  63.38%\nPOSITIVE   [===                 ]  13.72%",
+      "raw_logits": null,
+      "latency_ms": 113.69189999822993,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "neutral",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "negative": 0.22901400798642682,
+        "neutral": 0.6337595363712034,
+        "positive": 0.13722645564236974
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.8279259824042935,
+      "formatted_confidence": "82.79%",
+      "probabilities": {
+        "NEGATIVE": 0.8279259824042935,
+        "NEUTRAL": 0.15757682963528716,
+        "POSITIVE": 0.014497187960419398
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "82.79%",
+        "NEUTRAL": "15.76%",
+        "POSITIVE": "1.45%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=================   ]  82.79%\nNEUTRAL    [===                 ]  15.76%\nPOSITIVE   [                    ]   1.45%",
+      "raw_logits": null,
+      "latency_ms": 79.378114285646,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "negative",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "negative": 0.8279259824042935,
+        "neutral": 0.15757682963528716,
+        "positive": 0.014497187960419398
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "NEUTRAL",
+    "original_confidence": 0.6337595363712034,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.8279259824042935,
+    "from_label": "NEUTRAL",
+    "to_label": "NEGATIVE",
+    "transition_type": "NEUTRAL \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_d59487c5df7c",
+      "sentence_text": "i am not healthy but still hospitalized",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'still hospitalized' (compound: -0.54).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790617610.4890516,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": false,
+    "semantic_state_change": true,
+    "confidence_delta": 0.19416644603309008,
+    "confidence_delta_pts": 19.41664460330901,
+    "confidence_delta_pp": 19.41664460330901,
+    "formatted_confidence_delta": "+19.42 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": false,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "NEUTRAL_TO_NEGATIVE",
+    "behavioral_outcome": "UNEXPECTED_CHANGE",
+    "failure_type": "Spurious",
+    "rationale": "Model unexpectedly flipped prediction ('NEUTRAL -> NEGATIVE') under meaning-preserving perturbation, indicating spurious sensitivity.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 79.378114285646,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_486ad0cc9955",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_18fb2706a780",
+    "seed_text": "i am healthy but still hospitalized",
+    "perturbed_text": "It is not impossible that i am healthy but still hospitalized",
+    "perturbation_type": "double_negation",
+    "category": "double_negation",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.6337595363712034,
+      "formatted_confidence": "63.38%",
+      "probabilities": {
+        "NEGATIVE": 0.22901400798642682,
+        "NEUTRAL": 0.6337595363712034,
+        "POSITIVE": 0.13722645564236974
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "22.90%",
+        "NEUTRAL": "63.38%",
+        "POSITIVE": "13.72%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=====               ]  22.90%\nNEUTRAL    [=============       ]  63.38%\nPOSITIVE   [===                 ]  13.72%",
+      "raw_logits": null,
+      "latency_ms": 113.69189999822993,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "neutral",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "negative": 0.22901400798642682,
+        "neutral": 0.6337595363712034,
+        "positive": 0.13722645564236974
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.4642716749967264,
+      "formatted_confidence": "46.43%",
+      "probabilities": {
+        "NEGATIVE": 0.43651134751389953,
+        "NEUTRAL": 0.4642716749967264,
+        "POSITIVE": 0.09921697748937408
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "43.65%",
+        "NEUTRAL": "46.43%",
+        "POSITIVE": "9.92%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=========           ]  43.65%\nNEUTRAL    [=========           ]  46.43%\nPOSITIVE   [==                  ]   9.92%",
+      "raw_logits": null,
+      "latency_ms": 79.378114285646,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "neutral",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "negative": 0.43651134751389953,
+        "neutral": 0.4642716749967264,
+        "positive": 0.09921697748937408
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "NEUTRAL",
+    "original_confidence": 0.6337595363712034,
+    "perturbed_label": "NEUTRAL",
+    "perturbed_confidence": 0.4642716749967264,
+    "from_label": "NEUTRAL",
+    "to_label": "NEUTRAL",
+    "transition_type": "NEUTRAL \u2192 NEUTRAL",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_18fb2706a780",
+      "sentence_text": "It is not impossible that i am healthy but still hospitalized",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'still hospitalized' (compound: -0.32).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790617610.4980555,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.16948786137447702,
+    "confidence_delta_pts": -16.9487861374477,
+    "confidence_delta_pp": -16.9487861374477,
+    "formatted_confidence_delta": "-16.95 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "POLARITY_WEAKENED",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "Misweighted",
+    "rationale": "Polarity preserved, but confidence collapsed by 16.95 percentage points under meaning-preserving perturbation.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 79.378114285646,
+    "ground_truth_match": false
+  },
+  {
+    "baseline_id": "base_486ad0cc9955",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_1faf50373dfb",
+    "seed_text": "i am healthy but still hospitalized",
+    "perturbed_text": "i am extremely healthy but still hospitalized",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.6337595363712034,
+      "formatted_confidence": "63.38%",
+      "probabilities": {
+        "NEGATIVE": 0.22901400798642682,
+        "NEUTRAL": 0.6337595363712034,
+        "POSITIVE": 0.13722645564236974
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "22.90%",
+        "NEUTRAL": "63.38%",
+        "POSITIVE": "13.72%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=====               ]  22.90%\nNEUTRAL    [=============       ]  63.38%\nPOSITIVE   [===                 ]  13.72%",
+      "raw_logits": null,
+      "latency_ms": 113.69189999822993,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "neutral",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "negative": 0.22901400798642682,
+        "neutral": 0.6337595363712034,
+        "positive": 0.13722645564236974
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.5910622037155775,
+      "formatted_confidence": "59.11%",
+      "probabilities": {
+        "NEGATIVE": 0.045626592216894614,
+        "NEUTRAL": 0.3633112040675279,
+        "POSITIVE": 0.5910622037155775
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "4.56%",
+        "NEUTRAL": "36.33%",
+        "POSITIVE": "59.11%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=                   ]   4.56%\nNEUTRAL    [=======             ]  36.33%\nPOSITIVE   [============        ]  59.11%",
+      "raw_logits": null,
+      "latency_ms": 79.378114285646,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "positive",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "negative": 0.045626592216894614,
+        "neutral": 0.3633112040675279,
+        "positive": 0.5910622037155775
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "NEUTRAL",
+    "original_confidence": 0.6337595363712034,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.5910622037155775,
+    "from_label": "NEUTRAL",
+    "to_label": "POSITIVE",
+    "transition_type": "NEUTRAL \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_1faf50373dfb",
+      "sentence_text": "i am extremely healthy but still hospitalized",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'still hospitalized' (compound: -0.30).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790617610.5064297,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": false,
+    "semantic_state_change": true,
+    "confidence_delta": -0.04269733265562592,
+    "confidence_delta_pts": -4.269733265562592,
+    "confidence_delta_pp": -4.269733265562592,
+    "formatted_confidence_delta": "-4.27 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": false,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "NEUTRAL_TO_POSITIVE",
+    "behavioral_outcome": "UNEXPECTED_CHANGE",
+    "failure_type": "Spurious",
+    "rationale": "Model unexpectedly flipped prediction ('NEUTRAL -> POSITIVE') under meaning-preserving perturbation, indicating spurious sensitivity.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 79.378114285646,
+    "ground_truth_match": false
+  },
+  {
+    "baseline_id": "base_486ad0cc9955",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_defcd4d250b4",
+    "seed_text": "i am healthy but still hospitalized",
+    "perturbed_text": "i am somewhat healthy but still hospitalized",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.6337595363712034,
+      "formatted_confidence": "63.38%",
+      "probabilities": {
+        "NEGATIVE": 0.22901400798642682,
+        "NEUTRAL": 0.6337595363712034,
+        "POSITIVE": 0.13722645564236974
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "22.90%",
+        "NEUTRAL": "63.38%",
+        "POSITIVE": "13.72%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=====               ]  22.90%\nNEUTRAL    [=============       ]  63.38%\nPOSITIVE   [===                 ]  13.72%",
+      "raw_logits": null,
+      "latency_ms": 113.69189999822993,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "neutral",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "negative": 0.22901400798642682,
+        "neutral": 0.6337595363712034,
+        "positive": 0.13722645564236974
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.7020897373868485,
+      "formatted_confidence": "70.21%",
+      "probabilities": {
+        "NEGATIVE": 0.07716359313076128,
+        "NEUTRAL": 0.7020897373868485,
+        "POSITIVE": 0.22074666948239013
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "7.72%",
+        "NEUTRAL": "70.21%",
+        "POSITIVE": "22.07%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [==                  ]   7.72%\nNEUTRAL    [==============      ]  70.21%\nPOSITIVE   [====                ]  22.07%",
+      "raw_logits": null,
+      "latency_ms": 79.378114285646,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "neutral",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "negative": 0.07716359313076128,
+        "neutral": 0.7020897373868485,
+        "positive": 0.22074666948239013
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "NEUTRAL",
+    "original_confidence": 0.6337595363712034,
+    "perturbed_label": "NEUTRAL",
+    "perturbed_confidence": 0.7020897373868485,
+    "from_label": "NEUTRAL",
+    "to_label": "NEUTRAL",
+    "transition_type": "NEUTRAL \u2192 NEUTRAL",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_defcd4d250b4",
+      "sentence_text": "i am somewhat healthy but still hospitalized",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'still hospitalized' (compound: -0.33).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790617610.5134697,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.06833020101564513,
+    "confidence_delta_pts": 6.833020101564513,
+    "confidence_delta_pp": 6.833020101564513,
+    "formatted_confidence_delta": "+6.83 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (NEUTRAL (NEUTRAL) \u2192 NEUTRAL (NEUTRAL)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 79.378114285646,
+    "ground_truth_match": false
+  },
+  {
+    "baseline_id": "base_486ad0cc9955",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_7dc6459a9d15",
+    "seed_text": "i am healthy but still hospitalized",
+    "perturbed_text": "i am goodish but still hospitalized",
+    "perturbation_type": "synonym_substitution",
+    "category": "synonym_substitution",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.6337595363712034,
+      "formatted_confidence": "63.38%",
+      "probabilities": {
+        "NEGATIVE": 0.22901400798642682,
+        "NEUTRAL": 0.6337595363712034,
+        "POSITIVE": 0.13722645564236974
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "22.90%",
+        "NEUTRAL": "63.38%",
+        "POSITIVE": "13.72%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=====               ]  22.90%\nNEUTRAL    [=============       ]  63.38%\nPOSITIVE   [===                 ]  13.72%",
+      "raw_logits": null,
+      "latency_ms": 113.69189999822993,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "neutral",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "negative": 0.22901400798642682,
+        "neutral": 0.6337595363712034,
+        "positive": 0.13722645564236974
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.5658735247654291,
+      "formatted_confidence": "56.59%",
+      "probabilities": {
+        "NEGATIVE": 0.11679649043070117,
+        "NEUTRAL": 0.5658735247654291,
+        "POSITIVE": 0.31732998480386976
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "11.68%",
+        "NEUTRAL": "56.59%",
+        "POSITIVE": "31.73%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [==                  ]  11.68%\nNEUTRAL    [===========         ]  56.59%\nPOSITIVE   [======              ]  31.73%",
+      "raw_logits": null,
+      "latency_ms": 79.378114285646,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "neutral",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "negative": 0.11679649043070117,
+        "neutral": 0.5658735247654291,
+        "positive": 0.31732998480386976
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "NEUTRAL",
+    "original_confidence": 0.6337595363712034,
+    "perturbed_label": "NEUTRAL",
+    "perturbed_confidence": 0.5658735247654291,
+    "from_label": "NEUTRAL",
+    "to_label": "NEUTRAL",
+    "transition_type": "NEUTRAL \u2192 NEUTRAL",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_7dc6459a9d15",
+      "sentence_text": "i am goodish but still hospitalized",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'still hospitalized' (compound: -0.44).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790617610.5191524,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.06788601160577434,
+    "confidence_delta_pts": -6.788601160577434,
+    "confidence_delta_pp": -6.788601160577434,
+    "formatted_confidence_delta": "-6.79 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (NEUTRAL (NEUTRAL) \u2192 NEUTRAL (NEUTRAL)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 79.378114285646,
+    "ground_truth_match": false
+  },
+  {
+    "baseline_id": "base_486ad0cc9955",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_f9f881eda7b2",
+    "seed_text": "i am healthy but still hospitalized",
+    "perturbed_text": "i am healthy but still hospitalized, however I could not repeat that performance.",
+    "perturbation_type": "contrast_negative_append",
+    "category": "contrast_negative_append",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.6337595363712034,
+      "formatted_confidence": "63.38%",
+      "probabilities": {
+        "NEGATIVE": 0.22901400798642682,
+        "NEUTRAL": 0.6337595363712034,
+        "POSITIVE": 0.13722645564236974
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "22.90%",
+        "NEUTRAL": "63.38%",
+        "POSITIVE": "13.72%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=====               ]  22.90%\nNEUTRAL    [=============       ]  63.38%\nPOSITIVE   [===                 ]  13.72%",
+      "raw_logits": null,
+      "latency_ms": 113.69189999822993,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "neutral",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "negative": 0.22901400798642682,
+        "neutral": 0.6337595363712034,
+        "positive": 0.13722645564236974
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.6572156548500061,
+      "formatted_confidence": "65.72%",
+      "probabilities": {
+        "NEGATIVE": 0.6572156548500061,
+        "NEUTRAL": 0.31146204471588135,
+        "POSITIVE": 0.03132230043411255
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "65.72%",
+        "NEUTRAL": "31.15%",
+        "POSITIVE": "3.13%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=============       ]  65.72%\nNEUTRAL    [======              ]  31.15%\nPOSITIVE   [=                   ]   3.13%",
+      "raw_logits": null,
+      "latency_ms": 79.378114285646,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "negative",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "negative": 0.6572156548500061,
+        "neutral": 0.31146204471588135,
+        "positive": 0.03132230043411255
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "NEUTRAL",
+    "original_confidence": 0.6337595363712034,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.6572156548500061,
+    "from_label": "NEUTRAL",
+    "to_label": "NEGATIVE",
+    "transition_type": "NEUTRAL \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_f9f881eda7b2",
+      "sentence_text": "i am healthy but still hospitalized, however I could not repeat that performance.",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'still hospitalized,' (compound: -0.32).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790617610.525104,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": false,
+    "semantic_state_change": true,
+    "confidence_delta": 0.02345611847880269,
+    "confidence_delta_pts": 2.345611847880269,
+    "confidence_delta_pp": 2.345611847880269,
+    "formatted_confidence_delta": "+2.35 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": false,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "NEUTRAL_TO_NEGATIVE",
+    "behavioral_outcome": "UNEXPECTED_CHANGE",
+    "failure_type": "Spurious",
+    "rationale": "Model unexpectedly flipped prediction ('NEUTRAL -> NEGATIVE') under meaning-preserving perturbation, indicating spurious sensitivity.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 79.378114285646,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_486ad0cc9955",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_d57d653dadae",
+    "seed_text": "i am healthy but still hospitalized",
+    "perturbed_text": "i am healthy but still hospitalized, and I displayed remarkable skill.",
+    "perturbation_type": "contrast_positive_append",
+    "category": "contrast_positive_append",
+    "expected_flip": true,
+    "expected_semantic_effect": "EXPECTED_FLIP",
+    "original_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.6337595363712034,
+      "formatted_confidence": "63.38%",
+      "probabilities": {
+        "NEGATIVE": 0.22901400798642682,
+        "NEUTRAL": 0.6337595363712034,
+        "POSITIVE": 0.13722645564236974
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "22.90%",
+        "NEUTRAL": "63.38%",
+        "POSITIVE": "13.72%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=====               ]  22.90%\nNEUTRAL    [=============       ]  63.38%\nPOSITIVE   [===                 ]  13.72%",
+      "raw_logits": null,
+      "latency_ms": 113.69189999822993,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "neutral",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "negative": 0.22901400798642682,
+        "neutral": 0.6337595363712034,
+        "positive": 0.13722645564236974
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9251005393839175,
+      "formatted_confidence": "92.51%",
+      "probabilities": {
+        "NEGATIVE": 0.007351674875608792,
+        "NEUTRAL": 0.0675477857404738,
+        "POSITIVE": 0.9251005393839175
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.74%",
+        "NEUTRAL": "6.75%",
+        "POSITIVE": "92.51%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.74%\nNEUTRAL    [=                   ]   6.75%\nPOSITIVE   [=================== ]  92.51%",
+      "raw_logits": null,
+      "latency_ms": 79.378114285646,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "positive",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "negative": 0.007351674875608792,
+        "neutral": 0.0675477857404738,
+        "positive": 0.9251005393839175
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "NEUTRAL",
+    "original_confidence": 0.6337595363712034,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9251005393839175,
+    "from_label": "NEUTRAL",
+    "to_label": "POSITIVE",
+    "transition_type": "NEUTRAL \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_d57d653dadae",
+      "sentence_text": "i am healthy but still hospitalized, and I displayed remarkable skill.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Positive affective orientation (compound score: +0.13).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "REVERSE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790617610.5319207,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": false,
+    "semantic_state_change": true,
+    "confidence_delta": 0.29134100301271404,
+    "confidence_delta_pts": 29.134100301271403,
+    "confidence_delta_pp": 29.134100301271403,
+    "formatted_confidence_delta": "+29.13 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": false,
+    "expected_relation": "POLARITY_REVERSED",
+    "observed_relation": "NEUTRAL_TO_POSITIVE",
+    "behavioral_outcome": "EXPECTED_FLIP",
+    "failure_type": "None",
+    "rationale": "Model correctly flipped and changed label (NEUTRAL (NEUTRAL) \u2192 POSITIVE (POSITIVE)) under DIFFERENT_LABEL expectation.",
+    "semantic_intent": "REVERSE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 79.378114285646,
+    "ground_truth_match": true
+  }
+]

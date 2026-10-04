@@ -1,0 +1,8 @@
+{
+  "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+  "status": "COMPLETED",
+  "completed_at": 1790950746.9568539,
+  "error": null,
+  "probes_done": 7,
+  "total_probes": 7
+}

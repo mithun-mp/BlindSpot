@@ -1,0 +1,1310 @@
+"""
+Execution Runner for Multimodel Experiments in BlindSpot.
+Coordinates probe generation, batched model evaluation, explainability extraction,
+failure diagnosis, event emission, fault isolation, and artifact persistence.
+"""
+import re
+
+from blindspot import core
+
+import threading
+import time
+import uuid
+import logging
+from typing import Dict, List, Any, Optional, Callable
+
+from blindspot.core.config import ExperimentConfig, PerformanceMode, ResourceConfig
+from blindspot.core.events import EventEmitter, ExecutionEvent
+from blindspot.core.types import (
+    SharedProbeSet,
+    ModelProbeEvaluation,
+    PredictionResult,
+    ExplanationResult,
+    ExplanationBundle,
+    FailureCategory,
+    BaselineEvaluation,
+    RunPlan,
+    BehavioralProbeResult,
+    ModelExecutionTiming,
+    ModelRunState,
+    ModelStatus,
+    ProbeExpectation,
+    ExpectationType,
+    BehavioralRelation,
+)
+
+from blindspot.execution.resources import ResourceManager
+from blindspot.execution.scheduler import AuditScheduler
+from blindspot.models.cache import ModelCache
+from blindspot.perturbations.shared import SharedProbeGenerator, extract_probe_operator
+from blindspot.testing.behavioral import BehavioralTester
+from blindspot.explainability.lime_explainer import LimeExplainerWrapper
+from blindspot.explainability.shap_explainer import ShapExplainerWrapper
+from blindspot.explainability.word_ablation import WordAblationExplainer
+from blindspot.explainability.attention_explainer import AttentionExplainer
+from blindspot.explainability.taxonomy import TaxonomyClassifier
+from blindspot.explainability.alignment import (
+    compute_jaccard_similarity,
+    compute_attribution_cosine,
+    compute_explanation_quality,
+)
+from blindspot.explainability.token_attributions import align_token_attributions, align_multimodel_attributions
+from blindspot.analysis.cross_model import CrossModelAnalyzer
+from blindspot.storage.run_store import RunStore
+from blindspot.reporting.report_generator import ReportGenerator
+from blindspot.semantic import (
+    get_semantic_service,
+    SemanticReferenceSet,
+    SemanticReferenceLabel,
+    SemanticRelation,
+)
+from blindspot.models.registry import get_model_short_name, get_model_display_name
+
+logger = logging.getLogger(__name__)
+
+
+class ExperimentRunner:
+    """
+    Orchestrates asynchronous or synchronous multimodel auditing jobs.
+    """
+    def __init__(
+        self,
+        config: ExperimentConfig,
+        run_store: Optional[RunStore] = None,
+        model_cache: Optional[ModelCache] = None,
+    ):
+        self.config = config
+        self.experiment_id = f"exp_{int(time.time())}_{uuid.uuid4().hex[:6]}"
+        self.run_store = run_store or RunStore(base_dir=config.output_dir)
+        self.resource_config = ResourceManager.resolve_config(
+            mode=config.performance_mode,
+            batch_size_override=config.batch_size,
+        )
+        self.model_cache = model_cache or ModelCache.get_shared_cache(
+            max_size=self.resource_config.model_cache_size
+        )
+        self.events = EventEmitter()
+        self.taxonomy = TaxonomyClassifier()
+        self.cross_analyzer = CrossModelAnalyzer()
+        self.reporter = ReportGenerator(output_dir=self.run_store.get_run_dir(self.experiment_id))
+
+        self.status: str = "idle"  # idle, running, completed, cancelled, failed
+        self.progress: float = 0.0  # 0.0 to 1.0
+        self.current_step: str = ""
+        self.start_time: Optional[float] = None
+        self.end_time: Optional[float] = None
+        self.model_progress: Dict[str, Dict[str, Any]] = {
+            m: {"status": "pending", "done": 0, "total": 0} for m in self.config.model_ids
+        }
+        self.model_run_states: Dict[str, ModelRunState] = {
+            m: ModelRunState(model_id=m, status=ModelStatus.QUEUED)
+            for m in self.config.model_ids
+        }
+        self._resume_mode: bool = False
+        self._cancel_flag = threading.Event()
+        self._thread: Optional[threading.Thread] = None
+        self._result: Optional[Dict[str, Any]] = None
+        self._error: Optional[Exception] = None
+
+        # Wire event logging to RunStore
+        self.events.on_any(lambda e: self.run_store.log_event(self.experiment_id, e))
+        self.events.on("progress", lambda e: setattr(self, "progress", float(e.get("progress", self.progress))))
+
+    @classmethod
+    def resume_run(
+        cls,
+        experiment_id: str,
+        run_store: Optional[RunStore] = None,
+        model_cache: Optional[ModelCache] = None,
+    ) -> "ExperimentRunner":
+        """
+        Instantiates an ExperimentRunner initialized to resume an interrupted or incomplete run.
+        Skips already completed models without re-running forward passes.
+        """
+        store = run_store or RunStore()
+        run_data = store.load_run(experiment_id)
+        cfg_dict = run_data.get("config", {})
+        config = ExperimentConfig.from_dict(cfg_dict)
+        saved_pset = store.load_probe_set(experiment_id)
+        if saved_pset:
+            config.selected_probe_set = saved_pset
+        runner = cls(config=config, run_store=store, model_cache=model_cache)
+        runner.experiment_id = experiment_id
+        runner._resume_mode = True
+        return runner
+
+    def cancel(self) -> None:
+        """Requests graceful cancellation of the running experiment."""
+        self._cancel_flag.set()
+        self.status = "cancelled"
+        self.events.emit("cancelled", message="Experiment cancellation requested by user.")
+
+    def run_async(self) -> threading.Thread:
+        """Starts experiment execution in a background daemon thread."""
+        self._cancel_flag.clear()
+        self.status = "running"
+        self._thread = threading.Thread(target=self._execute, daemon=True)
+        self._thread.start()
+        return self._thread
+
+    def run_sync(self) -> Dict[str, Any]:
+        """Executes experiment synchronously and returns results dictionary."""
+        self._cancel_flag.clear()
+        self.status = "running"
+        self._execute()
+        if self._error:
+            raise self._error
+        return self._result or {}
+
+    def run(self) -> Dict[str, Any]:
+        """Convenience alias for run_sync()."""
+        return self.run_sync()
+
+
+    def _execute(self) -> None:
+        t_start = time.time()
+        self.start_time = t_start
+        self.reporter = ReportGenerator(output_dir=self.run_store.get_run_dir(self.experiment_id))
+        try:
+            self.run_store.init_run(self.experiment_id, self.config)
+            self.events.emit(
+                "log",
+                level="INFO",
+                message=f"Starting experiment '{self.config.experiment_name}' [{self.experiment_id}]",
+            )
+            self.events.emit("progress", progress=0.05, step="Initializing resources")
+
+            # 1. Resolve Shared Probes (Canonical Protocol: Generation != Selection != Execution)
+            if self._cancel_flag.is_set():
+                self.end_time = time.time()
+                return
+
+            if self._resume_mode and self.config.selected_probe_set is None:
+                saved_pset = self.run_store.load_probe_set(self.experiment_id)
+                if saved_pset:
+                    self.config.selected_probe_set = saved_pset
+
+            if self.config.selected_probe_set is not None:
+                if isinstance(self.config.selected_probe_set, SharedProbeSet):
+                    probe_set = self.config.selected_probe_set
+                elif isinstance(self.config.selected_probe_set, dict):
+                    probe_set = SharedProbeSet.from_dict(self.config.selected_probe_set)
+                else:
+                    raise ValueError(f"Unsupported selected_probe_set type: {type(self.config.selected_probe_set)}")
+                
+                # Filter strictly by selected_probe_ids if explicitly provided
+                if getattr(self.config, "selected_probe_ids", None):
+                    probe_set = probe_set.get_selected(set(self.config.selected_probe_ids))
+
+                self.events.emit(
+                    "log",
+                    level="INFO",
+                    message=f"Consuming user-selected canonical SharedProbeSet with {len(probe_set.probes)} probe(s) (no re-generation)",
+                )
+                self.events.emit("progress", progress=0.10, step="Using verified probe selection")
+            else:
+                self.current_step = "Generating shared probes"
+                self.events.emit("progress", progress=0.10, step=self.current_step)
+                probe_gen = SharedProbeGenerator()
+                probe_set = probe_gen.generate_probes(
+                    seed_texts=self.config.seed_texts,
+                    perturbation_types=self.config.perturbation_types,
+                    sentence_types=self.config.sentence_types,
+                )
+                if getattr(self.config, "selected_probe_ids", None):
+                    probe_set = probe_set.get_selected(set(self.config.selected_probe_ids))
+
+                self.events.emit(
+                    "log",
+                    level="INFO",
+                    message=f"Generated {len(probe_set.probes)} shared probe(s) across {len(self.config.seed_texts)} seed text(s)",
+                )
+
+            # Validate probe set before execution (Section 13: Invalid probes must BLOCK execution)
+            is_valid, validation_errors = probe_set.validate()
+            if not is_valid:
+                err_msg = f"Probe set validation failed: {'; '.join(validation_errors)}"
+                logger.error(err_msg)
+                self.events.emit("log", level="ERROR", message=err_msg)
+                raise ValueError(err_msg)
+
+            # Resolve & Freeze Canonical Semantic Ground-Truth Reference (Sections 6, 8, 22, 30)
+            self.current_step = "Resolving canonical semantic ground-truth"
+            self.events.emit("progress", progress=0.12, step=self.current_step)
+            if getattr(probe_set, "semantic_reference_set", None) is None:
+                semantic_svc = get_semantic_service()
+                seed_t = self.config.seed_texts[0] if self.config.seed_texts else ""
+                ref_set = semantic_svc.annotate_experiment(baseline_text=seed_t, probes=probe_set.probes)
+                ref_set.freeze()
+                probe_set.semantic_reference_set = ref_set
+            else:
+                if isinstance(probe_set.semantic_reference_set, dict):
+                    probe_set.semantic_reference_set = SemanticReferenceSet.from_dict(probe_set.semantic_reference_set)
+                if hasattr(probe_set.semantic_reference_set, "freeze"):
+                    probe_set.semantic_reference_set.freeze()
+
+            # Synchronize each probe's reference strictly without mutating semantic truth (Phase 10)
+            ref_set = probe_set.semantic_reference_set
+            base_pol = ref_set.baseline_annotation.final_semantic_polarity
+            is_base_unavailable = (ref_set.baseline_annotation.status == "UNAVAILABLE" or base_pol is None)
+            for p in probe_set.probes:
+                p_annot = ref_set.probe_annotations.get(p.probe_id)
+                if p_annot:
+                    p.semantic_reference = p_annot.to_dict()
+                    is_probe_unavailable = (p_annot.status == "UNAVAILABLE" or p_annot.final_semantic_polarity is None)
+
+                    if is_base_unavailable or is_probe_unavailable:
+                        p.reference_polarity = "UNAVAILABLE"
+                        p.semantic_relation = "UNAVAILABLE"
+                        p.expected_flip = None
+                        p.expected_semantic_effect = "UNAVAILABLE"
+                        p.semantic_intent = "UNAVAILABLE"
+                        p.expected_label_relation = "UNCONSTRAINED"
+                        exp_type = ExpectationType.UNKNOWN
+                        exp_rel = BehavioralRelation.UNKNOWN
+                        p.expectation = ProbeExpectation(
+                            expectation_type=exp_type,
+                            expected_semantic_relation=exp_rel,
+                            expected_polarity_transition=p.expected_semantic_effect,
+                            rationale=getattr(p, "rationale", "") or "Semantic reference unavailable",
+                            confidence=0.0,
+                            validation_status="UNAVAILABLE",
+                        )
+                    else:
+                        p.reference_polarity = p_annot.final_semantic_polarity.value
+                        sem_rel = p_annot.semantic_relation_to_baseline
+                        rel_val = sem_rel.value if hasattr(sem_rel, "value") else str(sem_rel)
+                        p.semantic_relation = rel_val
+                        probe_pol = p_annot.final_semantic_polarity
+
+                        # True polarity flip occurs strictly if both baseline and probe are non-neutral and opposite
+                        is_polar_flip = (
+                            base_pol in (SemanticReferenceLabel.POSITIVE, SemanticReferenceLabel.NEGATIVE)
+                            and probe_pol in (SemanticReferenceLabel.POSITIVE, SemanticReferenceLabel.NEGATIVE)
+                            and base_pol != probe_pol
+                        )
+                        p.expected_flip = is_polar_flip
+                        if is_polar_flip:
+                            p.expected_semantic_effect = "invert"
+                            p.semantic_intent = "REVERSE_POLARITY"
+                            p.expected_label_relation = "DIFFERENT_LABEL"
+                            exp_type = ExpectationType.REVERSE_POLARITY
+                            exp_rel = BehavioralRelation.POLARITY_REVERSED
+                        elif rel_val in ("PRESERVE", "PRESERVE_POLARITY"):
+                            p.expected_semantic_effect = "preserve"
+                            p.semantic_intent = "PRESERVE_POLARITY"
+                            p.expected_label_relation = "SAME_LABEL"
+                            exp_type = ExpectationType.PRESERVE_POLARITY
+                            exp_rel = BehavioralRelation.SAME_POLARITY
+                        elif rel_val == "SHIFT_TO_NEUTRAL":
+                            p.expected_semantic_effect = "SHIFT_TO_NEUTRAL"
+                            p.semantic_intent = "SHIFT_TO_NEUTRAL"
+                            p.expected_label_relation = "DIFFERENT_LABEL" if base_pol != SemanticReferenceLabel.NEUTRAL else "SAME_LABEL"
+                            exp_type = ExpectationType.CONTRAST_SHIFT
+                            if base_pol == SemanticReferenceLabel.POSITIVE:
+                                exp_rel = BehavioralRelation.POSITIVE_TO_NEUTRAL
+                            elif base_pol == SemanticReferenceLabel.NEGATIVE:
+                                exp_rel = BehavioralRelation.NEGATIVE_TO_NEUTRAL
+                            else:
+                                exp_rel = BehavioralRelation.NEUTRALIZED
+                        elif rel_val == "SHIFT_FROM_NEUTRAL":
+                            p.expected_semantic_effect = "SHIFT_FROM_NEUTRAL"
+                            p.semantic_intent = "SHIFT_FROM_NEUTRAL"
+                            p.expected_label_relation = "DIFFERENT_LABEL" if probe_pol != SemanticReferenceLabel.NEUTRAL else "SAME_LABEL"
+                            exp_type = ExpectationType.CONTRAST_SHIFT
+                            if probe_pol == SemanticReferenceLabel.POSITIVE:
+                                exp_rel = BehavioralRelation.NEUTRAL_TO_POSITIVE
+                            elif probe_pol == SemanticReferenceLabel.NEGATIVE:
+                                exp_rel = BehavioralRelation.NEUTRAL_TO_NEGATIVE
+                            else:
+                                exp_rel = BehavioralRelation.OTHER
+                        else:
+                            p.expected_semantic_effect = rel_val
+                            p.semantic_intent = rel_val
+                            p.expected_label_relation = "UNCONSTRAINED"
+                            exp_type = ExpectationType.UNKNOWN
+                            exp_rel = BehavioralRelation.UNKNOWN
+
+                        # Crucial Fix: Synchronize embedded probe.expectation with verified semantic ground truth
+                        p.expectation = ProbeExpectation(
+                            expectation_type=exp_type,
+                            expected_semantic_relation=exp_rel,
+                            expected_polarity_transition=p.expected_semantic_effect,
+                            rationale=getattr(p, "rationale", "") or f"Verified semantic relation: {rel_val}",
+                            confidence=1.0,
+                            validation_status="VALIDATED",
+                        )
+
+            # Save semantic_reference.json artifact
+            self.run_store.save_semantic_reference(self.experiment_id, probe_set.semantic_reference_set)
+            base_label_str = (
+                probe_set.semantic_reference_set.baseline_annotation.final_semantic_polarity.value
+                if probe_set.semantic_reference_set.baseline_annotation.final_semantic_polarity
+                else "UNAVAILABLE"
+            )
+            self.events.emit(
+                "log",
+                level="INFO",
+                message=(
+                    f"[SEMANTIC] Semantic reference frozen: baseline={base_label_str}, "
+                    f"probes={len(probe_set.semantic_reference_set.probe_annotations)}, "
+                    f"engine={probe_set.semantic_reference_set.annotation_engine}, "
+                    f"cache_hits={probe_set.semantic_reference_set.cache_hits}"
+                ),
+            )
+
+            # Create immutable RunPlan per Phase 11
+            run_plan = RunPlan(
+                experiment_id=self.experiment_id,
+                model_ids=list(self.config.model_ids),
+                probe_set_id=probe_set.probe_set_id,
+                probe_set_version=probe_set.probe_set_version,
+                selected_probe_ids=[p.probe_id for p in probe_set.probes],
+                probe_versions={p.probe_id: getattr(p, "version", 1) for p in probe_set.probes},
+                original_text=self.config.seed_texts[0] if self.config.seed_texts else "",
+                probe_texts={p.probe_id: p.perturbed_text for p in probe_set.probes},
+                semantic_polarity_reference=base_pol.value if hasattr(base_pol, "value") else str(base_pol),
+                probe_semantic_references={
+                    pid: p_ann.to_dict() for pid, p_ann in ref_set.probe_annotations.items()
+                },
+                semantic_relations={
+                    pid: (p_ann.semantic_relation_to_baseline.value if hasattr(p_ann.semantic_relation_to_baseline, "value") else str(p_ann.semantic_relation_to_baseline))
+                    for pid, p_ann in ref_set.probe_annotations.items()
+                },
+                verification_status=ref_set.baseline_annotation.verification_status.value,
+                provider=ref_set.provider,
+                schema_version="v2.0",
+                sentence_type=probe_set.sentence_types.get(self.config.seed_texts[0], "literal") if self.config.seed_texts else "literal",
+            )
+            self.run_plan = run_plan
+
+            # Save RunPlan and SharedProbeSet artifacts immediately
+            self.run_store.save_run_plan(self.experiment_id, run_plan)
+            self.run_store.save_probe_set(self.experiment_id, probe_set)
+
+            total_probes_count = len(probe_set.probes)
+            for m_id in self.config.model_ids:
+                self.model_progress[m_id] = {"status": "pending", "done": 0, "total": total_probes_count}
+                if m_id not in self.model_run_states:
+                    self.model_run_states[m_id] = ModelRunState(model_id=m_id, status=ModelStatus.QUEUED, total_probes=total_probes_count)
+
+            # 2. Evaluate Models
+            num_models = len(self.config.model_ids)
+            model_evaluations: Dict[str, List[ModelProbeEvaluation]] = {}
+            model_canonical_results: Dict[str, List[Dict[str, Any]]] = {}
+            model_baselines: Dict[str, Dict[str, Any]] = {}
+            model_failures: Dict[str, List[Dict[str, Any]]] = {}
+            model_explanations: Dict[str, List[Dict[str, Any]]] = {}
+            model_metrics: Dict[str, Dict[str, Any]] = {}
+            model_eces: Dict[str, float] = {}
+
+            # Check if resuming existing run
+            completed_in_store = self.run_store.list_completed_models(self.experiment_id) if self._resume_mode else []
+
+            for m_idx, model_id in enumerate(self.config.model_ids):
+                if self._cancel_flag.is_set():
+                    self.end_time = time.time()
+                    return
+
+                pct_base = 0.15 + (m_idx / num_models) * 0.65
+                self.current_step = f"Evaluating model [{m_idx + 1}/{num_models}]: {model_id}"
+                self.events.emit("progress", progress=pct_base, step=self.current_step)
+
+                # Resume support: skip already completed models
+                if self._resume_mode and model_id in completed_in_store:
+                    self.events.emit("log", level="INFO", message=f"Resuming: Model {model_id} already completed. Loading persisted artifacts.")
+                    loaded_m = self.run_store.load_model_result(self.experiment_id, model_id)
+                    if loaded_m:
+                        model_baselines[model_id] = loaded_m.get("baseline", {})
+                        raw_evals = loaded_m.get("evaluations") or loaded_m.get("predictions") or []
+                        parsed_evals = []
+                        for rev in raw_evals:
+                            if isinstance(rev, dict):
+                                try:
+                                    parsed_evals.append(ModelProbeEvaluation.from_dict(rev))
+                                except Exception:
+                                    parsed_evals.append(rev)
+                            else:
+                                parsed_evals.append(rev)
+                        model_evaluations[model_id] = parsed_evals
+                        model_canonical_results[model_id] = loaded_m.get("predictions", [])
+                        model_metrics[model_id] = loaded_m.get("metrics", {})
+                        model_failures[model_id] = loaded_m.get("taxonomy", [])
+                        model_eces[model_id] = float(loaded_m.get("metrics", {}).get("ece", 0.0))
+                        self.model_run_states[model_id].status = ModelStatus.COMPLETED
+                        self.model_progress[model_id]["status"] = "completed"
+                        self.model_progress[model_id]["done"] = len(parsed_evals)
+                        continue
+
+                t_m_start = time.perf_counter()
+                timing = ModelExecutionTiming(model_id=model_id)
+
+                self.events.emit("model_start", model_id=model_id)
+                self.model_run_states[model_id].status = ModelStatus.LOADING
+                self.events.emit("model_status_changed", model_id=model_id, status=ModelStatus.LOADING.value)
+                self.model_progress[model_id]["status"] = "running"
+
+                try:
+                    # Model loading via cache
+                    t_load_0 = time.perf_counter()
+                    model_wrapper = self.model_cache.get_or_load(
+                        model_id, device=self.resource_config.device
+                    )
+                    timing.model_load_ms = (time.perf_counter() - t_load_0) * 1000.0
+
+                    self.model_run_states[model_id].status = ModelStatus.RUNNING
+                    self.events.emit("model_status_changed", model_id=model_id, status=ModelStatus.RUNNING.value)
+                    tester = BehavioralTester(model_wrapper)
+
+                    # Batched Shared Probe Evaluation
+                    t_inf_0 = time.perf_counter()
+                    eval_results = tester.evaluate_shared_probes(probe_set)
+                    timing.probe_inference_ms = (time.perf_counter() - t_inf_0) * 1000.0
+                    timing.baseline_inference_ms = float(eval_results.get("baseline_latency_ms", 0.0))
+                    timing.total_inference_ms = timing.baseline_inference_ms + timing.probe_inference_ms
+
+                    evaluations: List[ModelProbeEvaluation] = eval_results["evaluations"]
+                    # Strict validation: selected_probe_ids == executed_probe_ids per Section 3 & 22
+                    executed_ids = [
+                        getattr(e, "probe_id", e.get("probe_id") if isinstance(e, dict) else "")
+                        for e in evaluations
+                    ]
+                    is_valid_exec, exec_msg = self.run_plan.validate_execution(executed_ids)
+                    if not is_valid_exec:
+                        err_msg = f"Pipeline Integrity Violation for model '{model_id}': {exec_msg}"
+                        logger.error(err_msg)
+                        self.events.emit("log", level="ERROR", message=err_msg)
+                        raise RuntimeError(err_msg)
+
+                    model_evaluations[model_id] = evaluations
+                    model_canonical_results[model_id] = eval_results.get("probe_results", [])
+                    model_baselines[model_id] = eval_results.get("baselines", {})
+                    model_eces[model_id] = eval_results["ece"]
+                    self.model_progress[model_id]["done"] = len(evaluations)
+                    self.model_run_states[model_id].probes_done = len(evaluations)
+
+                    # Populate diagnosed behavioral failures from pure classifier
+                    t_ana_0 = time.perf_counter()
+                    failures: List[Dict[str, Any]] = list(eval_results.get("failures", []))
+
+                    # Emit fine-grained per-probe execution events safely
+                    for ev in evaluations:
+                        orig_lbl = getattr(ev, "original_label", None) or (ev.get("original_label") if isinstance(ev, dict) else "")
+                        orig_conf = getattr(ev, "original_confidence", None) or (ev.get("original_confidence") if isinstance(ev, dict) else 0.0)
+                        pert_lbl = getattr(ev, "perturbed_label", None) or (ev.get("perturbed_label") if isinstance(ev, dict) else "")
+                        pert_conf = getattr(ev, "perturbed_confidence", None) or (ev.get("perturbed_confidence") if isinstance(ev, dict) else 0.0)
+                        self.events.emit(
+                            "probe_evaluated",
+                            model_id=model_id,
+                            probe_id=getattr(ev, "probe_id", ev.get("probe_id") if isinstance(ev, dict) else ""),
+                            perturbation_type=getattr(ev, "perturbation_type", ev.get("perturbation_type") if isinstance(ev, dict) else ""),
+                            seed_text=getattr(ev, "seed_text", ev.get("seed_text") if isinstance(ev, dict) else ""),
+                            perturbed_text=getattr(ev, "perturbed_text", ev.get("perturbed_text") if isinstance(ev, dict) else ""),
+                            original_label=orig_lbl,
+                            original_confidence=orig_conf,
+                            perturbed_label=pert_lbl,
+                            perturbed_confidence=pert_conf,
+                            is_flipped=getattr(ev, "is_flipped", ev.get("is_flipped") if isinstance(ev, dict) else False),
+                            expected_flip=getattr(ev, "expected_flip", ev.get("expected_flip") if isinstance(ev, dict) else False),
+                            expected_effect=getattr(ev, "expected_effect", getattr(ev, "expected_semantic_effect", "EXPECTED_FLIP" if getattr(ev, "expected_flip", False) else "EXPECTED_PRESERVE")),
+                            semantic_intent=getattr(ev, "semantic_intent", "PRESERVE_MEANING"),
+                            behavioral_outcome=getattr(ev, "behavioral_outcome", "EXPECTED_FLIP"),
+                            failure_type=getattr(ev, "failure_type", "None"),
+                            confidence_delta_pts=getattr(ev, "confidence_delta_pts", 0.0),
+                            rationale=getattr(ev, "rationale", ""),
+                        )
+
+                    num_fails = len(failures)
+                    analysis_status = "NO_FAILURES_OBSERVED" if num_fails == 0 else "FAILURES_OBSERVED"
+                    model_metrics[model_id] = {
+                        "total_probes": eval_results["total_probes"],
+                        "flip_rate": eval_results["observed_flip_rate"],
+                        "observed_flip_rate": eval_results["observed_flip_rate"],
+                        "expected_flip_rate": eval_results["expected_flip_rate"],
+                        "suite_expected_flip_rate": eval_results.get("suite_expected_flip_rate", eval_results["expected_flip_rate"]),
+                        "expected_flip_compliance": eval_results.get("expected_flip_compliance", 0.0),
+                        "preserve_rate": eval_results["preserve_rate"],
+                        "behavioral_consistency": eval_results["behavioral_consistency"],
+                        "satisfaction_rate": eval_results["behavioral_consistency"],
+                        "raw_label_flip_rate": eval_results.get("raw_label_flip_rate", 0.0),
+                        "polarity_flip_rate": eval_results.get("polarity_flip_rate", 0.0),
+                        "confidence_flip_rate": eval_results["confidence_flip_rate"],
+                        "ece": eval_results["ece"],
+                        "transition_matrix": eval_results["transition_matrix"],
+                        "confidence_shifts": eval_results["confidence_shifts"],
+                        "failure_counts": eval_results.get("failure_counts", {}),
+                        "analysis_status": analysis_status,
+                    }
+                    timing.analysis_ms = (time.perf_counter() - t_ana_0) * 1000.0
+
+                    # Explainability & Taxonomy Diagnosis (bounded & batched)
+                    explanations: List[Dict[str, Any]] = []
+
+                    if self.config.explainer_type != "none":
+                        ablation_exp = WordAblationExplainer(model_wrapper)
+                        attention_exp = AttentionExplainer(model_wrapper)
+                        lime_exp = LimeExplainerWrapper(model_wrapper, random_seed=self.config.random_seed)
+                        shap_exp = ShapExplainerWrapper(model_wrapper)
+
+                        probes_to_explain = evaluations[:self.resource_config.explanation_sample_size]
+                        probe_by_id = {p.probe_id: p for p in probe_set.probes}
+
+                        for ev in probes_to_explain:
+                            if self._cancel_flag.is_set():
+                                return
+
+                            seed_t = ev.seed_text if hasattr(ev, "seed_text") else (ev.get("seed_text", "") if hasattr(ev, "get") else "")
+                            pert_t = ev.perturbed_text if hasattr(ev, "perturbed_text") else (ev.get("perturbed_text", "") if hasattr(ev, "get") else "")
+                            probe_id_val = ev.probe_id if hasattr(ev, "probe_id") else (ev.get("probe_id", "") if hasattr(ev, "get") else "")
+                            ptype_val = ev.perturbation_type if hasattr(ev, "perturbation_type") else (ev.get("perturbation_type", "") if hasattr(ev, "get") else "")
+
+                            # Resolve operator tokens and operator type for this probe
+                            matched_probe = probe_by_id.get(probe_id_val)
+                            if matched_probe and getattr(matched_probe, "operator_tokens", None):
+                                op_tokens = list(matched_probe.operator_tokens)
+                                op_type = matched_probe.operator_type
+                            else:
+                                op_tokens, op_type = extract_probe_operator(ev if isinstance(ev, dict) else (ev.to_dict() if hasattr(ev, "to_dict") else {}))
+
+                            # 1. Resolve prediction labels and probabilities first (Phase 4)
+                            orig_lbl = getattr(ev, "original_label", None) or (ev.get("original_label") if isinstance(ev, dict) else "")
+                            orig_conf = float(getattr(ev, "original_confidence", None) or (ev.get("original_confidence") if isinstance(ev, dict) else 1.0))
+                            pert_lbl = getattr(ev, "perturbed_label", None) or (ev.get("perturbed_label") if isinstance(ev, dict) else "")
+                            pert_conf = float(getattr(ev, "perturbed_confidence", None) or (ev.get("perturbed_confidence") if isinstance(ev, dict) else 1.0))
+
+                            # 2. Independent LIME explanations (Phases 1, 2, 4: explicit target class)
+                            lime_orig = lime_exp.explain(seed_t, target_class=orig_lbl)
+                            lime_pert = lime_exp.explain(pert_t, target_class=orig_lbl)
+
+                            # 3. Independent SHAP explanations (Phases 1, 3, 4: explicit target class)
+                            shap_orig = shap_exp.explain(seed_t, target_class=orig_lbl)
+                            shap_pert = shap_exp.explain(pert_t, target_class=orig_lbl)
+
+                            # 4. Secondary explainers preserved purely for backward compatibility
+                            abl_orig = ablation_exp.explain(seed_t)
+                            abl_pert = ablation_exp.explain(pert_t)
+                            attn_orig = attention_exp.explain(seed_t)
+                            attn_pert = attention_exp.explain(pert_t)
+
+                            # Explanations for compatibility callers
+                            if self.config.explainer_type in ("ablation", "loo", "word_ablation"):
+                                orig_exp = abl_orig
+                                pert_exp = abl_pert
+                            elif self.config.explainer_type == "attention":
+                                orig_exp = attn_orig
+                                pert_exp = attn_pert
+                            elif self.config.explainer_type == "shap":
+                                orig_exp = shap_orig
+                                pert_exp = shap_pert
+                            else:
+                                # Default or 'both' or 'lime': keep lime as primary single view without averaging
+                                orig_exp = lime_orig
+                                pert_exp = lime_pert
+
+                            # 5. Metrics & Multi-model alignment
+                            jaccard_lime = compute_jaccard_similarity(lime_orig, lime_pert)
+                            cosine_lime = compute_attribution_cosine(lime_orig, lime_pert)
+                            jaccard_shap = compute_jaccard_similarity(shap_orig, shap_pert)
+                            cosine_shap = compute_attribution_cosine(shap_orig, shap_pert)
+
+                            aligned_multimodel = align_multimodel_attributions(
+                                seed_t, pert_t, lime_orig, lime_pert, shap_orig, shap_pert, operator_tokens=op_tokens
+                            )
+                            aligned_tokens = align_token_attributions(seed_t, pert_t, lime_orig, lime_pert)
+                            abl_aligned = align_token_attributions(seed_t, pert_t, abl_orig, abl_pert)
+                            attn_aligned = align_token_attributions(seed_t, pert_t, attn_orig, attn_pert)
+
+                            # Explanation quality assessment (Phase 8)
+                            exp_quality = compute_explanation_quality(lime_pert, shap_pert, aligned_multimodel)
+
+                            # 6. Baseline vs Probe Attribution Delta (Phase 13)
+                            op_lime_orig = None
+                            op_lime_pert = None
+                            op_shap_orig = None
+                            op_shap_pert = None
+                            if op_tokens:
+                                for r in aligned_multimodel:
+                                    if r.get("is_operator"):
+                                        op_lime_orig = r.get("orig_lime")
+                                        op_lime_pert = r.get("pert_lime")
+                                        op_shap_orig = r.get("orig_shap")
+                                        op_shap_pert = r.get("pert_shap")
+                                        break
+                            delta_lime_val = (op_lime_pert - (op_lime_orig or 0.0)) if op_lime_pert is not None else None
+                            delta_shap_val = (op_shap_pert - (op_shap_orig or 0.0)) if op_shap_pert is not None else None
+                            attr_delta = {
+                                "operator_tokens": op_tokens,
+                                "operator_attribution_baseline_lime": op_lime_orig,
+                                "operator_attribution_probe_lime": op_lime_pert,
+                                "operator_attribution_delta_lime": delta_lime_val,
+                                "operator_attribution_baseline_shap": op_shap_orig,
+                                "operator_attribution_probe_shap": op_shap_pert,
+                                "operator_attribution_delta_shap": delta_shap_val,
+                            }
+
+                            # 7. Controlled Counterfactual Validation (Phase 14)
+                            cf_evidence = None
+                            if op_tokens and hasattr(model_wrapper, "predict_proba"):
+                                try:
+                                    cf_text = pert_t
+                                    for ot in op_tokens:
+                                        cf_text = re.sub(rf"\b{re.escape(ot)}\b", "", cf_text, flags=re.IGNORECASE)
+                                    cf_text = re.sub(r"\s+", " ", cf_text).strip()
+                                    if cf_text and cf_text != pert_t:
+                                        cf_preds = model_wrapper.predict_proba([seed_t, pert_t, cf_text])
+                                        target_idx = model_wrapper.labels.index(orig_lbl) if (hasattr(model_wrapper, "labels") and orig_lbl in model_wrapper.labels) else 0
+                                        p_seed = float(cf_preds[0][target_idx])
+                                        p_pert = float(cf_preds[1][target_idx])
+                                        p_cf = float(cf_preds[2][target_idx])
+                                        restored = abs(p_cf - p_seed) < abs(p_pert - p_seed)
+                                        cf_evidence = {
+                                            "control_text": cf_text,
+                                            "p_original_target_seed": p_seed,
+                                            "p_original_target_probe": p_pert,
+                                            "p_original_target_control": p_cf,
+                                            "counterfactual_support": restored,
+                                        }
+                                except Exception as cf_err:
+                                    logger.debug(f"Counterfactual validation error: {cf_err}")
+
+                            # 8. Baseline vs Probe Prediction & Explanations (Phase 5, 19 schema)
+                            baseline_bundle = {
+                                "text": seed_t,
+                                "prediction": orig_lbl,
+                                "confidence": orig_conf,
+                                "explanations": {
+                                    "lime": lime_orig.to_dict(),
+                                    "shap": shap_orig.to_dict(),
+                                },
+                            }
+                            probe_bundle = {
+                                "text": pert_t,
+                                "prediction": pert_lbl,
+                                "confidence": pert_conf,
+                                "explanations": {
+                                    "lime": lime_pert.to_dict(),
+                                    "shap": shap_pert.to_dict(),
+                                },
+                            }
+
+                            exp_item = {
+                                "probe_id": probe_id_val,
+                                "model_id": model_id,
+                                "seed_text": seed_t,
+                                "perturbed_text": pert_t,
+                                "perturbation_type": ptype_val,
+                                "operator_tokens": op_tokens,
+                                "operator_type": op_type,
+                                "baseline": baseline_bundle,
+                                "probe": probe_bundle,
+                                "lime_orig": lime_orig.to_dict(),
+                                "lime_pert": lime_pert.to_dict(),
+                                "shap_orig": shap_orig.to_dict(),
+                                "shap_pert": shap_pert.to_dict(),
+                                "orig_explanation": orig_exp.to_dict(),
+                                "pert_explanation": pert_exp.to_dict(),
+                                "ablation_orig": abl_orig.to_dict(),
+                                "ablation_pert": abl_pert.to_dict(),
+                                "attention_orig": attn_orig.to_dict(),
+                                "attention_pert": attn_pert.to_dict(),
+                                "ablation_aligned": abl_aligned,
+                                "attention_aligned": attn_aligned,
+                                "jaccard_similarity": jaccard_lime,
+                                "cosine_alignment": cosine_lime,
+                                "jaccard_shap": jaccard_shap,
+                                "cosine_shap": cosine_shap,
+                                "aligned_tokens": aligned_tokens,
+                                "aligned_multimodel": aligned_multimodel,
+                                "explanation_quality": exp_quality.to_dict() if hasattr(exp_quality, "to_dict") else exp_quality,
+                                "attribution_delta": attr_delta,
+                                "counterfactual_evidence": cf_evidence,
+                            }
+                            explanations.append(exp_item)
+
+                            # Enrich diagnosed failures with XAI evidence and authoritative taxonomy
+                            for f in failures:
+                                if f.get("probe_id") == probe_id_val:
+                                    if "evidence" not in f or not isinstance(f["evidence"], dict):
+                                        f["evidence"] = {}
+
+                                    diag = self.taxonomy.classify_failure(
+                                        perturbation_type=f.get("probe_type", ptype_val),
+                                        original_sentence=seed_t,
+                                        perturbed_sentence=pert_t,
+                                        original_label=f.get("original_label", orig_lbl),
+                                        perturbed_label=f.get("perturbed_label", pert_lbl),
+                                        is_flipped=f.get("is_flipped", getattr(ev, "is_flipped", False)),
+                                        expected_flip=f.get("expected_flip", getattr(ev, "expected_flip", False)),
+                                        lime_orig=lime_orig,
+                                        lime_pert=lime_pert,
+                                        shap_orig=shap_orig,
+                                        shap_pert=shap_pert,
+                                        operator_tokens=op_tokens,
+                                        operator_type=op_type,
+                                        model_id=model_id,
+                                        probe_id=probe_id_val,
+                                        confidence_delta=f.get("confidence_delta_pts", getattr(ev, "confidence_delta_pts", 0.0)),
+                                        expected_semantic_effect=getattr(ev, "expected_semantic_effect", getattr(ev, "expected_effect", "")),
+                                        semantic_intent=getattr(ev, "semantic_intent", ""),
+                                        original_confidence=orig_conf,
+                                        perturbed_confidence=pert_conf,
+                                        thresholds=self.config.thresholds,
+                                        counterfactual_evidence=cf_evidence,
+                                        explanation_quality=exp_quality,
+                                        behavioral_outcome=f.get("behavioral_outcome", getattr(ev, "behavioral_outcome", None)),
+                                        target_polarity=f.get("target_polarity", f.get("evidence", {}).get("target_polarity", getattr(ev, "reference_polarity", None))),
+                                        behavioral_evidence=f.get("evidence", getattr(ev, "evidence", {})),
+                                        behavioral_rationale=f.get("reason", getattr(ev, "rationale", "")),
+                                    )
+                                    if diag:
+                                        f["category"] = diag["category"]
+                                        f["reason"] = diag["reason"]
+                                        f["details"] = diag["details"]
+                                        f["evidence"]["taxonomy_evidence"] = diag["evidence"].get("taxonomy_evidence", {})
+                                        f["evidence"]["operator_tokens"] = op_tokens
+                                        f["evidence"]["operator_type"] = op_type
+                                        f["evidence"]["lime"] = diag["evidence"].get("taxonomy_evidence", {}).get("lime", {})
+                                        f["evidence"]["shap"] = diag["evidence"].get("taxonomy_evidence", {}).get("shap", {})
+                                        f["evidence"]["baseline"] = baseline_bundle
+                                        f["evidence"]["probe"] = probe_bundle
+                                        f["evidence"]["aligned_multimodel"] = aligned_multimodel
+                                        f["evidence"]["aligned_tokens"] = aligned_tokens
+                                        f["evidence"]["attribution_delta"] = attr_delta
+                                        f["evidence"]["explanation_quality"] = exp_quality.to_dict() if hasattr(exp_quality, "to_dict") else exp_quality
+                                        f["evidence"]["counterfactual_analysis"] = cf_evidence
+                                        f["evidence"]["jaccard_similarity"] = jaccard_lime
+                                        f["evidence"]["cosine_alignment"] = cosine_lime
+                                        f["evidence"]["orig_explanation"] = exp_item["orig_explanation"]
+                                        f["evidence"]["pert_explanation"] = exp_item["pert_explanation"]
+
+                                        if hasattr(ev, "failure_type"):
+                                             ev.failure_type = diag["category"]
+                                             ev.rationale = diag["reason"]
+
+                        # Recount failure categories after authoritative XAI taxonomy classification
+                        failure_counts = {}
+                        for f in failures:
+                            c = f.get("category", "UNDETERMINED")
+                            failure_counts[c] = failure_counts.get(c, 0) + 1
+                        model_metrics[model_id]["failure_counts"] = failure_counts
+
+                    model_failures[model_id] = failures
+                    model_explanations[model_id] = explanations
+
+                    # Build per-model markdown report
+                    t_rep_0 = time.perf_counter()
+                    report_md = (
+                        f"# Model Behavioral Audit: {model_id}\n\n"
+                        f"- **Flip Rate**: {eval_results['observed_flip_rate']:.2%}\n"
+                        f"- **Preserve Rate**: {eval_results['preserve_rate']:.2%}\n"
+                        f"- **Behavioral Consistency**: {eval_results['behavioral_consistency']:.2%}\n"
+                        f"- **ECE**: {eval_results['ece']:.4f}\n"
+                        f"- **Diagnosed Failures**: {len(failures)}\n"
+                        f"- **Evaluated Probes**: {len(evaluations)}\n"
+                    )
+                    timing.report_ms = (time.perf_counter() - t_rep_0) * 1000.0
+                    timing.total_duration_sec = round(time.perf_counter() - t_m_start, 3)
+
+                    # Save per-model artifacts immediately
+                    t_save_0 = time.perf_counter()
+                    model_data = {
+                        "status": ModelStatus.COMPLETED,
+                        "model_id": model_id,
+                        "baseline": model_baselines[model_id],
+                        "predictions": [e.to_dict() if hasattr(e, "to_dict") else e for e in evaluations],
+                        "evaluations": [e.to_dict() if hasattr(e, "to_dict") else e for e in evaluations],
+                        "behavioral": [e.to_dict() if hasattr(e, "to_dict") else e for e in evaluations],
+                        "metrics": model_metrics[model_id],
+                        "failures": failures,
+                        "taxonomy": failures,
+                        "explanations": explanations,
+                        "timing": timing,
+                        "report_md": report_md,
+                        "completed_at": time.time(),
+                        "probes_done": len(evaluations),
+                        "total_probes": total_probes_count,
+                    }
+                    self.run_store.save_model_result(self.experiment_id, model_id, model_data)
+                    timing.persistence_ms = (time.perf_counter() - t_save_0) * 1000.0
+
+                    self.model_run_states[model_id].status = ModelStatus.COMPLETED
+                    self.model_run_states[model_id].probes_done = len(evaluations)
+                    self.model_run_states[model_id].timing = timing
+                    self.model_run_states[model_id].completed_at = time.time()
+                    self.model_progress[model_id]["status"] = "completed"
+                    self.model_progress[model_id]["done"] = len(evaluations)
+
+                    m_prog = 0.15 + ((m_idx + 1) / num_models) * 0.70
+                    self.progress = m_prog
+                    self.events.emit("progress", progress=m_prog, step=f"Completed model [{m_idx + 1}/{num_models}]: {model_id}")
+
+                    self.events.emit(
+                        "model_status_changed",
+                        model_id=model_id,
+                        status=ModelStatus.COMPLETED.value,
+                    )
+                    self.events.emit(
+                        "model_complete",
+                        model_id=model_id,
+                        flip_rate=eval_results["observed_flip_rate"],
+                        num_failures=len(failures),
+                        timing=timing.to_dict(),
+                    )
+
+                    # Memory hygiene: sequentially evict model from RAM only if cache capacity is constrained (<=1)
+                    if self.resource_config.model_cache_size <= 1:
+                        self.model_cache.evict_from_memory(model_id)
+                        del model_wrapper
+                        del tester
+                        import gc
+                        gc.collect()
+
+                except Exception as m_err:
+                    logger.error(f"Fault in model {model_id}: {m_err}", exc_info=True)
+                    self.events.emit("log", level="ERROR", message=f"Model {model_id} error: {m_err}")
+                    timing.total_duration_sec = round(time.perf_counter() - t_m_start, 3)
+
+                    self.model_run_states[model_id].status = ModelStatus.FAILED
+                    self.model_run_states[model_id].error = str(m_err)
+                    self.model_run_states[model_id].timing = timing
+                    self.model_progress[model_id]["status"] = "failed"
+
+                    self.events.emit(
+                        "model_status_changed",
+                        model_id=model_id,
+                        status=ModelStatus.FAILED.value,
+                    )
+
+                    model_metrics[model_id] = {
+                        "error": str(m_err),
+                        "analysis_status": "NO_VALID_ANALYSIS",
+                        "failure_counts": None,  # unavailable, NOT zero
+                    }
+                    model_evaluations[model_id] = []
+                    model_baselines[model_id] = {}
+                    model_failures[model_id] = []
+                    model_explanations[model_id] = []
+
+                    # Persist failed model state
+                    err_payload = {
+                        "status": ModelStatus.FAILED,
+                        "model_id": model_id,
+                        "error": str(m_err),
+                        "timing": timing,
+                        "completed_at": time.time(),
+                    }
+                    self.run_store.save_model_result(self.experiment_id, model_id, err_payload)
+
+            # 3. Cross-Model Descriptive Comparison
+            if self._cancel_flag.is_set():
+                return
+
+            self.current_step = "Computing cross-model comparative metrics"
+            self.events.emit("progress", progress=0.85, step=self.current_step)
+
+            cross_comparison = {}
+            if len(model_evaluations) > 1:
+                cross_comparison = self.cross_analyzer.compare_models(
+                    model_evaluations=model_evaluations,
+                    model_failures=model_failures,
+                    model_eces=model_eces,
+                )
+
+            # 4. Pipeline Count Integrity Verification (Section 8, 28)
+            planned_count = total_probes_count
+            selected_count = total_probes_count
+            generated_count = getattr(self.config, "generated_probe_count", total_probes_count) or total_probes_count
+            verified_count = getattr(self.config, "verified_probe_count", selected_count) or selected_count
+
+            integrity_checks = {}
+            for m_id in self.config.model_ids:
+                executed_count = len(model_evaluations.get(m_id, []))
+                analyzed_count = executed_count
+                reported_count = executed_count
+                passed = (planned_count == executed_count == analyzed_count == reported_count)
+                integrity_checks[m_id] = {
+                    "generated": generated_count,
+                    "selected": selected_count,
+                    "verified": verified_count,
+                    "planned": planned_count,
+                    "executed": executed_count,
+                    "analyzed": analyzed_count,
+                    "reported": reported_count,
+                    "integrity_verified": passed,
+                }
+
+            all_integrity_passed = all(r["integrity_verified"] for r in integrity_checks.values())
+            has_model_errors = any("error" in model_metrics.get(m_id, {}) for m_id in self.config.model_ids)
+
+            # Section 8 & 10: Distinguish FAILED / INCOMPLETE from COMPLETED
+            if has_model_errors or not all_integrity_passed:
+                total_executed = sum(len(model_evaluations.get(m, [])) for m in self.config.model_ids)
+                if total_executed == 0:
+                    overall_run_status = "FAILED"
+                    overall_analysis_status = "NO_VALID_ANALYSIS"
+                else:
+                    overall_run_status = "INCOMPLETE"
+                    overall_analysis_status = "NO_VALID_ANALYSIS"
+            else:
+                overall_run_status = "COMPLETED"
+                total_failures_observed = sum(len(model_failures.get(m, [])) for m in self.config.model_ids)
+                overall_analysis_status = "NO_FAILURES_OBSERVED" if total_failures_observed == 0 else "FAILURES_OBSERVED"
+
+            self.events.emit(
+                "log",
+                level="INFO" if all_integrity_passed else "WARNING",
+                message=f"Pipeline integrity audit: planned={planned_count} | all_models_passed={all_integrity_passed} | run_status={overall_run_status}",
+            )
+
+            # 5. Generate Reports & Persist Run
+            self.current_step = "Generating diagnostic reports & saving run"
+            self.events.emit("progress", progress=0.92, step=self.current_step)
+
+            final_results = {
+                "schema_version": 3,
+                "experiment_id": self.experiment_id,
+                "run_status": overall_run_status,
+                "analysis_status": overall_analysis_status,
+                "config": self.config.to_dict(),
+                "run_plan": self.run_plan.to_dict(),
+                "shared_probes": probe_set.to_dict(),
+                "semantic_reference": probe_set.semantic_reference_set.to_dict() if getattr(probe_set, "semantic_reference_set", None) else None,
+                "model_baselines": model_baselines,
+                "pipeline_integrity": {
+                    "generated": generated_count,
+                    "selected": selected_count,
+                    "verified": verified_count,
+                    "planned": planned_count,
+                    "total_probes": planned_count,
+                    "model_checks": integrity_checks,
+                    "all_passed": all_integrity_passed,
+                },
+                "models": {
+                    m_id: {
+                        "baselines": model_baselines.get(m_id, {}),
+                        "behavioral_metrics": model_metrics.get(m_id, {}),
+                        "evaluations": [e.to_dict() if hasattr(e, "to_dict") else e for e in model_evaluations.get(m_id, [])],
+                        "probe_results": model_canonical_results.get(m_id, []),
+                        "failures": model_failures.get(m_id, []),
+                        "explanations": model_explanations.get(m_id, []),
+                        "timing": self.model_run_states[m_id].timing.to_dict() if self.model_run_states.get(m_id) and self.model_run_states[m_id].timing else None,
+                    }
+                    for m_id in self.config.model_ids
+                },
+                "cross_model_comparison": cross_comparison,
+                "total_duration_sec": round(time.time() - t_start, 2),
+            }
+
+            # Save aggregate results
+            self.run_store.save_aggregate_results(self.experiment_id, {
+                "comparison": cross_comparison,
+                "metrics": model_metrics,
+                "taxonomy": {m: model_failures.get(m, []) for m in self.config.model_ids},
+            })
+
+            # Generate 15 publication thesis figures + 4 classic diagnostic figures
+            try:
+                self.reporter.visualizer.generate_thesis_figures(final_results)
+                primary_m = self.config.model_ids[0] if self.config.model_ids else ""
+                all_fails = [f for m_f in model_failures.values() for f in m_f]
+                primary_exps = model_explanations.get(primary_m, [])
+                primary_metrics = model_metrics.get(primary_m, {})
+                self.reporter.visualizer.generate_all_plots(
+                    audit_results={"flip_rate": primary_metrics.get("observed_flip_rate", 0.0), "ece": primary_metrics.get("ece", 0.0)},
+                    failures=all_fails,
+                    explanations_summary=primary_exps,
+                )
+            except Exception as fig_err:
+                logger.warning(f"Error generating publication/diagnostic figures: {fig_err}")
+
+
+            # Generate markdown reports
+            try:
+                self._generate_markdown_reports(final_results)
+            except Exception as rep_err:
+                logger.warning(f"Error generating markdown reports ({rep_err})")
+
+            # Persist to RunStore
+            self.run_store.save_results(
+                self.experiment_id,
+                results=final_results,
+                metadata={
+                    "total_duration_sec": final_results["total_duration_sec"],
+                    "models": self.config.model_ids,
+                    "num_probes": len(probe_set.probes),
+                    "pipeline_integrity_passed": all_integrity_passed,
+                    "run_status": overall_run_status,
+                    "analysis_status": overall_analysis_status,
+                    "semantic_reference": {
+                        "engine": probe_set.semantic_reference_set.annotation_engine,
+                        "model": probe_set.semantic_reference_set.model,
+                        "baseline_polarity": probe_set.semantic_reference_set.baseline_annotation.final_semantic_polarity.value,
+                        "cache_hits": probe_set.semantic_reference_set.cache_hits,
+                        "api_requests": probe_set.semantic_reference_set.api_requests,
+                    } if getattr(probe_set, "semantic_reference_set", None) else {},
+                    "completed_at": time.time(),
+                },
+            )
+
+            self.status = "completed" if overall_run_status == "COMPLETED" else overall_run_status.lower()
+            self.progress = 1.0
+            self.current_step = f"Audit {overall_run_status}"
+            self.end_time = time.time()
+            self._result = final_results
+            self.events.emit(
+                "completed" if overall_run_status == "COMPLETED" else "incomplete",
+                experiment_id=self.experiment_id,
+                run_status=overall_run_status,
+                analysis_status=overall_analysis_status,
+                duration_sec=final_results["total_duration_sec"],
+            )
+
+        except Exception as e:
+            logger.error(f"Audit run failed with unhandled exception: {e}", exc_info=True)
+            self.status = "failed"
+            self.end_time = time.time()
+            self._error = e
+            self.events.emit("error", error=str(e))
+
+    def _generate_markdown_reports(self, results: Dict[str, Any]) -> None:
+        exp_id = self.experiment_id
+        models_data = results.get("models", {})
+        cross = results.get("cross_model_comparison", {})
+        integrity = results.get("pipeline_integrity", {})
+        shared_probes = results.get("shared_probes", {})
+        pset_id = shared_probes.get("probe_set_id", "N/A")
+        pset_version = shared_probes.get("probe_set_version", "2.2.0")
+        gen_version = shared_probes.get("generator_version", "2.2.0")
+        seed_texts = shared_probes.get("seed_texts", self.config.seed_texts)
+        sentence_types = shared_probes.get("sentence_types", {})
+        model_baselines = results.get("model_baselines", {})
+
+        # ==========================================
+        # 1. EXPERIMENT SUMMARY REPORT
+        # ==========================================
+        summary_md = [
+            f"# BlindSpot Research Audit Report: {self.config.experiment_name}",
+            f"\n## 1. Experiment Metadata & Configuration",
+            f"- **Experiment ID**: `{exp_id}`",
+            f"- **Run Plan Created**: `{self.run_plan.created_at}`",
+            f"- **Target Models**: {', '.join(f'`{m}`' for m in self.config.model_ids)}",
+            f"- **Probe Set ID / Version**: `{pset_id}` (v{pset_version})",
+            f"- **Generator Version**: `{gen_version}`",
+            f"- **Total Selected Probes**: {len(self.run_plan.selected_probe_ids)}",
+            f"- **Execution Runtime**: {results.get('total_duration_sec', 0.0):.2f}s",
+            f"- **Pipeline Integrity Status**: `{'PASS' if integrity.get('all_passed', False) else 'WARNING'}`\n",
+            "## 2. Baseline Seed Sentences",
+        ]
+
+        for s_idx, stext in enumerate(seed_texts):
+            summary_md.append(f"- **Seed #{s_idx + 1}**: \"{stext}\"")
+
+        summary_md.append("\n## 3. Original Sentence Baselines (Evaluated Once Per Model)")
+        summary_md.append("| Model | Predicted Label | Confidence |")
+        summary_md.append("| :--- | :---: | :---: |")
+
+        for m_id in self.config.model_ids:
+            m_base = model_baselines.get(m_id, {})
+            for stext, bdata in m_base.items():
+                pred = bdata.get("prediction", {})
+                lbl = pred.get("label", "N/A")
+                conf = pred.get("confidence", 0.0)
+                summary_md.append(f"| `{m_id.split('/')[-1]}` | **{lbl}** | {conf:.4f} ({conf * 100:.1f}%) |")
+
+        # Calculate suite-level composition
+        first_evals = next((models_data.get(m, {}).get("evaluations", []) for m in self.config.model_ids if models_data.get(m, {}).get("evaluations")), [])
+        suite_tot = len(first_evals)
+        suite_exp_flips = sum(1 for e in first_evals if e.get("expected_flip"))
+        suite_share_pct = (suite_exp_flips / max(1, suite_tot)) * 100.0 if suite_tot > 0 else 0.0
+
+        summary_md.append("\n## 4. Primary Research Metrics")
+        if suite_tot > 0:
+            summary_md.append(f"- **Suite Expected-Flip Share**: {suite_exp_flips}/{suite_tot} ({suite_share_pct:.1f}%) *(Proportion of test suite designed to elicit polarity reversal — suite property)*\n")
+
+        summary_md.append("| Model | Probes | Observed Flips | Expected-Flip Compliance | Preserve Rate | Consistency | ECE | Mean Δ (pp) |")
+        summary_md.append("| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |")
+
+        for m_id in self.config.model_ids:
+            evals = models_data.get(m_id, {}).get("evaluations", [])
+            m_metrics = models_data.get(m_id, {}).get("behavioral_metrics", {})
+            tot = m_metrics.get("total_probes", len(evals))
+
+            # 1. Observed Flips
+            obs_flips = sum(1 for e in evals if e.get("is_flipped"))
+            obs_flip_r = m_metrics.get("observed_flip_rate", obs_flips / max(1, tot) if tot > 0 else 0.0)
+            obs_str = f"{obs_flips}/{tot} ({obs_flip_r * 100:.1f}%)" if tot > 0 else f"{obs_flips} ({obs_flip_r * 100:.1f}%)"
+
+            # 2. Expected-Flip Compliance (per-probe contract evaluation)
+            exp_flips_tot = sum(1 for e in evals if e.get("expected_flip"))
+            corr_exp_flips = sum(1 for e in evals if e.get("expected_flip") and e.get("is_flipped"))
+            exp_comp = m_metrics.get("expected_flip_compliance")
+            if exp_comp is None:
+                exp_comp = corr_exp_flips / max(1, exp_flips_tot) if exp_flips_tot > 0 else 1.0
+            comp_str = f"{corr_exp_flips}/{exp_flips_tot} ({exp_comp * 100:.1f}%)" if exp_flips_tot > 0 else "N/A"
+
+            # 3. Preserve Rate (per-probe preservation on expected-preserve probes)
+            pres_tot = sum(1 for e in evals if not e.get("expected_flip"))
+            corr_pres = sum(1 for e in evals if (not e.get("expected_flip")) and (not e.get("is_flipped")))
+            pres_r = m_metrics.get("preserve_rate")
+            if pres_r is None:
+                pres_r = corr_pres / max(1, pres_tot) if pres_tot > 0 else 1.0
+            pres_str = f"{corr_pres}/{pres_tot} ({pres_r * 100:.1f}%)" if pres_tot > 0 else "N/A"
+
+            # 4. Behavioral Consistency (all individual probe contracts satisfied)
+            consistency = m_metrics.get("behavioral_consistency")
+            corr_consistency = sum(1 for e in evals if e.get("expectation_satisfied", e.get("expectation_match", False)))
+            if consistency is None:
+                consistency = corr_consistency / max(1, tot) if tot > 0 else 1.0
+            cons_str = f"{corr_consistency}/{tot} ({consistency * 100:.1f}%)" if tot > 0 else f"{consistency * 100:.1f}%"
+
+            # Calibration and shifts
+            ece = m_metrics.get("ece", 0.0)
+            shift = m_metrics.get("confidence_shifts", {}).get("mean_delta_pts", 0.0)
+
+            summary_md.append(
+                f"| `{m_id.split('/')[-1]}` | {tot} | {obs_str} | {comp_str} | {pres_str} | {cons_str} | {ece:.4f} | {shift:+.1f} pp |"
+            )
+
+        summary_md.append("\n## 5. Behavioral Failure Taxonomy Counts (Never Suppressed)")
+        summary_md.append("| Model | Blind | Spurious | Misweighted | Undetermined | Compliant (None) |")
+        summary_md.append("| :--- | :---: | :---: | :---: | :---: | :---: |")
+
+        for m_id in self.config.model_ids:
+            evals = models_data.get(m_id, {}).get("evaluations", [])
+            b_cnt = sum(1 for e in evals if e.get("failure_type") == "Blind")
+            s_cnt = sum(1 for e in evals if e.get("failure_type") == "Spurious")
+            m_cnt = sum(1 for e in evals if e.get("failure_type") == "Misweighted")
+            u_cnt = sum(1 for e in evals if e.get("failure_type") == "Undetermined")
+            n_cnt = sum(1 for e in evals if e.get("failure_type") in ("None", None, ""))
+            summary_md.append(f"| `{m_id.split('/')[-1]}` | {b_cnt} | {s_cnt} | {m_cnt} | {u_cnt} | {n_cnt} |")
+
+        if cross:
+            summary_md.extend([
+                "\n## 6. Cross-Model Descriptive Agreement",
+                f"- **Overall Prediction Agreement**: {cross.get('overall_agreement_rate', 0.0):.2%}",
+            ])
+            pair = cross.get("pairwise_agreement", {})
+            if pair:
+                summary_md.append("\n### Pairwise Concordance Matrix")
+                models_list = list(pair.keys())
+                header_str = "| Model | " + " | ".join(f"`{get_model_short_name(m)}`" for m in models_list) + " |"
+                sep_str = "| :--- | " + " | ".join(":---:" for _ in models_list) + " |"
+                summary_md.append(header_str)
+                summary_md.append(sep_str)
+                for m1 in models_list:
+                    row_vals = [f"{pair.get(m1, {}).get(m2, 0.0):.1%}" for m2 in models_list]
+                    summary_md.append(f"| `{get_model_short_name(m1)}` | " + " | ".join(row_vals) + " |")
+
+        summary_md.extend([
+            "\n## 7. Pipeline Count Integrity Audit",
+            "| Model | Generated | Selected | Verified | Planned | Executed | Analyzed | Reported | Audit Result |",
+            "| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |",
+        ])
+        for m_id, chk in integrity.get("model_checks", {}).items():
+            res_str = "PASS" if chk.get("integrity_verified") else "FAIL"
+            summary_md.append(
+                f"| `{m_id.split('/')[-1]}` | {chk.get('generated')} | {chk.get('selected')} | "
+                f"{chk.get('verified')} | {chk.get('planned')} | {chk.get('executed')} | "
+                f"{chk.get('analyzed')} | {chk.get('reported')} | **{res_str}** |"
+            )
+
+        summary_md.extend([
+            "\n## 8. Semantic Reference Methodology & Ground-Truth Alignment",
+            "1. **Canonical Semantic Label Space**: Ground-truth polarity is strictly confined to `POSITIVE`, `NEGATIVE`, and `NEUTRAL`. Non-canonical sentiment categories (such as `MIXED`, `AMBIGUOUS`, `SARCASTIC`) are rejected.",
+            "2. **Google Gemini Role**: Gemini operates exclusively as an external semantic annotator/verification layer for baseline and probe sentences. It is **never** a benchmark model, does not forecast model failures, and is strictly prohibited from generating the failure taxonomy.",
+            "3. **Human Verification & Override**: Every semantic reference can be verified and overridden by researchers (`[Accept]` / `[Change]`). Frozen semantic references are strictly immutable during model evaluation.",
+            "4. **Binary vs. Multiclass Alignment**: Binary models (e.g. 2-class SST-2) natively output `NEGATIVE` and `POSITIVE`. When semantic reference is `NEUTRAL`, binary models' forced polarity is recorded as `NOT_DIRECTLY_REPRESENTABLE` (`BINARY_FORCED_POLARITY`), preserving empirical truth rather than falsely modifying the reference.",
+            "5. **Independence of Model Outputs & Rule-Based Taxonomy**: Model predictions remain 100% empirical forward-pass outputs. The failure taxonomy (`Blind`, `Spurious`, `Misweighted`, `Undetermined`) is derived purely by deterministic rule-based behavioral analysis, completely independent of Gemini.",
+        ])
+
+        self.run_store.save_report(exp_id, "experiment_summary.md", "\n".join(summary_md))
+
+        # ==========================================
+        # 2. PROBE-LEVEL EVIDENCE REPORT
+        # ==========================================
+        evidence_md = [
+            f"# Probe-Level Behavioral Evidence: {self.config.experiment_name}",
+            f"\n**Experiment ID**: `{exp_id}`",
+            f"Detailed probe-level records establishing full observable evidence for behavioral outcomes and failure classifications.\n",
+        ]
+
+        for m_id in self.config.model_ids:
+            short_m = m_id.split("/")[-1]
+            evidence_md.append(f"\n## Model: `{short_m}`\n")
+            evidence_md.append("| Probe ID | Category | Original → Perturbed | Semantic Ref | Baseline | Probe Output | Transition | Δ Conf (pp) | Flip | Outcome | Failure |")
+            evidence_md.append("| :--- | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |")
+
+            for ev in models_data.get(m_id, {}).get("evaluations", []):
+                pid = ev.get("probe_id", "")[:8]
+                pcat = ev.get("perturbation_type", "").upper()
+                s_text = ev.get("seed_text", "")
+                p_text = ev.get("perturbed_text", "")
+                orig_lbl = ev.get("original_label", "")
+                orig_c = ev.get("original_confidence", 0.0)
+                pert_lbl = ev.get("perturbed_label", "")
+                pert_c = ev.get("perturbed_confidence", 0.0)
+                delta_pts = ev.get("confidence_delta_pts", 0.0)
+                is_flip = "YES" if ev.get("is_flipped") else "NO"
+                outcome = ev.get("behavioral_outcome", "")
+                ftype = ev.get("failure_type", "None")
+
+                sem_ref = ev.get("semantic_reference") or {}
+                sem_pol = sem_ref.get("final_semantic_polarity", "N/A")
+                sem_rel = sem_ref.get("semantic_relation_to_baseline", "N/A")
+                sem_str = f"{sem_pol} ({sem_rel})"
+
+                orig_pert_str = f"\"{s_text[:25]}...\" → \"{p_text[:25]}...\""
+                base_str = f"{orig_lbl} ({orig_c:.2f})"
+                out_str = f"{pert_lbl} ({pert_c:.2f})"
+                trans_str = f"{orig_lbl} → {pert_lbl}"
+
+                evidence_md.append(
+                    f"| `{pid}` | {pcat} | {orig_pert_str} | `{sem_str}` | {base_str} | {out_str} | {trans_str} | {delta_pts:+.1f} | {is_flip} | `{outcome}` | **{ftype}** |"
+                )
+
+            evidence_md.append("\n### Probe Rationales & Evidence Notes")
+            for ev in models_data.get(m_id, {}).get("evaluations", []):
+                pid = ev.get("probe_id", "")[:8]
+                ftype = ev.get("failure_type", "None")
+                outcome = ev.get("behavioral_outcome", "")
+                rat = ev.get("rationale") or "N/A"
+                evidence_md.append(f"- **`{pid}`** [{ftype} / {outcome}]: {rat}")
+
+        self.run_store.save_report(exp_id, "probe_level_evidence.md", "\n".join(evidence_md))
+
+        # ==========================================
+        # 3. FAILURE DIAGNOSES REPORT
+        # ==========================================
+        all_failures = []
+        for m_id in self.config.model_ids:
+            for f in models_data.get(m_id, {}).get("failures", []):
+                item = dict(f)
+                item["model_id"] = m_id
+                all_failures.append(item)
+
+        fail_md = [
+            f"# Behavioral Failure Diagnoses: {self.config.experiment_name}",
+            f"\n**Experiment ID**: `{exp_id}`",
+            f"**Total Diagnosed Failures**: {len(all_failures)}\n",
+        ]
+
+        if not all_failures:
+            fail_md.append("### Diagnostic Finding: ZERO BEHAVIORAL FAILURES")
+            fail_md.append("All target models complied with defined semantic expectations across all evaluated linguistic probes.")
+            fail_md.append("Probe-level predictions and confidence transitions are fully documented in `probe_level_evidence.md`.\n")
+        else:
+            for idx, fail in enumerate(all_failures, 1):
+                short_m = fail.get("model_id", "").split("/")[-1]
+                f_cat = fail.get("category", "Undetermined")
+                fail_md.append(f"### Failure #{idx}: [{f_cat.upper()}] — Model `{short_m}`")
+                fail_md.append(f"- **Probe ID**: `{fail.get('probe_id', 'N/A')}` ({fail.get('probe_type', 'N/A')})")
+                fail_md.append(f"- **Original Input**: \"{fail.get('original_sentence', '')}\"")
+                fail_md.append(f"- **Perturbed Input**: \"{fail.get('perturbed_sentence', '')}\"")
+                fail_md.append(f"- **Observed Transition**: `{fail.get('original_label')} ({fail.get('original_confidence', 0.0):.2f})` → `{fail.get('perturbed_label')} ({fail.get('perturbed_confidence', 0.0):.2f})`")
+                fail_md.append(f"- **Prediction Flipped**: `{fail.get('is_flipped')}` (Expected Flip: `{fail.get('expected_flip')}`)")
+                fail_md.append(f"- **Diagnostic Reason**: {fail.get('reason', 'N/A')}")
+                fail_md.append(f"- **Evidence**: {fail.get('details', 'N/A')}")
+                fail_md.append(f"- **Actionable Recommendation**: {fail.get('recommendation', 'N/A')}\n")
+
+        self.run_store.save_report(exp_id, "failure_summary.md", "\n".join(fail_md))
+

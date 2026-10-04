@@ -1,0 +1,79 @@
+{
+  "i am healthy but still hospitalized": {
+    "baseline_id": "base_f18ee4e16b81",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "seed_text": "i am healthy but still hospitalized",
+    "original_text": "i am healthy but still hospitalized",
+    "sentence_type": "literal",
+    "prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.8186574578285217,
+      "formatted_confidence": "81.87%",
+      "probabilities": {
+        "NEGATIVE": 0.8186574578285217,
+        "POSITIVE": 0.18134254217147827
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "81.87%",
+        "POSITIVE": "18.13%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [================    ]  81.87%\nPOSITIVE   [====                ]  18.13%",
+      "raw_logits": null,
+      "latency_ms": 100.25660000246717,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.8186574578285217,
+        "LABEL_1": 0.18134254217147827
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "raw_label": "LABEL_0",
+    "raw_label_id": 0,
+    "semantic_polarity": "NEGATIVE",
+    "confidence": 0.8186574578285217,
+    "full_probability_distribution": {
+      "NEGATIVE": 0.8186574578285217,
+      "POSITIVE": 0.18134254217147827
+    },
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "NEGATIVE",
+    "semantic_reference": {
+      "sentence_id": "baseline",
+      "sentence_text": "i am healthy but still hospitalized",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'still hospitalized' (compound: -0.32).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": null,
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790617610.4798121,
+      "prompt_version": "v2.0"
+    },
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "latency_ms": 100.25660000246717
+  }
+}

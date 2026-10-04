@@ -1,0 +1,45 @@
+{
+  "total_probes": 7,
+  "flip_rate": 0.14285714285714285,
+  "observed_flip_rate": 0.14285714285714285,
+  "expected_flip_rate": 0.2857142857142857,
+  "expected_flip_compliance": 0.5,
+  "preserve_rate": 1.0,
+  "behavioral_consistency": 0.7142857142857143,
+  "satisfaction_rate": 0.7142857142857143,
+  "raw_label_flip_rate": 0.14285714285714285,
+  "polarity_flip_rate": 0.14285714285714285,
+  "confidence_flip_rate": 0.14285714285714285,
+  "ece": 0.17674133423191551,
+  "transition_matrix": {
+    "NEGATIVE": {
+      "NEGATIVE": 0,
+      "NEUTRAL": 0,
+      "POSITIVE": 0
+    },
+    "NEUTRAL": {
+      "NEGATIVE": 0,
+      "NEUTRAL": 0,
+      "POSITIVE": 0
+    },
+    "POSITIVE": {
+      "NEGATIVE": 1,
+      "NEUTRAL": 0,
+      "POSITIVE": 6
+    }
+  },
+  "confidence_shifts": {
+    "mean_delta_pts": -9.514692233895138,
+    "median_delta_pts": -0.2878827748094559,
+    "max_drop_pts": 57.059552850888906,
+    "max_gain_pts": 0.25061894517790506,
+    "num_increased": 2,
+    "num_decreased": 5,
+    "num_unchanged": 0
+  },
+  "failure_counts": {
+    "Misweighted": 1,
+    "Blind": 1
+  },
+  "analysis_status": "FAILURES_OBSERVED"
+}

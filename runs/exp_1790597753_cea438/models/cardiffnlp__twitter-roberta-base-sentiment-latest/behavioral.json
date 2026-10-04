@@ -1,0 +1,1045 @@
+[
+  {
+    "baseline_id": "base_8afe595abb89",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_80889330b7c6",
+    "seed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbed_text": "The movie had excellent acting and beautiful visuals, but the storyline was not boring and disappointing",
+    "perturbation_type": "negation_insertion",
+    "category": "negation_insertion",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.45435319976946115,
+      "formatted_confidence": "45.44%",
+      "probabilities": {
+        "NEGATIVE": 0.31216542982562095,
+        "NEUTRAL": 0.23348137040491787,
+        "POSITIVE": 0.45435319976946115
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "31.22%",
+        "NEUTRAL": "23.35%",
+        "POSITIVE": "45.44%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [======              ]  31.22%\nNEUTRAL    [=====               ]  23.35%\nPOSITIVE   [=========           ]  45.44%",
+      "raw_logits": null,
+      "latency_ms": 154.8874000000069,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "positive",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "negative": 0.31216542982562095,
+        "neutral": 0.23348137040491787,
+        "positive": 0.45435319976946115
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9571498668087641,
+      "formatted_confidence": "95.71%",
+      "probabilities": {
+        "NEGATIVE": 0.010534167328976718,
+        "NEUTRAL": 0.03231596586225914,
+        "POSITIVE": 0.9571498668087641
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "1.05%",
+        "NEUTRAL": "3.23%",
+        "POSITIVE": "95.71%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   1.05%\nNEUTRAL    [=                   ]   3.23%\nPOSITIVE   [=================== ]  95.71%",
+      "raw_logits": null,
+      "latency_ms": 109.93115714310468,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "positive",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "negative": 0.010534167328976718,
+        "neutral": 0.03231596586225914,
+        "positive": 0.9571498668087641
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.45435319976946115,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9571498668087641,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_80889330b7c6",
+      "sentence_text": "The movie had excellent acting and beautiful visuals, but the storyline was not boring and disappointing",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'the storyline was not boring and disappointing' (compound: +0.62).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790597714.6920607,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.5027966670393029,
+    "confidence_delta_pts": 50.27966670393029,
+    "confidence_delta_pp": 50.27966670393029,
+    "formatted_confidence_delta": "+50.28 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "POLARITY_STRENGTHENED",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 109.93115714310468
+  },
+  {
+    "baseline_id": "base_8afe595abb89",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_0b010af6635d",
+    "seed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbed_text": "It is not impossible that the movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbation_type": "double_negation",
+    "category": "double_negation",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.45435319976946115,
+      "formatted_confidence": "45.44%",
+      "probabilities": {
+        "NEGATIVE": 0.31216542982562095,
+        "NEUTRAL": 0.23348137040491787,
+        "POSITIVE": 0.45435319976946115
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "31.22%",
+        "NEUTRAL": "23.35%",
+        "POSITIVE": "45.44%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [======              ]  31.22%\nNEUTRAL    [=====               ]  23.35%\nPOSITIVE   [=========           ]  45.44%",
+      "raw_logits": null,
+      "latency_ms": 154.8874000000069,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "positive",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "negative": 0.31216542982562095,
+        "neutral": 0.23348137040491787,
+        "positive": 0.45435319976946115
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.5009600892233809,
+      "formatted_confidence": "50.10%",
+      "probabilities": {
+        "NEGATIVE": 0.5009600892233809,
+        "NEUTRAL": 0.29751409750368757,
+        "POSITIVE": 0.2015258132729316
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "50.10%",
+        "NEUTRAL": "29.75%",
+        "POSITIVE": "20.15%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [==========          ]  50.10%\nNEUTRAL    [======              ]  29.75%\nPOSITIVE   [====                ]  20.15%",
+      "raw_logits": null,
+      "latency_ms": 109.93115714310468,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "negative",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "negative": 0.5009600892233809,
+        "neutral": 0.29751409750368757,
+        "positive": 0.2015258132729316
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.45435319976946115,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.5009600892233809,
+    "from_label": "POSITIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "POSITIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_0b010af6635d",
+      "sentence_text": "It is not impossible that the movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'the storyline was boring and disappointing' (compound: -0.30).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "UNVERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "LOCAL_HEURISTIC_UNVERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790597714.697132,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": true,
+    "semantic_state_change": true,
+    "confidence_delta": 0.04660688945391972,
+    "confidence_delta_pts": 4.660688945391972,
+    "confidence_delta_pp": 4.660688945391972,
+    "formatted_confidence_delta": "+4.66 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": false,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "POLARITY_REVERSED",
+    "behavioral_outcome": "UNEXPECTED_FLIP",
+    "failure_type": "Spurious",
+    "rationale": "The perturbation is meaning-preserving (PRESERVE_POLARITY), but model unexpectedly changed its predicted class and altered its predicted state (POSITIVE (POSITIVE) \u2192 NEGATIVE (NEGATIVE)).",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 109.93115714310468
+  },
+  {
+    "baseline_id": "base_8afe595abb89",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_3b1c7a6a7f9a",
+    "seed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbed_text": "The movie had extremely excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.45435319976946115,
+      "formatted_confidence": "45.44%",
+      "probabilities": {
+        "NEGATIVE": 0.31216542982562095,
+        "NEUTRAL": 0.23348137040491787,
+        "POSITIVE": 0.45435319976946115
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "31.22%",
+        "NEUTRAL": "23.35%",
+        "POSITIVE": "45.44%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [======              ]  31.22%\nNEUTRAL    [=====               ]  23.35%\nPOSITIVE   [=========           ]  45.44%",
+      "raw_logits": null,
+      "latency_ms": 154.8874000000069,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "positive",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "negative": 0.31216542982562095,
+        "neutral": 0.23348137040491787,
+        "positive": 0.45435319976946115
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.597610694241205,
+      "formatted_confidence": "59.76%",
+      "probabilities": {
+        "NEGATIVE": 0.21430405335712274,
+        "NEUTRAL": 0.18808525240167223,
+        "POSITIVE": 0.597610694241205
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "21.43%",
+        "NEUTRAL": "18.81%",
+        "POSITIVE": "59.76%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====                ]  21.43%\nNEUTRAL    [====                ]  18.81%\nPOSITIVE   [============        ]  59.76%",
+      "raw_logits": null,
+      "latency_ms": 109.93115714310468,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "positive",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "negative": 0.21430405335712274,
+        "neutral": 0.18808525240167223,
+        "positive": 0.597610694241205
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.45435319976946115,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.597610694241205,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_3b1c7a6a7f9a",
+      "sentence_text": "The movie had extremely excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'the storyline was boring and disappointing' (compound: -0.29).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790597714.7028654,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.1432574944717439,
+    "confidence_delta_pts": 14.32574944717439,
+    "confidence_delta_pp": 14.32574944717439,
+    "formatted_confidence_delta": "+14.33 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "POLARITY_STRENGTHENED",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Intensifier preserved polarity.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 109.93115714310468
+  },
+  {
+    "baseline_id": "base_8afe595abb89",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_d794fddd78d0",
+    "seed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbed_text": "The movie had somewhat excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.45435319976946115,
+      "formatted_confidence": "45.44%",
+      "probabilities": {
+        "NEGATIVE": 0.31216542982562095,
+        "NEUTRAL": 0.23348137040491787,
+        "POSITIVE": 0.45435319976946115
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "31.22%",
+        "NEUTRAL": "23.35%",
+        "POSITIVE": "45.44%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [======              ]  31.22%\nNEUTRAL    [=====               ]  23.35%\nPOSITIVE   [=========           ]  45.44%",
+      "raw_logits": null,
+      "latency_ms": 154.8874000000069,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "positive",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "negative": 0.31216542982562095,
+        "neutral": 0.23348137040491787,
+        "positive": 0.45435319976946115
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.3861651075334751,
+      "formatted_confidence": "38.62%",
+      "probabilities": {
+        "NEGATIVE": 0.3861651075334751,
+        "NEUTRAL": 0.26611072426044424,
+        "POSITIVE": 0.34772416820608065
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "38.62%",
+        "NEUTRAL": "26.61%",
+        "POSITIVE": "34.77%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [========            ]  38.62%\nNEUTRAL    [=====               ]  26.61%\nPOSITIVE   [=======             ]  34.77%",
+      "raw_logits": null,
+      "latency_ms": 109.93115714310468,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "negative",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "negative": 0.3861651075334751,
+        "neutral": 0.26611072426044424,
+        "positive": 0.34772416820608065
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.45435319976946115,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.3861651075334751,
+    "from_label": "POSITIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "POSITIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_d794fddd78d0",
+      "sentence_text": "The movie had somewhat excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'the storyline was boring and disappointing' (compound: -0.30).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790597714.7075071,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": true,
+    "semantic_state_change": true,
+    "confidence_delta": -0.06818809223598604,
+    "confidence_delta_pts": -6.818809223598604,
+    "confidence_delta_pp": -6.818809223598604,
+    "formatted_confidence_delta": "-6.82 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": false,
+    "expected_relation": "POLARITY_WEAKENED",
+    "observed_relation": "POLARITY_REVERSED",
+    "behavioral_outcome": "UNEXPECTED_FLIP",
+    "failure_type": "Misweighted",
+    "rationale": "Downtoner inverted polarity (POSITIVE (POSITIVE) \u2192 NEGATIVE (NEGATIVE)).",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 109.93115714310468
+  },
+  {
+    "baseline_id": "base_8afe595abb89",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_e115cc106ff1",
+    "seed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbed_text": "The film had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbation_type": "synonym_substitution",
+    "category": "synonym_substitution",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.45435319976946115,
+      "formatted_confidence": "45.44%",
+      "probabilities": {
+        "NEGATIVE": 0.31216542982562095,
+        "NEUTRAL": 0.23348137040491787,
+        "POSITIVE": 0.45435319976946115
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "31.22%",
+        "NEUTRAL": "23.35%",
+        "POSITIVE": "45.44%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [======              ]  31.22%\nNEUTRAL    [=====               ]  23.35%\nPOSITIVE   [=========           ]  45.44%",
+      "raw_logits": null,
+      "latency_ms": 154.8874000000069,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "positive",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "negative": 0.31216542982562095,
+        "neutral": 0.23348137040491787,
+        "positive": 0.45435319976946115
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.45858571863536307,
+      "formatted_confidence": "45.86%",
+      "probabilities": {
+        "NEGATIVE": 0.30309273437741097,
+        "NEUTRAL": 0.238321546987226,
+        "POSITIVE": 0.45858571863536307
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "30.31%",
+        "NEUTRAL": "23.83%",
+        "POSITIVE": "45.86%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [======              ]  30.31%\nNEUTRAL    [=====               ]  23.83%\nPOSITIVE   [=========           ]  45.86%",
+      "raw_logits": null,
+      "latency_ms": 109.93115714310468,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "positive",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "negative": 0.30309273437741097,
+        "neutral": 0.238321546987226,
+        "positive": 0.45858571863536307
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.45435319976946115,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.45858571863536307,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_e115cc106ff1",
+      "sentence_text": "The film had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'the storyline was boring and disappointing' (compound: -0.30).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "UNVERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "LOCAL_HEURISTIC_UNVERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790597714.7125041,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.004232518865901924,
+    "confidence_delta_pts": 0.4232518865901924,
+    "confidence_delta_pp": 0.4232518865901924,
+    "formatted_confidence_delta": "+0.42 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 109.93115714310468
+  },
+  {
+    "baseline_id": "base_8afe595abb89",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_8883f3615d65",
+    "seed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing, however it was surprisingly inferior in comparison.",
+    "perturbation_type": "contrast_negative_append",
+    "category": "contrast_negative_append",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.45435319976946115,
+      "formatted_confidence": "45.44%",
+      "probabilities": {
+        "NEGATIVE": 0.31216542982562095,
+        "NEUTRAL": 0.23348137040491787,
+        "POSITIVE": 0.45435319976946115
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "31.22%",
+        "NEUTRAL": "23.35%",
+        "POSITIVE": "45.44%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [======              ]  31.22%\nNEUTRAL    [=====               ]  23.35%\nPOSITIVE   [=========           ]  45.44%",
+      "raw_logits": null,
+      "latency_ms": 154.8874000000069,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "positive",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "negative": 0.31216542982562095,
+        "neutral": 0.23348137040491787,
+        "positive": 0.45435319976946115
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.723173212196239,
+      "formatted_confidence": "72.32%",
+      "probabilities": {
+        "NEGATIVE": 0.723173212196239,
+        "NEUTRAL": 0.18507120262354,
+        "POSITIVE": 0.091755585180221
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "72.32%",
+        "NEUTRAL": "18.51%",
+        "POSITIVE": "9.18%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [==============      ]  72.32%\nNEUTRAL    [====                ]  18.51%\nPOSITIVE   [==                  ]   9.18%",
+      "raw_logits": null,
+      "latency_ms": 109.93115714310468,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "negative",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "negative": 0.723173212196239,
+        "neutral": 0.18507120262354,
+        "positive": 0.091755585180221
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.45435319976946115,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.723173212196239,
+    "from_label": "POSITIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "POSITIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_8883f3615d65",
+      "sentence_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing, however it was surprisingly inferior in comparison.",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'the storyline was boring and disappointing,' (compound: -0.30).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790597714.7178652,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": true,
+    "semantic_state_change": true,
+    "confidence_delta": 0.26882001242677783,
+    "confidence_delta_pts": 26.882001242677784,
+    "confidence_delta_pp": 26.882001242677784,
+    "formatted_confidence_delta": "+26.88 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": false,
+    "expected_relation": "POLARITY_REVERSED",
+    "observed_relation": "POLARITY_REVERSED",
+    "behavioral_outcome": "EXPECTED_FLIP",
+    "failure_type": "None",
+    "rationale": "Model correctly flipped and reversed polarity (POSITIVE (POSITIVE) \u2192 NEGATIVE (NEGATIVE)) under polarity-altering probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 109.93115714310468
+  },
+  {
+    "baseline_id": "base_8afe595abb89",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "probe_id": "prb_0896126a5725",
+    "seed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing",
+    "perturbed_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing, and the overall storyline was engaging.",
+    "perturbation_type": "contrast_positive_append",
+    "category": "contrast_positive_append",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.45435319976946115,
+      "formatted_confidence": "45.44%",
+      "probabilities": {
+        "NEGATIVE": 0.31216542982562095,
+        "NEUTRAL": 0.23348137040491787,
+        "POSITIVE": 0.45435319976946115
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "31.22%",
+        "NEUTRAL": "23.35%",
+        "POSITIVE": "45.44%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [======              ]  31.22%\nNEUTRAL    [=====               ]  23.35%\nPOSITIVE   [=========           ]  45.44%",
+      "raw_logits": null,
+      "latency_ms": 154.8874000000069,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "positive",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "negative": 0.31216542982562095,
+        "neutral": 0.23348137040491787,
+        "positive": 0.45435319976946115
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.4840860962867737,
+      "formatted_confidence": "48.41%",
+      "probabilities": {
+        "NEGATIVE": 0.25820502638816833,
+        "NEUTRAL": 0.257708877325058,
+        "POSITIVE": 0.4840860962867737
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "25.82%",
+        "NEUTRAL": "25.77%",
+        "POSITIVE": "48.41%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=====               ]  25.82%\nNEUTRAL    [=====               ]  25.77%\nPOSITIVE   [==========          ]  48.41%",
+      "raw_logits": null,
+      "latency_ms": 109.93115714310468,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment-latest",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "positive",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "negative": 0.25820502638816833,
+        "neutral": 0.257708877325058,
+        "positive": 0.4840860962867737
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.45435319976946115,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.4840860962867737,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_0896126a5725",
+      "sentence_text": "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing, and the overall storyline was engaging.",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by adverse second clause: 'the storyline was boring and disappointing, and the overall storyline was engaging.' (compound: -0.15).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790597714.7233264,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "NEGATIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.029732896517312535,
+    "confidence_delta_pts": 2.9732896517312533,
+    "confidence_delta_pp": 2.9732896517312533,
+    "formatted_confidence_delta": "+2.97 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 109.93115714310468
+  }
+]

@@ -1,0 +1,204 @@
+{
+  "It's really a good and comfortable product": {
+    "baseline_id": "base_9e962810b46d",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "seed_text": "It's really a good and comfortable product",
+    "original_text": "It's really a good and comfortable product",
+    "sentence_type": "literal",
+    "prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9773662531769493,
+      "formatted_confidence": "97.74%",
+      "probabilities": {
+        "NEGATIVE": 0.0021469291338008486,
+        "NEUTRAL": 0.020486817689249905,
+        "POSITIVE": 0.9773662531769493
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.21%",
+        "NEUTRAL": "2.05%",
+        "POSITIVE": "97.74%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.21%\nNEUTRAL    [                    ]   2.05%\nPOSITIVE   [====================]  97.74%",
+      "raw_logits": null,
+      "latency_ms": 36.18039999855682,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0021469291338008486,
+        "LABEL_1": 0.020486817689249905,
+        "LABEL_2": 0.9773662531769493
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "raw_label": "LABEL_2",
+    "raw_label_id": 2,
+    "semantic_polarity": "POSITIVE",
+    "confidence": 0.9773662531769493,
+    "full_probability_distribution": {
+      "NEGATIVE": 0.0021469291338008486,
+      "NEUTRAL": 0.020486817689249905,
+      "POSITIVE": 0.9773662531769493
+    },
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "POSITIVE",
+    "semantic_reference": {
+      "sentence_id": "baseline",
+      "sentence_text": "It's really a good and comfortable product",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.97,
+      "reason": "Direct positive statement about the product being good and comfortable.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.97,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790948800.526018,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.01,
+      "neutral_probability": 0.02,
+      "positive_probability": 0.97,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.01,
+        "neutral_probability": 0.02,
+        "positive_probability": 0.97,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.01,
+        "positive_probability": 0.97,
+        "neutral_probability_excluded": 0.02,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.02,
+            "positive_probability": 0.97,
+            "reason_short": "Direct positive statement about the product being good and comfortable.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_c186dc0c3d2b",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.88,
+            "neutral_probability": 0.08,
+            "positive_probability": 0.04,
+            "reason_short": "Explicit negation of a positive statement reverses the sentiment.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_ba2f14837e2c",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.08,
+            "neutral_probability": 0.22,
+            "positive_probability": 0.7,
+            "reason_short": "Double negation ('not impossible') implies a favorable or positive possibility.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0770f88de5d0",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.01,
+            "positive_probability": 0.98,
+            "reason_short": "Intensified positive statement.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_32926d7db398",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.02,
+            "neutral_probability": 0.15,
+            "positive_probability": 0.83,
+            "reason_short": "Slightly hedged positive statement, still remains overall positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_7152aca783c8",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.02,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.88,
+            "reason_short": "Moderated positive sentiment using 'decent'.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_096a9aebe53b",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.75,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.15,
+            "reason_short": "Contrastive clause introduced by 'however' shifts the overall sentiment to negative.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_21e62a74687e",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.01,
+            "neutral_probability": 0.04,
+            "positive_probability": 0.95,
+            "reason_short": "Reinforced positive sentiment with additional good practical results.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      }
+    },
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "latency_ms": 36.18039999855682
+  }
+}

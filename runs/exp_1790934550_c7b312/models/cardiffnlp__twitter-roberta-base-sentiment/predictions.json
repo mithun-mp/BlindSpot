@@ -1,0 +1,1885 @@
+[
+  {
+    "baseline_id": "base_6ee544fd19c2",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_0917328cb2cb",
+    "seed_text": "the movie was very boring but the ending was good",
+    "perturbed_text": "the movie was not very boring but the ending was good",
+    "perturbation_type": "negation_insertion",
+    "category": "negation_insertion",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.3552795264291481,
+      "formatted_confidence": "35.53%",
+      "probabilities": {
+        "NEGATIVE": 0.31070320670027773,
+        "NEUTRAL": 0.33401726687057415,
+        "POSITIVE": 0.3552795264291481
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "31.07%",
+        "NEUTRAL": "33.40%",
+        "POSITIVE": "35.53%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [======              ]  31.07%\nNEUTRAL    [=======             ]  33.40%\nPOSITIVE   [=======             ]  35.53%",
+      "raw_logits": null,
+      "latency_ms": 1007.8359999897657,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.31070320670027773,
+        "LABEL_1": 0.33401726687057415,
+        "LABEL_2": 0.3552795264291481
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9564077342728837,
+      "formatted_confidence": "95.64%",
+      "probabilities": {
+        "NEGATIVE": 0.006938571637418522,
+        "NEUTRAL": 0.036653694089697764,
+        "POSITIVE": 0.9564077342728837
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.69%",
+        "NEUTRAL": "3.67%",
+        "POSITIVE": "95.64%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.69%\nNEUTRAL    [=                   ]   3.67%\nPOSITIVE   [=================== ]  95.64%",
+      "raw_logits": null,
+      "latency_ms": 23.118642857298255,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.006938571637418522,
+        "LABEL_1": 0.036653694089697764,
+        "LABEL_2": 0.9564077342728837
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.3552795264291481,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9564077342728837,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_0917328cb2cb",
+      "sentence_text": "the movie was not very boring but the ending was good",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.85,
+      "reason": "Negation removes the boring aspect, making it mostly positive.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.85,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790934482.8266551,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.05,
+      "neutral_probability": 0.1,
+      "positive_probability": 0.85,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "neutral_probability": 0.1,
+        "positive_probability": 0.85,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.05,
+        "positive_probability": 0.85,
+        "neutral_probability_excluded": 0.1,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.2,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.7,
+            "reason_short": "Mixed review with a positive conclusion.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0917328cb2cb",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.85,
+            "reason_short": "Negation removes the boring aspect, making it mostly positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5d81d79ba6f3",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.15,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation creates epistemic modality but keeps the overall positive lean.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_5a73af4c864a",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.4,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.5,
+            "reason_short": "Extremely boring outweighs the good ending slightly, but overall contrast remains balanced.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_b2a231404863",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.3,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.6,
+            "reason_short": "Conflicting modifiers but positive ending dominates.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3f66bcd63292",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.2,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.7,
+            "reason_short": "Synonymous to baseline.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_73097dfd4a52",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.6,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.2,
+            "reason_short": "Additional negative clause darkens the overall sentiment.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_dde170bd9168",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.8,
+            "reason_short": "Reinforced with genuinely interesting, highly positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.6011282078437357,
+    "confidence_delta_pts": 60.11282078437357,
+    "confidence_delta_pp": 60.11282078437357,
+    "formatted_confidence_delta": "+60.11 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "POLARITY_STRENGTHENED",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 23.118642857298255,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_6ee544fd19c2",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_5d81d79ba6f3",
+    "seed_text": "the movie was very boring but the ending was good",
+    "perturbed_text": "It is not impossible that the movie was very boring but the ending was good",
+    "perturbation_type": "double_negation",
+    "category": "double_negation",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.3552795264291481,
+      "formatted_confidence": "35.53%",
+      "probabilities": {
+        "NEGATIVE": 0.31070320670027773,
+        "NEUTRAL": 0.33401726687057415,
+        "POSITIVE": 0.3552795264291481
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "31.07%",
+        "NEUTRAL": "33.40%",
+        "POSITIVE": "35.53%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [======              ]  31.07%\nNEUTRAL    [=======             ]  33.40%\nPOSITIVE   [=======             ]  35.53%",
+      "raw_logits": null,
+      "latency_ms": 1007.8359999897657,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.31070320670027773,
+        "LABEL_1": 0.33401726687057415,
+        "LABEL_2": 0.3552795264291481
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.642809684255647,
+      "formatted_confidence": "64.28%",
+      "probabilities": {
+        "NEGATIVE": 0.10527909468651492,
+        "NEUTRAL": 0.25191122105783803,
+        "POSITIVE": 0.642809684255647
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "10.53%",
+        "NEUTRAL": "25.19%",
+        "POSITIVE": "64.28%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [==                  ]  10.53%\nNEUTRAL    [=====               ]  25.19%\nPOSITIVE   [=============       ]  64.28%",
+      "raw_logits": null,
+      "latency_ms": 23.118642857298255,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.10527909468651492,
+        "LABEL_1": 0.25191122105783803,
+        "LABEL_2": 0.642809684255647
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.3552795264291481,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.642809684255647,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_5d81d79ba6f3",
+      "sentence_text": "It is not impossible that the movie was very boring but the ending was good",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.6,
+      "reason": "Double negation creates epistemic modality but keeps the overall positive lean.",
+      "ambiguity": "HIGH",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.6,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790934482.826711,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.15,
+      "neutral_probability": 0.25,
+      "positive_probability": 0.6,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.15,
+        "neutral_probability": 0.25,
+        "positive_probability": 0.6,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.15,
+        "positive_probability": 0.6,
+        "neutral_probability_excluded": 0.25,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.2,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.7,
+            "reason_short": "Mixed review with a positive conclusion.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0917328cb2cb",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.85,
+            "reason_short": "Negation removes the boring aspect, making it mostly positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5d81d79ba6f3",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.15,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation creates epistemic modality but keeps the overall positive lean.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_5a73af4c864a",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.4,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.5,
+            "reason_short": "Extremely boring outweighs the good ending slightly, but overall contrast remains balanced.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_b2a231404863",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.3,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.6,
+            "reason_short": "Conflicting modifiers but positive ending dominates.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3f66bcd63292",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.2,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.7,
+            "reason_short": "Synonymous to baseline.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_73097dfd4a52",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.6,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.2,
+            "reason_short": "Additional negative clause darkens the overall sentiment.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_dde170bd9168",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.8,
+            "reason_short": "Reinforced with genuinely interesting, highly positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.2875301578264989,
+    "confidence_delta_pts": 28.75301578264989,
+    "confidence_delta_pp": 28.75301578264989,
+    "formatted_confidence_delta": "+28.75 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "POLARITY_STRENGTHENED",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 23.118642857298255,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_6ee544fd19c2",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_5a73af4c864a",
+    "seed_text": "the movie was very boring but the ending was good",
+    "perturbed_text": "the movie was very extremely boring but the ending was good",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.3552795264291481,
+      "formatted_confidence": "35.53%",
+      "probabilities": {
+        "NEGATIVE": 0.31070320670027773,
+        "NEUTRAL": 0.33401726687057415,
+        "POSITIVE": 0.3552795264291481
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "31.07%",
+        "NEUTRAL": "33.40%",
+        "POSITIVE": "35.53%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [======              ]  31.07%\nNEUTRAL    [=======             ]  33.40%\nPOSITIVE   [=======             ]  35.53%",
+      "raw_logits": null,
+      "latency_ms": 1007.8359999897657,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.31070320670027773,
+        "LABEL_1": 0.33401726687057415,
+        "LABEL_2": 0.3552795264291481
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.48086312413215637,
+      "formatted_confidence": "48.09%",
+      "probabilities": {
+        "NEGATIVE": 0.48086312413215637,
+        "NEUTRAL": 0.2991262972354889,
+        "POSITIVE": 0.22001057863235474
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "48.09%",
+        "NEUTRAL": "29.91%",
+        "POSITIVE": "22.00%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [==========          ]  48.09%\nNEUTRAL    [======              ]  29.91%\nPOSITIVE   [====                ]  22.00%",
+      "raw_logits": null,
+      "latency_ms": 23.118642857298255,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.48086312413215637,
+        "LABEL_1": 0.2991262972354889,
+        "LABEL_2": 0.22001057863235474
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.3552795264291481,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.48086312413215637,
+    "from_label": "POSITIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "POSITIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_5a73af4c864a",
+      "sentence_text": "the movie was very extremely boring but the ending was good",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.5,
+      "reason": "Extremely boring outweighs the good ending slightly, but overall contrast remains balanced.",
+      "ambiguity": "HIGH",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.5,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790934482.8267498,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.4,
+      "neutral_probability": 0.1,
+      "positive_probability": 0.5,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.4,
+        "neutral_probability": 0.1,
+        "positive_probability": 0.5,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.4,
+        "positive_probability": 0.5,
+        "neutral_probability_excluded": 0.1,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.2,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.7,
+            "reason_short": "Mixed review with a positive conclusion.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0917328cb2cb",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.85,
+            "reason_short": "Negation removes the boring aspect, making it mostly positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5d81d79ba6f3",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.15,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation creates epistemic modality but keeps the overall positive lean.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_5a73af4c864a",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.4,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.5,
+            "reason_short": "Extremely boring outweighs the good ending slightly, but overall contrast remains balanced.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_b2a231404863",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.3,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.6,
+            "reason_short": "Conflicting modifiers but positive ending dominates.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3f66bcd63292",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.2,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.7,
+            "reason_short": "Synonymous to baseline.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_73097dfd4a52",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.6,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.2,
+            "reason_short": "Additional negative clause darkens the overall sentiment.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_dde170bd9168",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.8,
+            "reason_short": "Reinforced with genuinely interesting, highly positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": true,
+    "semantic_state_change": true,
+    "confidence_delta": 0.12558359770300825,
+    "confidence_delta_pts": 12.558359770300825,
+    "confidence_delta_pp": 12.558359770300825,
+    "formatted_confidence_delta": "+12.56 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": false,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "POLARITY_REVERSED",
+    "behavioral_outcome": "UNEXPECTED_FLIP",
+    "failure_type": "Misweighted",
+    "rationale": "Model unexpectedly flipped prediction under meaning-preserving perturbation due to disproportionate feature weight shift on semantic tokens.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 23.118642857298255,
+    "ground_truth_match": false
+  },
+  {
+    "baseline_id": "base_6ee544fd19c2",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_b2a231404863",
+    "seed_text": "the movie was very boring but the ending was good",
+    "perturbed_text": "the movie was very somewhat boring but the ending was good",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.3552795264291481,
+      "formatted_confidence": "35.53%",
+      "probabilities": {
+        "NEGATIVE": 0.31070320670027773,
+        "NEUTRAL": 0.33401726687057415,
+        "POSITIVE": 0.3552795264291481
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "31.07%",
+        "NEUTRAL": "33.40%",
+        "POSITIVE": "35.53%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [======              ]  31.07%\nNEUTRAL    [=======             ]  33.40%\nPOSITIVE   [=======             ]  35.53%",
+      "raw_logits": null,
+      "latency_ms": 1007.8359999897657,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.31070320670027773,
+        "LABEL_1": 0.33401726687057415,
+        "LABEL_2": 0.3552795264291481
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.4714876641111424,
+      "formatted_confidence": "47.15%",
+      "probabilities": {
+        "NEGATIVE": 0.21444855310844552,
+        "NEUTRAL": 0.3140637827804121,
+        "POSITIVE": 0.4714876641111424
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "21.44%",
+        "NEUTRAL": "31.41%",
+        "POSITIVE": "47.15%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====                ]  21.44%\nNEUTRAL    [======              ]  31.41%\nPOSITIVE   [=========           ]  47.15%",
+      "raw_logits": null,
+      "latency_ms": 23.118642857298255,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.21444855310844552,
+        "LABEL_1": 0.3140637827804121,
+        "LABEL_2": 0.4714876641111424
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.3552795264291481,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.4714876641111424,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_b2a231404863",
+      "sentence_text": "the movie was very somewhat boring but the ending was good",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.6,
+      "reason": "Conflicting modifiers but positive ending dominates.",
+      "ambiguity": "MEDIUM",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.6,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790934482.8267832,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.3,
+      "neutral_probability": 0.1,
+      "positive_probability": 0.6,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.3,
+        "neutral_probability": 0.1,
+        "positive_probability": 0.6,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.3,
+        "positive_probability": 0.6,
+        "neutral_probability_excluded": 0.1,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.2,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.7,
+            "reason_short": "Mixed review with a positive conclusion.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0917328cb2cb",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.85,
+            "reason_short": "Negation removes the boring aspect, making it mostly positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5d81d79ba6f3",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.15,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation creates epistemic modality but keeps the overall positive lean.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_5a73af4c864a",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.4,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.5,
+            "reason_short": "Extremely boring outweighs the good ending slightly, but overall contrast remains balanced.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_b2a231404863",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.3,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.6,
+            "reason_short": "Conflicting modifiers but positive ending dominates.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3f66bcd63292",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.2,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.7,
+            "reason_short": "Synonymous to baseline.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_73097dfd4a52",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.6,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.2,
+            "reason_short": "Additional negative clause darkens the overall sentiment.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_dde170bd9168",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.8,
+            "reason_short": "Reinforced with genuinely interesting, highly positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.11620813768199428,
+    "confidence_delta_pts": 11.620813768199428,
+    "confidence_delta_pp": 11.620813768199428,
+    "formatted_confidence_delta": "+11.62 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 23.118642857298255,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_6ee544fd19c2",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_3f66bcd63292",
+    "seed_text": "the movie was very boring but the ending was good",
+    "perturbed_text": "the film was very boring but the ending was good",
+    "perturbation_type": "synonym_substitution",
+    "category": "synonym_substitution",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.3552795264291481,
+      "formatted_confidence": "35.53%",
+      "probabilities": {
+        "NEGATIVE": 0.31070320670027773,
+        "NEUTRAL": 0.33401726687057415,
+        "POSITIVE": 0.3552795264291481
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "31.07%",
+        "NEUTRAL": "33.40%",
+        "POSITIVE": "35.53%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [======              ]  31.07%\nNEUTRAL    [=======             ]  33.40%\nPOSITIVE   [=======             ]  35.53%",
+      "raw_logits": null,
+      "latency_ms": 1007.8359999897657,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.31070320670027773,
+        "LABEL_1": 0.33401726687057415,
+        "LABEL_2": 0.3552795264291481
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEUTRAL",
+      "predicted_label": "NEUTRAL",
+      "confidence": 0.3463219312621314,
+      "formatted_confidence": "34.63%",
+      "probabilities": {
+        "NEGATIVE": 0.3238866522244604,
+        "NEUTRAL": 0.3463219312621314,
+        "POSITIVE": 0.3297914165134082
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "32.39%",
+        "NEUTRAL": "34.63%",
+        "POSITIVE": "32.98%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [======              ]  32.39%\nNEUTRAL    [=======             ]  34.63%\nPOSITIVE   [=======             ]  32.98%",
+      "raw_logits": null,
+      "latency_ms": 23.118642857298255,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.3238866522244604,
+        "LABEL_1": 0.3463219312621314,
+        "LABEL_2": 0.3297914165134082
+      },
+      "semantic_polarity": "NEUTRAL",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.3552795264291481,
+    "perturbed_label": "NEUTRAL",
+    "perturbed_confidence": 0.3463219312621314,
+    "from_label": "POSITIVE",
+    "to_label": "NEUTRAL",
+    "transition_type": "POSITIVE \u2192 NEUTRAL",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_3f66bcd63292",
+      "sentence_text": "the film was very boring but the ending was good",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.7,
+      "reason": "Synonymous to baseline.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.7,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790934482.8268187,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.2,
+      "neutral_probability": 0.1,
+      "positive_probability": 0.7,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.2,
+        "neutral_probability": 0.1,
+        "positive_probability": 0.7,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.2,
+        "positive_probability": 0.7,
+        "neutral_probability_excluded": 0.1,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.2,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.7,
+            "reason_short": "Mixed review with a positive conclusion.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0917328cb2cb",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.85,
+            "reason_short": "Negation removes the boring aspect, making it mostly positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5d81d79ba6f3",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.15,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation creates epistemic modality but keeps the overall positive lean.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_5a73af4c864a",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.4,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.5,
+            "reason_short": "Extremely boring outweighs the good ending slightly, but overall contrast remains balanced.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_b2a231404863",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.3,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.6,
+            "reason_short": "Conflicting modifiers but positive ending dominates.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3f66bcd63292",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.2,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.7,
+            "reason_short": "Synonymous to baseline.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_73097dfd4a52",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.6,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.2,
+            "reason_short": "Additional negative clause darkens the overall sentiment.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_dde170bd9168",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.8,
+            "reason_short": "Reinforced with genuinely interesting, highly positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": true,
+    "polarity_flip": false,
+    "semantic_state_change": true,
+    "confidence_delta": -0.008957595167016719,
+    "confidence_delta_pts": -0.8957595167016719,
+    "confidence_delta_pp": -0.8957595167016719,
+    "formatted_confidence_delta": "-0.90 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": false,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "POSITIVE_TO_NEUTRAL",
+    "behavioral_outcome": "UNEXPECTED_CHANGE",
+    "failure_type": "Misweighted",
+    "rationale": "Model unexpectedly flipped prediction under meaning-preserving perturbation due to disproportionate feature weight shift on semantic tokens.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 23.118642857298255,
+    "ground_truth_match": false
+  },
+  {
+    "baseline_id": "base_6ee544fd19c2",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_73097dfd4a52",
+    "seed_text": "the movie was very boring but the ending was good",
+    "perturbed_text": "the movie was very boring but the ending was good, however it did not improve over time.",
+    "perturbation_type": "contrast_negative_append",
+    "category": "contrast_negative_append",
+    "expected_flip": true,
+    "expected_semantic_effect": "EXPECTED_FLIP",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.3552795264291481,
+      "formatted_confidence": "35.53%",
+      "probabilities": {
+        "NEGATIVE": 0.31070320670027773,
+        "NEUTRAL": 0.33401726687057415,
+        "POSITIVE": 0.3552795264291481
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "31.07%",
+        "NEUTRAL": "33.40%",
+        "POSITIVE": "35.53%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [======              ]  31.07%\nNEUTRAL    [=======             ]  33.40%\nPOSITIVE   [=======             ]  35.53%",
+      "raw_logits": null,
+      "latency_ms": 1007.8359999897657,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.31070320670027773,
+        "LABEL_1": 0.33401726687057415,
+        "LABEL_2": 0.3552795264291481
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.6453288841644591,
+      "formatted_confidence": "64.53%",
+      "probabilities": {
+        "NEGATIVE": 0.6453288841644591,
+        "NEUTRAL": 0.2661030014313981,
+        "POSITIVE": 0.08856811440414275
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "64.53%",
+        "NEUTRAL": "26.61%",
+        "POSITIVE": "8.86%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=============       ]  64.53%\nNEUTRAL    [=====               ]  26.61%\nPOSITIVE   [==                  ]   8.86%",
+      "raw_logits": null,
+      "latency_ms": 23.118642857298255,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.6453288841644591,
+        "LABEL_1": 0.2661030014313981,
+        "LABEL_2": 0.08856811440414275
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.3552795264291481,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.6453288841644591,
+    "from_label": "POSITIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "POSITIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_73097dfd4a52",
+      "sentence_text": "the movie was very boring but the ending was good, however it did not improve over time.",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": 0.6,
+      "reason": "Additional negative clause darkens the overall sentiment.",
+      "ambiguity": "MEDIUM",
+      "semantic_relation_to_baseline": "REVERSE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "NEGATIVE",
+      "gemini_confidence": 0.6,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790934482.8268595,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.6,
+      "neutral_probability": 0.2,
+      "positive_probability": 0.2,
+      "reference_class_count": 3,
+      "reference_label": "NEGATIVE",
+      "three_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.6,
+        "neutral_probability": 0.2,
+        "positive_probability": 0.2,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "NEGATIVE",
+        "negative_probability": 0.6,
+        "positive_probability": 0.2,
+        "neutral_probability_excluded": 0.2,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "NEGATIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.2,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.7,
+            "reason_short": "Mixed review with a positive conclusion.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0917328cb2cb",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.85,
+            "reason_short": "Negation removes the boring aspect, making it mostly positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5d81d79ba6f3",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.15,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation creates epistemic modality but keeps the overall positive lean.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_5a73af4c864a",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.4,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.5,
+            "reason_short": "Extremely boring outweighs the good ending slightly, but overall contrast remains balanced.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_b2a231404863",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.3,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.6,
+            "reason_short": "Conflicting modifiers but positive ending dominates.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3f66bcd63292",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.2,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.7,
+            "reason_short": "Synonymous to baseline.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_73097dfd4a52",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.6,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.2,
+            "reason_short": "Additional negative clause darkens the overall sentiment.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_dde170bd9168",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.8,
+            "reason_short": "Reinforced with genuinely interesting, highly positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": true,
+    "semantic_state_change": true,
+    "confidence_delta": 0.290049357735311,
+    "confidence_delta_pts": 29.0049357735311,
+    "confidence_delta_pp": 29.0049357735311,
+    "formatted_confidence_delta": "+29.00 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": false,
+    "expected_relation": "POLARITY_REVERSED",
+    "observed_relation": "POLARITY_REVERSED",
+    "behavioral_outcome": "EXPECTED_FLIP",
+    "failure_type": "None",
+    "rationale": "Model correctly flipped and changed label (POSITIVE (POSITIVE) \u2192 NEGATIVE (NEGATIVE)) under DIFFERENT_LABEL expectation.",
+    "semantic_intent": "REVERSE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 23.118642857298255,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_6ee544fd19c2",
+    "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+    "probe_id": "prb_dde170bd9168",
+    "seed_text": "the movie was very boring but the ending was good",
+    "perturbed_text": "the movie was very boring but the ending was good, but it was genuinely interesting in practice.",
+    "perturbation_type": "contrast_positive_append",
+    "category": "contrast_positive_append",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.3552795264291481,
+      "formatted_confidence": "35.53%",
+      "probabilities": {
+        "NEGATIVE": 0.31070320670027773,
+        "NEUTRAL": 0.33401726687057415,
+        "POSITIVE": 0.3552795264291481
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "31.07%",
+        "NEUTRAL": "33.40%",
+        "POSITIVE": "35.53%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [======              ]  31.07%\nNEUTRAL    [=======             ]  33.40%\nPOSITIVE   [=======             ]  35.53%",
+      "raw_logits": null,
+      "latency_ms": 1007.8359999897657,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.31070320670027773,
+        "LABEL_1": 0.33401726687057415,
+        "LABEL_2": 0.3552795264291481
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.6430541920889481,
+      "formatted_confidence": "64.31%",
+      "probabilities": {
+        "NEGATIVE": 0.11585187253245616,
+        "NEUTRAL": 0.2410939353785957,
+        "POSITIVE": 0.6430541920889481
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "11.59%",
+        "NEUTRAL": "24.11%",
+        "POSITIVE": "64.31%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [==                  ]  11.59%\nNEUTRAL    [=====               ]  24.11%\nPOSITIVE   [=============       ]  64.31%",
+      "raw_logits": null,
+      "latency_ms": 23.118642857298255,
+      "model_id": "cardiffnlp/twitter-roberta-base-sentiment",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_2",
+      "raw_label_id": 2,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.11585187253245616,
+        "LABEL_1": 0.2410939353785957,
+        "LABEL_2": 0.6430541920889481
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "NEUTRAL",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.3552795264291481,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.6430541920889481,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "NEUTRAL",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_dde170bd9168",
+      "sentence_text": "the movie was very boring but the ending was good, but it was genuinely interesting in practice.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": 0.8,
+      "reason": "Reinforced with genuinely interesting, highly positive.",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "GEMINI",
+      "gemini_polarity": "POSITIVE",
+      "gemini_confidence": 0.8,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "gemini-flash-lite-latest",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790934482.8268945,
+      "prompt_version": "v2.0",
+      "negative_probability": 0.1,
+      "neutral_probability": 0.1,
+      "positive_probability": 0.8,
+      "reference_class_count": 3,
+      "reference_label": "POSITIVE",
+      "three_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.1,
+        "neutral_probability": 0.1,
+        "positive_probability": 0.8,
+        "reference_class_count": 3,
+        "status": "AVAILABLE"
+      },
+      "two_class": {
+        "label": "POSITIVE",
+        "negative_probability": 0.1,
+        "positive_probability": 0.8,
+        "neutral_probability_excluded": 0.1,
+        "reference_class_count": 2,
+        "status": "DERIVED_FROM_POLARITY_PROBABILITIES"
+      },
+      "binary_projection_label": "POSITIVE",
+      "binary_projection_status": "DERIVED_FROM_POLARITY_PROBABILITIES",
+      "status": "AVAILABLE",
+      "failure_reason": null,
+      "credential_alias": "gemini_key_1",
+      "request_id": null,
+      "raw_response": {
+        "annotations": [
+          {
+            "sentence_id": "baseline",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.2,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.7,
+            "reason_short": "Mixed review with a positive conclusion.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_0917328cb2cb",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.05,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.85,
+            "reason_short": "Negation removes the boring aspect, making it mostly positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "REVERSE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_5d81d79ba6f3",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.15,
+            "neutral_probability": 0.25,
+            "positive_probability": 0.6,
+            "reason_short": "Double negation creates epistemic modality but keeps the overall positive lean.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "SHIFT_TO_NEUTRAL"
+          },
+          {
+            "sentence_id": "prb_5a73af4c864a",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.4,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.5,
+            "reason_short": "Extremely boring outweighs the good ending slightly, but overall contrast remains balanced.",
+            "ambiguity": "HIGH",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_b2a231404863",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.3,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.6,
+            "reason_short": "Conflicting modifiers but positive ending dominates.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_3f66bcd63292",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.2,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.7,
+            "reason_short": "Synonymous to baseline.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          },
+          {
+            "sentence_id": "prb_73097dfd4a52",
+            "semantic_polarity": "NEGATIVE",
+            "label": "NEGATIVE",
+            "negative_probability": 0.6,
+            "neutral_probability": 0.2,
+            "positive_probability": 0.2,
+            "reason_short": "Additional negative clause darkens the overall sentiment.",
+            "ambiguity": "MEDIUM",
+            "semantic_relation_to_baseline": "CONTRAST_SHIFT"
+          },
+          {
+            "sentence_id": "prb_dde170bd9168",
+            "semantic_polarity": "POSITIVE",
+            "label": "POSITIVE",
+            "negative_probability": 0.1,
+            "neutral_probability": 0.1,
+            "positive_probability": 0.8,
+            "reason_short": "Reinforced with genuinely interesting, highly positive.",
+            "ambiguity": "LOW",
+            "semantic_relation_to_baseline": "PRESERVE_POLARITY"
+          }
+        ]
+      },
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.2877746656598,
+    "confidence_delta_pts": 28.77746656598,
+    "confidence_delta_pp": 28.77746656598,
+    "formatted_confidence_delta": "+28.78 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "POLARITY_STRENGTHENED",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 23.118642857298255,
+    "ground_truth_match": true
+  }
+]

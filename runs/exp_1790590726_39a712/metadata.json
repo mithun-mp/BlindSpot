@@ -1,0 +1,43 @@
+{
+  "experiment_id": "exp_1790590726_39a712",
+  "experiment_name": "Multimodel Robustness Audit",
+  "created_at": 1790590727.8358428,
+  "status": "completed",
+  "models": [
+    "distilbert-base-uncased-finetuned-sst-2-english",
+    "cardiffnlp/twitter-roberta-base-sentiment",
+    "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "textattack/albert-base-v2-SST-2",
+    "textattack/bert-base-uncased-SST-2"
+  ],
+  "completed_models": [
+    "distilbert-base-uncased-finetuned-sst-2-english",
+    "cardiffnlp/twitter-roberta-base-sentiment",
+    "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "textattack/albert-base-v2-SST-2",
+    "textattack/bert-base-uncased-SST-2"
+  ],
+  "model_states": {
+    "distilbert-base-uncased-finetuned-sst-2-english": "completed",
+    "cardiffnlp/twitter-roberta-base-sentiment": "completed",
+    "cardiffnlp/twitter-roberta-base-sentiment-latest": "completed",
+    "textattack/albert-base-v2-SST-2": "completed",
+    "textattack/bert-base-uncased-SST-2": "completed"
+  },
+  "num_models": 5,
+  "num_seed_texts": 1,
+  "num_probes": 7,
+  "last_updated_at": 1790590915.1305645,
+  "total_duration_sec": 188.17,
+  "pipeline_integrity_passed": true,
+  "run_status": "COMPLETED",
+  "analysis_status": "FAILURES_OBSERVED",
+  "semantic_reference": {
+    "engine": "local_heuristic",
+    "model": "local_heuristic",
+    "baseline_polarity": "POSITIVE",
+    "cache_hits": 0,
+    "api_requests": 0
+  },
+  "completed_at": 1790591315.9578233
+}

@@ -1,0 +1,53 @@
+{
+  "experiment_name": "movieboring",
+  "model_ids": [
+    "distilbert-base-uncased-finetuned-sst-2-english",
+    "textattack/albert-base-v2-SST-2",
+    "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "textattack/bert-base-uncased-SST-2",
+    "cardiffnlp/twitter-roberta-base-sentiment"
+  ],
+  "seed_texts": [
+    "the movie was very boring but the ending was good"
+  ],
+  "sentence_types": {
+    "the movie was very boring but the ending was good": "literal"
+  },
+  "perturbation_types": [
+    "contrast_negative_append",
+    "double_negation",
+    "negation_insertion",
+    "intensity",
+    "contrast_positive_append",
+    "synonym_substitution"
+  ],
+  "explainer_type": "both",
+  "performance_mode": "balanced",
+  "batch_size": null,
+  "random_seed": 42,
+  "confidence_threshold": 0.65,
+  "confidence_sensitivity_threshold_pts": 20.0,
+  "output_dir": "runs",
+  "has_selected_probes": true,
+  "selected_probe_ids": [
+    "prb_0917328cb2cb",
+    "prb_5d81d79ba6f3",
+    "prb_5a73af4c864a",
+    "prb_b2a231404863",
+    "prb_3f66bcd63292",
+    "prb_73097dfd4a52",
+    "prb_dde170bd9168"
+  ],
+  "thresholds": {
+    "operator_min_abs": 0.05,
+    "competing_dominance_ratio": 1.0,
+    "spurious_stopword_ratio": 0.4,
+    "indeterminate_total_abs": 0.0001,
+    "_descriptions": {
+      "operator_min_abs": "Minimum absolute attribution for operator recognition (|w_op| >= 0.05)",
+      "competing_dominance_ratio": "Ratio of competing opposing tokens to operator attribution",
+      "spurious_stopword_ratio": "Fraction of attribution carried by background/stop words",
+      "indeterminate_total_abs": "Threshold below which attribution is deemed uninformative"
+    }
+  }
+}

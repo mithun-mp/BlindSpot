@@ -1,0 +1,41 @@
+{
+  "experiment_name": "Multimodel Robustness Audit",
+  "model_ids": [
+    "distilbert-base-uncased-finetuned-sst-2-english",
+    "cardiffnlp/twitter-roberta-base-sentiment",
+    "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "textattack/bert-base-uncased-SST-2",
+    "textattack/albert-base-v2-SST-2"
+  ],
+  "seed_texts": [
+    "The new security system is extremely reliable and protects users from dangerous attacks"
+  ],
+  "sentence_types": {
+    "The new security system is extremely reliable and protects users from dangerous attacks": "literal"
+  },
+  "perturbation_types": [
+    "intensity",
+    "synonym_substitution",
+    "contrast_positive_append",
+    "negation_insertion",
+    "double_negation",
+    "contrast_negative_append"
+  ],
+  "explainer_type": "both",
+  "performance_mode": "balanced",
+  "batch_size": null,
+  "random_seed": 42,
+  "confidence_threshold": 0.65,
+  "confidence_sensitivity_threshold_pts": 20.0,
+  "output_dir": "runs",
+  "has_selected_probes": true,
+  "selected_probe_ids": [
+    "prb_b97b6ff93a22",
+    "prb_19d2175f47cc",
+    "prb_32ac03c6a824",
+    "prb_f64d6f520815",
+    "prb_6e32cc742253",
+    "prb_01db79cec89d",
+    "prb_b9120354c0b5"
+  ]
+}

@@ -1,0 +1,975 @@
+[
+  {
+    "baseline_id": "base_6b75450dca6b",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_b97b6ff93a22",
+    "seed_text": "The new security system is extremely reliable and protects users from dangerous attacks",
+    "perturbed_text": "The new security system is not extremely reliable and protects users from dangerous attacks",
+    "perturbation_type": "negation_insertion",
+    "category": "negation_insertion",
+    "expected_flip": true,
+    "expected_semantic_effect": "EXPECTED_FLIP",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9980137747848334,
+      "formatted_confidence": "99.80%",
+      "probabilities": {
+        "NEGATIVE": 0.001986225215166513,
+        "POSITIVE": 0.9980137747848334
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.20%",
+        "POSITIVE": "99.80%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.20%\nPOSITIVE   [====================]  99.80%",
+      "raw_logits": null,
+      "latency_ms": 180.14409999886993,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.001986225215166513,
+        "LABEL_1": 0.9980137747848334
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9971847407127074,
+      "formatted_confidence": "99.72%",
+      "probabilities": {
+        "NEGATIVE": 0.9971847407127074,
+        "POSITIVE": 0.002815259287292691
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "99.72%",
+        "POSITIVE": "0.28%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [====================]  99.72%\nPOSITIVE   [                    ]   0.28%",
+      "raw_logits": null,
+      "latency_ms": 114.65358571357294,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.9971847407127074,
+        "LABEL_1": 0.002815259287292691
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9980137747848334,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.9971847407127074,
+    "from_label": "POSITIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "POSITIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_b97b6ff93a22",
+      "sentence_text": "The new security system is not extremely reliable and protects users from dangerous attacks",
+      "semantic_polarity": "NEGATIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Negative affective orientation (compound score: -0.58).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "REVERSE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "NEGATIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790614462.6332605,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": true,
+    "semantic_state_change": true,
+    "confidence_delta": -0.0008290340721260891,
+    "confidence_delta_pts": -0.08290340721260891,
+    "confidence_delta_pp": -0.08290340721260891,
+    "formatted_confidence_delta": "-0.08 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": false,
+    "expected_relation": "POLARITY_REVERSED",
+    "observed_relation": "POLARITY_REVERSED",
+    "behavioral_outcome": "EXPECTED_FLIP",
+    "failure_type": "None",
+    "rationale": "Model correctly flipped and changed label (POSITIVE (POSITIVE) \u2192 NEGATIVE (NEGATIVE)) under DIFFERENT_LABEL expectation.",
+    "semantic_intent": "REVERSE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 114.65358571357294,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_6b75450dca6b",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_19d2175f47cc",
+    "seed_text": "The new security system is extremely reliable and protects users from dangerous attacks",
+    "perturbed_text": "It is not impossible that the new security system is extremely reliable and protects users from dangerous attacks",
+    "perturbation_type": "double_negation",
+    "category": "double_negation",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9980137747848334,
+      "formatted_confidence": "99.80%",
+      "probabilities": {
+        "NEGATIVE": 0.001986225215166513,
+        "POSITIVE": 0.9980137747848334
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.20%",
+        "POSITIVE": "99.80%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.20%\nPOSITIVE   [====================]  99.80%",
+      "raw_logits": null,
+      "latency_ms": 180.14409999886993,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.001986225215166513,
+        "LABEL_1": 0.9980137747848334
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9401507061764809,
+      "formatted_confidence": "94.02%",
+      "probabilities": {
+        "NEGATIVE": 0.05984929382351917,
+        "POSITIVE": 0.9401507061764809
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "5.98%",
+        "POSITIVE": "94.02%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=                   ]   5.98%\nPOSITIVE   [=================== ]  94.02%",
+      "raw_logits": null,
+      "latency_ms": 114.65358571357294,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.05984929382351917,
+        "LABEL_1": 0.9401507061764809
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9980137747848334,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9401507061764809,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_19d2175f47cc",
+      "sentence_text": "It is not impossible that the new security system is extremely reliable and protects users from dangerous attacks",
+      "semantic_polarity": "POSITIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Positive affective orientation (compound score: +0.31).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790614462.6399713,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": -0.05786306860835255,
+    "confidence_delta_pts": -5.786306860835255,
+    "confidence_delta_pp": -5.786306860835255,
+    "formatted_confidence_delta": "-5.79 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 114.65358571357294,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_6b75450dca6b",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_32ac03c6a824",
+    "seed_text": "The new security system is extremely reliable and protects users from dangerous attacks",
+    "perturbed_text": "The new extremely security system is extremely reliable and protects users from dangerous attacks",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9980137747848334,
+      "formatted_confidence": "99.80%",
+      "probabilities": {
+        "NEGATIVE": 0.001986225215166513,
+        "POSITIVE": 0.9980137747848334
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.20%",
+        "POSITIVE": "99.80%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.20%\nPOSITIVE   [====================]  99.80%",
+      "raw_logits": null,
+      "latency_ms": 180.14409999886993,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.001986225215166513,
+        "LABEL_1": 0.9980137747848334
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9989790484982977,
+      "formatted_confidence": "99.90%",
+      "probabilities": {
+        "NEGATIVE": 0.0010209515017023068,
+        "POSITIVE": 0.9989790484982977
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.10%",
+        "POSITIVE": "99.90%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.10%\nPOSITIVE   [====================]  99.90%",
+      "raw_logits": null,
+      "latency_ms": 114.65358571357294,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0010209515017023068,
+        "LABEL_1": 0.9989790484982977
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9980137747848334,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9989790484982977,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_32ac03c6a824",
+      "sentence_text": "The new extremely security system is extremely reliable and protects users from dangerous attacks",
+      "semantic_polarity": "POSITIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Positive affective orientation (compound score: +0.37).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790614462.6476986,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.0009652737134642209,
+    "confidence_delta_pts": 0.09652737134642209,
+    "confidence_delta_pp": 0.09652737134642209,
+    "formatted_confidence_delta": "+0.10 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 114.65358571357294,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_6b75450dca6b",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_f64d6f520815",
+    "seed_text": "The new security system is extremely reliable and protects users from dangerous attacks",
+    "perturbed_text": "The new somewhat security system is extremely reliable and protects users from dangerous attacks",
+    "perturbation_type": "intensity",
+    "category": "intensity",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9980137747848334,
+      "formatted_confidence": "99.80%",
+      "probabilities": {
+        "NEGATIVE": 0.001986225215166513,
+        "POSITIVE": 0.9980137747848334
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.20%",
+        "POSITIVE": "99.80%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.20%\nPOSITIVE   [====================]  99.80%",
+      "raw_logits": null,
+      "latency_ms": 180.14409999886993,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.001986225215166513,
+        "LABEL_1": 0.9980137747848334
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9984729425754298,
+      "formatted_confidence": "99.85%",
+      "probabilities": {
+        "NEGATIVE": 0.0015270574245701148,
+        "POSITIVE": 0.9984729425754298
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.15%",
+        "POSITIVE": "99.85%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.15%\nPOSITIVE   [====================]  99.85%",
+      "raw_logits": null,
+      "latency_ms": 114.65358571357294,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0015270574245701148,
+        "LABEL_1": 0.9984729425754298
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9980137747848334,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9984729425754298,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_f64d6f520815",
+      "sentence_text": "The new somewhat security system is extremely reliable and protects users from dangerous attacks",
+      "semantic_polarity": "POSITIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Positive affective orientation (compound score: +0.24).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790614462.657158,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.0004591677905964042,
+    "confidence_delta_pts": 0.04591677905964042,
+    "confidence_delta_pp": 0.04591677905964042,
+    "formatted_confidence_delta": "+0.05 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 114.65358571357294,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_6b75450dca6b",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_6e32cc742253",
+    "seed_text": "The new security system is extremely reliable and protects users from dangerous attacks",
+    "perturbed_text": "The newfangled security system is extremely reliable and protects users from dangerous attacks",
+    "perturbation_type": "synonym_substitution",
+    "category": "synonym_substitution",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9980137747848334,
+      "formatted_confidence": "99.80%",
+      "probabilities": {
+        "NEGATIVE": 0.001986225215166513,
+        "POSITIVE": 0.9980137747848334
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.20%",
+        "POSITIVE": "99.80%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.20%\nPOSITIVE   [====================]  99.80%",
+      "raw_logits": null,
+      "latency_ms": 180.14409999886993,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.001986225215166513,
+        "LABEL_1": 0.9980137747848334
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9989602115706538,
+      "formatted_confidence": "99.90%",
+      "probabilities": {
+        "NEGATIVE": 0.0010397884293461542,
+        "POSITIVE": 0.9989602115706538
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.10%",
+        "POSITIVE": "99.90%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.10%\nPOSITIVE   [====================]  99.90%",
+      "raw_logits": null,
+      "latency_ms": 114.65358571357294,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0010397884293461542,
+        "LABEL_1": 0.9989602115706538
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9980137747848334,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9989602115706538,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_6e32cc742253",
+      "sentence_text": "The newfangled security system is extremely reliable and protects users from dangerous attacks",
+      "semantic_polarity": "POSITIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Positive affective orientation (compound score: +0.31).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790614462.666096,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.0009464367858204037,
+    "confidence_delta_pts": 0.09464367858204037,
+    "confidence_delta_pp": 0.09464367858204037,
+    "formatted_confidence_delta": "+0.09 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 114.65358571357294,
+    "ground_truth_match": true
+  },
+  {
+    "baseline_id": "base_6b75450dca6b",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_01db79cec89d",
+    "seed_text": "The new security system is extremely reliable and protects users from dangerous attacks",
+    "perturbed_text": "The new security system is extremely reliable and protects users from dangerous attacks, however it is surprisingly worn in comparison.",
+    "perturbation_type": "contrast_negative_append",
+    "category": "contrast_negative_append",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9980137747848334,
+      "formatted_confidence": "99.80%",
+      "probabilities": {
+        "NEGATIVE": 0.001986225215166513,
+        "POSITIVE": 0.9980137747848334
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.20%",
+        "POSITIVE": "99.80%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.20%\nPOSITIVE   [====================]  99.80%",
+      "raw_logits": null,
+      "latency_ms": 180.14409999886993,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.001986225215166513,
+        "LABEL_1": 0.9980137747848334
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "NEGATIVE",
+      "predicted_label": "NEGATIVE",
+      "confidence": 0.9540472137262733,
+      "formatted_confidence": "95.40%",
+      "probabilities": {
+        "NEGATIVE": 0.9540472137262733,
+        "POSITIVE": 0.04595278627372667
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "95.40%",
+        "POSITIVE": "4.60%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [=================== ]  95.40%\nPOSITIVE   [=                   ]   4.60%",
+      "raw_logits": null,
+      "latency_ms": 114.65358571357294,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_0",
+      "raw_label_id": 0,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.9540472137262733,
+        "LABEL_1": 0.04595278627372667
+      },
+      "semantic_polarity": "NEGATIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "POLARITY_MISMATCH"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9980137747848334,
+    "perturbed_label": "NEGATIVE",
+    "perturbed_confidence": 0.9540472137262733,
+    "from_label": "POSITIVE",
+    "to_label": "NEGATIVE",
+    "transition_type": "POSITIVE \u2192 NEGATIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "POLARITY_MISMATCH",
+    "semantic_reference": {
+      "sentence_id": "prb_01db79cec89d",
+      "sentence_text": "The new security system is extremely reliable and protects users from dangerous attacks, however it is surprisingly worn in comparison.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Contrastive construction dominated by favorable second clause: 'it is surprisingly worn in comparison.' (compound: +0.08).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790614462.6741874,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": true,
+    "raw_label_flip": true,
+    "polarity_flip": true,
+    "semantic_state_change": true,
+    "confidence_delta": -0.043966561058560116,
+    "confidence_delta_pts": -4.396656105856012,
+    "confidence_delta_pp": -4.396656105856012,
+    "formatted_confidence_delta": "-4.40 percentage points",
+    "expectation_satisfied": false,
+    "expectation_match": false,
+    "preservation": false,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "POLARITY_REVERSED",
+    "behavioral_outcome": "UNEXPECTED_FLIP",
+    "failure_type": "Spurious",
+    "rationale": "Model unexpectedly flipped prediction ('POSITIVE -> NEGATIVE') under meaning-preserving perturbation, indicating spurious sensitivity.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 114.65358571357294,
+    "ground_truth_match": false
+  },
+  {
+    "baseline_id": "base_6b75450dca6b",
+    "model_id": "textattack/bert-base-uncased-SST-2",
+    "probe_id": "prb_b9120354c0b5",
+    "seed_text": "The new security system is extremely reliable and protects users from dangerous attacks",
+    "perturbed_text": "The new security system is extremely reliable and protects users from dangerous attacks, and it operates reliably under normal conditions.",
+    "perturbation_type": "contrast_positive_append",
+    "category": "contrast_positive_append",
+    "expected_flip": false,
+    "expected_semantic_effect": "EXPECTED_PRESERVE",
+    "original_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9980137747848334,
+      "formatted_confidence": "99.80%",
+      "probabilities": {
+        "NEGATIVE": 0.001986225215166513,
+        "POSITIVE": 0.9980137747848334
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.20%",
+        "POSITIVE": "99.80%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.20%\nPOSITIVE   [====================]  99.80%",
+      "raw_logits": null,
+      "latency_ms": 180.14409999886993,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.001986225215166513,
+        "LABEL_1": 0.9980137747848334
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "perturbed_prediction": {
+      "label": "POSITIVE",
+      "predicted_label": "POSITIVE",
+      "confidence": 0.9982684085104272,
+      "formatted_confidence": "99.83%",
+      "probabilities": {
+        "NEGATIVE": 0.0017315914895727855,
+        "POSITIVE": 0.9982684085104272
+      },
+      "formatted_probabilities": {
+        "NEGATIVE": "0.17%",
+        "POSITIVE": "99.83%"
+      },
+      "formatted_distribution_ascii": "NEGATIVE   [                    ]   0.17%\nPOSITIVE   [====================]  99.83%",
+      "raw_logits": null,
+      "latency_ms": 114.65358571357294,
+      "model_id": "textattack/bert-base-uncased-SST-2",
+      "device": "cpu",
+      "model_status": "READY",
+      "raw_label": "LABEL_1",
+      "raw_label_id": 1,
+      "raw_probability_distribution": {
+        "LABEL_0": 0.0017315914895727855,
+        "LABEL_1": 0.9982684085104272
+      },
+      "semantic_polarity": "POSITIVE",
+      "label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "model_label_space": [
+        "NEGATIVE",
+        "POSITIVE"
+      ],
+      "semantic_compatibility": "DIRECTLY_COMPATIBLE"
+    },
+    "original_label": "POSITIVE",
+    "original_confidence": 0.9980137747848334,
+    "perturbed_label": "POSITIVE",
+    "perturbed_confidence": 0.9982684085104272,
+    "from_label": "POSITIVE",
+    "to_label": "POSITIVE",
+    "transition_type": "POSITIVE \u2192 POSITIVE",
+    "model_label_space": [
+      "NEGATIVE",
+      "POSITIVE"
+    ],
+    "semantic_compatibility": "DIRECTLY_COMPATIBLE",
+    "semantic_reference": {
+      "sentence_id": "prb_b9120354c0b5",
+      "sentence_text": "The new security system is extremely reliable and protects users from dangerous attacks, and it operates reliably under normal conditions.",
+      "semantic_polarity": "POSITIVE",
+      "confidence": null,
+      "reason": "[Local Heuristic - Unverified] Positive affective orientation (compound score: +0.31).",
+      "ambiguity": "LOW",
+      "semantic_relation_to_baseline": "PRESERVE_POLARITY",
+      "verification_status": "HUMAN_VERIFIED",
+      "provider": "LOCAL_HEURISTIC",
+      "gemini_polarity": null,
+      "gemini_confidence": null,
+      "human_verified_polarity": null,
+      "final_semantic_polarity": "POSITIVE",
+      "verification_source": "HUMAN_VERIFIED",
+      "model_used": "local_heuristic",
+      "schema_version": "v2.0",
+      "annotation_version": "v2.0",
+      "timestamp": 1790614462.6809592,
+      "prompt_version": "v2.0",
+      "baseline_semantic_polarity": "POSITIVE"
+    },
+    "is_flipped": false,
+    "raw_label_flip": false,
+    "polarity_flip": false,
+    "semantic_state_change": false,
+    "confidence_delta": 0.00025463372559375586,
+    "confidence_delta_pts": 0.025463372559375586,
+    "confidence_delta_pp": 0.025463372559375586,
+    "formatted_confidence_delta": "+0.03 percentage points",
+    "expectation_satisfied": true,
+    "expectation_match": true,
+    "preservation": true,
+    "expected_relation": "SAME_POLARITY",
+    "observed_relation": "SAME_POLARITY",
+    "behavioral_outcome": "EXPECTED_PRESERVE",
+    "failure_type": "None",
+    "rationale": "Model correctly preserved prediction (POSITIVE (POSITIVE) \u2192 POSITIVE (POSITIVE)) under meaning-preserving probe.",
+    "semantic_intent": "PRESERVE_POLARITY",
+    "reference_polarity": "UNKNOWN",
+    "linguistic_source_polarity": "UNKNOWN",
+    "model_observed_polarity": "UNKNOWN",
+    "latency_ms": 114.65358571357294,
+    "ground_truth_match": true
+  }
+]

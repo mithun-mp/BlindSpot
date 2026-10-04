@@ -1,0 +1,41 @@
+{
+  "experiment_name": "Multimodel Robustness Audit",
+  "model_ids": [
+    "distilbert-base-uncased-finetuned-sst-2-english",
+    "cardiffnlp/twitter-roberta-base-sentiment-latest",
+    "cardiffnlp/twitter-roberta-base-sentiment",
+    "textattack/albert-base-v2-SST-2",
+    "textattack/bert-base-uncased-SST-2"
+  ],
+  "seed_texts": [
+    "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing"
+  ],
+  "sentence_types": {
+    "The movie had excellent acting and beautiful visuals, but the storyline was boring and disappointing": "literal"
+  },
+  "perturbation_types": [
+    "contrast_positive_append",
+    "synonym_substitution",
+    "intensity",
+    "negation_insertion",
+    "double_negation",
+    "contrast_negative_append"
+  ],
+  "explainer_type": "both",
+  "performance_mode": "balanced",
+  "batch_size": null,
+  "random_seed": 42,
+  "confidence_threshold": 0.65,
+  "confidence_sensitivity_threshold_pts": 20.0,
+  "output_dir": "runs",
+  "has_selected_probes": true,
+  "selected_probe_ids": [
+    "prb_80889330b7c6",
+    "prb_0b010af6635d",
+    "prb_3b1c7a6a7f9a",
+    "prb_d794fddd78d0",
+    "prb_e115cc106ff1",
+    "prb_8883f3615d65",
+    "prb_0896126a5725"
+  ]
+}
